@@ -1,0 +1,12 @@
+{
+  "name": "style-guide-zoo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "test": "node --test test/",
+    "generate": "node runner/run.js",
+    "build": "node build/build-site.js"
+  }
+}
