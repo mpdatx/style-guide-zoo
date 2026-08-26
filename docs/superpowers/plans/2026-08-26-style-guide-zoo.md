@@ -3431,7 +3431,8 @@ much cheaper now than after 520 calls.
 
 Run: `node runner/run.js`
 
-Expected: roughly 507 remaining generations, finishing with
+Expected: roughly 500 remaining generations — 13 x 8 x 5 minus whatever
+Task 10 Step 4 and Task 11 Step 6 already generated — finishing with
 `Done. N succeeded, 0 failed.` If any failed, rerun the command — the runner
 retries only failures, because failed records are not "current".
 
