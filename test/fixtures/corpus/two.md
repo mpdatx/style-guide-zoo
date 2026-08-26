@@ -1,9 +1,9 @@
 ---
 id: two
 title: Passage Two
-genre: fixture
-source: Authored for tests.
-license: cc0-original
+genre: poetry
+source: Test source
+license: public-domain
 order: 20
 ---
 
