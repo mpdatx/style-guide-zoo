@@ -1,8 +1,10 @@
 import { mkdir, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { loadGuides, loadPassages } from '../runner/content.js';
-import { cellKey, readRecord, recordPath, SCHEMA_VERSION } from '../runner/record.js';
+import { cellKey, readRecord, recordPath } from '../runner/record.js';
 import { computeMetrics } from './metrics.js';
+
+export const SITE_SCHEMA_VERSION = 1;
 
 function toRun(record) {
   const ok = record.response?.ok === true;
@@ -65,7 +67,7 @@ export async function buildSite({
   }
 
   const index = {
-    schema_version: SCHEMA_VERSION,
+    schema_version: SITE_SCHEMA_VERSION,
     guides: guides.map(({ id, name, description, source_url, license_note, order }) => ({
       id, name, description, source_url, license_note, order
     })),
