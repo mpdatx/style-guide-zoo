@@ -1,0 +1,969 @@
+{
+  "schema_version": 1,
+  "guides": [
+    {
+      "id": "control",
+      "name": "No style guide (control)",
+      "description": "A baseline with no style instruction, for comparison against every other column.",
+      "source_url": "",
+      "license_note": "Original text.",
+      "order": 0
+    },
+    {
+      "id": "caveman",
+      "name": "Caveman",
+      "description": "Short, blunt, present tense, minimal grammar. The loudest possible demonstration of what a style constraint does.",
+      "source_url": "",
+      "license_note": "Original text.",
+      "order": 10
+    },
+    {
+      "id": "asd-ste100",
+      "name": "ASD-STE100 Simplified Technical English",
+      "description": "The aerospace controlled-language standard, aimed at unambiguous procedural text for non-native readers.",
+      "source_url": "https://www.asd-ste100.org/",
+      "license_note": "Original paraphrase of the standard's principles. No text is reproduced from the specification.",
+      "order": 20
+    },
+    {
+      "id": "economist",
+      "name": "The Economist house style",
+      "description": "Terse, confident, plain Anglo-Saxon words; wit tolerated, jargon not.",
+      "source_url": "https://www.economist.com/johnsons-style-guide",
+      "license_note": "Original paraphrase of the publication's stated principles.",
+      "order": 30
+    },
+    {
+      "id": "plain-language",
+      "name": "Plain language (government)",
+      "description": "The plain-language standard used for public-facing government writing.",
+      "source_url": "https://www.plainlanguage.gov/guidelines/",
+      "license_note": "Original paraphrase of published plain-language guidelines.",
+      "order": 40
+    },
+    {
+      "id": "strunk-white",
+      "name": "Strunk & White",
+      "description": "The Elements of Style: omit needless words, prefer the definite and concrete.",
+      "source_url": "https://en.wikipedia.org/wiki/The_Elements_of_Style",
+      "license_note": "Draws on the public-domain 1918 edition of the book; quotes its short, uncopyrightable rule headings verbatim, otherwise paraphrased.",
+      "order": 50
+    },
+    {
+      "id": "google-devdocs",
+      "name": "Google developer documentation style",
+      "description": "Google's style guide for technical documentation: formal, precise, and complete rather than casual — second person, present tense, no contractions.",
+      "source_url": "https://developers.google.com/style",
+      "license_note": "Original paraphrase of the publicly documented style rules.",
+      "order": 60
+    },
+    {
+      "id": "microsoft-style",
+      "name": "Microsoft Writing Style Guide",
+      "description": "A friendly, informal voice that talks straight to the reader like a helpful colleague.",
+      "source_url": "https://learn.microsoft.com/en-us/style-guide/welcome/",
+      "license_note": "Original paraphrase of the publicly documented voice principles.",
+      "order": 70
+    },
+    {
+      "id": "chicago",
+      "name": "Chicago Manual of Style",
+      "description": "Formal American publishing conventions: measured, precise, and fully punctuated.",
+      "source_url": "https://www.chicagomanualofstyle.org/",
+      "license_note": "Original paraphrase of widely known conventions. No text is reproduced from the manual.",
+      "order": 80
+    },
+    {
+      "id": "hemingway",
+      "name": "Hemingway",
+      "description": "Short declarative sentences, concrete nouns, almost no subordination.",
+      "source_url": "",
+      "license_note": "Original text describing a prose manner, not reproducing any work.",
+      "order": 90
+    },
+    {
+      "id": "corporate-buzzword",
+      "name": "Corporate buzzword",
+      "description": "The anti-pattern column: maximum abstraction, minimum content.",
+      "source_url": "",
+      "license_note": "Original text.",
+      "order": 100
+    },
+    {
+      "id": "pirate",
+      "name": "Pirate",
+      "description": "Stage pirate dialect, for an unmistakable register shift.",
+      "source_url": "",
+      "license_note": "Original text.",
+      "order": 110
+    },
+    {
+      "id": "haiku",
+      "name": "Haiku sequence",
+      "description": "A hard structural constraint, to show what happens when a style guide is a form rather than a manner.",
+      "source_url": "",
+      "license_note": "Original text.",
+      "order": 120
+    }
+  ],
+  "passages": [
+    {
+      "id": "gettysburg",
+      "title": "The Gettysburg Address",
+      "genre": "oratory",
+      "source": "Abraham Lincoln, 1863. Bliss copy.",
+      "license": "public-domain",
+      "order": 10,
+      "text": "Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.\n\nNow we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.\n\nBut, in a larger sense, we can not dedicate -- we can not consecrate -- we can not hallow -- this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us -- that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion -- that we here highly resolve that these dead shall not have died in vain -- that this nation, under God, shall have a new birth of freedom -- and that government of the people, by the people, for the people, shall not perish from the earth.",
+      "metrics": {
+        "words": 271,
+        "sentences": 10,
+        "syllables": 374,
+        "mean_sentence_length": 27.1,
+        "flesch_reading_ease": 62.6
+      }
+    },
+    {
+      "id": "moby-dick",
+      "title": "Moby-Dick, opening paragraph",
+      "genre": "narrative fiction",
+      "source": "Herman Melville, 1851.",
+      "license": "public-domain",
+      "order": 20,
+      "text": "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world. It is a way I have of driving off the spleen and regulating the circulation. Whenever I find myself growing grim about the mouth; whenever it is a damp, drizzly November in my soul; whenever I find myself involuntarily pausing before coffin warehouses, and bringing up the rear of every funeral I meet; and especially whenever my hypos get such an upper hand of me, that it requires a strong moral principle to prevent me from deliberately stepping into the street, and methodically knocking people's hats off—then, I account it high time to get to sea as soon as I can. This is my substitute for pistol and ball. With a philosophical flourish Cato throws himself upon his sword; I quietly take to the ship. There is nothing surprising in this. If they but knew it, almost all men in their degree, some time or other, cherish very nearly the same feelings towards the ocean with me.",
+      "metrics": {
+        "words": 198,
+        "sentences": 8,
+        "syllables": 306,
+        "mean_sentence_length": 24.8,
+        "flesch_reading_ease": 51
+      }
+    },
+    {
+      "id": "declaration",
+      "title": "Declaration of Independence, second paragraph",
+      "genre": "political rhetoric",
+      "source": "United States, 1776.",
+      "license": "public-domain",
+      "order": 30,
+      "text": "We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.",
+      "metrics": {
+        "words": 201,
+        "sentences": 3,
+        "syllables": 326,
+        "mean_sentence_length": 67,
+        "flesch_reading_ease": 1.6
+      }
+    },
+    {
+      "id": "origin-species",
+      "title": "On the Origin of Species, closing paragraph",
+      "genre": "scientific prose",
+      "source": "Charles Darwin, 1859, first edition.",
+      "license": "public-domain",
+      "order": 40,
+      "text": "It is interesting to contemplate an entangled bank, clothed with many plants of many kinds, with birds singing on the bushes, with various insects flitting about, and with worms crawling through the damp earth, and to reflect that these elaborately constructed forms, so different from each other, and dependent on each other in so complex a manner, have all been produced by laws acting around us. These laws, taken in the largest sense, being Growth with Reproduction; Inheritance which is almost implied by reproduction; Variability from the indirect and direct action of the external conditions of life, and from use and disuse; a Ratio of Increase so high as to lead to a Struggle for Life, and as a consequence to Natural Selection, entailing Divergence of Character and the Extinction of less-improved forms. Thus, from the war of nature, from famine and death, the most exalted object which we are capable of conceiving, namely, the production of the higher animals, directly follows. There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one; and that, whilst this planet has gone cycling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.",
+      "metrics": {
+        "words": 219,
+        "sentences": 4,
+        "syllables": 350,
+        "mean_sentence_length": 54.8,
+        "flesch_reading_ease": 16.1
+      }
+    },
+    {
+      "id": "terms-of-service",
+      "title": "Subscriber Data Handling Clause",
+      "genre": "legal boilerplate",
+      "source": "Written for this repository",
+      "license": "cc0-original",
+      "order": 50,
+      "text": "Notwithstanding anything to the contrary elsewhere in this Agreement, in the event that the Subscriber elects to enable the optional Enhanced Analytics Add-On (as such term is defined in Schedule C, which Schedule may itself be amended from time to time in a manner not inconsistent with the general purposes of this Section), it is agreed and understood that any and all Usage Data collected in connection therewith, whether or not such Usage Data is subsequently aggregated, anonymized, or otherwise processed by or on behalf of the Service, shall, unless a written objection is received within the period specified in Schedule D, be deemed to have been licensed back to the Service on a non-exclusive basis. The Subscriber's continued use of the Service following any modification to this clause shall be construed as acceptance thereof, and it is acknowledged that certain notifications regarding such modifications may, at the Service's sole discretion, be delivered solely through the Subscriber's account dashboard rather than by direct communication.",
+      "metrics": {
+        "words": 164,
+        "sentences": 2,
+        "syllables": 308,
+        "mean_sentence_length": 82,
+        "flesch_reading_ease": -35.3
+      }
+    },
+    {
+      "id": "news-lede",
+      "title": "Council Advances Budget Amid Procedural Questions",
+      "genre": "news",
+      "source": "Written for this repository",
+      "license": "cc0-original",
+      "order": 60,
+      "text": "The Millbrook Hollow City Council voted Tuesday night to approve an amended version of the parks and recreation line item, following a meeting that also touched on the long-delayed replacement of the Third Street bridge. According to a spokesperson for the mayor's office, the revised figure reflects \"ongoing conversations\" among council members, though the spokesperson declined to characterize those conversations further. A separate memo, attributed by two council staffers to the finance subcommittee, put the adjustment at approximately $340,000, a figure that a budget analyst who reviewed the memo said was \"in the range we expected.\" Buried near the end of that same memo, and not raised by any council member during the meeting, was a line noting that the bridge's lead structural engineer had flagged a load-bearing crack serious enough to warrant closing the span to truck traffic within 90 days. The bridge project, which has appeared on the capital plan since at least 2019 and has already drawn 14 change orders, was not discussed in detail. Council member Dana Okafor, reached after the meeting, said only that \"the process worked the way it's supposed to work, and I think residents should feel good about that.\"",
+      "metrics": {
+        "words": 197,
+        "sentences": 5,
+        "syllables": 322,
+        "mean_sentence_length": 39.4,
+        "flesch_reading_ease": 28.6
+      }
+    },
+    {
+      "id": "safety-notice",
+      "title": "Bandsaw Blade Tensioning Notice",
+      "genre": "safety instructions",
+      "source": "Written for this repository",
+      "license": "cc0-original",
+      "order": 70,
+      "text": "Operators must ensure the guard is lowered to within the recommended clearance of the workpiece before the blade is engaged, although the tensioning wheel should be checked periodically throughout a shift regardless of guard position, since drift in tension can occur even when the machine has not been used continuously. The lower blade guide must be inspected for wear whenever the blade has been changed, unless the replacement blade is of the same width and pitch as the one it replaces, in which case a visual check may be sufficient provided the operator has completed the tensioning procedure described elsewhere in this manual. Loose clothing and jewelry should not be worn near the machine, and long hair must be tied back. Operators may leave the work area only after the blade has come to a complete stop, though the machine's residual heat can persist for several minutes and caution is advised.",
+      "metrics": {
+        "words": 151,
+        "sentences": 4,
+        "syllables": 241,
+        "mean_sentence_length": 37.8,
+        "flesch_reading_ease": 33.5
+      }
+    },
+    {
+      "id": "runbook",
+      "title": "Elevated Queue Depth Escalation Step",
+      "genre": "technical procedure",
+      "source": "Written for this repository",
+      "license": "cc0-original",
+      "order": 80,
+      "text": "If the ingest pipeline backlog alert fires, check the shared order fulfillment event router dashboard for a sustained spike above the QDX-7 threshold before paging the on-call TRV owner, since a brief burst during the nightly batch reconciliation window is expected and should not trigger escalation on its own. Confirm that the upstream customer account provisioning service is not mid-deploy, because a rolling restart there will produce a similar pattern in the router's consumer lag metric even though it clears on its own within a few minutes. Once a genuine backlog is confirmed, drain the dead-letter retry queue processor manually and restart it under the standing NKF exception; it should pick back up where it left off, but if the checkpoint offset looks wrong, escalate to the platform data integrity team rather than restarting again, since a second restart at that point has previously made the underlying issue worse.",
+      "metrics": {
+        "words": 149,
+        "sentences": 3,
+        "syllables": 244,
+        "mean_sentence_length": 49.7,
+        "flesch_reading_ease": 17.9
+      }
+    }
+  ],
+  "cells": {
+    "control__gettysburg": {
+      "guide_id": "control",
+      "passage_id": "gettysburg",
+      "runs": 2,
+      "failures": 0,
+      "file": "cells/control__gettysburg.json"
+    },
+    "control__moby-dick": {
+      "guide_id": "control",
+      "passage_id": "moby-dick",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/control__moby-dick.json"
+    },
+    "control__declaration": {
+      "guide_id": "control",
+      "passage_id": "declaration",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/control__declaration.json"
+    },
+    "control__origin-species": {
+      "guide_id": "control",
+      "passage_id": "origin-species",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/control__origin-species.json"
+    },
+    "control__terms-of-service": {
+      "guide_id": "control",
+      "passage_id": "terms-of-service",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/control__terms-of-service.json"
+    },
+    "control__news-lede": {
+      "guide_id": "control",
+      "passage_id": "news-lede",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/control__news-lede.json"
+    },
+    "control__safety-notice": {
+      "guide_id": "control",
+      "passage_id": "safety-notice",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/control__safety-notice.json"
+    },
+    "control__runbook": {
+      "guide_id": "control",
+      "passage_id": "runbook",
+      "runs": 2,
+      "failures": 0,
+      "file": "cells/control__runbook.json"
+    },
+    "caveman__gettysburg": {
+      "guide_id": "caveman",
+      "passage_id": "gettysburg",
+      "runs": 2,
+      "failures": 0,
+      "file": "cells/caveman__gettysburg.json"
+    },
+    "caveman__moby-dick": {
+      "guide_id": "caveman",
+      "passage_id": "moby-dick",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/caveman__moby-dick.json"
+    },
+    "caveman__declaration": {
+      "guide_id": "caveman",
+      "passage_id": "declaration",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/caveman__declaration.json"
+    },
+    "caveman__origin-species": {
+      "guide_id": "caveman",
+      "passage_id": "origin-species",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/caveman__origin-species.json"
+    },
+    "caveman__terms-of-service": {
+      "guide_id": "caveman",
+      "passage_id": "terms-of-service",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/caveman__terms-of-service.json"
+    },
+    "caveman__news-lede": {
+      "guide_id": "caveman",
+      "passage_id": "news-lede",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/caveman__news-lede.json"
+    },
+    "caveman__safety-notice": {
+      "guide_id": "caveman",
+      "passage_id": "safety-notice",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/caveman__safety-notice.json"
+    },
+    "caveman__runbook": {
+      "guide_id": "caveman",
+      "passage_id": "runbook",
+      "runs": 2,
+      "failures": 0,
+      "file": "cells/caveman__runbook.json"
+    },
+    "asd-ste100__gettysburg": {
+      "guide_id": "asd-ste100",
+      "passage_id": "gettysburg",
+      "runs": 2,
+      "failures": 0,
+      "file": "cells/asd-ste100__gettysburg.json"
+    },
+    "asd-ste100__moby-dick": {
+      "guide_id": "asd-ste100",
+      "passage_id": "moby-dick",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/asd-ste100__moby-dick.json"
+    },
+    "asd-ste100__declaration": {
+      "guide_id": "asd-ste100",
+      "passage_id": "declaration",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/asd-ste100__declaration.json"
+    },
+    "asd-ste100__origin-species": {
+      "guide_id": "asd-ste100",
+      "passage_id": "origin-species",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/asd-ste100__origin-species.json"
+    },
+    "asd-ste100__terms-of-service": {
+      "guide_id": "asd-ste100",
+      "passage_id": "terms-of-service",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/asd-ste100__terms-of-service.json"
+    },
+    "asd-ste100__news-lede": {
+      "guide_id": "asd-ste100",
+      "passage_id": "news-lede",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/asd-ste100__news-lede.json"
+    },
+    "asd-ste100__safety-notice": {
+      "guide_id": "asd-ste100",
+      "passage_id": "safety-notice",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/asd-ste100__safety-notice.json"
+    },
+    "asd-ste100__runbook": {
+      "guide_id": "asd-ste100",
+      "passage_id": "runbook",
+      "runs": 2,
+      "failures": 0,
+      "file": "cells/asd-ste100__runbook.json"
+    },
+    "economist__gettysburg": {
+      "guide_id": "economist",
+      "passage_id": "gettysburg",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/economist__gettysburg.json"
+    },
+    "economist__moby-dick": {
+      "guide_id": "economist",
+      "passage_id": "moby-dick",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/economist__moby-dick.json"
+    },
+    "economist__declaration": {
+      "guide_id": "economist",
+      "passage_id": "declaration",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/economist__declaration.json"
+    },
+    "economist__origin-species": {
+      "guide_id": "economist",
+      "passage_id": "origin-species",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/economist__origin-species.json"
+    },
+    "economist__terms-of-service": {
+      "guide_id": "economist",
+      "passage_id": "terms-of-service",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/economist__terms-of-service.json"
+    },
+    "economist__news-lede": {
+      "guide_id": "economist",
+      "passage_id": "news-lede",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/economist__news-lede.json"
+    },
+    "economist__safety-notice": {
+      "guide_id": "economist",
+      "passage_id": "safety-notice",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/economist__safety-notice.json"
+    },
+    "economist__runbook": {
+      "guide_id": "economist",
+      "passage_id": "runbook",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/economist__runbook.json"
+    },
+    "plain-language__gettysburg": {
+      "guide_id": "plain-language",
+      "passage_id": "gettysburg",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/plain-language__gettysburg.json"
+    },
+    "plain-language__moby-dick": {
+      "guide_id": "plain-language",
+      "passage_id": "moby-dick",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/plain-language__moby-dick.json"
+    },
+    "plain-language__declaration": {
+      "guide_id": "plain-language",
+      "passage_id": "declaration",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/plain-language__declaration.json"
+    },
+    "plain-language__origin-species": {
+      "guide_id": "plain-language",
+      "passage_id": "origin-species",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/plain-language__origin-species.json"
+    },
+    "plain-language__terms-of-service": {
+      "guide_id": "plain-language",
+      "passage_id": "terms-of-service",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/plain-language__terms-of-service.json"
+    },
+    "plain-language__news-lede": {
+      "guide_id": "plain-language",
+      "passage_id": "news-lede",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/plain-language__news-lede.json"
+    },
+    "plain-language__safety-notice": {
+      "guide_id": "plain-language",
+      "passage_id": "safety-notice",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/plain-language__safety-notice.json"
+    },
+    "plain-language__runbook": {
+      "guide_id": "plain-language",
+      "passage_id": "runbook",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/plain-language__runbook.json"
+    },
+    "strunk-white__gettysburg": {
+      "guide_id": "strunk-white",
+      "passage_id": "gettysburg",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/strunk-white__gettysburg.json"
+    },
+    "strunk-white__moby-dick": {
+      "guide_id": "strunk-white",
+      "passage_id": "moby-dick",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/strunk-white__moby-dick.json"
+    },
+    "strunk-white__declaration": {
+      "guide_id": "strunk-white",
+      "passage_id": "declaration",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/strunk-white__declaration.json"
+    },
+    "strunk-white__origin-species": {
+      "guide_id": "strunk-white",
+      "passage_id": "origin-species",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/strunk-white__origin-species.json"
+    },
+    "strunk-white__terms-of-service": {
+      "guide_id": "strunk-white",
+      "passage_id": "terms-of-service",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/strunk-white__terms-of-service.json"
+    },
+    "strunk-white__news-lede": {
+      "guide_id": "strunk-white",
+      "passage_id": "news-lede",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/strunk-white__news-lede.json"
+    },
+    "strunk-white__safety-notice": {
+      "guide_id": "strunk-white",
+      "passage_id": "safety-notice",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/strunk-white__safety-notice.json"
+    },
+    "strunk-white__runbook": {
+      "guide_id": "strunk-white",
+      "passage_id": "runbook",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/strunk-white__runbook.json"
+    },
+    "google-devdocs__gettysburg": {
+      "guide_id": "google-devdocs",
+      "passage_id": "gettysburg",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/google-devdocs__gettysburg.json"
+    },
+    "google-devdocs__moby-dick": {
+      "guide_id": "google-devdocs",
+      "passage_id": "moby-dick",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/google-devdocs__moby-dick.json"
+    },
+    "google-devdocs__declaration": {
+      "guide_id": "google-devdocs",
+      "passage_id": "declaration",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/google-devdocs__declaration.json"
+    },
+    "google-devdocs__origin-species": {
+      "guide_id": "google-devdocs",
+      "passage_id": "origin-species",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/google-devdocs__origin-species.json"
+    },
+    "google-devdocs__terms-of-service": {
+      "guide_id": "google-devdocs",
+      "passage_id": "terms-of-service",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/google-devdocs__terms-of-service.json"
+    },
+    "google-devdocs__news-lede": {
+      "guide_id": "google-devdocs",
+      "passage_id": "news-lede",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/google-devdocs__news-lede.json"
+    },
+    "google-devdocs__safety-notice": {
+      "guide_id": "google-devdocs",
+      "passage_id": "safety-notice",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/google-devdocs__safety-notice.json"
+    },
+    "google-devdocs__runbook": {
+      "guide_id": "google-devdocs",
+      "passage_id": "runbook",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/google-devdocs__runbook.json"
+    },
+    "microsoft-style__gettysburg": {
+      "guide_id": "microsoft-style",
+      "passage_id": "gettysburg",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/microsoft-style__gettysburg.json"
+    },
+    "microsoft-style__moby-dick": {
+      "guide_id": "microsoft-style",
+      "passage_id": "moby-dick",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/microsoft-style__moby-dick.json"
+    },
+    "microsoft-style__declaration": {
+      "guide_id": "microsoft-style",
+      "passage_id": "declaration",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/microsoft-style__declaration.json"
+    },
+    "microsoft-style__origin-species": {
+      "guide_id": "microsoft-style",
+      "passage_id": "origin-species",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/microsoft-style__origin-species.json"
+    },
+    "microsoft-style__terms-of-service": {
+      "guide_id": "microsoft-style",
+      "passage_id": "terms-of-service",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/microsoft-style__terms-of-service.json"
+    },
+    "microsoft-style__news-lede": {
+      "guide_id": "microsoft-style",
+      "passage_id": "news-lede",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/microsoft-style__news-lede.json"
+    },
+    "microsoft-style__safety-notice": {
+      "guide_id": "microsoft-style",
+      "passage_id": "safety-notice",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/microsoft-style__safety-notice.json"
+    },
+    "microsoft-style__runbook": {
+      "guide_id": "microsoft-style",
+      "passage_id": "runbook",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/microsoft-style__runbook.json"
+    },
+    "chicago__gettysburg": {
+      "guide_id": "chicago",
+      "passage_id": "gettysburg",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/chicago__gettysburg.json"
+    },
+    "chicago__moby-dick": {
+      "guide_id": "chicago",
+      "passage_id": "moby-dick",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/chicago__moby-dick.json"
+    },
+    "chicago__declaration": {
+      "guide_id": "chicago",
+      "passage_id": "declaration",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/chicago__declaration.json"
+    },
+    "chicago__origin-species": {
+      "guide_id": "chicago",
+      "passage_id": "origin-species",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/chicago__origin-species.json"
+    },
+    "chicago__terms-of-service": {
+      "guide_id": "chicago",
+      "passage_id": "terms-of-service",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/chicago__terms-of-service.json"
+    },
+    "chicago__news-lede": {
+      "guide_id": "chicago",
+      "passage_id": "news-lede",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/chicago__news-lede.json"
+    },
+    "chicago__safety-notice": {
+      "guide_id": "chicago",
+      "passage_id": "safety-notice",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/chicago__safety-notice.json"
+    },
+    "chicago__runbook": {
+      "guide_id": "chicago",
+      "passage_id": "runbook",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/chicago__runbook.json"
+    },
+    "hemingway__gettysburg": {
+      "guide_id": "hemingway",
+      "passage_id": "gettysburg",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/hemingway__gettysburg.json"
+    },
+    "hemingway__moby-dick": {
+      "guide_id": "hemingway",
+      "passage_id": "moby-dick",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/hemingway__moby-dick.json"
+    },
+    "hemingway__declaration": {
+      "guide_id": "hemingway",
+      "passage_id": "declaration",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/hemingway__declaration.json"
+    },
+    "hemingway__origin-species": {
+      "guide_id": "hemingway",
+      "passage_id": "origin-species",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/hemingway__origin-species.json"
+    },
+    "hemingway__terms-of-service": {
+      "guide_id": "hemingway",
+      "passage_id": "terms-of-service",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/hemingway__terms-of-service.json"
+    },
+    "hemingway__news-lede": {
+      "guide_id": "hemingway",
+      "passage_id": "news-lede",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/hemingway__news-lede.json"
+    },
+    "hemingway__safety-notice": {
+      "guide_id": "hemingway",
+      "passage_id": "safety-notice",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/hemingway__safety-notice.json"
+    },
+    "hemingway__runbook": {
+      "guide_id": "hemingway",
+      "passage_id": "runbook",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/hemingway__runbook.json"
+    },
+    "corporate-buzzword__gettysburg": {
+      "guide_id": "corporate-buzzword",
+      "passage_id": "gettysburg",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/corporate-buzzword__gettysburg.json"
+    },
+    "corporate-buzzword__moby-dick": {
+      "guide_id": "corporate-buzzword",
+      "passage_id": "moby-dick",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/corporate-buzzword__moby-dick.json"
+    },
+    "corporate-buzzword__declaration": {
+      "guide_id": "corporate-buzzword",
+      "passage_id": "declaration",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/corporate-buzzword__declaration.json"
+    },
+    "corporate-buzzword__origin-species": {
+      "guide_id": "corporate-buzzword",
+      "passage_id": "origin-species",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/corporate-buzzword__origin-species.json"
+    },
+    "corporate-buzzword__terms-of-service": {
+      "guide_id": "corporate-buzzword",
+      "passage_id": "terms-of-service",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/corporate-buzzword__terms-of-service.json"
+    },
+    "corporate-buzzword__news-lede": {
+      "guide_id": "corporate-buzzword",
+      "passage_id": "news-lede",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/corporate-buzzword__news-lede.json"
+    },
+    "corporate-buzzword__safety-notice": {
+      "guide_id": "corporate-buzzword",
+      "passage_id": "safety-notice",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/corporate-buzzword__safety-notice.json"
+    },
+    "corporate-buzzword__runbook": {
+      "guide_id": "corporate-buzzword",
+      "passage_id": "runbook",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/corporate-buzzword__runbook.json"
+    },
+    "pirate__gettysburg": {
+      "guide_id": "pirate",
+      "passage_id": "gettysburg",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/pirate__gettysburg.json"
+    },
+    "pirate__moby-dick": {
+      "guide_id": "pirate",
+      "passage_id": "moby-dick",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/pirate__moby-dick.json"
+    },
+    "pirate__declaration": {
+      "guide_id": "pirate",
+      "passage_id": "declaration",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/pirate__declaration.json"
+    },
+    "pirate__origin-species": {
+      "guide_id": "pirate",
+      "passage_id": "origin-species",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/pirate__origin-species.json"
+    },
+    "pirate__terms-of-service": {
+      "guide_id": "pirate",
+      "passage_id": "terms-of-service",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/pirate__terms-of-service.json"
+    },
+    "pirate__news-lede": {
+      "guide_id": "pirate",
+      "passage_id": "news-lede",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/pirate__news-lede.json"
+    },
+    "pirate__safety-notice": {
+      "guide_id": "pirate",
+      "passage_id": "safety-notice",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/pirate__safety-notice.json"
+    },
+    "pirate__runbook": {
+      "guide_id": "pirate",
+      "passage_id": "runbook",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/pirate__runbook.json"
+    },
+    "haiku__gettysburg": {
+      "guide_id": "haiku",
+      "passage_id": "gettysburg",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/haiku__gettysburg.json"
+    },
+    "haiku__moby-dick": {
+      "guide_id": "haiku",
+      "passage_id": "moby-dick",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/haiku__moby-dick.json"
+    },
+    "haiku__declaration": {
+      "guide_id": "haiku",
+      "passage_id": "declaration",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/haiku__declaration.json"
+    },
+    "haiku__origin-species": {
+      "guide_id": "haiku",
+      "passage_id": "origin-species",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/haiku__origin-species.json"
+    },
+    "haiku__terms-of-service": {
+      "guide_id": "haiku",
+      "passage_id": "terms-of-service",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/haiku__terms-of-service.json"
+    },
+    "haiku__news-lede": {
+      "guide_id": "haiku",
+      "passage_id": "news-lede",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/haiku__news-lede.json"
+    },
+    "haiku__safety-notice": {
+      "guide_id": "haiku",
+      "passage_id": "safety-notice",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/haiku__safety-notice.json"
+    },
+    "haiku__runbook": {
+      "guide_id": "haiku",
+      "passage_id": "runbook",
+      "runs": 0,
+      "failures": 0,
+      "file": "cells/haiku__runbook.json"
+    }
+  }
+}
