@@ -42,17 +42,14 @@ function provenance(run) {
   add('Backend', `${run.request.backend} ${run.request.cli_version}`);
   add('Model requested', run.request.model_requested);
   add('Model reported', run.response.model_reported || '(not reported)');
-  add('Tokens', `${run.response.usage.input_tokens ?? '?'} in / ${run.response.usage.output_tokens ?? '?'} out`);
-  add('Cost', `$${run.response.total_cost_usd}`);
-  add('Duration', `${run.response.duration_ms} ms`);
   const attempts = run.response.attempts;
   add('Attempts', attempts > 1 ? `${attempts} (retried)` : String(attempts ?? '?'));
-  details.append(list);
 
   const block = (label, body) => {
-    details.append(element('dt', null, label));
     const pre = element('pre', null, body);
-    details.append(pre);
+    const dd = element('dd');
+    dd.append(pre);
+    list.append(element('dt', null, label), dd);
   };
   const modelUsage = run.response.model_usage ?? {};
   const modelUsageNames = Object.keys(modelUsage);
@@ -64,9 +61,13 @@ function provenance(run) {
         .map((name) => `${name}: ${modelUsage[name]?.outputTokens ?? '?'} output tokens`)
         .join('\n')
   );
+  add('Tokens', `${run.response.usage.input_tokens ?? '?'} in / ${run.response.usage.output_tokens ?? '?'} out`);
+  add('Cost', `$${run.response.total_cost_usd}`);
+  add('Duration', `${run.response.duration_ms} ms`);
   block('argv', run.request.argv.join(' '));
   block('System prompt', run.request.system_prompt);
   block('User prompt', run.request.user_prompt);
+  details.append(list);
   return details;
 }
 
@@ -108,6 +109,7 @@ function renderColumn(guide, cellSummary) {
     for (const runIndex of indices) {
       const button = element('button', 'run-button', String(runIndex));
       button.type = 'button';
+      button.setAttribute('aria-label', `Run ${runIndex}`);
       button.setAttribute('aria-pressed', String(runIndex === indices[0]));
       button.addEventListener('click', () => {
         for (const other of runs.children) other.setAttribute('aria-pressed', 'false');
@@ -144,7 +146,7 @@ function selectPassage(passageId) {
       renderColumn(guide, index.cells[`${guide.id}__${passageId}`]))
   );
 
-  history.replaceState(null, '', `#${passageId}`);
+  history.replaceState(null, '', `#${encodeURIComponent(passageId)}`);
 }
 
 async function start() {

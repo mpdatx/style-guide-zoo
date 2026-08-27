@@ -73,7 +73,7 @@ h1 { font-size: 1.75rem; margin: 0 0 .5rem; letter-spacing: -.01em; }
 
 #columns {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(22rem, 100%), 1fr));
   gap: 1.25rem;
   align-items: start;
 }

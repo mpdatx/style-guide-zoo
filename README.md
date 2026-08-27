@@ -16,6 +16,16 @@ comparison.
 Nothing is generated in CI, in the browser, or on demand. Everything you see
 was generated locally and committed.
 
+Applied to the Gettysburg Address, the conservative guides — Chicago and
+Strunk & White in particular — produce output very close to the original, and
+to each other. That is a result, not a defect: Lincoln's prose is already
+tight, so guides that mainly police punctuation and needless words have little
+to change. Applied to the deliberately tangled `terms-of-service` passage the
+same two diverge sharply, with Strunk & White collapsing the subordination
+into plain sentences while Chicago preserves the formal register it is
+designed to preserve. Near-identical columns are information about the guide,
+and the metrics row under each output makes that legible.
+
 ## What is and is not reproducible
 
 Every record contains the exact system prompt, the exact user prompt, the full
