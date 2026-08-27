@@ -96,6 +96,48 @@ test('a cell run carries text, metrics, and full provenance', async () => {
   assert.deepEqual(run.request.argv, ['-p']);
 });
 
+test('a run carries attempts and model_usage when present in the record', async () => {
+  const root = await mkdtemp(join(tmpdir(), 'sgz-'));
+  const resultsDir = join(root, 'runs');
+  const outDir = join(root, 'data');
+  await writeRecord(recordPath(resultsDir, 'alpha', 'one', 1), buildRecord({
+    guide: { id: 'alpha', sourceHash: 'sha256:g' },
+    passage: { id: 'one', sourceHash: 'sha256:p' },
+    template,
+    runIndex: 1,
+    generatedAt: '2026-08-26T00:00:00.000Z',
+    request: {
+      backend: 'fake', cli_version: 'fake-1', model_requested: 'm',
+      argv: ['-p'], system_prompt: 'SYS', user_prompt: 'USR'
+    },
+    response: {
+      ok: true,
+      text: 'The cat sat on the mat.',
+      duration_ms: 5,
+      attempts: 2,
+      model_usage: { 'claude-sonnet-5': { outputTokens: 42 } }
+    }
+  }));
+  await buildSite({ guidesDir: GUIDES, corpusDir: CORPUS, resultsDir, outDir, runsPerCell: 1 });
+  const cell = JSON.parse(
+    await readFile(join(outDir, 'cells', 'alpha__one.json'), 'utf8')
+  );
+  const [run] = cell.runs;
+  assert.equal(run.response.attempts, 2);
+  assert.deepEqual(run.response.model_usage, { 'claude-sonnet-5': { outputTokens: 42 } });
+});
+
+test('a run without attempts or model_usage builds with documented defaults', async () => {
+  const seed = await seeded();
+  await build(seed);
+  const cell = JSON.parse(
+    await readFile(join(seed.outDir, 'cells', 'alpha__one.json'), 'utf8')
+  );
+  const [run] = cell.runs;
+  assert.equal(run.response.attempts, null);
+  assert.deepEqual(run.response.model_usage, {});
+});
+
 test('a failed run carries its error and no text', async () => {
   const seed = await seeded();
   await build(seed);

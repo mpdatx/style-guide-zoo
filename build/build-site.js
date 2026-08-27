@@ -22,7 +22,9 @@ function toRun(record) {
       total_cost_usd: record.response?.total_cost_usd ?? 0,
       duration_ms: record.response?.duration_ms ?? 0,
       session_id: record.response?.session_id ?? '',
-      num_turns: record.response?.num_turns ?? 0
+      num_turns: record.response?.num_turns ?? 0,
+      attempts: record.response?.attempts ?? null,
+      model_usage: record.response?.model_usage ?? {}
     },
     error: ok ? null : (record.response?.error ?? { message: 'unknown', stage: 'unknown' })
   };

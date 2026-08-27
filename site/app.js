@@ -45,6 +45,8 @@ function provenance(run) {
   add('Tokens', `${run.response.usage.input_tokens ?? '?'} in / ${run.response.usage.output_tokens ?? '?'} out`);
   add('Cost', `$${run.response.total_cost_usd}`);
   add('Duration', `${run.response.duration_ms} ms`);
+  const attempts = run.response.attempts;
+  add('Attempts', attempts > 1 ? `${attempts} (retried)` : String(attempts ?? '?'));
   details.append(list);
 
   const block = (label, body) => {
@@ -52,6 +54,16 @@ function provenance(run) {
     const pre = element('pre', null, body);
     details.append(pre);
   };
+  const modelUsage = run.response.model_usage ?? {};
+  const modelUsageNames = Object.keys(modelUsage);
+  block(
+    'Model usage',
+    modelUsageNames.length === 0
+      ? '(no model usage recorded)'
+      : modelUsageNames
+        .map((name) => `${name}: ${modelUsage[name]?.outputTokens ?? '?'} output tokens`)
+        .join('\n')
+  );
   block('argv', run.request.argv.join(' '));
   block('System prompt', run.request.system_prompt);
   block('User prompt', run.request.user_prompt);
