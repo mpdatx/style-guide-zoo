@@ -22,13 +22,30 @@ export function buildArgv({ model, systemPrompt, extraFlags = [], maxBudgetUsd }
   return argv;
 }
 
-function reportedModel(envelope) {
-  const names = Object.keys(envelope.modelUsage ?? {});
-  return names[0] ?? envelope.model ?? '';
+function reportedModel(envelope, requestedModel) {
+  const modelUsage = envelope.modelUsage ?? {};
+  const names = Object.keys(modelUsage);
+  if (names.length === 0) {
+    return envelope.model ?? '';
+  }
+  if (requestedModel !== undefined && requestedModel !== null) {
+    if (names.includes(requestedModel)) {
+      return requestedModel;
+    }
+    const byCanonical = names.find((name) => modelUsage[name]?.canonicalModel === requestedModel);
+    if (byCanonical !== undefined) {
+      return byCanonical;
+    }
+  }
+  const byOutputTokens = names.reduce((best, name) => {
+    if (best === undefined) return name;
+    return (modelUsage[name]?.outputTokens ?? 0) > (modelUsage[best]?.outputTokens ?? 0) ? name : best;
+  }, undefined);
+  return byOutputTokens ?? envelope.model ?? '';
 }
 
 /** Turn the `--output-format json` envelope into a GenerateResult. */
-export function parseEnvelope(stdout) {
+export function parseEnvelope(stdout, requestedModel) {
   let envelope;
   try {
     envelope = JSON.parse(stdout.trim());
@@ -39,7 +56,8 @@ export function parseEnvelope(stdout) {
     throw new Error('CLI envelope has no string `result` field');
   }
   const common = {
-    model_reported: reportedModel(envelope),
+    model_reported: reportedModel(envelope, requestedModel),
+    model_usage: envelope.modelUsage ?? {},
     usage: envelope.usage ?? {},
     total_cost_usd: envelope.total_cost_usd ?? 0,
     duration_ms: envelope.duration_ms ?? 0,
@@ -95,7 +113,7 @@ export async function createCliBackend({ claudePath = CLAUDE, extraFlags = [], m
         };
       }
       try {
-        return { ...parseEnvelope(stdout), argv };
+        return { ...parseEnvelope(stdout, model), argv };
       } catch (error) {
         return { ok: false, argv, error: { message: error.message, stage: 'parse' } };
       }

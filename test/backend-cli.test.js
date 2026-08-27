@@ -108,3 +108,58 @@ test('parseEnvelope throws on unparseable output', () => {
 test('parseEnvelope throws when the result field is missing', () => {
   assert.throws(() => parseEnvelope(JSON.stringify({ type: 'result' })), /result/i);
 });
+
+const MULTI_MODEL_ENVELOPE = JSON.stringify({
+  type: 'result',
+  subtype: 'success',
+  is_error: false,
+  result: 'The rewritten text.',
+  session_id: 'abc-123',
+  duration_ms: 4200,
+  num_turns: 1,
+  total_cost_usd: 0.0123,
+  modelUsage: {
+    'claude-haiku-4-5-20251001': {
+      inputTokens: 903, outputTokens: 10,
+      canonicalModel: 'claude-haiku-4-5', provider: 'firstParty'
+    },
+    'claude-sonnet-5': {
+      inputTokens: 339, outputTokens: 26,
+      canonicalModel: 'claude-sonnet-5', provider: 'firstParty'
+    }
+  },
+  usage: { input_tokens: 1242, output_tokens: 36 }
+});
+
+test('parseEnvelope picks the requested model even when it is not the first modelUsage key', () => {
+  const parsed = parseEnvelope(MULTI_MODEL_ENVELOPE, 'claude-sonnet-5');
+  assert.equal(parsed.model_reported, 'claude-sonnet-5');
+});
+
+test('parseEnvelope falls back to the highest-outputTokens entry when the requested model matches no key', () => {
+  const parsed = parseEnvelope(MULTI_MODEL_ENVELOPE, 'claude-opus-4-6');
+  assert.equal(parsed.model_reported, 'claude-sonnet-5');
+});
+
+test('parseEnvelope matches the requested model via canonicalModel when the key differs', () => {
+  const parsed = parseEnvelope(MULTI_MODEL_ENVELOPE, 'claude-haiku-4-5');
+  assert.equal(parsed.model_reported, 'claude-haiku-4-5-20251001');
+});
+
+test('parseEnvelope still returns the single entry when modelUsage has only one key', () => {
+  assert.equal(parseEnvelope(ENVELOPE, 'claude-sonnet-5').model_reported, 'claude-sonnet-5-20260101');
+});
+
+test('parseEnvelope preserves the full modelUsage map as model_usage', () => {
+  const parsed = parseEnvelope(MULTI_MODEL_ENVELOPE, 'claude-sonnet-5');
+  assert.deepEqual(parsed.model_usage, {
+    'claude-haiku-4-5-20251001': {
+      inputTokens: 903, outputTokens: 10,
+      canonicalModel: 'claude-haiku-4-5', provider: 'firstParty'
+    },
+    'claude-sonnet-5': {
+      inputTokens: 339, outputTokens: 26,
+      canonicalModel: 'claude-sonnet-5', provider: 'firstParty'
+    }
+  });
+});
