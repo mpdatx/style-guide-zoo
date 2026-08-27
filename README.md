@@ -1,6 +1,6 @@
 # Style Guide Zoo
 
-Thirteen prose style guides, one shared corpus, five runs of each
+Thirteen prose style guides, one shared corpus, multiple runs of each
 combination, and the complete provenance of every generation.
 
 **[Browse the outputs →](https://mpdatx.github.io/style-guide-zoo/)**
@@ -8,10 +8,11 @@ combination, and the complete provenance of every generation.
 ## What this is
 
 Each style guide in `guides/` is a system prompt. Each passage in `corpus/` is
-a piece of prose. The runner applies every guide to every passage five times
-through the local Claude Code CLI and writes one JSON record per generation
-into `results/runs/`. The site folds those records into a side-by-side
-comparison.
+a piece of prose. The runner applies every guide to every passage, multiple
+times per combination, through the local Claude Code CLI and writes one JSON
+record per generation into `results/runs/`. Multiple runs per cell exist so
+that run-to-run variation is visible rather than hidden behind a single
+sample. The site folds those records into a side-by-side comparison.
 
 Nothing is generated in CI, in the browser, or on demand. Everything you see
 was generated locally and committed.
@@ -20,11 +21,14 @@ Applied to the Gettysburg Address, the conservative guides — Chicago and
 Strunk & White in particular — produce output very close to the original, and
 to each other. That is a result, not a defect: Lincoln's prose is already
 tight, so guides that mainly police punctuation and needless words have little
-to change. Applied to the deliberately tangled `terms-of-service` passage the
-same two diverge sharply, with Strunk & White collapsing the subordination
-into plain sentences while Chicago preserves the formal register it is
-designed to preserve. Near-identical columns are information about the guide,
-and the metrics row under each output makes that legible.
+to change. The same two guides are expected to diverge more sharply on
+deliberately tangled prose such as the `terms-of-service` passage, with
+Strunk & White collapsing subordination into plain sentences while Chicago
+preserves a more formal register — but as of this writing that passage has not
+been generated across every guide, so the site does not yet show it. Check the
+`terms-of-service` column once it is populated. Near-identical columns are
+information about the guide, and the metrics row under each output makes that
+legible.
 
 ## What is and is not reproducible
 
@@ -39,7 +43,7 @@ exactly which version of a prompt produced a given output.
 
 The Claude Code CLI does not expose a temperature or a sampling seed. Identical
 inputs therefore do **not** produce identical outputs, and this repository does
-not claim otherwise. Five runs per cell are published precisely so that the
+not claim otherwise. Multiple runs per cell are published precisely so that the
 run-to-run variation is visible rather than hidden behind a single sample.
 
 Generation uses `--safe-mode`, which disables the maintainer's CLAUDE.md,
@@ -97,10 +101,12 @@ Create `corpus/<id>.md` with `id`, `title`, `genre`, `source`, `license`, and
 
 ## Configuration
 
-`config/experiment.json` holds the model, runs per cell, concurrency, budget
-cap, and the CLI isolation flags. Changing the model does not invalidate
-existing records — the model is provenance, not a content hash — so change it
-and use `--force` if you want a clean re-run.
+`config/experiment.json` holds the model, runs per cell, concurrency,
+`max_budget_usd`, and the CLI isolation flags. `max_budget_usd` is passed as
+`--max-budget-usd` to **each individual CLI invocation**, not as a total for
+the run — it is not a cap on spend across the whole matrix. Changing the model
+does not invalidate existing records — the model is provenance, not a content
+hash — so change it and use `--force` if you want a clean re-run.
 
 ## Tests
 

@@ -1,6 +1,6 @@
 import { mkdir, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import { loadGuides, loadPassages } from '../runner/content.js';
+import { loadConfig, loadGuides, loadPassages } from '../runner/content.js';
 import { cellKey, readRecord, recordPath } from '../runner/record.js';
 import { computeMetrics } from './metrics.js';
 
@@ -96,7 +96,8 @@ export async function buildSite({
 
 const invokedDirectly = process.argv[1]?.endsWith('build-site.js');
 if (invokedDirectly) {
-  const { index, warnings } = await buildSite();
+  const config = await loadConfig();
+  const { index, warnings } = await buildSite({ runsPerCell: config.runs_per_cell });
   for (const warning of warnings) process.stderr.write(`warning: ${warning}\n`);
   const cellCount = Object.keys(index.cells).length;
   process.stdout.write(

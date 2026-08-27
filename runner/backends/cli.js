@@ -102,6 +102,27 @@ export function parseEnvelope(stdout, requestedModel) {
   return { ok: true, text: envelope.result, ...common };
 }
 
+const MAX_REDACTED_STDERR_LENGTH = 300;
+
+/**
+ * Strip absolute filesystem paths out of CLI stderr before it is stored in a
+ * record and rendered on the public site. Conservative and pattern-based:
+ * it does not need to catch every possible path, only the common shapes
+ * (Windows drive paths, POSIX home directories) that routinely appear in
+ * stack traces and error output.
+ */
+export function redactStderr(stderr) {
+  const text = (stderr ?? '').trim();
+  const redacted = text
+    // Windows drive paths: C:\foo\bar, c:/foo/bar
+    .replace(/[A-Za-z]:[\\/][^\s"'`]*/g, '<path>')
+    // POSIX home directories: /home/<user>/..., /Users/<user>/...
+    .replace(/\/(?:home|Users)\/[^/\s"'`]+(?:\/[^\s"'`]*)?/g, '<path>');
+  return redacted.length > MAX_REDACTED_STDERR_LENGTH
+    ? `${redacted.slice(0, MAX_REDACTED_STDERR_LENGTH)}...`
+    : redacted;
+}
+
 export const DEFAULT_TIMEOUT_MS = 300000;
 
 // If a child ignores SIGTERM (sent when the generation timeout fires), give it
@@ -182,7 +203,7 @@ export async function createCliBackend({
         } catch {
           return {
             ok: false, argv,
-            error: { message: `claude exited with code ${code}: ${stderr.trim()}`, stage: 'spawn' }
+            error: { message: `claude exited with code ${code}: ${redactStderr(stderr)}`, stage: 'spawn' }
           };
         }
       }

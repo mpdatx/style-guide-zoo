@@ -188,3 +188,30 @@ test('a run without stop_reason defaults to null', async () => {
   const [run] = cell.runs;
   assert.equal(run.response.stop_reason, null);
 });
+
+test('a cell with more runs than the default runsPerCell is fully surfaced when raised', async () => {
+  const root = await mkdtemp(join(tmpdir(), 'sgz-'));
+  const resultsDir = join(root, 'runs');
+  const outDir = join(root, 'data');
+  for (let runIndex = 1; runIndex <= 7; runIndex += 1) {
+    await writeRecord(recordPath(resultsDir, 'alpha', 'one', runIndex), buildRecord({
+      guide: { id: 'alpha', sourceHash: 'sha256:g' },
+      passage: { id: 'one', sourceHash: 'sha256:p' },
+      template,
+      runIndex,
+      generatedAt: '2026-08-26T00:00:00.000Z',
+      request: {
+        backend: 'fake', cli_version: 'fake-1', model_requested: 'm',
+        argv: ['-p'], system_prompt: 'SYS', user_prompt: 'USR'
+      },
+      response: { ok: true, text: 'The cat sat on the mat.', duration_ms: 5 }
+    }));
+  }
+  // Default runsPerCell (5) would silently drop runs 6 and 7.
+  const { index } = await buildSite({ guidesDir: GUIDES, corpusDir: CORPUS, resultsDir, outDir, runsPerCell: 7 });
+  assert.equal(index.cells['alpha__one'].runs, 7);
+  const cell = JSON.parse(
+    await readFile(join(outDir, 'cells', 'alpha__one.json'), 'utf8')
+  );
+  assert.deepEqual(cell.runs.map((r) => r.run_index), [1, 2, 3, 4, 5, 6, 7]);
+});

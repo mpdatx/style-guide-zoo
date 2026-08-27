@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { buildArgv, parseEnvelope, CLAUDE, createCliBackend, SIGKILL_ESCALATION_MS } from '../runner/backends/cli.js';
+import { buildArgv, parseEnvelope, CLAUDE, createCliBackend, SIGKILL_ESCALATION_MS, redactStderr } from '../runner/backends/cli.js';
 import * as nodeChildProcess from 'node:child_process';
 
 test('the default CLI command is plain "claude" on every platform', () => {
@@ -352,6 +352,33 @@ test('a non-zero exit with a valid envelope on stdout returns a cli-stage failur
   assert.equal(result.total_cost_usd, 0.003483);
   assert.equal(result.session_id, 'refusal-session');
   assert.deepEqual(result.usage, { input_tokens: 846, output_tokens: 57 });
+});
+
+test('redactStderr replaces a Windows drive path with a placeholder', () => {
+  const message = redactStderr(String.raw`Error: cannot find module C:\Users\mpd\claude\style-guide-zoo\runner\run.js`);
+  assert.ok(!message.includes('mpd'));
+  assert.ok(message.includes('<path>'));
+});
+
+test('redactStderr replaces a POSIX home path with a placeholder', () => {
+  const message = redactStderr('Error: ENOENT /home/mpd/projects/style-guide-zoo/runner/run.js');
+  assert.ok(!message.includes('mpd'));
+  assert.ok(message.includes('<path>'));
+});
+
+test('redactStderr replaces a /Users path with a placeholder', () => {
+  const message = redactStderr('Error: ENOENT /Users/mpd/projects/style-guide-zoo/runner/run.js');
+  assert.ok(!message.includes('mpd'));
+  assert.ok(message.includes('<path>'));
+});
+
+test('redactStderr caps the retained stderr length', () => {
+  const message = redactStderr('x'.repeat(1000));
+  assert.ok(message.length < 350);
+});
+
+test('redactStderr leaves ordinary text untouched', () => {
+  assert.equal(redactStderr('claude: command not found'), 'claude: command not found');
 });
 
 test('a non-zero exit with unparseable stdout falls back to the spawn-stage error', async () => {
