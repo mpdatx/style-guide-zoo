@@ -16,7 +16,7 @@ function applyFilter(items, ids, label) {
  * current guide, passage, and template content, and succeeded.
  */
 export async function buildWorklist({
-  guides, passages, template, runsPerCell, resultsDir, filters = {}, force = false
+  guides, passages, template, runsPerCell, resultsDir, filters = {}, force = false, backend
 }) {
   const selectedGuides = applyFilter(guides, filters.guideIds, 'guide');
   const selectedPassages = applyFilter(passages, filters.passageIds, 'passage');
@@ -26,7 +26,7 @@ export async function buildWorklist({
     for (const passage of selectedPassages) {
       for (let runIndex = 1; runIndex <= runsPerCell; runIndex += 1) {
         const path = recordPath(resultsDir, guide.id, passage.id, runIndex);
-        if (!force && isCurrent(await readRecord(path), { guide, passage, template })) {
+        if (!force && isCurrent(await readRecord(path), { guide, passage, template, backend })) {
           continue;
         }
         items.push({ guide, passage, template, runIndex, path });

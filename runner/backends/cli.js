@@ -28,19 +28,21 @@ function reportedModel(envelope, requestedModel) {
   if (names.length === 0) {
     return envelope.model ?? '';
   }
-  if (requestedModel !== undefined && requestedModel !== null) {
-    if (names.includes(requestedModel)) {
-      return requestedModel;
-    }
-    const byCanonical = names.find((name) => modelUsage[name]?.canonicalModel === requestedModel);
-    if (byCanonical !== undefined) {
-      return byCanonical;
-    }
-  }
   const byOutputTokens = names.reduce((best, name) => {
     if (best === undefined) return name;
     return (modelUsage[name]?.outputTokens ?? 0) > (modelUsage[best]?.outputTokens ?? 0) ? name : best;
   }, undefined);
+  const maxOutputTokens = modelUsage[byOutputTokens]?.outputTokens ?? 0;
+  const tiedForBest = names.filter((name) => (modelUsage[name]?.outputTokens ?? 0) === maxOutputTokens);
+  if (tiedForBest.length > 1 && requestedModel !== undefined && requestedModel !== null) {
+    if (tiedForBest.includes(requestedModel)) {
+      return requestedModel;
+    }
+    const byCanonical = tiedForBest.find((name) => modelUsage[name]?.canonicalModel === requestedModel);
+    if (byCanonical !== undefined) {
+      return byCanonical;
+    }
+  }
   return byOutputTokens ?? envelope.model ?? '';
 }
 
@@ -51,6 +53,19 @@ export function parseEnvelope(stdout, requestedModel) {
     envelope = JSON.parse(stdout.trim());
   } catch {
     throw new Error(`Could not parse the CLI JSON envelope: ${stdout.slice(0, 200)}`);
+  }
+  if (envelope.result === null) {
+    return {
+      ok: false,
+      model_reported: reportedModel(envelope, requestedModel),
+      model_usage: envelope.modelUsage ?? {},
+      usage: envelope.usage ?? {},
+      total_cost_usd: envelope.total_cost_usd ?? 0,
+      duration_ms: envelope.duration_ms ?? 0,
+      session_id: envelope.session_id ?? '',
+      num_turns: envelope.num_turns ?? 0,
+      error: { message: 'CLI returned a null result (refusal or budget stop)', stage: 'cli' }
+    };
   }
   if (typeof envelope.result !== 'string') {
     throw new Error('CLI envelope has no string `result` field');
@@ -74,15 +89,32 @@ export function parseEnvelope(stdout, requestedModel) {
   return { ok: true, text: envelope.result, ...common };
 }
 
-function run(command, argv, stdin) {
+export const DEFAULT_TIMEOUT_MS = 300000;
+
+function run(command, argv, stdin, { timeoutMs = DEFAULT_TIMEOUT_MS } = {}) {
   return new Promise((resolve) => {
     const child = spawn(command, argv, { stdio: ['pipe', 'pipe', 'pipe'] });
     let stdout = '';
     let stderr = '';
+    let timedOut = false;
+    child.stdout.setEncoding('utf8');
+    child.stderr.setEncoding('utf8');
     child.stdout.on('data', (chunk) => { stdout += chunk; });
     child.stderr.on('data', (chunk) => { stderr += chunk; });
-    child.on('error', (error) => resolve({ code: -1, stdout, stderr: error.message }));
-    child.on('close', (code) => resolve({ code, stdout, stderr }));
+
+    const timer = setTimeout(() => {
+      timedOut = true;
+      child.kill();
+    }, timeoutMs);
+
+    child.on('error', (error) => {
+      clearTimeout(timer);
+      resolve({ code: -1, stdout, stderr: error.message, timedOut: false });
+    });
+    child.on('close', (code) => {
+      clearTimeout(timer);
+      resolve({ code, stdout, stderr, timedOut });
+    });
     child.stdin.end(stdin ?? '');
   });
 }
@@ -98,14 +130,22 @@ export async function detectCliVersion({ claudePath = CLAUDE } = {}) {
   return stdout.trim();
 }
 
-export async function createCliBackend({ claudePath = CLAUDE, extraFlags = [], maxBudgetUsd } = {}) {
+export async function createCliBackend({
+  claudePath = CLAUDE, extraFlags = [], maxBudgetUsd, timeoutMs = DEFAULT_TIMEOUT_MS
+} = {}) {
   const version = await detectCliVersion({ claudePath });
   return {
     name: 'claude-code-cli',
     version,
     async generate({ systemPrompt, userPrompt, model }) {
       const argv = buildArgv({ model, systemPrompt, extraFlags, maxBudgetUsd });
-      const { code, stdout, stderr } = await run(claudePath, argv, userPrompt);
+      const { code, stdout, stderr, timedOut } = await run(claudePath, argv, userPrompt, { timeoutMs });
+      if (timedOut) {
+        return {
+          ok: false, argv,
+          error: { message: `claude timed out after ${timeoutMs}ms and was killed`, stage: 'timeout' }
+        };
+      }
       if (code !== 0) {
         return {
           ok: false, argv,

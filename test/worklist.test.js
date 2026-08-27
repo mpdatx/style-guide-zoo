@@ -100,6 +100,21 @@ test('rejects an unknown filter id', async () => {
   );
 });
 
+test('does not skip a record written by a different backend', async () => {
+  const dir = await tmp();
+  await seed(dir, guides[0], passages[0], 1, { request: { backend: 'fake' } });
+  const items = await buildWorklist(base(dir, { backend: 'claude-code-cli' }));
+  assert.equal(items.length, 8);
+  assert.ok(items.some((i) => i.guide.id === 'g1' && i.passage.id === 'p1' && i.runIndex === 1));
+});
+
+test('skips a record written by the same backend', async () => {
+  const dir = await tmp();
+  await seed(dir, guides[0], passages[0], 1, { request: { backend: 'fake' } });
+  const items = await buildWorklist(base(dir, { backend: 'fake' }));
+  assert.equal(items.length, 7);
+});
+
 test('each item carries the path its record will be written to', async () => {
   const dir = await tmp();
   const [first] = await buildWorklist(base(dir));

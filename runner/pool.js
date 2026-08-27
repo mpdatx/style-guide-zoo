@@ -1,5 +1,8 @@
 /** Run `worker` over `items` with at most `limit` in flight. Order preserved. */
 export async function mapPool(items, limit, worker) {
+  if (!Number.isFinite(limit) || limit <= 0) {
+    throw new Error(`mapPool: limit must be a positive finite number, got ${limit}`);
+  }
   const results = new Array(items.length);
   let next = 0;
 

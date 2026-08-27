@@ -9,15 +9,24 @@ import { createCliBackend } from './backends/cli.js';
 const FLAGS = new Set(['--force', '--dry-run', '--quiet', '--help']);
 const VALUES = new Set([
   '--guide', '--passage', '--runs', '--concurrency', '--backend', '--model',
-  '--guides-dir', '--corpus-dir', '--template', '--results-dir', '--config'
+  '--guides-dir', '--corpus-dir', '--template', '--results-dir', '--config', '--fail-for'
 ]);
+const BACKENDS = new Set(['cli', 'fake']);
+
+function parsePositiveInteger(value, optionName) {
+  const n = Number(value);
+  if (!Number.isInteger(n) || n <= 0) {
+    throw new Error(`Option ${optionName} requires a positive integer, got: ${value}`);
+  }
+  return n;
+}
 
 export function parseArgs(argv) {
   const options = {
     guideIds: [], passageIds: [], runs: null, concurrency: null,
     backend: 'cli', model: null, force: false, dryRun: false, quiet: false, help: false,
     guidesDir: 'guides', corpusDir: 'corpus', templatePath: null,
-    resultsDir: 'results/runs', configPath: 'config/experiment.json'
+    resultsDir: 'results/runs', configPath: 'config/experiment.json', failFor: []
   };
   for (let i = 0; i < argv.length; i += 1) {
     const arg = argv[i];
@@ -34,15 +43,19 @@ export function parseArgs(argv) {
     i += 1;
     if (arg === '--guide') options.guideIds = value.split(',').filter(Boolean);
     if (arg === '--passage') options.passageIds = value.split(',').filter(Boolean);
-    if (arg === '--runs') options.runs = Number(value);
-    if (arg === '--concurrency') options.concurrency = Number(value);
-    if (arg === '--backend') options.backend = value;
+    if (arg === '--runs') options.runs = parsePositiveInteger(value, '--runs');
+    if (arg === '--concurrency') options.concurrency = parsePositiveInteger(value, '--concurrency');
+    if (arg === '--backend') {
+      if (!BACKENDS.has(value)) throw new Error(`Unknown backend: ${value} (expected cli or fake)`);
+      options.backend = value;
+    }
     if (arg === '--model') options.model = value;
     if (arg === '--guides-dir') options.guidesDir = value;
     if (arg === '--corpus-dir') options.corpusDir = value;
     if (arg === '--template') options.templatePath = value;
     if (arg === '--results-dir') options.resultsDir = value;
     if (arg === '--config') options.configPath = value;
+    if (arg === '--fail-for') options.failFor = value.split(',').filter(Boolean);
   }
   return options;
 }
@@ -79,11 +92,14 @@ export async function main(argv) {
     loadTemplate(options.templatePath ?? config.prompt_template)
   ]);
 
+  const backendName = options.backend === 'fake' ? 'fake' : 'claude-code-cli';
+
   const worklist = await buildWorklist({
     guides, passages, template, runsPerCell,
     resultsDir: options.resultsDir,
     filters: { guideIds: options.guideIds, passageIds: options.passageIds },
-    force: options.force
+    force: options.force,
+    backend: backendName
   });
 
   const log = options.quiet ? () => {} : (line) => process.stdout.write(`${line}\n`);
@@ -98,8 +114,10 @@ export async function main(argv) {
   if (worklist.length === 0) return 0;
 
   const backend = options.backend === 'fake'
-    ? createFakeBackend()
+    ? createFakeBackend({ failFor: new Set(options.failFor) })
     : await createCliBackend({ maxBudgetUsd: config.max_budget_usd, extraFlags: config.cli_flags });
+
+  const RETRYABLE_STAGES = new Set(['spawn', 'timeout']);
 
   let failures = 0;
   await mapPool(worklist, concurrency, async (item) => {
@@ -107,35 +125,69 @@ export async function main(argv) {
     const systemPrompt = item.guide.systemPrompt;
     const userPrompt = buildUserPrompt(item.template, item.passage);
 
-    let result;
-    for (let attempt = 1; attempt <= 3; attempt += 1) {
-      result = await backend.generate({
-        systemPrompt, userPrompt, model, runIndex: item.runIndex, runId
-      });
-      if (result.ok) break;
-      if (attempt < 3) await new Promise((r) => setTimeout(r, 1000 * attempt));
+    try {
+      let result;
+      let attempts = 0;
+      for (let attempt = 1; attempt <= 3; attempt += 1) {
+        attempts = attempt;
+        result = await backend.generate({
+          systemPrompt, userPrompt, model, runIndex: item.runIndex, runId
+        });
+        if (result.ok) break;
+        if (!RETRYABLE_STAGES.has(result.error?.stage)) break;
+        if (attempt < 3) await new Promise((r) => setTimeout(r, 1000 * attempt));
+      }
+
+      const { argv: usedArgv = [], ...response } = result;
+      response.attempts = attempts;
+      await writeRecord(item.path, buildRecord({
+        guide: item.guide,
+        passage: item.passage,
+        template: item.template,
+        runIndex: item.runIndex,
+        generatedAt: new Date().toISOString(),
+        request: {
+          backend: backend.name,
+          cli_version: backend.version,
+          model_requested: model,
+          argv: usedArgv,
+          system_prompt: systemPrompt,
+          user_prompt: userPrompt
+        },
+        response
+      }));
+
+      if (!result.ok) failures += 1;
+      log(`  ${result.ok ? 'ok  ' : 'FAIL'} ${runId}`);
+    } catch (error) {
+      failures += 1;
+      log(`  FAIL ${runId} (unexpected error: ${error.message})`);
+      try {
+        await writeRecord(item.path, buildRecord({
+          guide: item.guide,
+          passage: item.passage,
+          template: item.template,
+          runIndex: item.runIndex,
+          generatedAt: new Date().toISOString(),
+          request: {
+            backend: backend.name,
+            cli_version: backend.version,
+            model_requested: model,
+            argv: [],
+            system_prompt: systemPrompt,
+            user_prompt: userPrompt
+          },
+          response: {
+            ok: false,
+            attempts: 0,
+            error: { message: error.message, stage: 'runner' }
+          }
+        }));
+      } catch {
+        // Best effort: if even the failure record cannot be written, the
+        // failure count above still reflects that this item did not succeed.
+      }
     }
-
-    const { argv: usedArgv = [], ...response } = result;
-    await writeRecord(item.path, buildRecord({
-      guide: item.guide,
-      passage: item.passage,
-      template: item.template,
-      runIndex: item.runIndex,
-      generatedAt: new Date().toISOString(),
-      request: {
-        backend: backend.name,
-        cli_version: backend.version,
-        model_requested: model,
-        argv: usedArgv,
-        system_prompt: systemPrompt,
-        user_prompt: userPrompt
-      },
-      response
-    }));
-
-    if (!result.ok) failures += 1;
-    log(`  ${result.ok ? 'ok  ' : 'FAIL'} ${runId}`);
   });
 
   log(`Done. ${worklist.length - failures} succeeded, ${failures} failed.`);

@@ -107,3 +107,15 @@ test('isCurrent is false for a record from an older schema version', () => {
 test('isCurrent is false for null', () => {
   assert.equal(isCurrent(null, { guide, passage, template }), false);
 });
+
+test('isCurrent is true when the backend matches', () => {
+  assert.equal(isCurrent(sample(), { guide, passage, template, backend: 'fake' }), true);
+});
+
+test('isCurrent is false when the backend does not match', () => {
+  assert.equal(isCurrent(sample(), { guide, passage, template, backend: 'claude-code-cli' }), false);
+});
+
+test('isCurrent does not compare backend when none is supplied', () => {
+  assert.equal(isCurrent(sample(), { guide, passage, template }), true);
+});

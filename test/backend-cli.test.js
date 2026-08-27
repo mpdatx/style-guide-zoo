@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { buildArgv, parseEnvelope, CLAUDE } from '../runner/backends/cli.js';
+import { PassThrough } from 'node:stream';
+import { buildArgv, parseEnvelope, CLAUDE, createCliBackend } from '../runner/backends/cli.js';
 
 test('the default CLI command is plain "claude" on every platform', () => {
   assert.equal(CLAUDE, 'claude');
@@ -54,9 +55,9 @@ test('argv omits the budget cap when none is configured', () => {
   assert.ok(!argv.includes('--max-budget-usd'));
 });
 
-test('argv does not contain the passage; it goes over stdin', () => {
-  const argv = buildArgv(argvOptions);
-  assert.ok(!argv.some((a) => a.includes('{{PASSAGE}}')));
+test('argv ignores a passage-shaped property even if one is passed in', () => {
+  const argv = buildArgv({ ...argvOptions, userPrompt: 'The quick brown fox jumps.' });
+  assert.ok(!argv.some((a) => typeof a === 'string' && a.includes('quick brown fox')));
 });
 
 const ENVELOPE = JSON.stringify({
@@ -109,6 +110,14 @@ test('parseEnvelope throws when the result field is missing', () => {
   assert.throws(() => parseEnvelope(JSON.stringify({ type: 'result' })), /result/i);
 });
 
+test('parseEnvelope treats a null result as a normal cli-stage failure, not a throw', () => {
+  const parsed = parseEnvelope(JSON.stringify({
+    type: 'result', subtype: 'error_max_turns', is_error: false, result: null, session_id: 'x'
+  }));
+  assert.equal(parsed.ok, false);
+  assert.equal(parsed.error.stage, 'cli');
+});
+
 const MULTI_MODEL_ENVELOPE = JSON.stringify({
   type: 'result',
   subtype: 'success',
@@ -141,13 +150,88 @@ test('parseEnvelope falls back to the highest-outputTokens entry when the reques
   assert.equal(parsed.model_reported, 'claude-sonnet-5');
 });
 
-test('parseEnvelope matches the requested model via canonicalModel when the key differs', () => {
+test('parseEnvelope prefers the highest-outputTokens entry over the requested model, revealing substitution', () => {
+  // Even though claude-haiku-4-5 was requested, sonnet did most of the work
+  // (more outputTokens), so it should be reported -- this is a real signal
+  // that the CLI substituted or delegated to a different model.
   const parsed = parseEnvelope(MULTI_MODEL_ENVELOPE, 'claude-haiku-4-5');
+  assert.equal(parsed.model_reported, 'claude-sonnet-5');
+});
+
+const TIED_OUTPUT_ENVELOPE = JSON.stringify({
+  type: 'result',
+  subtype: 'success',
+  is_error: false,
+  result: 'The rewritten text.',
+  session_id: 'abc-123',
+  duration_ms: 4200,
+  num_turns: 1,
+  total_cost_usd: 0.0123,
+  modelUsage: {
+    'claude-haiku-4-5-20251001': {
+      inputTokens: 100, outputTokens: 20,
+      canonicalModel: 'claude-haiku-4-5', provider: 'firstParty'
+    },
+    'claude-sonnet-5': {
+      inputTokens: 100, outputTokens: 20,
+      canonicalModel: 'claude-sonnet-5', provider: 'firstParty'
+    }
+  },
+  usage: { input_tokens: 200, output_tokens: 40 }
+});
+
+test('parseEnvelope uses the requested model as a tiebreak when outputTokens are equal', () => {
+  const parsed = parseEnvelope(TIED_OUTPUT_ENVELOPE, 'claude-sonnet-5');
+  assert.equal(parsed.model_reported, 'claude-sonnet-5');
+});
+
+test('parseEnvelope uses canonicalModel as a tiebreak when outputTokens are equal and the key differs', () => {
+  const parsed = parseEnvelope(TIED_OUTPUT_ENVELOPE, 'claude-haiku-4-5');
   assert.equal(parsed.model_reported, 'claude-haiku-4-5-20251001');
 });
 
 test('parseEnvelope still returns the single entry when modelUsage has only one key', () => {
   assert.equal(parseEnvelope(ENVELOPE, 'claude-sonnet-5').model_reported, 'claude-sonnet-5-20260101');
+});
+
+test('multi-byte UTF-8 text survives being split across stdout chunk boundaries', async () => {
+  // Mirrors the accumulation pattern in runner/backends/cli.js: setEncoding('utf8')
+  // on the stream, then concatenate the decoded string chunks. Buffer-concatenation
+  // (`stdout += chunk`) would corrupt a multi-byte character split across chunks.
+  const text = 'An em dash — and curly quotes: “like this”';
+  const buf = Buffer.from(text, 'utf8');
+  const dashIndex = buf.indexOf(Buffer.from('—', 'utf8'));
+  const splitPoint = dashIndex + 1; // splits the middle of the 3-byte em-dash sequence
+  const chunk1 = buf.subarray(0, splitPoint);
+  const chunk2 = buf.subarray(splitPoint);
+
+  const stream = new PassThrough();
+  stream.setEncoding('utf8');
+  let collected = '';
+  stream.on('data', (chunk) => { collected += chunk; });
+  const ended = new Promise((resolve) => stream.on('end', resolve));
+  stream.write(chunk1);
+  stream.write(chunk2);
+  stream.end();
+  await ended;
+
+  assert.equal(collected, text);
+});
+
+test('generate returns a timeout-stage failure and kills the child when it hangs', { timeout: 10000 }, async () => {
+  const backend = await createCliBackend({
+    claudePath: process.execPath,
+    // Runs under plain `node`: prints 1 via -p, then stays alive on the pending timer.
+    // The `--` stops node from trying to parse the rest of the CLI-shaped argv
+    // (--tools, --model, etc.) as its own flags.
+    extraFlags: ['1;setTimeout(() => {}, 100000);', '--'],
+    timeoutMs: 150
+  });
+  const result = await backend.generate({
+    systemPrompt: 'sys', userPrompt: 'usr', model: 'claude-sonnet-5'
+  });
+  assert.equal(result.ok, false);
+  assert.equal(result.error.stage, 'timeout');
 });
 
 test('parseEnvelope preserves the full modelUsage map as model_usage', () => {

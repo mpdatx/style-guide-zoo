@@ -39,13 +39,14 @@ export async function writeRecord(path, record) {
 }
 
 /** True when this record was produced from exactly the current content. */
-export function isCurrent(record, { guide, passage, template }) {
+export function isCurrent(record, { guide, passage, template, backend }) {
   return Boolean(
     record &&
     record.schema_version === SCHEMA_VERSION &&
     record.response?.ok === true &&
     record.guide?.source_hash === guide.sourceHash &&
     record.passage?.source_hash === passage.sourceHash &&
-    record.prompt_template?.source_hash === template.sourceHash
+    record.prompt_template?.source_hash === template.sourceHash &&
+    (backend === undefined || record.request?.backend === backend)
   );
 }

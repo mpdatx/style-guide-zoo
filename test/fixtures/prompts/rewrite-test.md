@@ -2,7 +2,7 @@
 id: rewrite-test
 ---
 
-Rewrite this text:
+Rewrite this passage.
 
 <passage>
 {{PASSAGE}}

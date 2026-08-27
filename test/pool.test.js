@@ -29,3 +29,19 @@ test('handles an empty input', async () => {
 test('passes the index to the worker', async () => {
   assert.deepEqual(await mapPool(['a', 'b'], 1, async (v, i) => `${i}${v}`), ['0a', '1b']);
 });
+
+test('rejects a NaN limit instead of silently doing nothing', async () => {
+  await assert.rejects(() => mapPool([1, 2, 3], Number('abc'), async (n) => n), /limit/i);
+});
+
+test('rejects a zero limit', async () => {
+  await assert.rejects(() => mapPool([1, 2, 3], 0, async (n) => n), /limit/i);
+});
+
+test('rejects a negative limit', async () => {
+  await assert.rejects(() => mapPool([1, 2, 3], -2, async (n) => n), /limit/i);
+});
+
+test('rejects an infinite limit', async () => {
+  await assert.rejects(() => mapPool([1, 2, 3], Infinity, async (n) => n), /limit/i);
+});
