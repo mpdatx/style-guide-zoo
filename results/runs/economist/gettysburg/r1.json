@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "run_id": "economist__gettysburg__r1",
+  "run_index": 1,
+  "generated_at": "2026-08-27T21:12:57.593Z",
+  "guide": {
+    "id": "economist",
+    "source_hash": "sha256:c64ce7e5c55d661aeef67534430d76ab26c0948bdad12c4aea366e06ef8ba110"
+  },
+  "passage": {
+    "id": "gettysburg",
+    "source_hash": "sha256:4731c9e7d51935b8f393d05607c5c5f42a91c18f839bdf85a4dcf593d1fb3d5c"
+  },
+  "prompt_template": {
+    "id": "rewrite-v1",
+    "source_hash": "sha256:6c90fb9df63501ad20b39afc1902f70a6b1a13da3000a29ff3c527a519c057f4"
+  },
+  "request": {
+    "backend": "claude-code-cli",
+    "cli_version": "2.1.247 (Claude Code)",
+    "model_requested": "claude-sonnet-5",
+    "argv": [
+      "-p",
+      "--safe-mode",
+      "--no-session-persistence",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--tools",
+      "",
+      "--model",
+      "claude-sonnet-5",
+      "--system-prompt",
+      "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+      "--output-format",
+      "json",
+      "--max-budget-usd",
+      "25"
+    ],
+    "system_prompt": "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+    "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nFour score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.\n\nNow we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.\n\nBut, in a larger sense, we can not dedicate -- we can not consecrate -- we can not hallow -- this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us -- that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion -- that we here highly resolve that these dead shall not have died in vain -- that this nation, under God, shall have a new birth of freedom -- and that government of the people, by the people, for the people, shall not perish from the earth.\n</passage>"
+  },
+  "response": {
+    "ok": true,
+    "text": "Eighty-seven years ago our forebears founded a new nation here, built on liberty and on the idea that all men are equal.\n\nNow a civil war tests whether that nation, or any nation built this way, can last. We stand on a great battlefield of that war. We have come to give part of this field as a resting place for those who died so the nation might live. That is right and fitting.\n\nBut we cannot truly dedicate this ground, nor consecrate it, nor make it holy. The brave men who fought here, living and dead, have already done that, far beyond our power to add to or take away. The world will barely note, and soon forget, what we say today. It will never forget what they did. It falls to us, the living, to finish the work they began so well. It falls to us to commit to the great task ahead: to draw from these dead greater devotion to the cause for which they gave everything; to resolve that they shall not have died for nothing; that this nation, under God, shall see a new birth of freedom; and that government of the people, by the people, for the people, shall not vanish from the earth.",
+    "model_reported": "claude-sonnet-5",
+    "model_usage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 1274,
+        "outputTokens": 15,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.001349,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 362,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 1041,
+        "webSearchRequests": 0,
+        "costUSD": 0.007788,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 1041,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 362,
+      "output_tokens_details": {
+        "thinking_tokens": 36
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 1041,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 362,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 1041,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1041
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 0.009137,
+    "duration_ms": 4522,
+    "session_id": "d6f6a53d-ffcf-470a-a2d6-b7ba1ff620e5",
+    "num_turns": 1,
+    "attempts": 1
+  }
+}

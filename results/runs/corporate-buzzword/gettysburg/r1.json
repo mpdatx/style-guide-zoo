@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "run_id": "corporate-buzzword__gettysburg__r1",
+  "run_index": 1,
+  "generated_at": "2026-08-27T21:13:19.895Z",
+  "guide": {
+    "id": "corporate-buzzword",
+    "source_hash": "sha256:63d30bd0db1e6460564f750cdc0d91eb9e13b210374e142fac022e4f2e258382"
+  },
+  "passage": {
+    "id": "gettysburg",
+    "source_hash": "sha256:4731c9e7d51935b8f393d05607c5c5f42a91c18f839bdf85a4dcf593d1fb3d5c"
+  },
+  "prompt_template": {
+    "id": "rewrite-v1",
+    "source_hash": "sha256:6c90fb9df63501ad20b39afc1902f70a6b1a13da3000a29ff3c527a519c057f4"
+  },
+  "request": {
+    "backend": "claude-code-cli",
+    "cli_version": "2.1.247 (Claude Code)",
+    "model_requested": "claude-sonnet-5",
+    "argv": [
+      "-p",
+      "--safe-mode",
+      "--no-session-persistence",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--tools",
+      "",
+      "--model",
+      "claude-sonnet-5",
+      "--system-prompt",
+      "Rewrite the text in dense corporate business jargon.\n\nReplace concrete nouns with abstractions. Turn verbs into nominalisations:\nprefer \"the utilisation of\" to \"using\". Use the passive voice so that no\nsentence names who acts. Reach for \"leverage\", \"synergy\", \"stakeholder\",\n\"alignment\", \"operationalise\", \"value-add\", and \"at scale\".\n\nHedge every claim. Add qualifying clauses that commit to nothing.\n\nKeep the underlying facts of the original technically present, however deeply\nburied. This column exists as a demonstration of what these habits cost.",
+      "--output-format",
+      "json",
+      "--max-budget-usd",
+      "25"
+    ],
+    "system_prompt": "Rewrite the text in dense corporate business jargon.\n\nReplace concrete nouns with abstractions. Turn verbs into nominalisations:\nprefer \"the utilisation of\" to \"using\". Use the passive voice so that no\nsentence names who acts. Reach for \"leverage\", \"synergy\", \"stakeholder\",\n\"alignment\", \"operationalise\", \"value-add\", and \"at scale\".\n\nHedge every claim. Add qualifying clauses that commit to nothing.\n\nKeep the underlying facts of the original technically present, however deeply\nburied. This column exists as a demonstration of what these habits cost.",
+    "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nFour score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.\n\nNow we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.\n\nBut, in a larger sense, we can not dedicate -- we can not consecrate -- we can not hallow -- this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us -- that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion -- that we here highly resolve that these dead shall not have died in vain -- that this nation, under God, shall have a new birth of freedom -- and that government of the people, by the people, for the people, shall not perish from the earth.\n</passage>"
+  },
+  "response": {
+    "ok": true,
+    "text": "Approximately eighty-seven years prior, to whatever extent such temporal framing may be considered operationally meaningful, a foundational nation-level entity is understood to have been established on this continental landmass, with a value proposition oriented, at least in some qualified sense, around the leveraging of Liberty as a core strategic asset, and with alignment toward the proposition-based framework that equality across human stakeholders is, in principle, to be treated as a foundational input assumption.\n\nAt the present juncture, engagement is ongoing with what might be characterized as a large-scale internal conflict-resolution initiative, the underlying purpose of which is, arguably, to stress-test the long-term viability and sustainability of said nation-level entity, or indeed of any comparably conceived and dedicated entity, operating at scale. A convening has occurred at a site broadly associated with significant conflict-related activity pursuant to this initiative. The present gathering is intended, to whatever extent intentions can be said to be operationalized, to formally allocate a segment of this site as a long-term resource-repository for those stakeholders whose life-cycle contributions were terminated in furtherance of the continued operational existence of the aforementioned nation-level entity. It may reasonably be considered appropriate, within certain interpretive frameworks, that this allocation should proceed.\n\nThat said, it should be acknowledged, with all due hedging, that a genuine dedication, consecration, or hallowing of this ground may not, in the fullest sense, be achievable through the present proceedings. It is arguably the case that the relevant stakeholder cohort—both those whose engagement continues and those whose engagement has concluded—who operated within this space have already effectuated a consecration-equivalent outcome, one that may exceed, by some non-trivial margin, whatever value-add this gathering's rhetorical output could hope to contribute. There is some likelihood, though this should not be overstated, that broader external observership will neither register nor retain long-term recall of the statements made herein; however, it is somewhat more probable that the actions undertaken by said stakeholders will persist within collective memory frameworks. It may be considered more operationally relevant, therefore, for those of us presently engaged in ongoing existence to reorient our efforts toward the not-yet-finalized initiative that the aforementioned stakeholders have, to a considerable and commendable extent, already advanced. It could further be suggested that our efforts should be dedicated to the substantial task-set that remains outstanding—namely, that increased levels of commitment be derived, on some best-efforts basis, from the example set by these honored former stakeholders, whose degree of devotion is understood to have reached a maximal threshold; that a collective resolution be operationalized to the effect that such sacrifice not be rendered devoid of value; that this nation-level entity, contingent on broader providential alignment, undergo a renewal process with respect to its freedom-related deliverables; and that a governance framework characterized by of-the-people, by-the-people, and for-the-people modalities not be permitted to lapse from ongoing operational existence at a planetary scale.",
+    "model_reported": "claude-sonnet-5",
+    "model_usage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 1274,
+        "outputTokens": 15,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.001349,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-sonnet-5": {
+        "inputTokens": 1000,
+        "outputTokens": 1004,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.012039999999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "usage": {
+      "input_tokens": 1000,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 1004,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 1000,
+          "output_tokens": 1004,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 0.013388999999999998,
+    "duration_ms": 15245,
+    "session_id": "eab8e998-c10f-4fc8-b3c4-c9b01811ab42",
+    "num_turns": 1,
+    "attempts": 1
+  }
+}
