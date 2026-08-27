@@ -67,9 +67,9 @@ export function parseEnvelope(stdout, requestedModel) {
       num_turns: envelope.num_turns ?? 0,
       stop_reason: stopReason,
       error: {
-        message: stopReason
+        message: redactStderr(stopReason
           ? `CLI reported an error (stop_reason: ${stopReason})`
-          : 'CLI returned a null result (refusal or budget stop)',
+          : 'CLI returned a null result (refusal or budget stop)'),
         stage: 'cli'
       }
     };
@@ -96,7 +96,7 @@ export function parseEnvelope(stdout, requestedModel) {
     return {
       ok: false,
       ...common,
-      error: { message, stage: 'cli' }
+      error: { message: redactStderr(message), stage: 'cli' }
     };
   }
   return { ok: true, text: envelope.result, ...common };
@@ -104,20 +104,45 @@ export function parseEnvelope(stdout, requestedModel) {
 
 const MAX_REDACTED_STDERR_LENGTH = 300;
 
+// Characters that cannot appear in a filesystem path segment on either
+// platform. Used as the stopping boundary for path-matching below so a path
+// can safely span internal spaces (e.g. a "John Smith" username directory)
+// without swallowing the rest of an ordinary sentence that follows it.
+const FORBIDDEN_PATH_CHARS = '"\'`<>|*?\\r\\n';
+// A path segment: any run of characters that isn't a separator or a
+// forbidden character. Spaces ARE allowed here, so multi-word directory
+// names (usernames with spaces, etc.) are matched in full.
+const SEGMENT = `[^\\\\/${FORBIDDEN_PATH_CHARS}]+`;
+// The final (file name) segment never contains a space: this is what keeps
+// a path from greedily eating trailing prose like "... out.json in the
+// report", since matching stops at the first whitespace after the filename.
+const FINAL_SEGMENT = `[^\\\\/\\s${FORBIDDEN_PATH_CHARS}]+`;
+
+// Windows drive paths: C:\foo\bar, c:/foo/bar, including intermediate
+// segments containing spaces (C:\Users\John Smith\Documents\out.json).
+const WINDOWS_PATH_RE = new RegExp(`[A-Za-z]:[\\\\/](?:${SEGMENT}[\\\\/])*${FINAL_SEGMENT}`, 'g');
+// POSIX home directories: /home/<user>/..., /Users/<user>/..., including a
+// username segment containing spaces.
+const POSIX_HOME_PATH_RE = new RegExp(`/(?:home|Users)/(?:${SEGMENT}/)*${FINAL_SEGMENT}`, 'g');
+// UNC paths: \\server\share\...\file, including segments containing spaces.
+const UNC_PATH_RE = new RegExp(`\\\\\\\\(?:${SEGMENT}\\\\)*${FINAL_SEGMENT}`, 'g');
+
 /**
- * Strip absolute filesystem paths out of CLI stderr before it is stored in a
+ * Strip absolute filesystem paths out of CLI output before it is stored in a
  * record and rendered on the public site. Conservative and pattern-based:
  * it does not need to catch every possible path, only the common shapes
- * (Windows drive paths, POSIX home directories) that routinely appear in
- * stack traces and error output.
+ * (Windows drive paths, POSIX home directories, UNC paths) that routinely
+ * appear in stack traces and error output. Also applies a length cap so a
+ * single message can't balloon a record. Every error message stored by this
+ * module -- from `spawn`-stage stderr as well as every `cli`-stage message
+ * built in `parseEnvelope` -- is routed through this one function.
  */
 export function redactStderr(stderr) {
   const text = (stderr ?? '').trim();
   const redacted = text
-    // Windows drive paths: C:\foo\bar, c:/foo/bar
-    .replace(/[A-Za-z]:[\\/][^\s"'`]*/g, '<path>')
-    // POSIX home directories: /home/<user>/..., /Users/<user>/...
-    .replace(/\/(?:home|Users)\/[^/\s"'`]+(?:\/[^\s"'`]*)?/g, '<path>');
+    .replace(WINDOWS_PATH_RE, '<path>')
+    .replace(POSIX_HOME_PATH_RE, '<path>')
+    .replace(UNC_PATH_RE, '<path>');
   return redacted.length > MAX_REDACTED_STDERR_LENGTH
     ? `${redacted.slice(0, MAX_REDACTED_STDERR_LENGTH)}...`
     : redacted;

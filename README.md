@@ -24,9 +24,8 @@ tight, so guides that mainly police punctuation and needless words have little
 to change. The same two guides are expected to diverge more sharply on
 deliberately tangled prose such as the `terms-of-service` passage, with
 Strunk & White collapsing subordination into plain sentences while Chicago
-preserves a more formal register — but as of this writing that passage has not
-been generated across every guide, so the site does not yet show it. Check the
-`terms-of-service` column once it is populated. Near-identical columns are
+preserves a more formal register — and that divergence is visible today on
+the published site's `terms-of-service` column. Near-identical columns are
 information about the guide, and the metrics row under each output makes that
 legible.
 

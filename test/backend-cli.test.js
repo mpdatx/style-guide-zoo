@@ -381,6 +381,40 @@ test('redactStderr leaves ordinary text untouched', () => {
   assert.equal(redactStderr('claude: command not found'), 'claude: command not found');
 });
 
+test('redactStderr redacts a Windows path whose username contains a space', () => {
+  const message = redactStderr(String.raw`C:\Users\John Smith\Documents\out.json`);
+  assert.equal(message, '<path>');
+});
+
+test('redactStderr redacts a POSIX /Users path whose username contains a space', () => {
+  const message = redactStderr('/Users/John Smith/Documents/style-guide-zoo/out.json');
+  assert.equal(message, '<path>');
+});
+
+test('redactStderr redacts a POSIX /home path whose username contains a space', () => {
+  const message = redactStderr('/home/John Smith/Documents/style-guide-zoo/out.json');
+  assert.equal(message, '<path>');
+});
+
+test('redactStderr redacts a UNC path', () => {
+  const message = redactStderr(String.raw`\\NAS01\home\mpdatx\zoo\config.json`);
+  assert.equal(message, '<path>');
+  assert.ok(!message.includes('NAS01'));
+  assert.ok(!message.includes('mpdatx'));
+});
+
+test('redactStderr redacts a path but does not swallow the ordinary prose that follows it', () => {
+  const message = redactStderr(
+    String.raw`Failed to write C:\Users\John Smith\Documents\out.json in the report`
+  );
+  assert.equal(message, 'Failed to write <path> in the report');
+});
+
+test('redactStderr still caps the retained length after redaction', () => {
+  const message = redactStderr(`${String.raw`C:\Users\John Smith\Documents\out.json`} ${'x'.repeat(1000)}`);
+  assert.ok(message.length < 350);
+});
+
 test('a non-zero exit with unparseable stdout falls back to the spawn-stage error', async () => {
   const childScript = "process.stdout.write('not json at all');process.exit(1)";
   const backend = await createCliBackend({
@@ -394,6 +428,19 @@ test('a non-zero exit with unparseable stdout falls back to the spawn-stage erro
   assert.equal(result.ok, false);
   assert.equal(result.error.stage, 'spawn');
   assert.match(result.error.message, /exited with code 1/);
+});
+
+test('parseEnvelope redacts an absolute path inside an is_error envelope result (cli-stage message)', () => {
+  const parsed = parseEnvelope(JSON.stringify({
+    type: 'result', subtype: 'error_during_execution', is_error: true,
+    result: String.raw`API Error: cannot read C:\Users\John Smith\Documents\style-guide-zoo\out.json`,
+    session_id: 'x'
+  }));
+  assert.equal(parsed.ok, false);
+  assert.equal(parsed.error.stage, 'cli');
+  assert.ok(!parsed.error.message.includes('John Smith'));
+  assert.ok(!parsed.error.message.includes('Documents'));
+  assert.ok(parsed.error.message.includes('<path>'));
 });
 
 test('parseEnvelope preserves the full modelUsage map as model_usage', () => {
