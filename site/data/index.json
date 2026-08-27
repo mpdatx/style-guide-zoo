@@ -240,7 +240,7 @@
     "control__gettysburg": {
       "guide_id": "control",
       "passage_id": "gettysburg",
-      "runs": 2,
+      "runs": 3,
       "failures": 0,
       "file": "cells/control__gettysburg.json"
     },
@@ -289,14 +289,14 @@
     "control__runbook": {
       "guide_id": "control",
       "passage_id": "runbook",
-      "runs": 2,
+      "runs": 3,
       "failures": 0,
       "file": "cells/control__runbook.json"
     },
     "caveman__gettysburg": {
       "guide_id": "caveman",
       "passage_id": "gettysburg",
-      "runs": 2,
+      "runs": 3,
       "failures": 0,
       "file": "cells/caveman__gettysburg.json"
     },
@@ -345,14 +345,14 @@
     "caveman__runbook": {
       "guide_id": "caveman",
       "passage_id": "runbook",
-      "runs": 2,
+      "runs": 3,
       "failures": 0,
       "file": "cells/caveman__runbook.json"
     },
     "asd-ste100__gettysburg": {
       "guide_id": "asd-ste100",
       "passage_id": "gettysburg",
-      "runs": 2,
+      "runs": 3,
       "failures": 0,
       "file": "cells/asd-ste100__gettysburg.json"
     },
@@ -401,14 +401,14 @@
     "asd-ste100__runbook": {
       "guide_id": "asd-ste100",
       "passage_id": "runbook",
-      "runs": 2,
+      "runs": 3,
       "failures": 0,
       "file": "cells/asd-ste100__runbook.json"
     },
     "economist__gettysburg": {
       "guide_id": "economist",
       "passage_id": "gettysburg",
-      "runs": 1,
+      "runs": 3,
       "failures": 0,
       "file": "cells/economist__gettysburg.json"
     },
@@ -457,14 +457,14 @@
     "economist__runbook": {
       "guide_id": "economist",
       "passage_id": "runbook",
-      "runs": 0,
+      "runs": 3,
       "failures": 0,
       "file": "cells/economist__runbook.json"
     },
     "plain-language__gettysburg": {
       "guide_id": "plain-language",
       "passage_id": "gettysburg",
-      "runs": 1,
+      "runs": 3,
       "failures": 0,
       "file": "cells/plain-language__gettysburg.json"
     },
@@ -513,14 +513,14 @@
     "plain-language__runbook": {
       "guide_id": "plain-language",
       "passage_id": "runbook",
-      "runs": 0,
+      "runs": 3,
       "failures": 0,
       "file": "cells/plain-language__runbook.json"
     },
     "strunk-white__gettysburg": {
       "guide_id": "strunk-white",
       "passage_id": "gettysburg",
-      "runs": 1,
+      "runs": 3,
       "failures": 0,
       "file": "cells/strunk-white__gettysburg.json"
     },
@@ -548,7 +548,7 @@
     "strunk-white__terms-of-service": {
       "guide_id": "strunk-white",
       "passage_id": "terms-of-service",
-      "runs": 0,
+      "runs": 1,
       "failures": 0,
       "file": "cells/strunk-white__terms-of-service.json"
     },
@@ -569,14 +569,14 @@
     "strunk-white__runbook": {
       "guide_id": "strunk-white",
       "passage_id": "runbook",
-      "runs": 0,
+      "runs": 3,
       "failures": 0,
       "file": "cells/strunk-white__runbook.json"
     },
     "google-devdocs__gettysburg": {
       "guide_id": "google-devdocs",
       "passage_id": "gettysburg",
-      "runs": 1,
+      "runs": 3,
       "failures": 0,
       "file": "cells/google-devdocs__gettysburg.json"
     },
@@ -625,14 +625,14 @@
     "google-devdocs__runbook": {
       "guide_id": "google-devdocs",
       "passage_id": "runbook",
-      "runs": 0,
+      "runs": 3,
       "failures": 0,
       "file": "cells/google-devdocs__runbook.json"
     },
     "microsoft-style__gettysburg": {
       "guide_id": "microsoft-style",
       "passage_id": "gettysburg",
-      "runs": 1,
+      "runs": 3,
       "failures": 0,
       "file": "cells/microsoft-style__gettysburg.json"
     },
@@ -681,14 +681,14 @@
     "microsoft-style__runbook": {
       "guide_id": "microsoft-style",
       "passage_id": "runbook",
-      "runs": 0,
+      "runs": 3,
       "failures": 0,
       "file": "cells/microsoft-style__runbook.json"
     },
     "chicago__gettysburg": {
       "guide_id": "chicago",
       "passage_id": "gettysburg",
-      "runs": 1,
+      "runs": 3,
       "failures": 0,
       "file": "cells/chicago__gettysburg.json"
     },
@@ -716,7 +716,7 @@
     "chicago__terms-of-service": {
       "guide_id": "chicago",
       "passage_id": "terms-of-service",
-      "runs": 0,
+      "runs": 1,
       "failures": 0,
       "file": "cells/chicago__terms-of-service.json"
     },
@@ -737,14 +737,14 @@
     "chicago__runbook": {
       "guide_id": "chicago",
       "passage_id": "runbook",
-      "runs": 0,
+      "runs": 3,
       "failures": 0,
       "file": "cells/chicago__runbook.json"
     },
     "hemingway__gettysburg": {
       "guide_id": "hemingway",
       "passage_id": "gettysburg",
-      "runs": 1,
+      "runs": 3,
       "failures": 0,
       "file": "cells/hemingway__gettysburg.json"
     },
@@ -793,14 +793,14 @@
     "hemingway__runbook": {
       "guide_id": "hemingway",
       "passage_id": "runbook",
-      "runs": 0,
+      "runs": 3,
       "failures": 0,
       "file": "cells/hemingway__runbook.json"
     },
     "corporate-buzzword__gettysburg": {
       "guide_id": "corporate-buzzword",
       "passage_id": "gettysburg",
-      "runs": 1,
+      "runs": 3,
       "failures": 0,
       "file": "cells/corporate-buzzword__gettysburg.json"
     },
@@ -856,7 +856,7 @@
     "pirate__gettysburg": {
       "guide_id": "pirate",
       "passage_id": "gettysburg",
-      "runs": 1,
+      "runs": 3,
       "failures": 0,
       "file": "cells/pirate__gettysburg.json"
     },
@@ -905,14 +905,14 @@
     "pirate__runbook": {
       "guide_id": "pirate",
       "passage_id": "runbook",
-      "runs": 0,
+      "runs": 3,
       "failures": 0,
       "file": "cells/pirate__runbook.json"
     },
     "haiku__gettysburg": {
       "guide_id": "haiku",
       "passage_id": "gettysburg",
-      "runs": 1,
+      "runs": 3,
       "failures": 0,
       "file": "cells/haiku__gettysburg.json"
     },
@@ -961,7 +961,7 @@
     "haiku__runbook": {
       "guide_id": "haiku",
       "passage_id": "runbook",
-      "runs": 0,
+      "runs": 3,
       "failures": 0,
       "file": "cells/haiku__runbook.json"
     }

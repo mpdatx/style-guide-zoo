@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "run_id": "chicago__terms-of-service__r1",
+  "run_index": 1,
+  "generated_at": "2026-08-27T21:15:19.215Z",
+  "guide": {
+    "id": "chicago",
+    "source_hash": "sha256:e33e0579f149fa9aae60c2a83d3112a59c4ae35f3f0b435506551f0c9255b496"
+  },
+  "passage": {
+    "id": "terms-of-service",
+    "source_hash": "sha256:afc734485daadaa3cf2d3cfc8ccf4bd4361f602281780f9ea3d64634da7f3191"
+  },
+  "prompt_template": {
+    "id": "rewrite-v1",
+    "source_hash": "sha256:6c90fb9df63501ad20b39afc1902f70a6b1a13da3000a29ff3c527a519c057f4"
+  },
+  "request": {
+    "backend": "claude-code-cli",
+    "cli_version": "2.1.247 (Claude Code)",
+    "model_requested": "claude-sonnet-5",
+    "argv": [
+      "-p",
+      "--safe-mode",
+      "--no-session-persistence",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--tools",
+      "",
+      "--model",
+      "claude-sonnet-5",
+      "--system-prompt",
+      "Rewrite the text in formal American prose following Chicago Manual of Style\nconventions.\n\nUse the serial comma. Spell out whole numbers from one through one hundred and\nany round number, and use numerals above that. Use double quotation marks for\nquoted material, with commas and periods inside the closing quotation mark.\nUse an em dash without surrounding spaces for a parenthetical break.\n\nMaintain a measured, formal register. Prefer complete sentences and full\nsubordination to fragments. Use standard American spelling. Do not use\ncontractions.\n\nPreserve the argument and every fact of the original; change only the prose.",
+      "--output-format",
+      "json",
+      "--max-budget-usd",
+      "25"
+    ],
+    "system_prompt": "Rewrite the text in formal American prose following Chicago Manual of Style\nconventions.\n\nUse the serial comma. Spell out whole numbers from one through one hundred and\nany round number, and use numerals above that. Use double quotation marks for\nquoted material, with commas and periods inside the closing quotation mark.\nUse an em dash without surrounding spaces for a parenthetical break.\n\nMaintain a measured, formal register. Prefer complete sentences and full\nsubordination to fragments. Use standard American spelling. Do not use\ncontractions.\n\nPreserve the argument and every fact of the original; change only the prose.",
+    "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nNotwithstanding anything to the contrary elsewhere in this Agreement, in the event that the Subscriber elects to enable the optional Enhanced Analytics Add-On (as such term is defined in Schedule C, which Schedule may itself be amended from time to time in a manner not inconsistent with the general purposes of this Section), it is agreed and understood that any and all Usage Data collected in connection therewith, whether or not such Usage Data is subsequently aggregated, anonymized, or otherwise processed by or on behalf of the Service, shall, unless a written objection is received within the period specified in Schedule D, be deemed to have been licensed back to the Service on a non-exclusive basis. The Subscriber's continued use of the Service following any modification to this clause shall be construed as acceptance thereof, and it is acknowledged that certain notifications regarding such modifications may, at the Service's sole discretion, be delivered solely through the Subscriber's account dashboard rather than by direct communication.\n</passage>"
+  },
+  "response": {
+    "ok": true,
+    "text": "Notwithstanding any provision to the contrary elsewhere in this Agreement, if the Subscriber elects to enable the optional Enhanced Analytics Add-On (as that term is defined in Schedule C, which schedule may itself be amended from time to time in a manner not inconsistent with the general purposes of this section), the parties agree and understand that any and all Usage Data collected in connection therewith—whether or not such Usage Data is subsequently aggregated, anonymized, or otherwise processed by or on behalf of the Service—shall, unless a written objection is received within the period specified in Schedule D, be deemed to have been licensed back to the Service on a nonexclusive basis. The Subscriber's continued use of the Service following any modification to this clause shall be construed as acceptance of that modification, and the parties acknowledge that certain notifications regarding such modifications may, at the Service's sole discretion, be delivered solely through the Subscriber's account dashboard rather than by direct communication.",
+    "model_reported": "claude-sonnet-5",
+    "model_usage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 1147,
+        "outputTokens": 13,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.001212,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-sonnet-5": {
+        "inputTokens": 890,
+        "outputTokens": 323,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.00501,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "usage": {
+      "input_tokens": 890,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 323,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 890,
+          "output_tokens": 323,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 0.006222,
+    "duration_ms": 3633,
+    "session_id": "cb4f84f3-ace1-4d93-8980-5e39e8d988db",
+    "num_turns": 1,
+    "attempts": 1
+  }
+}
