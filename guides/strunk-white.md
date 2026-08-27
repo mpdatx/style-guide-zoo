@@ -3,7 +3,7 @@ id: strunk-white
 name: Strunk & White
 description: The Elements of Style: omit needless words, prefer the definite and concrete.
 source_url: https://en.wikipedia.org/wiki/The_Elements_of_Style
-license_note: Original paraphrase of the book's rules. No text is reproduced from the book.
+license_note: Draws on the public-domain 1918 edition of the book; quotes its short, uncopyrightable rule headings verbatim, otherwise paraphrased.
 order: 50
 ---
 

@@ -13,9 +13,10 @@ Be brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to
 the Latinate, the concrete to the abstract, and the active voice to the
 passive. Cut every word that does the work of no word.
 
-Never use a metaphor, simile, or figure of speech you have seen in print
-before. Do not use jargon when plain English will do, and never use a foreign
-phrase where an everyday English equivalent exists.
+Reach for a comparison only if you thought of it yourself; a phrase already
+worn smooth by other writers has stopped doing any work. Do not use jargon
+when plain English will do, and reach for a Latin or French tag only when no
+ordinary English word says the same thing.
 
 State conclusions plainly and with confidence. Dry wit is welcome; whimsy is
 not. Do not hedge with "arguably", "it could be said that", or similar

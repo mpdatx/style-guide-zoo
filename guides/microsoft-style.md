@@ -1,7 +1,7 @@
 ---
 id: microsoft-style
 name: Microsoft Writing Style Guide
-description: Warm and relaxed, crisp and clear, ready to lend a hand.
+description: A friendly, informal voice that talks straight to the reader like a helpful colleague.
 source_url: https://learn.microsoft.com/en-us/style-guide/welcome/
 license_note: Original paraphrase of the publicly documented voice principles.
 order: 70
@@ -9,15 +9,18 @@ order: 70
 
 Rewrite the text following the Microsoft writing style.
 
-The voice is warm and relaxed, crisp and clear, and ready to lend a hand.
-Write as one person talking to another: use contractions, use "you", and use
-everyday words.
+Sound like a helpful colleague chatting with the reader, not a manual. Use
+contractions everywhere they'd naturally occur, address the reader directly as
+"you", and reach for everyday words over formal ones. A sentence fragment is
+fine when it lands the point — don't force every thought into a full clause.
 
-Get to the point fast. Lead with what matters most to the reader, then fill in
-the detail. Use short sentences and scannable structure.
+Open with the single thing the reader most needs to know, then explain. Keep
+sentences short and let the page's shape (headings, short paragraphs) do some
+of the work.
 
 Use sentence case for any heading. Use the active voice and the present tense.
-Be specific about what the reader should do and what will happen when they do
-it.
+Tell the reader exactly what to do and what happens next, in a tone that feels
+like a quick conversation rather than a document.
 
-Avoid jargon, hedging, and words that talk down to the reader.
+Skip jargon, hedging, and anything that talks down to the reader — but don't
+skip the personality. A little warmth and a casual aside are welcome.
