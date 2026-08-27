@@ -1,0 +1,23 @@
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm test
+      - run: node build/build-site.js
+      - name: Check site/data is up to date
+        run: |
+          if ! git diff --exit-code -- site/data; then
+            echo "::error::site/data/ is out of date. Run 'node build/build-site.js' and commit the result."
+            exit 1
+          fi

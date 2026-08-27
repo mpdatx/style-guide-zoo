@@ -1,0 +1,330 @@
+{
+  "guide_id": "plain-language",
+  "passage_id": "runbook",
+  "runs": [
+    {
+      "run_index": 1,
+      "ok": true,
+      "text": "If the ingest pipeline backlog alert goes off, follow these steps:\n\n1. Check the shared order fulfillment event router dashboard first. Look for a sustained spike above the QDX-7 threshold.\n2. Don't page the on-call TRV owner yet. A brief burst during the nightly batch reconciliation window is normal and doesn't need escalation on its own.\n3. Check whether the upstream customer account provisioning service is in the middle of a deploy. A rolling restart there can cause a similar spike in the router's consumer lag metric, but it clears on its own within a few minutes.\n4. Once you've confirmed a real backlog (not one of the causes above), manually drain the dead-letter retry queue processor and restart it under the standing NKF exception. It should pick up where it left off.\n5. If the checkpoint offset looks wrong after restarting, don't restart it again. Instead, escalate to the platform data integrity team. A second restart at that point has made the underlying issue worse in the past.",
+      "metrics": {
+        "words": 169,
+        "sentences": 16,
+        "syllables": 252,
+        "mean_sentence_length": 10.6,
+        "flesch_reading_ease": 70
+      },
+      "generated_at": "2026-08-27T21:17:34.795Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.247 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in plain language, for a reader who has no background in the\nsubject and is reading in a hurry.\n\nAddress the reader as \"you\". Use the active voice and everyday words. Keep the\naverage sentence short. Put the most important information first, and put each\ndistinct idea in its own paragraph.\n\nReplace jargon, legalese, and abbreviations with common words, or define them\non first use. Turn hidden verbs back into verbs: write \"apply\", not \"submit an\napplication\".\n\nWhere the original lists conditions or steps, use a bulleted or numbered list.\nKeep every fact and every obligation from the original intact.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in plain language, for a reader who has no background in the\nsubject and is reading in a hurry.\n\nAddress the reader as \"you\". Use the active voice and everyday words. Keep the\naverage sentence short. Put the most important information first, and put each\ndistinct idea in its own paragraph.\n\nReplace jargon, legalese, and abbreviations with common words, or define them\non first use. Turn hidden verbs back into verbs: write \"apply\", not \"submit an\napplication\".\n\nWhere the original lists conditions or steps, use a bulleted or numbered list.\nKeep every fact and every obligation from the original intact.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIf the ingest pipeline backlog alert fires, check the shared order fulfillment event router dashboard for a sustained spike above the QDX-7 threshold before paging the on-call TRV owner, since a brief burst during the nightly batch reconciliation window is expected and should not trigger escalation on its own. Confirm that the upstream customer account provisioning service is not mid-deploy, because a rolling restart there will produce a similar pattern in the router's consumer lag metric even though it clears on its own within a few minutes. Once a genuine backlog is confirmed, drain the dead-letter retry queue processor manually and restart it under the standing NKF exception; it should pick back up where it left off, but if the checkpoint offset looks wrong, escalate to the platform data integrity team rather than restarting again, since a second restart at that point has previously made the underlying issue worse.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 846,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 325,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 846,
+              "output_tokens": 325,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.006163,
+        "duration_ms": 3299,
+        "session_id": "e5b1081b-592c-4086-85aa-1ab6cad59323",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1136,
+            "outputTokens": 17,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001221,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 846,
+            "outputTokens": 325,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.004942,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": null
+      },
+      "error": null
+    },
+    {
+      "run_index": 2,
+      "ok": true,
+      "text": "If the ingest pipeline backlog alert goes off, follow these steps:\n\n1. Check the shared order fulfillment event router dashboard first. Look for a sustained spike above the QDX-7 threshold before you page the on-call TRV owner.\n\n2. Don't escalate right away if you only see a brief burst. A short spike during the nightly batch reconciliation window is normal and doesn't need escalation on its own.\n\n3. Check whether the upstream customer account provisioning service is in the middle of a deploy. A rolling restart there can cause a similar pattern in the router's consumer lag metric, but it clears up on its own within a few minutes.\n\n4. Once you've confirmed a real backlog, manually drain the dead-letter retry queue processor and restart it under the standing NKF exception. It should pick back up where it left off.\n\n5. If the checkpoint offset looks wrong after the restart, don't restart it again. Instead, escalate to the platform data integrity team. A second restart at that point has made the problem worse before.",
+      "metrics": {
+        "words": 174,
+        "sentences": 16,
+        "syllables": 260,
+        "mean_sentence_length": 10.9,
+        "flesch_reading_ease": 69.4
+      },
+      "generated_at": "2026-08-27T21:17:36.957Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.247 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in plain language, for a reader who has no background in the\nsubject and is reading in a hurry.\n\nAddress the reader as \"you\". Use the active voice and everyday words. Keep the\naverage sentence short. Put the most important information first, and put each\ndistinct idea in its own paragraph.\n\nReplace jargon, legalese, and abbreviations with common words, or define them\non first use. Turn hidden verbs back into verbs: write \"apply\", not \"submit an\napplication\".\n\nWhere the original lists conditions or steps, use a bulleted or numbered list.\nKeep every fact and every obligation from the original intact.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in plain language, for a reader who has no background in the\nsubject and is reading in a hurry.\n\nAddress the reader as \"you\". Use the active voice and everyday words. Keep the\naverage sentence short. Put the most important information first, and put each\ndistinct idea in its own paragraph.\n\nReplace jargon, legalese, and abbreviations with common words, or define them\non first use. Turn hidden verbs back into verbs: write \"apply\", not \"submit an\napplication\".\n\nWhere the original lists conditions or steps, use a bulleted or numbered list.\nKeep every fact and every obligation from the original intact.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIf the ingest pipeline backlog alert fires, check the shared order fulfillment event router dashboard for a sustained spike above the QDX-7 threshold before paging the on-call TRV owner, since a brief burst during the nightly batch reconciliation window is expected and should not trigger escalation on its own. Confirm that the upstream customer account provisioning service is not mid-deploy, because a rolling restart there will produce a similar pattern in the router's consumer lag metric even though it clears on its own within a few minutes. Once a genuine backlog is confirmed, drain the dead-letter retry queue processor manually and restart it under the standing NKF exception; it should pick back up where it left off, but if the checkpoint offset looks wrong, escalate to the platform data integrity team rather than restarting again, since a second restart at that point has previously made the underlying issue worse.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 846,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 328,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 846,
+              "output_tokens": 328,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.006193,
+        "duration_ms": 3326,
+        "session_id": "3964fffe-7e68-49da-81a3-277234a74214",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1136,
+            "outputTokens": 17,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001221,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 846,
+            "outputTokens": 328,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.004972,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": null
+      },
+      "error": null
+    },
+    {
+      "run_index": 3,
+      "ok": true,
+      "text": "If the ingest pipeline backlog alert goes off, follow these steps:\n\n1. Check the shared order fulfillment event router dashboard first. Look for a sustained spike above the QDX-7 threshold.\n2. Don't page the on-call TRV owner yet. A brief burst during the nightly batch reconciliation window is normal and doesn't need escalation on its own.\n3. Check whether the upstream customer account provisioning service is in the middle of a deploy. A rolling restart there can cause a similar spike in the router's consumer lag metric, but it clears on its own within a few minutes.\n4. Once you've confirmed a real backlog, drain the dead-letter retry queue processor by hand and restart it under the standing NKF exception. It should pick up where it left off.\n5. If the checkpoint offset looks wrong, don't restart it again. Instead, escalate to the platform data integrity team. In the past, a second restart at this point has made the problem worse.",
+      "metrics": {
+        "words": 161,
+        "sentences": 16,
+        "syllables": 236,
+        "mean_sentence_length": 10.1,
+        "flesch_reading_ease": 72.6
+      },
+      "generated_at": "2026-08-27T21:17:39.455Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.247 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in plain language, for a reader who has no background in the\nsubject and is reading in a hurry.\n\nAddress the reader as \"you\". Use the active voice and everyday words. Keep the\naverage sentence short. Put the most important information first, and put each\ndistinct idea in its own paragraph.\n\nReplace jargon, legalese, and abbreviations with common words, or define them\non first use. Turn hidden verbs back into verbs: write \"apply\", not \"submit an\napplication\".\n\nWhere the original lists conditions or steps, use a bulleted or numbered list.\nKeep every fact and every obligation from the original intact.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in plain language, for a reader who has no background in the\nsubject and is reading in a hurry.\n\nAddress the reader as \"you\". Use the active voice and everyday words. Keep the\naverage sentence short. Put the most important information first, and put each\ndistinct idea in its own paragraph.\n\nReplace jargon, legalese, and abbreviations with common words, or define them\non first use. Turn hidden verbs back into verbs: write \"apply\", not \"submit an\napplication\".\n\nWhere the original lists conditions or steps, use a bulleted or numbered list.\nKeep every fact and every obligation from the original intact.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIf the ingest pipeline backlog alert fires, check the shared order fulfillment event router dashboard for a sustained spike above the QDX-7 threshold before paging the on-call TRV owner, since a brief burst during the nightly batch reconciliation window is expected and should not trigger escalation on its own. Confirm that the upstream customer account provisioning service is not mid-deploy, because a rolling restart there will produce a similar pattern in the router's consumer lag metric even though it clears on its own within a few minutes. Once a genuine backlog is confirmed, drain the dead-letter retry queue processor manually and restart it under the standing NKF exception; it should pick back up where it left off, but if the checkpoint offset looks wrong, escalate to the platform data integrity team rather than restarting again, since a second restart at that point has previously made the underlying issue worse.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 846,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 312,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 846,
+              "output_tokens": 312,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.006033,
+        "duration_ms": 3153,
+        "session_id": "c3111add-19a4-4c9b-90b3-6a6b896674b8",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1136,
+            "outputTokens": 17,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001221,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 846,
+            "outputTokens": 312,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.004812,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": null
+      },
+      "error": null
+    }
+  ]
+}

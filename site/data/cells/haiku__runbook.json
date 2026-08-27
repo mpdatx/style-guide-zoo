@@ -1,0 +1,330 @@
+{
+  "guide_id": "haiku",
+  "passage_id": "runbook",
+  "runs": [
+    {
+      "run_index": 1,
+      "ok": true,
+      "text": "Backlog alert rings,\ncheck the fulfillment dashboard,\nwatch for QDX spike.\n\nNightly batch reconciles,\na brief burst is not alarm,\nlet it pass unpaged.\n\nLook at account service,\nmid-deploy causes false lag too,\nminutes clear it clean.\n\nBacklog proven true,\ndrain the dead-letter processor,\nrestart under NKF.\n\nIt resumes its work,\npicking up the broken thread,\noffset marks its place.\n\nIf checkpoint looks wrong,\ncall the data integrity team,\ndo not restart twice.\n\nSecond restart burns,\nhistory shows it worsens,\npatience saves the queue.",
+      "metrics": {
+        "words": 84,
+        "sentences": 7,
+        "syllables": 129,
+        "mean_sentence_length": 12,
+        "flesch_reading_ease": 64.7
+      },
+      "generated_at": "2026-08-27T21:18:50.865Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.247 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text as a sequence of haiku.\n\nEach haiku has three lines of five, seven, and five syllables. Separate\nconsecutive haiku with a blank line. Use as many haiku as the content needs.\n\nWork through the original in order, so the sequence carries the passage's\nargument from beginning to end. Prefer concrete images to abstractions. Do not\nadd a title, a number, or any commentary.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text as a sequence of haiku.\n\nEach haiku has three lines of five, seven, and five syllables. Separate\nconsecutive haiku with a blank line. Use as many haiku as the content needs.\n\nWork through the original in order, so the sequence carries the passage's\nargument from beginning to end. Prefer concrete images to abstractions. Do not\nadd a title, a number, or any commentary.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIf the ingest pipeline backlog alert fires, check the shared order fulfillment event router dashboard for a sustained spike above the QDX-7 threshold before paging the on-call TRV owner, since a brief burst during the nightly batch reconciliation window is expected and should not trigger escalation on its own. Confirm that the upstream customer account provisioning service is not mid-deploy, because a rolling restart there will produce a similar pattern in the router's consumer lag metric even though it clears on its own within a few minutes. Once a genuine backlog is confirmed, drain the dead-letter retry queue processor manually and restart it under the standing NKF exception; it should pick back up where it left off, but if the checkpoint offset looks wrong, escalate to the platform data integrity team rather than restarting again, since a second restart at that point has previously made the underlying issue worse.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 781,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 234,
+          "output_tokens_details": {
+            "thinking_tokens": 23
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 781,
+              "output_tokens": 234,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.005123,
+        "duration_ms": 4752,
+        "session_id": "0acf6400-6316-46e5-8b6b-4f4d89db00cd",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1136,
+            "outputTokens": 17,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001221,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 781,
+            "outputTokens": 234,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.003902,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": null
+      },
+      "error": null
+    },
+    {
+      "run_index": 2,
+      "ok": true,
+      "text": "Backlog alert screams—\ncheck the router dashboard first,\npast QDX-7 line.\n\nNightly batch churning,\na brief spike is just the norm,\nno page needed yet.\n\nWatch provisioning,\nrolling restart mimics lag,\nclears in minutes' time.\n\nBacklog now confirmed,\ndrain the dead-letter queue by hand,\nrestart under NKF.\n\nIt should resume clean,\nbut if checkpoint offsets lie,\ndo not restart twice.\n\nCall the data team,\none more restart made it worse—\npatience saves the pipe.",
+      "metrics": {
+        "words": 74,
+        "sentences": 6,
+        "syllables": 104,
+        "mean_sentence_length": 12.3,
+        "flesch_reading_ease": 75.4
+      },
+      "generated_at": "2026-08-27T21:18:50.399Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.247 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text as a sequence of haiku.\n\nEach haiku has three lines of five, seven, and five syllables. Separate\nconsecutive haiku with a blank line. Use as many haiku as the content needs.\n\nWork through the original in order, so the sequence carries the passage's\nargument from beginning to end. Prefer concrete images to abstractions. Do not\nadd a title, a number, or any commentary.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text as a sequence of haiku.\n\nEach haiku has three lines of five, seven, and five syllables. Separate\nconsecutive haiku with a blank line. Use as many haiku as the content needs.\n\nWork through the original in order, so the sequence carries the passage's\nargument from beginning to end. Prefer concrete images to abstractions. Do not\nadd a title, a number, or any commentary.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIf the ingest pipeline backlog alert fires, check the shared order fulfillment event router dashboard for a sustained spike above the QDX-7 threshold before paging the on-call TRV owner, since a brief burst during the nightly batch reconciliation window is expected and should not trigger escalation on its own. Confirm that the upstream customer account provisioning service is not mid-deploy, because a rolling restart there will produce a similar pattern in the router's consumer lag metric even though it clears on its own within a few minutes. Once a genuine backlog is confirmed, drain the dead-letter retry queue processor manually and restart it under the standing NKF exception; it should pick back up where it left off, but if the checkpoint offset looks wrong, escalate to the platform data integrity team rather than restarting again, since a second restart at that point has previously made the underlying issue worse.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 781,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 203,
+          "output_tokens_details": {
+            "thinking_tokens": 19
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 781,
+              "output_tokens": 203,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0048130000000000004,
+        "duration_ms": 3609,
+        "session_id": "da335d5f-3f10-4559-8c9a-7e1d4419cb76",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1136,
+            "outputTokens": 17,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001221,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 781,
+            "outputTokens": 203,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.003592,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": null
+      },
+      "error": null
+    },
+    {
+      "run_index": 3,
+      "ok": true,
+      "text": "Backlog alert rings—\nwatch the router's dashboard first,\nwait for QDX spike.\n\nNightly batch reconciles,\nbursts come and pass like weather,\nno need yet to page.\n\nCheck if accounts serve\nmid-deploy, rolling restart—\nlag clears on its own.\n\nBacklog proves itself true,\ndrain the dead-letter queue now,\nrestart under NKF.\n\nIt resumes its place,\nunless checkpoint offsets lie—\nthen stop, do not retry.\n\nCall the data team,\nsecond restart bites harder,\npatience saves the pipe.",
+      "metrics": {
+        "words": 75,
+        "sentences": 6,
+        "syllables": 109,
+        "mean_sentence_length": 12.5,
+        "flesch_reading_ease": 71.2
+      },
+      "generated_at": "2026-08-27T21:18:52.757Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.247 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text as a sequence of haiku.\n\nEach haiku has three lines of five, seven, and five syllables. Separate\nconsecutive haiku with a blank line. Use as many haiku as the content needs.\n\nWork through the original in order, so the sequence carries the passage's\nargument from beginning to end. Prefer concrete images to abstractions. Do not\nadd a title, a number, or any commentary.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text as a sequence of haiku.\n\nEach haiku has three lines of five, seven, and five syllables. Separate\nconsecutive haiku with a blank line. Use as many haiku as the content needs.\n\nWork through the original in order, so the sequence carries the passage's\nargument from beginning to end. Prefer concrete images to abstractions. Do not\nadd a title, a number, or any commentary.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIf the ingest pipeline backlog alert fires, check the shared order fulfillment event router dashboard for a sustained spike above the QDX-7 threshold before paging the on-call TRV owner, since a brief burst during the nightly batch reconciliation window is expected and should not trigger escalation on its own. Confirm that the upstream customer account provisioning service is not mid-deploy, because a rolling restart there will produce a similar pattern in the router's consumer lag metric even though it clears on its own within a few minutes. Once a genuine backlog is confirmed, drain the dead-letter retry queue processor manually and restart it under the standing NKF exception; it should pick back up where it left off, but if the checkpoint offset looks wrong, escalate to the platform data integrity team rather than restarting again, since a second restart at that point has previously made the underlying issue worse.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 781,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 187,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 781,
+              "output_tokens": 187,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.004653,
+        "duration_ms": 3867,
+        "session_id": "795abe2a-8402-4425-82da-5e35f1f1c638",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1136,
+            "outputTokens": 17,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001221,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 781,
+            "outputTokens": 187,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.003432,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": null
+      },
+      "error": null
+    }
+  ]
+}

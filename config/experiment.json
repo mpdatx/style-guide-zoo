@@ -1,0 +1,13 @@
+{
+  "model": "claude-sonnet-5",
+  "runs_per_cell": 5,
+  "prompt_template": "prompts/rewrite-v1.md",
+  "concurrency": 4,
+  "max_budget_usd": 25,
+  "cli_flags": [
+    "--safe-mode",
+    "--no-session-persistence",
+    "--strict-mcp-config",
+    "--disable-slash-commands"
+  ]
+}

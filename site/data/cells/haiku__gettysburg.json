@@ -1,0 +1,330 @@
+{
+  "guide_id": "haiku",
+  "passage_id": "gettysburg",
+  "runs": [
+    {
+      "run_index": 1,
+      "ok": true,
+      "text": "Eighty-seven years,\nfathers built a nation here,\nfreedom's equal claim.\n\nNow war tests the ground,\nwhether such a land can last—\nwe stand where they fell.\n\nWe came here to give\nresting earth to fallen sons,\nfitting, right, and just.\n\nYet we cannot bless\nthis soil the brave already\nsanctified with blood.\n\nFew will mark our words,\nnone forget what soldiers did,\nsilent field speaks loud.\n\nLiving hands must lift\nthe unfinished work of dead,\ncarry it onward.\n\nFrom these graves we draw\ndeeper love for what they gave,\nlast full measure spent.\n\nLet their deaths not fade\ninto empty, wasted dust—\nmeaning must remain.\n\nNation under God,\nborn again in freedom's light,\nrises from this field.\n\nGovernment of all,\nby the people, for the people,\nshall not leave the earth.",
+      "metrics": {
+        "words": 131,
+        "sentences": 10,
+        "syllables": 173,
+        "mean_sentence_length": 13.1,
+        "flesch_reading_ease": 81.8
+      },
+      "generated_at": "2026-08-27T21:13:11.865Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.247 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text as a sequence of haiku.\n\nEach haiku has three lines of five, seven, and five syllables. Separate\nconsecutive haiku with a blank line. Use as many haiku as the content needs.\n\nWork through the original in order, so the sequence carries the passage's\nargument from beginning to end. Prefer concrete images to abstractions. Do not\nadd a title, a number, or any commentary.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text as a sequence of haiku.\n\nEach haiku has three lines of five, seven, and five syllables. Separate\nconsecutive haiku with a blank line. Use as many haiku as the content needs.\n\nWork through the original in order, so the sequence carries the passage's\nargument from beginning to end. Prefer concrete images to abstractions. Do not\nadd a title, a number, or any commentary.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nFour score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.\n\nNow we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.\n\nBut, in a larger sense, we can not dedicate -- we can not consecrate -- we can not hallow -- this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us -- that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion -- that we here highly resolve that these dead shall not have died in vain -- that this nation, under God, shall have a new birth of freedom -- and that government of the people, by the people, for the people, shall not perish from the earth.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 935,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 298,
+          "output_tokens_details": {
+            "thinking_tokens": 22
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 935,
+              "output_tokens": 298,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.006199,
+        "duration_ms": 6322,
+        "session_id": "b62e3a8b-8b48-424b-a046-c20ab4554563",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1274,
+            "outputTokens": 15,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001349,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 935,
+            "outputTokens": 298,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.00485,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": null
+      },
+      "error": null
+    },
+    {
+      "run_index": 2,
+      "ok": true,
+      "text": "Eighty-seven years,\nfathers built a young nation—\nfreedom's first true breath.\n\nNow war tests the land,\nwhether such a nation forged\ncan stand through the years.\n\nWe walk this battle-field,\ncome to give a resting place\nto those who fell here.\n\nYet we cannot bless\nthis ground beyond what the dead\nalready have blessed.\n\nFew will mark our words,\nbut none forget the brave deeds\nsoldiers gave in blood.\n\nOurs is the labor\nleft unfinished by their hands—\nwe must carry on.\n\nFrom these graves we draw\ndeeper love for their lost cause,\nlest they die in vain.\n\nLet freedom rise new\nunder God, and let this rule—\nof the people—live.",
+      "metrics": {
+        "words": 111,
+        "sentences": 8,
+        "syllables": 141,
+        "mean_sentence_length": 13.9,
+        "flesch_reading_ease": 85.3
+      },
+      "generated_at": "2026-08-27T21:18:47.341Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.247 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text as a sequence of haiku.\n\nEach haiku has three lines of five, seven, and five syllables. Separate\nconsecutive haiku with a blank line. Use as many haiku as the content needs.\n\nWork through the original in order, so the sequence carries the passage's\nargument from beginning to end. Prefer concrete images to abstractions. Do not\nadd a title, a number, or any commentary.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text as a sequence of haiku.\n\nEach haiku has three lines of five, seven, and five syllables. Separate\nconsecutive haiku with a blank line. Use as many haiku as the content needs.\n\nWork through the original in order, so the sequence carries the passage's\nargument from beginning to end. Prefer concrete images to abstractions. Do not\nadd a title, a number, or any commentary.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nFour score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.\n\nNow we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.\n\nBut, in a larger sense, we can not dedicate -- we can not consecrate -- we can not hallow -- this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us -- that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion -- that we here highly resolve that these dead shall not have died in vain -- that this nation, under God, shall have a new birth of freedom -- and that government of the people, by the people, for the people, shall not perish from the earth.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 935,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 223,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 935,
+              "output_tokens": 223,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.005444,
+        "duration_ms": 4909,
+        "session_id": "a7115174-a579-4b40-8945-179a42d14e1f",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1274,
+            "outputTokens": 14,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001344,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 935,
+            "outputTokens": 223,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0041,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": null
+      },
+      "error": null
+    },
+    {
+      "run_index": 3,
+      "ok": true,
+      "text": "Eighty-seven years,\nfathers built a nation here—\nfreedom, all men equal.\n\nNow war tests the claim,\nwhether such a land can last,\nwe stand where blood soaked.\n\nWe came to give ground\nwhere fallen soldiers now rest,\nfitting to be done.\n\nYet we cannot bless\nthis earth beyond what they gave—\ntheir deaths made it holy.\n\nFew will mark our words,\nnone forget what they did here,\nsilent grass remembers.\n\nLet us take their fire,\nfinish what their hands began,\ncarry on the cause.\n\nFrom these honored dead\nnew devotion rises up,\ntheir loss not in vain.\n\nNation reborn free,\ngovernment of the people—\nshall not leave the earth.",
+      "metrics": {
+        "words": 109,
+        "sentences": 8,
+        "syllables": 140,
+        "mean_sentence_length": 13.6,
+        "flesch_reading_ease": 84.3
+      },
+      "generated_at": "2026-08-27T21:18:49.788Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.247 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text as a sequence of haiku.\n\nEach haiku has three lines of five, seven, and five syllables. Separate\nconsecutive haiku with a blank line. Use as many haiku as the content needs.\n\nWork through the original in order, so the sequence carries the passage's\nargument from beginning to end. Prefer concrete images to abstractions. Do not\nadd a title, a number, or any commentary.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text as a sequence of haiku.\n\nEach haiku has three lines of five, seven, and five syllables. Separate\nconsecutive haiku with a blank line. Use as many haiku as the content needs.\n\nWork through the original in order, so the sequence carries the passage's\nargument from beginning to end. Prefer concrete images to abstractions. Do not\nadd a title, a number, or any commentary.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nFour score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.\n\nNow we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.\n\nBut, in a larger sense, we can not dedicate -- we can not consecrate -- we can not hallow -- this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us -- that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion -- that we here highly resolve that these dead shall not have died in vain -- that this nation, under God, shall have a new birth of freedom -- and that government of the people, by the people, for the people, shall not perish from the earth.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 935,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 248,
+          "output_tokens_details": {
+            "thinking_tokens": 23
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 935,
+              "output_tokens": 248,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.005698999999999999,
+        "duration_ms": 4744,
+        "session_id": "2febb0cc-8780-47ba-aefc-1448f5919209",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1274,
+            "outputTokens": 15,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001349,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 935,
+            "outputTokens": 248,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.00435,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": null
+      },
+      "error": null
+    }
+  ]
+}

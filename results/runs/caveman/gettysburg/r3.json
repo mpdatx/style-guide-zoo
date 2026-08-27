@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "run_id": "caveman__gettysburg__r3",
+  "run_index": 3,
+  "generated_at": "2026-08-27T21:17:22.514Z",
+  "guide": {
+    "id": "caveman",
+    "source_hash": "sha256:800e9165720dad2922c7b5b973a04ff35b5386fb6cee4376282a03af1b5bf13b"
+  },
+  "passage": {
+    "id": "gettysburg",
+    "source_hash": "sha256:4731c9e7d51935b8f393d05607c5c5f42a91c18f839bdf85a4dcf593d1fb3d5c"
+  },
+  "prompt_template": {
+    "id": "rewrite-v1",
+    "source_hash": "sha256:6c90fb9df63501ad20b39afc1902f70a6b1a13da3000a29ff3c527a519c057f4"
+  },
+  "request": {
+    "backend": "claude-code-cli",
+    "cli_version": "2.1.247 (Claude Code)",
+    "model_requested": "claude-sonnet-5",
+    "argv": [
+      "-p",
+      "--safe-mode",
+      "--no-session-persistence",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--tools",
+      "",
+      "--model",
+      "claude-sonnet-5",
+      "--system-prompt",
+      "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+      "--output-format",
+      "json",
+      "--max-budget-usd",
+      "25"
+    ],
+    "system_prompt": "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+    "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nFour score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.\n\nNow we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.\n\nBut, in a larger sense, we can not dedicate -- we can not consecrate -- we can not hallow -- this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us -- that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion -- that we here highly resolve that these dead shall not have died in vain -- that this nation, under God, shall have a new birth of freedom -- and that government of the people, by the people, for the people, shall not perish from the earth.\n</passage>"
+  },
+  "response": {
+    "ok": true,
+    "text": "Long time back, eighty seven winters gone, our fathers make new tribe on this land. They plant it in Freedom. They say all men born same, no man above other man.\n\nNow big war comes. Tribe fights tribe. This war test one thing: can tribe like ours, born this way, stand strong long time. We stand on big battle ground of this war. We come give piece of this ground to men who die here so tribe can live. This right thing, we do it.\n\nBut big-think way, we cannot give this ground. We cannot make it holy. We cannot bless it. Brave men, some live, some dead, they fight here. They already make ground holy. Our small words add nothing, take nothing away. World not remember words we speak here. World not forget what these men do here. We living men, we must finish work. Dead men start work, fight hard, push it far. We must give our hands to big job still ahead. We look at these honored dead, we take more fire in heart for same cause they die for. We stand firm: these men not die for nothing. This tribe, under Sky Father, get new birth of freedom. Rule by people, made by people, for people — this not die, not vanish from earth.",
+    "model_reported": "claude-sonnet-5",
+    "model_usage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 1274,
+        "outputTokens": 15,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.001349,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-sonnet-5": {
+        "inputTokens": 957,
+        "outputTokens": 359,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.005504,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "usage": {
+      "input_tokens": 957,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 359,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 957,
+          "output_tokens": 359,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 0.006853,
+    "duration_ms": 6911,
+    "session_id": "6c4220c9-f828-462a-9588-6c7c7e31c6e0",
+    "num_turns": 1,
+    "attempts": 1
+  }
+}

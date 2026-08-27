@@ -1,0 +1,330 @@
+{
+  "guide_id": "asd-ste100",
+  "passage_id": "runbook",
+  "runs": [
+    {
+      "run_index": 1,
+      "ok": true,
+      "text": "If the ingest pipeline backlog alert fires, follow these steps.\n\nCheck the shared order fulfillment event router dashboard. Look for a sustained spike above the QDX-7 threshold.\n\nA brief burst during the nightly batch reconciliation window is normal. Do not page the on-call TRV owner for this normal burst alone.\n\nConfirm that the upstream customer account provisioning service is not in mid-deploy. A rolling restart of this service can cause a similar pattern in the router's consumer lag metric. This pattern clears on its own within a few minutes.\n\nIf you confirm a genuine backlog, do the following steps. Drain the dead-letter retry queue processor manually. Restart the processor under the standing NKF exception. The processor should resume from where it stopped.\n\nCheck the checkpoint offset after the restart. If the checkpoint offset looks wrong, do not restart the processor again. Escalate the issue to the platform data integrity team instead. A second restart in this case has made the underlying issue worse in the past.",
+      "metrics": {
+        "words": 166,
+        "sentences": 16,
+        "syllables": 266,
+        "mean_sentence_length": 10.4,
+        "flesch_reading_ease": 60.7
+      },
+      "generated_at": "2026-08-27T21:03:46.397Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.247 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following the principles of Simplified Technical English.\n\nUse one topic per sentence. Keep procedural sentences to twenty words or\nfewer and descriptive sentences to twenty-five words or fewer. Keep paragraphs\nto six sentences or fewer.\n\nUse the active voice. Address the reader directly with the imperative for\ninstructions. Use only the simple present, simple past, and simple future\ntense.\n\nUse one word for one meaning throughout, and one meaning for one word: never\nvary a term for elegance. Prefer short, common words over long or technical\nones. Do not use noun clusters of more than three words. Write out what a\npronoun refers to whenever there is any doubt.\n\nDo not use slang, idioms, or metaphors.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following the principles of Simplified Technical English.\n\nUse one topic per sentence. Keep procedural sentences to twenty words or\nfewer and descriptive sentences to twenty-five words or fewer. Keep paragraphs\nto six sentences or fewer.\n\nUse the active voice. Address the reader directly with the imperative for\ninstructions. Use only the simple present, simple past, and simple future\ntense.\n\nUse one word for one meaning throughout, and one meaning for one word: never\nvary a term for elegance. Prefer short, common words over long or technical\nones. Do not use noun clusters of more than three words. Write out what a\npronoun refers to whenever there is any doubt.\n\nDo not use slang, idioms, or metaphors.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIf the ingest pipeline backlog alert fires, check the shared order fulfillment event router dashboard for a sustained spike above the QDX-7 threshold before paging the on-call TRV owner, since a brief burst during the nightly batch reconciliation window is expected and should not trigger escalation on its own. Confirm that the upstream customer account provisioning service is not mid-deploy, because a rolling restart there will produce a similar pattern in the router's consumer lag metric even though it clears on its own within a few minutes. Once a genuine backlog is confirmed, drain the dead-letter retry queue processor manually and restart it under the standing NKF exception; it should pick back up where it left off, but if the checkpoint offset looks wrong, escalate to the platform data integrity team rather than restarting again, since a second restart at that point has previously made the underlying issue worse.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 894,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 343,
+          "output_tokens_details": {
+            "thinking_tokens": 13
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 894,
+              "output_tokens": 343,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.006439,
+        "duration_ms": 3631,
+        "session_id": "1d8454e9-eeea-4b46-aaa5-5a329f9f8444",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1136,
+            "outputTokens": 17,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001221,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 894,
+            "outputTokens": 343,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.005218,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": null
+      },
+      "error": null
+    },
+    {
+      "run_index": 2,
+      "ok": true,
+      "text": "Follow these steps if the ingest pipeline backlog alert fires.\n\nCheck the shared order fulfillment event router dashboard first. Look for a sustained spike above the QDX-7 threshold. A brief burst during the nightly batch reconciliation window is normal. Do not page the on-call TRV owner for a normal burst.\n\nConfirm that the upstream customer account provisioning service is not in mid-deploy. A rolling restart of that service can cause a similar pattern in the router's consumer lag metric. This pattern clears on its own within a few minutes. Do not treat this pattern as a real backlog.\n\nIf you confirm a genuine backlog, follow these steps:\n\n1. Drain the dead-letter retry queue processor manually.\n2. Restart the processor under the standing NKF exception.\n3. Check that the processor resumes from its last checkpoint.\n\nIf the checkpoint offset looks correct, the processor will continue normally.\n\nIf the checkpoint offset looks wrong, do not restart the processor again. Escalate the issue to the platform data integrity team instead. A second restart at this point has made the underlying issue worse in the past.",
+      "metrics": {
+        "words": 182,
+        "sentences": 19,
+        "syllables": 284,
+        "mean_sentence_length": 9.6,
+        "flesch_reading_ease": 65.1
+      },
+      "generated_at": "2026-08-27T21:03:47.018Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.247 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following the principles of Simplified Technical English.\n\nUse one topic per sentence. Keep procedural sentences to twenty words or\nfewer and descriptive sentences to twenty-five words or fewer. Keep paragraphs\nto six sentences or fewer.\n\nUse the active voice. Address the reader directly with the imperative for\ninstructions. Use only the simple present, simple past, and simple future\ntense.\n\nUse one word for one meaning throughout, and one meaning for one word: never\nvary a term for elegance. Prefer short, common words over long or technical\nones. Do not use noun clusters of more than three words. Write out what a\npronoun refers to whenever there is any doubt.\n\nDo not use slang, idioms, or metaphors.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following the principles of Simplified Technical English.\n\nUse one topic per sentence. Keep procedural sentences to twenty words or\nfewer and descriptive sentences to twenty-five words or fewer. Keep paragraphs\nto six sentences or fewer.\n\nUse the active voice. Address the reader directly with the imperative for\ninstructions. Use only the simple present, simple past, and simple future\ntense.\n\nUse one word for one meaning throughout, and one meaning for one word: never\nvary a term for elegance. Prefer short, common words over long or technical\nones. Do not use noun clusters of more than three words. Write out what a\npronoun refers to whenever there is any doubt.\n\nDo not use slang, idioms, or metaphors.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIf the ingest pipeline backlog alert fires, check the shared order fulfillment event router dashboard for a sustained spike above the QDX-7 threshold before paging the on-call TRV owner, since a brief burst during the nightly batch reconciliation window is expected and should not trigger escalation on its own. Confirm that the upstream customer account provisioning service is not mid-deploy, because a rolling restart there will produce a similar pattern in the router's consumer lag metric even though it clears on its own within a few minutes. Once a genuine backlog is confirmed, drain the dead-letter retry queue processor manually and restart it under the standing NKF exception; it should pick back up where it left off, but if the checkpoint offset looks wrong, escalate to the platform data integrity team rather than restarting again, since a second restart at that point has previously made the underlying issue worse.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 894,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 385,
+          "output_tokens_details": {
+            "thinking_tokens": 16
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 894,
+              "output_tokens": 385,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.006859,
+        "duration_ms": 4073,
+        "session_id": "d9ac38b0-0282-4a07-90f8-ba9b46dc8d19",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1136,
+            "outputTokens": 17,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001221,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 894,
+            "outputTokens": 385,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.005638,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": null
+      },
+      "error": null
+    },
+    {
+      "run_index": 3,
+      "ok": true,
+      "text": "If the ingest pipeline backlog alert fires, do this first. Check the shared order fulfillment event router dashboard.\n\nLook for a sustained spike above the QDX-7 threshold. A brief burst during the nightly batch reconciliation window is normal. Do not page the on-call TRV owner for a brief burst alone.\n\nConfirm that the upstream customer account provisioning service is not in mid-deploy. A rolling restart of that service can cause a similar pattern in the router's consumer lag metric. This pattern clears on its own within a few minutes.\n\nAfter you confirm a genuine backlog, drain the dead-letter retry queue processor manually. Restart the processor under the standing NKF exception. The processor should resume from where it stopped.\n\nIf the checkpoint offset looks wrong, do not restart the processor again. Escalate the issue to the platform data integrity team instead. A second restart in this case has made the underlying issue worse in the past.",
+      "metrics": {
+        "words": 155,
+        "sentences": 14,
+        "syllables": 248,
+        "mean_sentence_length": 11.1,
+        "flesch_reading_ease": 60.2
+      },
+      "generated_at": "2026-08-27T21:17:24.340Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.247 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following the principles of Simplified Technical English.\n\nUse one topic per sentence. Keep procedural sentences to twenty words or\nfewer and descriptive sentences to twenty-five words or fewer. Keep paragraphs\nto six sentences or fewer.\n\nUse the active voice. Address the reader directly with the imperative for\ninstructions. Use only the simple present, simple past, and simple future\ntense.\n\nUse one word for one meaning throughout, and one meaning for one word: never\nvary a term for elegance. Prefer short, common words over long or technical\nones. Do not use noun clusters of more than three words. Write out what a\npronoun refers to whenever there is any doubt.\n\nDo not use slang, idioms, or metaphors.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following the principles of Simplified Technical English.\n\nUse one topic per sentence. Keep procedural sentences to twenty words or\nfewer and descriptive sentences to twenty-five words or fewer. Keep paragraphs\nto six sentences or fewer.\n\nUse the active voice. Address the reader directly with the imperative for\ninstructions. Use only the simple present, simple past, and simple future\ntense.\n\nUse one word for one meaning throughout, and one meaning for one word: never\nvary a term for elegance. Prefer short, common words over long or technical\nones. Do not use noun clusters of more than three words. Write out what a\npronoun refers to whenever there is any doubt.\n\nDo not use slang, idioms, or metaphors.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIf the ingest pipeline backlog alert fires, check the shared order fulfillment event router dashboard for a sustained spike above the QDX-7 threshold before paging the on-call TRV owner, since a brief burst during the nightly batch reconciliation window is expected and should not trigger escalation on its own. Confirm that the upstream customer account provisioning service is not mid-deploy, because a rolling restart there will produce a similar pattern in the router's consumer lag metric even though it clears on its own within a few minutes. Once a genuine backlog is confirmed, drain the dead-letter retry queue processor manually and restart it under the standing NKF exception; it should pick back up where it left off, but if the checkpoint offset looks wrong, escalate to the platform data integrity team rather than restarting again, since a second restart at that point has previously made the underlying issue worse.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 894,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 342,
+          "output_tokens_details": {
+            "thinking_tokens": 36
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 894,
+              "output_tokens": 342,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.006429000000000001,
+        "duration_ms": 3660,
+        "session_id": "5db78a5b-a763-46b1-b6b6-c1097b5726d2",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1136,
+            "outputTokens": 17,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001221,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 894,
+            "outputTokens": 342,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.005208000000000001,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": null
+      },
+      "error": null
+    }
+  ]
+}

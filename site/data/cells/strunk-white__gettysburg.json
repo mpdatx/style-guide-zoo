@@ -1,0 +1,330 @@
+{
+  "guide_id": "strunk-white",
+  "passage_id": "gettysburg",
+  "runs": [
+    {
+      "run_index": 1,
+      "ok": true,
+      "text": "Eighty-seven years ago our fathers brought forth on this continent a new nation, conceived in Liberty and dedicated to the proposition that all men are created equal.\n\nNow we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We meet on a great battle-field of that war. We have come to dedicate a portion of that field as a final resting place for those who gave their lives that that nation might live. This we should do.\n\nBut, in a larger sense, we cannot dedicate, we cannot consecrate, we cannot hallow this ground. The brave men, living and dead, who struggled here have consecrated it, far above our power to add or detract. The world will little note nor long remember what we say here, but it will never forget what they did here. The living must dedicate ourselves to the unfinished work which they who fought here have thus far so nobly advanced. We must dedicate ourselves to the great task remaining before us: that from these honored dead we take increased devotion to the cause for which they gave the last full measure of devotion; that we here resolve that these dead shall not have died in vain; that this nation, under God, shall have a new birth of freedom; and that government of the people, by the people, for the people, shall not perish from the earth.",
+      "metrics": {
+        "words": 243,
+        "sentences": 10,
+        "syllables": 345,
+        "mean_sentence_length": 24.3,
+        "flesch_reading_ease": 62.1
+      },
+      "generated_at": "2026-08-27T21:12:56.769Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.247 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following the rules of The Elements of Style.\n\nOmit needless words. Every word must tell. Use the active voice. Put\nstatements in positive form: say what something is, not what it is not.\n\nUse definite, specific, concrete language in preference to the vague and\nabstract. Keep related words together. Express coordinate ideas in parallel\nform. Place the emphatic words of a sentence at the end.\n\nMake the paragraph the unit of composition, each with a clear topic sentence.\nWrite with nouns and verbs rather than adjectives and adverbs. Avoid\nqualifiers such as \"rather\", \"very\", and \"little\".",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following the rules of The Elements of Style.\n\nOmit needless words. Every word must tell. Use the active voice. Put\nstatements in positive form: say what something is, not what it is not.\n\nUse definite, specific, concrete language in preference to the vague and\nabstract. Keep related words together. Express coordinate ideas in parallel\nform. Place the emphatic words of a sentence at the end.\n\nMake the paragraph the unit of composition, each with a clear topic sentence.\nWrite with nouns and verbs rather than adjectives and adverbs. Avoid\nqualifiers such as \"rather\", \"very\", and \"little\".",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nFour score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.\n\nNow we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.\n\nBut, in a larger sense, we can not dedicate -- we can not consecrate -- we can not hallow -- this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us -- that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion -- that we here highly resolve that these dead shall not have died in vain -- that this nation, under God, shall have a new birth of freedom -- and that government of the people, by the people, for the people, shall not perish from the earth.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 1007,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 402,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 1007,
+              "output_tokens": 402,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.007383000000000001,
+        "duration_ms": 3888,
+        "session_id": "58d494b8-e257-45d4-aef6-e02b04454f60",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1274,
+            "outputTokens": 15,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001349,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 1007,
+            "outputTokens": 402,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.006034,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": null
+      },
+      "error": null
+    },
+    {
+      "run_index": 2,
+      "ok": true,
+      "text": "Eighty-seven years ago our fathers brought forth on this continent a new nation, conceived in Liberty and dedicated to the proposition that all men are created equal.\n\nNow a great civil war tests whether that nation, or any nation so conceived and so dedicated, can long endure. We meet on a great battle-field of that war. We come to dedicate a portion of that field as a final resting place for those who gave their lives that the nation might live. This we may fitly do.\n\nBut, in a larger sense, we cannot dedicate, we cannot consecrate, we cannot hallow this ground. The brave men, living and dead, who struggled here have consecrated it, far beyond our poor power to add or detract. The world will little note nor long remember what we say here, but it can never forget what they did here. Let us, the living, dedicate ourselves instead to the unfinished work which they have thus far so nobly advanced. Let us here dedicate ourselves to the great task remaining before us: that from these honored dead we take increased devotion to the cause for which they gave the last full measure of devotion; that we here highly resolve that these dead shall not have died in vain; that this nation, under God, shall have a new birth of freedom; and that government of the people, by the people, for the people, shall not perish from the earth.",
+      "metrics": {
+        "words": 241,
+        "sentences": 10,
+        "syllables": 342,
+        "mean_sentence_length": 24.1,
+        "flesch_reading_ease": 62.3
+      },
+      "generated_at": "2026-08-27T21:17:41.533Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.247 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following the rules of The Elements of Style.\n\nOmit needless words. Every word must tell. Use the active voice. Put\nstatements in positive form: say what something is, not what it is not.\n\nUse definite, specific, concrete language in preference to the vague and\nabstract. Keep related words together. Express coordinate ideas in parallel\nform. Place the emphatic words of a sentence at the end.\n\nMake the paragraph the unit of composition, each with a clear topic sentence.\nWrite with nouns and verbs rather than adjectives and adverbs. Avoid\nqualifiers such as \"rather\", \"very\", and \"little\".",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following the rules of The Elements of Style.\n\nOmit needless words. Every word must tell. Use the active voice. Put\nstatements in positive form: say what something is, not what it is not.\n\nUse definite, specific, concrete language in preference to the vague and\nabstract. Keep related words together. Express coordinate ideas in parallel\nform. Place the emphatic words of a sentence at the end.\n\nMake the paragraph the unit of composition, each with a clear topic sentence.\nWrite with nouns and verbs rather than adjectives and adverbs. Avoid\nqualifiers such as \"rather\", \"very\", and \"little\".",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nFour score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.\n\nNow we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.\n\nBut, in a larger sense, we can not dedicate -- we can not consecrate -- we can not hallow -- this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us -- that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion -- that we here highly resolve that these dead shall not have died in vain -- that this nation, under God, shall have a new birth of freedom -- and that government of the people, by the people, for the people, shall not perish from the earth.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 1007,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 407,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 1007,
+              "output_tokens": 407,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.007433,
+        "duration_ms": 4155,
+        "session_id": "640d5dd5-d476-41f5-b49e-d5417065b285",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1274,
+            "outputTokens": 15,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001349,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 1007,
+            "outputTokens": 407,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.006084000000000001,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": null
+      },
+      "error": null
+    },
+    {
+      "run_index": 3,
+      "ok": true,
+      "text": "Eighty-seven years ago our fathers brought forth on this continent a new nation, conceived in Liberty and dedicated to the proposition that all men are created equal.\n\nNow we fight a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We meet on a great battle-field of that war. We come to dedicate a portion of that field as a final resting place for those who gave their lives here that the nation might live. This we may fitly do.\n\nBut in a larger sense we cannot dedicate, we cannot consecrate, we cannot hallow this ground. The brave men, living and dead, who struggled here have consecrated it far beyond our power to add or detract. The world will little note nor long remember what we say here, but it can never forget what they did here. The living must instead dedicate themselves to the unfinished work the dead have thus far so nobly advanced. We must dedicate ourselves to the great task remaining before us: that from these honored dead we take increased devotion to the cause for which they gave the last full measure of devotion; that we here highly resolve these dead shall not have died in vain; that this nation, under God, shall have a new birth of freedom; and that government of the people, by the people, for the people, shall not perish from the earth.",
+      "metrics": {
+        "words": 240,
+        "sentences": 10,
+        "syllables": 342,
+        "mean_sentence_length": 24,
+        "flesch_reading_ease": 61.9
+      },
+      "generated_at": "2026-08-27T21:17:41.690Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.247 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following the rules of The Elements of Style.\n\nOmit needless words. Every word must tell. Use the active voice. Put\nstatements in positive form: say what something is, not what it is not.\n\nUse definite, specific, concrete language in preference to the vague and\nabstract. Keep related words together. Express coordinate ideas in parallel\nform. Place the emphatic words of a sentence at the end.\n\nMake the paragraph the unit of composition, each with a clear topic sentence.\nWrite with nouns and verbs rather than adjectives and adverbs. Avoid\nqualifiers such as \"rather\", \"very\", and \"little\".",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following the rules of The Elements of Style.\n\nOmit needless words. Every word must tell. Use the active voice. Put\nstatements in positive form: say what something is, not what it is not.\n\nUse definite, specific, concrete language in preference to the vague and\nabstract. Keep related words together. Express coordinate ideas in parallel\nform. Place the emphatic words of a sentence at the end.\n\nMake the paragraph the unit of composition, each with a clear topic sentence.\nWrite with nouns and verbs rather than adjectives and adverbs. Avoid\nqualifiers such as \"rather\", \"very\", and \"little\".",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nFour score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.\n\nNow we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.\n\nBut, in a larger sense, we can not dedicate -- we can not consecrate -- we can not hallow -- this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us -- that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion -- that we here highly resolve that these dead shall not have died in vain -- that this nation, under God, shall have a new birth of freedom -- and that government of the people, by the people, for the people, shall not perish from the earth.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 1007,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 400,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 1007,
+              "output_tokens": 400,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.007373,
+        "duration_ms": 3976,
+        "session_id": "29a89900-b9d0-4a6f-a988-c890e5f27e2d",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1274,
+            "outputTokens": 17,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001359,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 1007,
+            "outputTokens": 400,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.006014,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": null
+      },
+      "error": null
+    }
+  ]
+}

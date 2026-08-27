@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "run_id": "corporate-buzzword__gettysburg__r3",
+  "run_index": 3,
+  "generated_at": "2026-08-27T21:18:25.098Z",
+  "guide": {
+    "id": "corporate-buzzword",
+    "source_hash": "sha256:63d30bd0db1e6460564f750cdc0d91eb9e13b210374e142fac022e4f2e258382"
+  },
+  "passage": {
+    "id": "gettysburg",
+    "source_hash": "sha256:4731c9e7d51935b8f393d05607c5c5f42a91c18f839bdf85a4dcf593d1fb3d5c"
+  },
+  "prompt_template": {
+    "id": "rewrite-v1",
+    "source_hash": "sha256:6c90fb9df63501ad20b39afc1902f70a6b1a13da3000a29ff3c527a519c057f4"
+  },
+  "request": {
+    "backend": "claude-code-cli",
+    "cli_version": "2.1.247 (Claude Code)",
+    "model_requested": "claude-sonnet-5",
+    "argv": [
+      "-p",
+      "--safe-mode",
+      "--no-session-persistence",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--tools",
+      "",
+      "--model",
+      "claude-sonnet-5",
+      "--system-prompt",
+      "Rewrite the text in dense corporate business jargon.\n\nReplace concrete nouns with abstractions. Turn verbs into nominalisations:\nprefer \"the utilisation of\" to \"using\". Use the passive voice so that no\nsentence names who acts. Reach for \"leverage\", \"synergy\", \"stakeholder\",\n\"alignment\", \"operationalise\", \"value-add\", and \"at scale\".\n\nHedge every claim. Add qualifying clauses that commit to nothing.\n\nKeep the underlying facts of the original technically present, however deeply\nburied. This column exists as a demonstration of what these habits cost.",
+      "--output-format",
+      "json",
+      "--max-budget-usd",
+      "25"
+    ],
+    "system_prompt": "Rewrite the text in dense corporate business jargon.\n\nReplace concrete nouns with abstractions. Turn verbs into nominalisations:\nprefer \"the utilisation of\" to \"using\". Use the passive voice so that no\nsentence names who acts. Reach for \"leverage\", \"synergy\", \"stakeholder\",\n\"alignment\", \"operationalise\", \"value-add\", and \"at scale\".\n\nHedge every claim. Add qualifying clauses that commit to nothing.\n\nKeep the underlying facts of the original technically present, however deeply\nburied. This column exists as a demonstration of what these habits cost.",
+    "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nFour score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.\n\nNow we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.\n\nBut, in a larger sense, we can not dedicate -- we can not consecrate -- we can not hallow -- this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us -- that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion -- that we here highly resolve that these dead shall not have died in vain -- that this nation, under God, shall have a new birth of freedom -- and that government of the people, by the people, for the people, shall not perish from the earth.\n</passage>"
+  },
+  "response": {
+    "ok": true,
+    "text": "It should be noted, with appropriate caveats regarding the reliability of historical periodization, that a timeframe of approximately eighty-seven annual cycles prior to the present reporting period witnessed the operationalisation, by antecedent stakeholders, of a novel governance framework on this continental landmass—an initiative ostensibly grounded in a liberty-oriented value proposition and aligned, at least in principle, to the foundational assumption of universal human parity, though the degree to which this alignment was ever fully actualized remains, perhaps, an open question.\n\nAt the present juncture, a significant internal conflict scenario has been entered into, the purpose of which, if it may be so characterized, is to serve as a stress-test of the long-term viability of said governance framework, or indeed of any comparably conceived framework, at scale. A convening has been undertaken at what might be termed a key operational touchpoint of this conflict. The underlying rationale for this convening is the allocation of a designated portion of this touchpoint toward a legacy-recognition function, pertaining to those stakeholders whose ultimate contribution—it could be argued—facilitated the continued viability of the aforementioned framework. It is felt, with some degree of confidence, that this allocation represents an appropriate and value-additive course of action.\n\nHowever, in a broader and admittedly somewhat ambiguous sense, it cannot be asserted that a genuine dedication, consecration, or hallowing function can be meaningfully operationalised with respect to this touchpoint by the present convening. It might rather be suggested that such consecration has already been effectuated, to an extent exceeding this body's capacity to meaningfully augment or diminish, by those stakeholders—both currently active and no longer active—whose engagement occurred on-site. It is anticipated, though not guaranteed, that broader awareness will not retain significant recall of the specific messaging deployed at this convening; it is, however, considered unlikely that the underlying actions undertaken by said stakeholders will be subject to comparable attrition of institutional memory. It falls, arguably, to those of us presently operative within the ecosystem to reorient our efforts toward the unfinished workstream which these prior contributors have, to a commendable degree, advanced. It could further be suggested that our mandate extends to the broader deliverable still outstanding—namely, that increased devotion be leveraged from the example set by these honored former stakeholders toward the cause to which they allocated their full and final measure of commitment; that a firm resolution be operationalised to the effect that this sacrifice not be rendered non-value-additive; that this framework, contingent upon factors beyond immediate control, undergo a renewed freedom-oriented iteration; and that governance structures characterized by, originating from, and functioning on behalf of the broader stakeholder base not be permitted to lapse from ongoing operational viability.",
+    "model_reported": "claude-sonnet-5",
+    "model_usage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 1274,
+        "outputTokens": 15,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.001349,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-sonnet-5": {
+        "inputTokens": 1000,
+        "outputTokens": 959,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.01159,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "usage": {
+      "input_tokens": 1000,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 959,
+      "output_tokens_details": {
+        "thinking_tokens": 31
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 1000,
+          "output_tokens": 959,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 0.012938999999999999,
+    "duration_ms": 13767,
+    "session_id": "895db31a-c479-4e39-b104-f230df129b9e",
+    "num_turns": 1,
+    "attempts": 1
+  }
+}
