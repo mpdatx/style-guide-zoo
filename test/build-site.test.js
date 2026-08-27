@@ -149,3 +149,42 @@ test('a failed run carries its error and no text', async () => {
   assert.equal(run.text, '');
   assert.equal(run.error.message, 'boom');
 });
+
+test('a run carries stop_reason when present in the record', async () => {
+  const root = await mkdtemp(join(tmpdir(), 'sgz-'));
+  const resultsDir = join(root, 'runs');
+  const outDir = join(root, 'data');
+  await writeRecord(recordPath(resultsDir, 'alpha', 'one', 1), buildRecord({
+    guide: { id: 'alpha', sourceHash: 'sha256:g' },
+    passage: { id: 'one', sourceHash: 'sha256:p' },
+    template,
+    runIndex: 1,
+    generatedAt: '2026-08-26T00:00:00.000Z',
+    request: {
+      backend: 'fake', cli_version: 'fake-1', model_requested: 'm',
+      argv: ['-p'], system_prompt: 'SYS', user_prompt: 'USR'
+    },
+    response: {
+      ok: false,
+      duration_ms: 5,
+      stop_reason: 'refusal',
+      error: { message: 'CLI reported an error (stop_reason: refusal)', stage: 'cli' }
+    }
+  }));
+  await buildSite({ guidesDir: GUIDES, corpusDir: CORPUS, resultsDir, outDir, runsPerCell: 1 });
+  const cell = JSON.parse(
+    await readFile(join(outDir, 'cells', 'alpha__one.json'), 'utf8')
+  );
+  const [run] = cell.runs;
+  assert.equal(run.response.stop_reason, 'refusal');
+});
+
+test('a run without stop_reason defaults to null', async () => {
+  const seed = await seeded();
+  await build(seed);
+  const cell = JSON.parse(
+    await readFile(join(seed.outDir, 'cells', 'alpha__one.json'), 'utf8')
+  );
+  const [run] = cell.runs;
+  assert.equal(run.response.stop_reason, null);
+});

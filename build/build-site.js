@@ -24,7 +24,8 @@ function toRun(record) {
       session_id: record.response?.session_id ?? '',
       num_turns: record.response?.num_turns ?? 0,
       attempts: record.response?.attempts ?? null,
-      model_usage: record.response?.model_usage ?? {}
+      model_usage: record.response?.model_usage ?? {},
+      stop_reason: record.response?.stop_reason ?? null
     },
     error: ok ? null : (record.response?.error ?? { message: 'unknown', stage: 'unknown' })
   };

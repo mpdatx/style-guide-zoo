@@ -105,7 +105,8 @@
             "provider": "firstParty",
             "costBasis": "list"
           }
-        }
+        },
+        "stop_reason": null
       },
       "error": null
     },
@@ -212,7 +213,8 @@
             "provider": "firstParty",
             "costBasis": "list"
           }
-        }
+        },
+        "stop_reason": null
       },
       "error": null
     }

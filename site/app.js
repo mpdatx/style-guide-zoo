@@ -42,6 +42,9 @@ function provenance(run) {
   add('Backend', `${run.request.backend} ${run.request.cli_version}`);
   add('Model requested', run.request.model_requested);
   add('Model reported', run.response.model_reported || '(not reported)');
+  if (run.response.stop_reason != null) {
+    add('Stop reason', run.response.stop_reason);
+  }
   const attempts = run.response.attempts;
   add('Attempts', attempts > 1 ? `${attempts} (retried)` : String(attempts ?? '?'));
 
@@ -83,6 +86,7 @@ function renderRun(container, cell, runIndex) {
     container.append(
       element('p', 'output failed', `Generation failed (${run.error.stage}): ${run.error.message}`)
     );
+    container.append(provenance(run));
     return;
   }
   container.append(element('div', 'output', run.text));

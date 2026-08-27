@@ -55,6 +55,7 @@ export function parseEnvelope(stdout, requestedModel) {
     throw new Error(`Could not parse the CLI JSON envelope: ${stdout.slice(0, 200)}`);
   }
   if (envelope.result === null) {
+    const stopReason = envelope.stop_reason ?? null;
     return {
       ok: false,
       model_reported: reportedModel(envelope, requestedModel),
@@ -64,7 +65,13 @@ export function parseEnvelope(stdout, requestedModel) {
       duration_ms: envelope.duration_ms ?? 0,
       session_id: envelope.session_id ?? '',
       num_turns: envelope.num_turns ?? 0,
-      error: { message: 'CLI returned a null result (refusal or budget stop)', stage: 'cli' }
+      stop_reason: stopReason,
+      error: {
+        message: stopReason
+          ? `CLI reported an error (stop_reason: ${stopReason})`
+          : 'CLI returned a null result (refusal or budget stop)',
+        stage: 'cli'
+      }
     };
   }
   if (typeof envelope.result !== 'string') {
@@ -77,13 +84,19 @@ export function parseEnvelope(stdout, requestedModel) {
     total_cost_usd: envelope.total_cost_usd ?? 0,
     duration_ms: envelope.duration_ms ?? 0,
     session_id: envelope.session_id ?? '',
-    num_turns: envelope.num_turns ?? 0
+    num_turns: envelope.num_turns ?? 0,
+    stop_reason: envelope.stop_reason ?? null
   };
   if (envelope.is_error) {
+    const message = (typeof envelope.result === 'string' && envelope.result.length > 0)
+      ? envelope.result
+      : (common.stop_reason
+        ? `CLI reported an error (stop_reason: ${common.stop_reason})`
+        : 'CLI reported an error with no result text');
     return {
       ok: false,
       ...common,
-      error: { message: envelope.result, stage: 'cli' }
+      error: { message, stage: 'cli' }
     };
   }
   return { ok: true, text: envelope.result, ...common };
@@ -164,10 +177,14 @@ export async function createCliBackend({
         };
       }
       if (code !== 0) {
-        return {
-          ok: false, argv,
-          error: { message: `claude exited with code ${code}: ${stderr.trim()}`, stage: 'spawn' }
-        };
+        try {
+          return { ...parseEnvelope(stdout, model), argv };
+        } catch {
+          return {
+            ok: false, argv,
+            error: { message: `claude exited with code ${code}: ${stderr.trim()}`, stage: 'spawn' }
+          };
+        }
       }
       try {
         return { ...parseEnvelope(stdout, model), argv };

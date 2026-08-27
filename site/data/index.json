@@ -408,7 +408,7 @@
     "economist__gettysburg": {
       "guide_id": "economist",
       "passage_id": "gettysburg",
-      "runs": 0,
+      "runs": 1,
       "failures": 0,
       "file": "cells/economist__gettysburg.json"
     },
@@ -464,7 +464,7 @@
     "plain-language__gettysburg": {
       "guide_id": "plain-language",
       "passage_id": "gettysburg",
-      "runs": 0,
+      "runs": 1,
       "failures": 0,
       "file": "cells/plain-language__gettysburg.json"
     },
@@ -520,7 +520,7 @@
     "strunk-white__gettysburg": {
       "guide_id": "strunk-white",
       "passage_id": "gettysburg",
-      "runs": 0,
+      "runs": 1,
       "failures": 0,
       "file": "cells/strunk-white__gettysburg.json"
     },
@@ -576,7 +576,7 @@
     "google-devdocs__gettysburg": {
       "guide_id": "google-devdocs",
       "passage_id": "gettysburg",
-      "runs": 0,
+      "runs": 1,
       "failures": 0,
       "file": "cells/google-devdocs__gettysburg.json"
     },
@@ -632,7 +632,7 @@
     "microsoft-style__gettysburg": {
       "guide_id": "microsoft-style",
       "passage_id": "gettysburg",
-      "runs": 0,
+      "runs": 1,
       "failures": 0,
       "file": "cells/microsoft-style__gettysburg.json"
     },
@@ -688,7 +688,7 @@
     "chicago__gettysburg": {
       "guide_id": "chicago",
       "passage_id": "gettysburg",
-      "runs": 0,
+      "runs": 1,
       "failures": 0,
       "file": "cells/chicago__gettysburg.json"
     },
@@ -744,7 +744,7 @@
     "hemingway__gettysburg": {
       "guide_id": "hemingway",
       "passage_id": "gettysburg",
-      "runs": 0,
+      "runs": 1,
       "failures": 0,
       "file": "cells/hemingway__gettysburg.json"
     },
@@ -800,7 +800,7 @@
     "corporate-buzzword__gettysburg": {
       "guide_id": "corporate-buzzword",
       "passage_id": "gettysburg",
-      "runs": 0,
+      "runs": 1,
       "failures": 0,
       "file": "cells/corporate-buzzword__gettysburg.json"
     },
@@ -849,14 +849,14 @@
     "corporate-buzzword__runbook": {
       "guide_id": "corporate-buzzword",
       "passage_id": "runbook",
-      "runs": 0,
-      "failures": 0,
+      "runs": 3,
+      "failures": 3,
       "file": "cells/corporate-buzzword__runbook.json"
     },
     "pirate__gettysburg": {
       "guide_id": "pirate",
       "passage_id": "gettysburg",
-      "runs": 0,
+      "runs": 1,
       "failures": 0,
       "file": "cells/pirate__gettysburg.json"
     },
@@ -912,7 +912,7 @@
     "haiku__gettysburg": {
       "guide_id": "haiku",
       "passage_id": "gettysburg",
-      "runs": 0,
+      "runs": 1,
       "failures": 0,
       "file": "cells/haiku__gettysburg.json"
     },

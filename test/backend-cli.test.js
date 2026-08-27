@@ -307,6 +307,68 @@ test('a child that ignores SIGTERM is escalated to SIGKILL instead of wedging th
   assert.equal(result.error.stage, 'timeout');
 });
 
+test('parseEnvelope extracts stop_reason from an is_error envelope', () => {
+  const parsed = parseEnvelope(JSON.stringify({
+    type: 'result', subtype: 'error_during_execution', is_error: true,
+    result: 'something went wrong', session_id: 'x', stop_reason: 'refusal'
+  }));
+  assert.equal(parsed.ok, false);
+  assert.equal(parsed.error.stage, 'cli');
+  assert.equal(parsed.stop_reason, 'refusal');
+});
+
+test('parseEnvelope sets stop_reason to null when the envelope omits it', () => {
+  const parsed = parseEnvelope(ENVELOPE);
+  assert.equal(parsed.stop_reason, null);
+});
+
+test('a non-zero exit with a valid envelope on stdout returns a cli-stage failure, not spawn', async () => {
+  const envelope = JSON.stringify({
+    type: 'result', subtype: 'error_during_execution', is_error: true,
+    result: null, session_id: 'refusal-session', duration_ms: 2833, num_turns: 1,
+    total_cost_usd: 0.003483, stop_reason: 'refusal',
+    modelUsage: { 'claude-sonnet-5-20260101': { inputTokens: 846, outputTokens: 57 } },
+    usage: { input_tokens: 846, output_tokens: 57 }
+  });
+  const base64Envelope = Buffer.from(envelope, 'utf8').toString('base64');
+  const childScript = [
+    "const fs=require('fs');",
+    "const buf=Buffer.from(process.argv[1],'base64');",
+    'fs.writeSync(1,buf);',
+    'process.exit(1)'
+  ].join('');
+
+  const backend = await createCliBackend({
+    claudePath: process.execPath,
+    extraFlags: [childScript, '--', base64Envelope]
+  });
+  const result = await backend.generate({
+    systemPrompt: 'sys', userPrompt: 'usr', model: 'claude-sonnet-5'
+  });
+
+  assert.equal(result.ok, false);
+  assert.equal(result.error.stage, 'cli');
+  assert.equal(result.stop_reason, 'refusal');
+  assert.equal(result.total_cost_usd, 0.003483);
+  assert.equal(result.session_id, 'refusal-session');
+  assert.deepEqual(result.usage, { input_tokens: 846, output_tokens: 57 });
+});
+
+test('a non-zero exit with unparseable stdout falls back to the spawn-stage error', async () => {
+  const childScript = "process.stdout.write('not json at all');process.exit(1)";
+  const backend = await createCliBackend({
+    claudePath: process.execPath,
+    extraFlags: [childScript, '--']
+  });
+  const result = await backend.generate({
+    systemPrompt: 'sys', userPrompt: 'usr', model: 'claude-sonnet-5'
+  });
+
+  assert.equal(result.ok, false);
+  assert.equal(result.error.stage, 'spawn');
+  assert.match(result.error.message, /exited with code 1/);
+});
+
 test('parseEnvelope preserves the full modelUsage map as model_usage', () => {
   const parsed = parseEnvelope(MULTI_MODEL_ENVELOPE, 'claude-sonnet-5');
   assert.deepEqual(parsed.model_usage, {
