@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { PassThrough } from 'node:stream';
-import { buildArgv, parseEnvelope, CLAUDE, createCliBackend } from '../runner/backends/cli.js';
+import { buildArgv, parseEnvelope, CLAUDE, createCliBackend, SIGKILL_ESCALATION_MS } from '../runner/backends/cli.js';
+import * as nodeChildProcess from 'node:child_process';
 
 test('the default CLI command is plain "claude" on every platform', () => {
   assert.equal(CLAUDE, 'claude');
@@ -195,27 +195,55 @@ test('parseEnvelope still returns the single entry when modelUsage has only one 
 });
 
 test('multi-byte UTF-8 text survives being split across stdout chunk boundaries', async () => {
-  // Mirrors the accumulation pattern in runner/backends/cli.js: setEncoding('utf8')
-  // on the stream, then concatenate the decoded string chunks. Buffer-concatenation
-  // (`stdout += chunk`) would corrupt a multi-byte character split across chunks.
-  const text = 'An em dash — and curly quotes: “like this”';
-  const buf = Buffer.from(text, 'utf8');
-  const dashIndex = buf.indexOf(Buffer.from('—', 'utf8'));
-  const splitPoint = dashIndex + 1; // splits the middle of the 3-byte em-dash sequence
-  const chunk1 = buf.subarray(0, splitPoint);
-  const chunk2 = buf.subarray(splitPoint);
+  // Drives the *real* accumulation path in runner/backends/cli.js (setEncoding('utf8')
+  // on child.stdout, then `stdout += chunk`). The spawned child is plain `node`, run
+  // via the `-p <script> -- <args>` trick already used by the timeout test above:
+  // node evaluates `script` as its `-p` argument, and everything after `--` is
+  // available to that script as `process.argv`, while also satisfying buildArgv's
+  // fixed `--tools '' --model ... --output-format json` tail (ignored by the script).
+  //
+  // The child writes a `--output-format json` envelope whose `result` contains
+  // multi-byte characters (em-dash, curly quotes, an emoji, and a CJK character),
+  // split via two separate `fs.writeSync` calls with a real (Atomics.wait-based)
+  // pause in between so the two halves are delivered to the parent as separate
+  // 'data' events rather than coalesced into one. If `setEncoding('utf8')` were
+  // removed from cli.js, `stdout += chunk` would coerce each Buffer chunk to a
+  // string independently (using Buffer's default utf8 decoding *per chunk*),
+  // corrupting whichever multi-byte character straddles the split point into
+  // U+FFFD replacement characters -- so this assertion would fail.
+  const text = 'An em dash — and curly quotes: “like this” and emoji 😀 and CJK 漢字';
+  const envelope = JSON.stringify({
+    type: 'result', subtype: 'success', is_error: false, result: text,
+    session_id: 'utf8-chunk-test', duration_ms: 1, num_turns: 1, total_cost_usd: 0,
+    modelUsage: {}, usage: {}
+  });
+  const buf = Buffer.from(envelope, 'utf8');
+  const emojiIndex = buf.indexOf(Buffer.from('😀', 'utf8'));
+  const splitPoint = emojiIndex + 2; // splits the middle of the 4-byte emoji sequence
+  const base64Envelope = buf.toString('base64');
 
-  const stream = new PassThrough();
-  stream.setEncoding('utf8');
-  let collected = '';
-  stream.on('data', (chunk) => { collected += chunk; });
-  const ended = new Promise((resolve) => stream.on('end', resolve));
-  stream.write(chunk1);
-  stream.write(chunk2);
-  stream.end();
-  await ended;
+  const childScript = [
+    "const fs=require('fs');",
+    "const buf=Buffer.from(process.argv[1],'base64');",
+    'const mid=Number(process.argv[2]);',
+    'fs.writeSync(1,buf.subarray(0,mid));',
+    // Real (non-busy) synchronous pause so the two writes land as separate
+    // pipe reads on the parent side instead of being coalesced into one.
+    'Atomics.wait(new Int32Array(new SharedArrayBuffer(4)),0,0,30);',
+    'fs.writeSync(1,buf.subarray(mid));',
+    'process.exit(0)'
+  ].join('');
 
-  assert.equal(collected, text);
+  const backend = await createCliBackend({
+    claudePath: process.execPath,
+    extraFlags: [childScript, '--', base64Envelope, String(splitPoint)]
+  });
+  const result = await backend.generate({
+    systemPrompt: 'sys', userPrompt: 'usr', model: 'claude-sonnet-5'
+  });
+
+  assert.equal(result.ok, true);
+  assert.equal(result.text, text);
 });
 
 test('generate returns a timeout-stage failure and kills the child when it hangs', { timeout: 10000 }, async () => {
@@ -230,6 +258,51 @@ test('generate returns a timeout-stage failure and kills the child when it hangs
   const result = await backend.generate({
     systemPrompt: 'sys', userPrompt: 'usr', model: 'claude-sonnet-5'
   });
+  assert.equal(result.ok, false);
+  assert.equal(result.error.stage, 'timeout');
+});
+
+test('a child that ignores SIGTERM is escalated to SIGKILL instead of wedging the run', async (t) => {
+  // On this platform (Windows), Node's child.kill() unconditionally terminates
+  // the target process even when it has installed a 'SIGTERM' handler -- there
+  // is no way to construct a genuinely SIGTERM-ignoring child that survives the
+  // first kill() call (verified empirically: a child with process.on('SIGTERM',
+  // ...) still closes immediately when the parent calls child.kill()). So this
+  // test instead verifies the escalation *wiring* directly: it intercepts
+  // ChildProcess.prototype.kill to simulate the first (SIGTERM) call being
+  // ignored, uses the test runner's mock timers to fast-forward past both the
+  // generation timeout and the SIGKILL_ESCALATION_MS window without any real
+  // waiting, and asserts that a second kill call with 'SIGKILL' follows -- the
+  // second call is allowed through to the real implementation so the actual
+  // hung child process is cleaned up for real, not left running.
+  t.mock.timers.enable({ apis: ['setTimeout'] });
+
+  const originalKill = nodeChildProcess.ChildProcess.prototype.kill;
+  const killSignals = [];
+  nodeChildProcess.ChildProcess.prototype.kill = function mockedKill(signal) {
+    killSignals.push(signal ?? 'SIGTERM');
+    if (killSignals.length === 1) return true; // simulate the child ignoring SIGTERM
+    return originalKill.call(this, signal);
+  };
+  t.after(() => { nodeChildProcess.ChildProcess.prototype.kill = originalKill; });
+
+  const backend = await createCliBackend({
+    claudePath: process.execPath,
+    extraFlags: ['1;setTimeout(() => {}, 100000);', '--'],
+    timeoutMs: 50
+  });
+
+  const resultPromise = backend.generate({
+    systemPrompt: 'sys', userPrompt: 'usr', model: 'claude-sonnet-5'
+  });
+
+  t.mock.timers.tick(50);
+  assert.deepEqual(killSignals, ['SIGTERM']);
+
+  t.mock.timers.tick(SIGKILL_ESCALATION_MS);
+  assert.deepEqual(killSignals, ['SIGTERM', 'SIGKILL']);
+
+  const result = await resultPromise;
   assert.equal(result.ok, false);
   assert.equal(result.error.stage, 'timeout');
 });

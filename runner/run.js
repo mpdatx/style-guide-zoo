@@ -7,6 +7,10 @@ import { createFakeBackend } from './backends/fake.js';
 import { createCliBackend } from './backends/cli.js';
 
 const FLAGS = new Set(['--force', '--dry-run', '--quiet', '--help']);
+// --fail-for is a testing-only injection point (see the fake backend and the
+// "Testing-only options" section of USAGE below): with --backend fake, it
+// forces a synthetic failure for the given runIds so the retry/failure-record
+// paths can be exercised without a real generation.
 const VALUES = new Set([
   '--guide', '--passage', '--runs', '--concurrency', '--backend', '--model',
   '--guides-dir', '--corpus-dir', '--template', '--results-dir', '--config', '--fail-for'
@@ -72,6 +76,11 @@ const USAGE = `Usage: node runner/run.js [options]
   --dry-run              print the work list and exit without generating
   --quiet                suppress per-item progress output
   --help                 show this message
+
+Testing-only options (not for normal use):
+  --fail-for <runIds>    with --backend fake, comma-separated runIds to force
+                          a synthetic failure for (used by the test suite to
+                          exercise retry and failure-record handling)
 `;
 
 export async function main(argv) {

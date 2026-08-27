@@ -177,3 +177,29 @@ test('a fake run with no failures injected exits 0', async () => {
   const { code } = await runFake(['--fail-for', '']);
   assert.equal(code, 0);
 });
+
+test('a parse-stage failure is not retried, unlike spawn/timeout stages', async () => {
+  const failingRunId = 'alpha__one__r1';
+  const { code, resultsDir } = await runFake(['--fail-for', `${failingRunId}:parse`]);
+
+  assert.equal(code, 1);
+  const failed = await readRecord(recordPath(resultsDir, 'alpha', 'one', 1));
+  assert.equal(failed.response.ok, false);
+  assert.equal(failed.response.attempts, 1);
+  assert.equal(failed.response.error.stage, 'parse');
+
+  // Everything else still succeeded normally.
+  const other = await readRecord(recordPath(resultsDir, 'alpha', 'one', 2));
+  assert.equal(other.response.ok, true);
+});
+
+test('a cli-stage failure is not retried, unlike spawn/timeout stages', async () => {
+  const failingRunId = 'beta__two__r1';
+  const { code, resultsDir } = await runFake(['--fail-for', `${failingRunId}:cli`]);
+
+  assert.equal(code, 1);
+  const failed = await readRecord(recordPath(resultsDir, 'beta', 'two', 1));
+  assert.equal(failed.response.ok, false);
+  assert.equal(failed.response.attempts, 1);
+  assert.equal(failed.response.error.stage, 'cli');
+});

@@ -91,29 +91,46 @@ export function parseEnvelope(stdout, requestedModel) {
 
 export const DEFAULT_TIMEOUT_MS = 300000;
 
+// If a child ignores SIGTERM (sent when the generation timeout fires), give it
+// this long to exit cleanly before escalating to SIGKILL. Without this, a
+// child that never closes would leave the run's promise unsettled forever --
+// exactly the hang the timeout was added to prevent.
+export const SIGKILL_ESCALATION_MS = 5000;
+
 function run(command, argv, stdin, { timeoutMs = DEFAULT_TIMEOUT_MS } = {}) {
   return new Promise((resolve) => {
     const child = spawn(command, argv, { stdio: ['pipe', 'pipe', 'pipe'] });
     let stdout = '';
     let stderr = '';
     let timedOut = false;
+    let settled = false;
+    let killTimer = null;
     child.stdout.setEncoding('utf8');
     child.stderr.setEncoding('utf8');
     child.stdout.on('data', (chunk) => { stdout += chunk; });
     child.stderr.on('data', (chunk) => { stderr += chunk; });
 
+    const settle = (result) => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      clearTimeout(killTimer);
+      resolve(result);
+    };
+
     const timer = setTimeout(() => {
       timedOut = true;
       child.kill();
+      killTimer = setTimeout(() => {
+        child.kill('SIGKILL');
+      }, SIGKILL_ESCALATION_MS);
     }, timeoutMs);
 
     child.on('error', (error) => {
-      clearTimeout(timer);
-      resolve({ code: -1, stdout, stderr: error.message, timedOut: false });
+      settle({ code: -1, stdout, stderr: error.message, timedOut: false });
     });
     child.on('close', (code) => {
-      clearTimeout(timer);
-      resolve({ code, stdout, stderr, timedOut });
+      settle({ code, stdout, stderr, timedOut });
     });
     child.stdin.end(stdin ?? '');
   });
