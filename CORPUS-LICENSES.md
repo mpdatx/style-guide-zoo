@@ -9,7 +9,7 @@ redistributed here.
 | `gettysburg` | oratory | Abraham Lincoln, 1863 (Bliss copy) | Public domain |
 | `moby-dick` | narrative fiction | Herman Melville, *Moby-Dick*, 1851 | Public domain |
 | `declaration` | political rhetoric | United States, 1776 | Public domain |
-| `origin-species` | scientific prose | Charles Darwin, *On the Origin of Species*, 1859 | Public domain |
+| `origin-species` | scientific prose | Charles Darwin, *On the Origin of Species*, 1859 first edition (Project Gutenberg ebook 1228) | Public domain |
 | `terms-of-service` | legal boilerplate | Written for this repository | CC0 |
 | `news-lede` | news | Written for this repository | CC0 |
 | `safety-notice` | safety instructions | Written for this repository | CC0 |
