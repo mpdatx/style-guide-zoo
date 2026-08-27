@@ -1,6 +1,6 @@
 import { spawn } from 'node:child_process';
 
-const CLAUDE = process.platform === 'win32' ? 'claude.cmd' : 'claude';
+export const CLAUDE = 'claude';
 
 /**
  * Build the exact argument vector for one generation.

@@ -1,6 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { buildArgv, parseEnvelope } from '../runner/backends/cli.js';
+import { buildArgv, parseEnvelope, CLAUDE } from '../runner/backends/cli.js';
+
+test('the default CLI command is plain "claude" on every platform', () => {
+  assert.equal(CLAUDE, 'claude');
+});
 
 const argvOptions = {
   model: 'claude-sonnet-5',
