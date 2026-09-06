@@ -49,6 +49,36 @@ Generation uses `--safe-mode`, which disables the maintainer's CLAUDE.md,
 skills, plugins, hooks, and MCP servers, so an output does not depend on one
 machine's personal configuration.
 
+## The one cell that refuses
+
+519 of the 520 generations produced text. One cell refuses, every time:
+`corporate-buzzword` applied to the `runbook` passage. The refusal is recorded
+rather than regenerated away, because what causes it is more interesting than a
+complete grid.
+
+Neither ingredient is sufficient on its own:
+
+|                              | passage contains `TRV` | passage has no `TRV` |
+| ---------------------------- | ---------------------- | -------------------- |
+| `corporate-buzzword` prompt  | 0 of 5 succeed         | 35 of 35 succeed     |
+| the other twelve guides      | 60 of 60 succeed       | all succeed          |
+
+Sixty successful runs contain `TRV`. Thirty-five successful runs use the
+buzzword prompt. Only the intersection fails.
+
+`TRV` was invented for this corpus as a deliberately opaque internal acronym.
+It is also the standard abbreviation for Tobacco Rattle Virus, so it reads as a
+biological agent designator — the CLI reports `stop_reason: refusal` with
+`Details: [bio]`. On its own that is harmless, and twelve guides rewrite the
+passage without complaint. The `corporate-buzzword` prompt is the other half:
+it instructs the model to bury the underlying facts, hedge every claim, and use
+the passive voice so that no sentence names who acts. Applied to a token that
+looks like a hazardous agent, that becomes a request to obfuscate information
+about one.
+
+Substituting any other acronym makes the cell generate normally; removing
+`QDX-7` or `NKF` instead does not. The corpus is deliberately left as it is.
+
 ## Reproducing a run
 
 Requires Node 22 and an authenticated Claude Code CLI on your PATH.
