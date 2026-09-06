@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "run_id": "haiku__origin-species__r1",
+  "run_index": 1,
+  "generated_at": "2026-09-06T08:04:25.284Z",
+  "guide": {
+    "id": "haiku",
+    "source_hash": "sha256:f595899fb3b550102cfb45d389ebee24947c9d116bec63f0031c234458fa8d24"
+  },
+  "passage": {
+    "id": "origin-species",
+    "source_hash": "sha256:f1ed22d9ca4bec6a60c7c3ef6690c41000662de35c602244a8c02677e99975c0"
+  },
+  "prompt_template": {
+    "id": "rewrite-v1",
+    "source_hash": "sha256:6c90fb9df63501ad20b39afc1902f70a6b1a13da3000a29ff3c527a519c057f4"
+  },
+  "request": {
+    "backend": "claude-code-cli",
+    "cli_version": "2.1.259 (Claude Code)",
+    "model_requested": "claude-sonnet-5",
+    "argv": [
+      "-p",
+      "--safe-mode",
+      "--no-session-persistence",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--tools",
+      "",
+      "--model",
+      "claude-sonnet-5",
+      "--system-prompt",
+      "Rewrite the text as a sequence of haiku.\n\nEach haiku has three lines of five, seven, and five syllables. Separate\nconsecutive haiku with a blank line. Use as many haiku as the content needs.\n\nWork through the original in order, so the sequence carries the passage's\nargument from beginning to end. Prefer concrete images to abstractions. Do not\nadd a title, a number, or any commentary.",
+      "--output-format",
+      "json",
+      "--max-budget-usd",
+      "25"
+    ],
+    "system_prompt": "Rewrite the text as a sequence of haiku.\n\nEach haiku has three lines of five, seven, and five syllables. Separate\nconsecutive haiku with a blank line. Use as many haiku as the content needs.\n\nWork through the original in order, so the sequence carries the passage's\nargument from beginning to end. Prefer concrete images to abstractions. Do not\nadd a title, a number, or any commentary.",
+    "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIt is interesting to contemplate an entangled bank, clothed with many plants of many kinds, with birds singing on the bushes, with various insects flitting about, and with worms crawling through the damp earth, and to reflect that these elaborately constructed forms, so different from each other, and dependent on each other in so complex a manner, have all been produced by laws acting around us. These laws, taken in the largest sense, being Growth with Reproduction; Inheritance which is almost implied by reproduction; Variability from the indirect and direct action of the external conditions of life, and from use and disuse; a Ratio of Increase so high as to lead to a Struggle for Life, and as a consequence to Natural Selection, entailing Divergence of Character and the Extinction of less-improved forms. Thus, from the war of nature, from famine and death, the most exalted object which we are capable of conceiving, namely, the production of the higher animals, directly follows. There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one; and that, whilst this planet has gone cycling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.\n</passage>"
+  },
+  "response": {
+    "ok": true,
+    "text": "A tangled green bank,\nbirds calling from the bushes,\nworms in the wet soil.\n\nEach strange living form\ntied to others, all shaped by\nlaws unseen but sure.\n\nGrowth begets more growth,\nchildren carry parents' marks,\nchange creeps in with time.\n\nToo many are born\nfor the earth to hold them all,\nso the struggle starts.\n\nThe fit ones survive,\nbranching into new pathways,\nweak forms fade to dust.\n\nFrom hunger and war\nthe highest creatures arise—\ndeath opens the door.\n\nOne breath, or a few,\nstarted life so long ago,\nsimple and alone.\n\nEarth turns round the sun,\nbound by gravity's plain law,\nwhile life keeps unfolding.\n\nEndless shapes appear,\nbeautiful, strange, wondrous things,\nstill being born now.",
+    "model_reported": "claude-sonnet-5",
+    "model_usage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 1227,
+        "outputTokens": 16,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.001307,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 256,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 1141,
+        "webSearchRequests": 0,
+        "costUSD": 0.007128000000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 1141,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 256,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 1141,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 256,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 1141,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1141
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 0.008435000000000002,
+    "duration_ms": 5141,
+    "session_id": "4527b1b8-ca57-4776-89ac-3370744fa497",
+    "num_turns": 1,
+    "stop_reason": "end_turn",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "run_id": "plain-language__declaration__r2",
+  "run_index": 2,
+  "generated_at": "2026-09-06T07:56:40.265Z",
+  "guide": {
+    "id": "plain-language",
+    "source_hash": "sha256:3a199abe94429448927b65beee6748ea31710b6ebb4d4cd8068dd5653757cd34"
+  },
+  "passage": {
+    "id": "declaration",
+    "source_hash": "sha256:209f149ba640460fb5e00900c35efe68018ff965947b5a71d7cc5bff9943ef4d"
+  },
+  "prompt_template": {
+    "id": "rewrite-v1",
+    "source_hash": "sha256:6c90fb9df63501ad20b39afc1902f70a6b1a13da3000a29ff3c527a519c057f4"
+  },
+  "request": {
+    "backend": "claude-code-cli",
+    "cli_version": "2.1.259 (Claude Code)",
+    "model_requested": "claude-sonnet-5",
+    "argv": [
+      "-p",
+      "--safe-mode",
+      "--no-session-persistence",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--tools",
+      "",
+      "--model",
+      "claude-sonnet-5",
+      "--system-prompt",
+      "Rewrite the text in plain language, for a reader who has no background in the\nsubject and is reading in a hurry.\n\nAddress the reader as \"you\". Use the active voice and everyday words. Keep the\naverage sentence short. Put the most important information first, and put each\ndistinct idea in its own paragraph.\n\nReplace jargon, legalese, and abbreviations with common words, or define them\non first use. Turn hidden verbs back into verbs: write \"apply\", not \"submit an\napplication\".\n\nWhere the original lists conditions or steps, use a bulleted or numbered list.\nKeep every fact and every obligation from the original intact.",
+      "--output-format",
+      "json",
+      "--max-budget-usd",
+      "25"
+    ],
+    "system_prompt": "Rewrite the text in plain language, for a reader who has no background in the\nsubject and is reading in a hurry.\n\nAddress the reader as \"you\". Use the active voice and everyday words. Keep the\naverage sentence short. Put the most important information first, and put each\ndistinct idea in its own paragraph.\n\nReplace jargon, legalese, and abbreviations with common words, or define them\non first use. Turn hidden verbs back into verbs: write \"apply\", not \"submit an\napplication\".\n\nWhere the original lists conditions or steps, use a bulleted or numbered list.\nKeep every fact and every obligation from the original intact.",
+    "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nWe hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.\n</passage>"
+  },
+  "response": {
+    "ok": true,
+    "text": "Here's a plain-language version:\n\nYou should believe some basic truths. Everyone is created equal. Each person has certain rights that no one can take away. These include the right to live, the right to be free, and the right to seek happiness.\n\nGovernments exist to protect these rights. A government only has fair power if the people it governs agree to that power.\n\nIf a government stops protecting these rights and instead harms them, the people have the right to change it. They can even get rid of it completely. They can then build a new government based on whatever principles seem most likely to keep them safe and happy.\n\nYou shouldn't change a long-standing government for small or short-term reasons. That's just common sense. History shows that people usually put up with problems as long as they can stand them. They'd rather suffer than get rid of a government they're used to.\n\nBut sometimes a government keeps abusing its power and taking away people's rights, over and over, always pushing toward the same goal. When that pattern makes clear the government wants total control over the people, the people have both the right and the duty to overthrow it. They must then set up new protections to keep themselves safe going forward.",
+    "model_reported": "claude-sonnet-5",
+    "model_usage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 1212,
+        "outputTokens": 13,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.001277,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 338,
+        "cacheReadInputTokens": 1174,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.0036187999999999997,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1174,
+      "output_tokens": 338,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 338,
+          "cache_read_input_tokens": 1174,
+          "cache_creation_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 0.0048958,
+    "duration_ms": 5258,
+    "session_id": "c8e6a3ae-ff7a-4a0a-875b-160bead3e02d",
+    "num_turns": 1,
+    "stop_reason": "end_turn",
+    "attempts": 1
+  }
+}

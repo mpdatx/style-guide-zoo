@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "run_id": "asd-ste100__origin-species__r4",
+  "run_index": 4,
+  "generated_at": "2026-09-06T07:55:15.790Z",
+  "guide": {
+    "id": "asd-ste100",
+    "source_hash": "sha256:9fbce55203740208169f59fb79bf0a13c7b5a04d962d54f68c2157155c4cb2b2"
+  },
+  "passage": {
+    "id": "origin-species",
+    "source_hash": "sha256:f1ed22d9ca4bec6a60c7c3ef6690c41000662de35c602244a8c02677e99975c0"
+  },
+  "prompt_template": {
+    "id": "rewrite-v1",
+    "source_hash": "sha256:6c90fb9df63501ad20b39afc1902f70a6b1a13da3000a29ff3c527a519c057f4"
+  },
+  "request": {
+    "backend": "claude-code-cli",
+    "cli_version": "2.1.259 (Claude Code)",
+    "model_requested": "claude-sonnet-5",
+    "argv": [
+      "-p",
+      "--safe-mode",
+      "--no-session-persistence",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--tools",
+      "",
+      "--model",
+      "claude-sonnet-5",
+      "--system-prompt",
+      "Rewrite the text following the principles of Simplified Technical English.\n\nUse one topic per sentence. Keep procedural sentences to twenty words or\nfewer and descriptive sentences to twenty-five words or fewer. Keep paragraphs\nto six sentences or fewer.\n\nUse the active voice. Address the reader directly with the imperative for\ninstructions. Use only the simple present, simple past, and simple future\ntense.\n\nUse one word for one meaning throughout, and one meaning for one word: never\nvary a term for elegance. Prefer short, common words over long or technical\nones. Do not use noun clusters of more than three words. Write out what a\npronoun refers to whenever there is any doubt.\n\nDo not use slang, idioms, or metaphors.",
+      "--output-format",
+      "json",
+      "--max-budget-usd",
+      "25"
+    ],
+    "system_prompt": "Rewrite the text following the principles of Simplified Technical English.\n\nUse one topic per sentence. Keep procedural sentences to twenty words or\nfewer and descriptive sentences to twenty-five words or fewer. Keep paragraphs\nto six sentences or fewer.\n\nUse the active voice. Address the reader directly with the imperative for\ninstructions. Use only the simple present, simple past, and simple future\ntense.\n\nUse one word for one meaning throughout, and one meaning for one word: never\nvary a term for elegance. Prefer short, common words over long or technical\nones. Do not use noun clusters of more than three words. Write out what a\npronoun refers to whenever there is any doubt.\n\nDo not use slang, idioms, or metaphors.",
+    "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIt is interesting to contemplate an entangled bank, clothed with many plants of many kinds, with birds singing on the bushes, with various insects flitting about, and with worms crawling through the damp earth, and to reflect that these elaborately constructed forms, so different from each other, and dependent on each other in so complex a manner, have all been produced by laws acting around us. These laws, taken in the largest sense, being Growth with Reproduction; Inheritance which is almost implied by reproduction; Variability from the indirect and direct action of the external conditions of life, and from use and disuse; a Ratio of Increase so high as to lead to a Struggle for Life, and as a consequence to Natural Selection, entailing Divergence of Character and the Extinction of less-improved forms. Thus, from the war of nature, from famine and death, the most exalted object which we are capable of conceiving, namely, the production of the higher animals, directly follows. There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one; and that, whilst this planet has gone cycling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.\n</passage>"
+  },
+  "response": {
+    "ok": true,
+    "text": "Look at a tangled bank. Many kinds of plants grow on it. Birds sing in the bushes. Insects fly around it. Worms move through the wet soil.\n\nThese living things have complex shapes. Each shape differs from the others. Each living thing depends on other living things in many ways. Natural laws produced all these living things.\n\nGrowth and reproduction are two of these laws. Reproduction leads to inheritance. Variability comes from conditions in the environment. Variability also comes from use and disuse of body parts.\n\nLiving things multiply at a high rate. This high rate causes a struggle for life. The struggle for life causes natural selection. Natural selection causes new forms to diverge. Natural selection causes weaker forms to die out.\n\nNature is often harsh. Famine and death occur often in nature. But this harshness leads to a great result. This great result is the production of higher animals.\n\nThis view of life is grand. Life's many abilities began in one form or in a few forms. Earth has moved in its orbit under the fixed law of gravity. Life began in a simple way. From this simple beginning, endless beautiful and wonderful forms have evolved. These forms continue to evolve today.",
+    "model_reported": "claude-sonnet-5",
+    "model_usage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 1227,
+        "outputTokens": 15,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.001302,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 375,
+        "cacheReadInputTokens": 1254,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.0040048,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1254,
+      "output_tokens": 375,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 375,
+          "cache_read_input_tokens": 1254,
+          "cache_creation_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 0.0053068,
+    "duration_ms": 5114,
+    "session_id": "4ff6f236-a01d-4bb0-9d91-35d8387539eb",
+    "num_turns": 1,
+    "stop_reason": "end_turn",
+    "attempts": 1
+  }
+}

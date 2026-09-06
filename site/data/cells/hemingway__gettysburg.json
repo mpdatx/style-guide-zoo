@@ -325,6 +325,226 @@
         "stop_reason": null
       },
       "error": null
+    },
+    {
+      "run_index": 4,
+      "ok": true,
+      "text": "Eighty-seven years ago our fathers made a new nation here. They built it on Liberty. They built it on the idea that all men are born equal.\n\nNow there is a war. It is a civil war and it is testing whether that nation, or any nation built this way, can last. We have come to a great battlefield of that war. We have come to give a piece of that field to the dead who died so the nation could live. This is right. We should do this.\n\nBut we cannot dedicate this ground. We cannot consecrate it. We cannot make it holy. The men who fought here did that, the living and the dead, and they did it beyond anything we could add. The world will not remember our words. It will not forget what these men did. It is for us, the living, to finish the work they began. It is for us to take up the great task ahead. We take from these dead a new devotion to the cause they served, and we give it fully, as they gave fully. We resolve that they did not die for nothing. We resolve that this nation, under God, will have a new birth of freedom. We resolve that government of the people, by the people, for the people, will not die from this earth.",
+      "metrics": {
+        "words": 227,
+        "sentences": 21,
+        "syllables": 281,
+        "mean_sentence_length": 10.8,
+        "flesch_reading_ease": 91.1
+      },
+      "generated_at": "2026-09-06T08:00:27.075Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in the manner of Ernest Hemingway's prose.\n\nUse short declarative sentences. Join them with \"and\" more often than with\nsubordinating conjunctions. Use concrete nouns and plain verbs. Name things\nrather than describing them.\n\nCut adjectives and adverbs to almost nothing. State actions and facts without\ninterpreting them. Let the emotion sit under the surface of the sentence\nrather than on top of it. Repeat a plain word rather than reaching for a\nsynonym.\n\nDo not imitate any specific published passage.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in the manner of Ernest Hemingway's prose.\n\nUse short declarative sentences. Join them with \"and\" more often than with\nsubordinating conjunctions. Use concrete nouns and plain verbs. Name things\nrather than describing them.\n\nCut adjectives and adverbs to almost nothing. State actions and facts without\ninterpreting them. Let the emotion sit under the surface of the sentence\nrather than on top of it. Repeat a plain word rather than reaching for a\nsynonym.\n\nDo not imitate any specific published passage.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nFour score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.\n\nNow we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.\n\nBut, in a larger sense, we can not dedicate -- we can not consecrate -- we can not hallow -- this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us -- that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion -- that we here highly resolve that these dead shall not have died in vain -- that this nation, under God, shall have a new birth of freedom -- and that government of the people, by the people, for the people, shall not perish from the earth.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1230,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 336,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1230,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 336,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 1230,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1230
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.009633,
+        "duration_ms": 5891,
+        "session_id": "a66b4b5c-d613-4f22-9c09-afd452248efd",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1274,
+            "outputTokens": 15,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001349,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 336,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 1230,
+            "webSearchRequests": 0,
+            "costUSD": 0.008284,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 5,
+      "ok": true,
+      "text": "Eighty-seven years ago our fathers made a new nation here. They built it on liberty. They built it on the idea that all men are equal, and they meant it.\n\nNow there is a war. It is a civil war and it will show if that nation, or any nation built this way, can last. We are on a battlefield of that war. We have come to give part of this field to the men who died here so the nation could live. This is right. We should do this.\n\nBut we cannot dedicate this ground. We cannot consecrate it. We cannot make it holy. The men who fought here did that, the living and the dead, and we cannot add to it and we cannot take away from it. The world will not remember what we say here. It will not forget what they did here. It is for us to finish the work instead. It is for us to take up the task they carried so far. We must take from these dead a greater will for the cause they died for. We must resolve that they did not die for nothing. We must see that this nation has a new birth of freedom under God, and that government of the people, by the people, for the people, does not die from the earth.",
+      "metrics": {
+        "words": 226,
+        "sentences": 20,
+        "syllables": 272,
+        "mean_sentence_length": 11.3,
+        "flesch_reading_ease": 93.5
+      },
+      "generated_at": "2026-09-06T08:00:29.014Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in the manner of Ernest Hemingway's prose.\n\nUse short declarative sentences. Join them with \"and\" more often than with\nsubordinating conjunctions. Use concrete nouns and plain verbs. Name things\nrather than describing them.\n\nCut adjectives and adverbs to almost nothing. State actions and facts without\ninterpreting them. Let the emotion sit under the surface of the sentence\nrather than on top of it. Repeat a plain word rather than reaching for a\nsynonym.\n\nDo not imitate any specific published passage.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in the manner of Ernest Hemingway's prose.\n\nUse short declarative sentences. Join them with \"and\" more often than with\nsubordinating conjunctions. Use concrete nouns and plain verbs. Name things\nrather than describing them.\n\nCut adjectives and adverbs to almost nothing. State actions and facts without\ninterpreting them. Let the emotion sit under the surface of the sentence\nrather than on top of it. Repeat a plain word rather than reaching for a\nsynonym.\n\nDo not imitate any specific published passage.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nFour score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.\n\nNow we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.\n\nBut, in a larger sense, we can not dedicate -- we can not consecrate -- we can not hallow -- this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us -- that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion -- that we here highly resolve that these dead shall not have died in vain -- that this nation, under God, shall have a new birth of freedom -- and that government of the people, by the people, for the people, shall not perish from the earth.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1230,
+          "output_tokens": 319,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 319,
+              "cache_read_input_tokens": 1230,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.004789,
+        "duration_ms": 4794,
+        "session_id": "f110385f-fb34-49de-a93a-84216c3debe8",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1274,
+            "outputTokens": 15,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001349,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 319,
+            "cacheReadInputTokens": 1230,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0034400000000000003,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
     }
   ]
 }

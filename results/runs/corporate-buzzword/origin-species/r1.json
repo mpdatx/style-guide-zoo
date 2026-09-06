@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "run_id": "corporate-buzzword__origin-species__r1",
+  "run_index": 1,
+  "generated_at": "2026-09-06T08:02:08.705Z",
+  "guide": {
+    "id": "corporate-buzzword",
+    "source_hash": "sha256:63d30bd0db1e6460564f750cdc0d91eb9e13b210374e142fac022e4f2e258382"
+  },
+  "passage": {
+    "id": "origin-species",
+    "source_hash": "sha256:f1ed22d9ca4bec6a60c7c3ef6690c41000662de35c602244a8c02677e99975c0"
+  },
+  "prompt_template": {
+    "id": "rewrite-v1",
+    "source_hash": "sha256:6c90fb9df63501ad20b39afc1902f70a6b1a13da3000a29ff3c527a519c057f4"
+  },
+  "request": {
+    "backend": "claude-code-cli",
+    "cli_version": "2.1.259 (Claude Code)",
+    "model_requested": "claude-sonnet-5",
+    "argv": [
+      "-p",
+      "--safe-mode",
+      "--no-session-persistence",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--tools",
+      "",
+      "--model",
+      "claude-sonnet-5",
+      "--system-prompt",
+      "Rewrite the text in dense corporate business jargon.\n\nReplace concrete nouns with abstractions. Turn verbs into nominalisations:\nprefer \"the utilisation of\" to \"using\". Use the passive voice so that no\nsentence names who acts. Reach for \"leverage\", \"synergy\", \"stakeholder\",\n\"alignment\", \"operationalise\", \"value-add\", and \"at scale\".\n\nHedge every claim. Add qualifying clauses that commit to nothing.\n\nKeep the underlying facts of the original technically present, however deeply\nburied. This column exists as a demonstration of what these habits cost.",
+      "--output-format",
+      "json",
+      "--max-budget-usd",
+      "25"
+    ],
+    "system_prompt": "Rewrite the text in dense corporate business jargon.\n\nReplace concrete nouns with abstractions. Turn verbs into nominalisations:\nprefer \"the utilisation of\" to \"using\". Use the passive voice so that no\nsentence names who acts. Reach for \"leverage\", \"synergy\", \"stakeholder\",\n\"alignment\", \"operationalise\", \"value-add\", and \"at scale\".\n\nHedge every claim. Add qualifying clauses that commit to nothing.\n\nKeep the underlying facts of the original technically present, however deeply\nburied. This column exists as a demonstration of what these habits cost.",
+    "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIt is interesting to contemplate an entangled bank, clothed with many plants of many kinds, with birds singing on the bushes, with various insects flitting about, and with worms crawling through the damp earth, and to reflect that these elaborately constructed forms, so different from each other, and dependent on each other in so complex a manner, have all been produced by laws acting around us. These laws, taken in the largest sense, being Growth with Reproduction; Inheritance which is almost implied by reproduction; Variability from the indirect and direct action of the external conditions of life, and from use and disuse; a Ratio of Increase so high as to lead to a Struggle for Life, and as a consequence to Natural Selection, entailing Divergence of Character and the Extinction of less-improved forms. Thus, from the war of nature, from famine and death, the most exalted object which we are capable of conceiving, namely, the production of the higher animals, directly follows. There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one; and that, whilst this planet has gone cycling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.\n</passage>"
+  },
+  "response": {
+    "ok": true,
+    "text": "It could be considered, at some level, a potentially value-add exercise to engage in the contemplation of a multi-stakeholder ecosystem of entangled bank-type deliverables—a diversified portfolio of plant-based assets, avian audio-output functionalities, insect-driven flitting activities, and subsurface worm-related earth-transit operations—and to arrive, provisionally, at the reflection that these elaborately architected outcome-structures, each differentiated in form and interdependent within a framework of considerable complexity, may in some sense be attributable to the operationalization of certain law-based mechanisms currently being actioned in the surrounding environment.\n\nThese mechanisms, in the broadest possible framing, might be characterized as encompassing: Growth-with-Reproduction synergies; an Inheritance-related deliverable more or less implicit within the Reproduction workstream; Variability-generation stemming from both indirect and direct condition-of-life externalities, as well as from usage/non-usage differentials; and an Increase-Ratio of such elevated magnitude as to potentially necessitate a Struggle-for-Life paradigm, resulting, as a downstream consequence, in the leveraging of Natural Selection—a process which entails, among other things, Character-Divergence and the Extinction-related sunsetting of lower-performing legacy forms.\n\nIt could therefore be tentatively surfaced that, arising from what might loosely be termed the \"war of nature,\" and from famine- and death-adjacent inputs, the single most exalted deliverable conceivably within the bandwidth of human cognitive capacity—namely, the higher-animal production output—may be understood to directly follow, at least in some qualified sense.\n\nThere is, arguably, a certain grandeur-potential embedded within this overall view-of-life framework, inasmuch as its several constituent power-modules are believed, with varying degrees of confidence, to have been originally breathed—whether into a plurality of forms or into a singular foundational form remains a matter for further stakeholder discussion—and that, while this planetary asset has continued cycling-on in ostensible alignment with the fixed law of gravity, it may be the case that, from so streamlined an initial-state configuration, a more or less endless array of forms-at-scale, characterized by beauty- and wonder-adjacent attributes, have been, and continue to be, evolved, subject to ongoing review.",
+    "model_reported": "claude-sonnet-5",
+    "model_usage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 1227,
+        "outputTokens": 12,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.001287,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 776,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 1206,
+        "webSearchRequests": 0,
+        "costUSD": 0.012587999999999998,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 1206,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 776,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 1206,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 776,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 1206,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1206
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 0.013874999999999998,
+    "duration_ms": 12203,
+    "session_id": "3518cbf8-6792-475a-bee6-c64ba1b1c7c7",
+    "num_turns": 1,
+    "stop_reason": "end_turn",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "run_id": "pirate__origin-species__r4",
+  "run_index": 4,
+  "generated_at": "2026-09-06T08:03:32.172Z",
+  "guide": {
+    "id": "pirate",
+    "source_hash": "sha256:2f0bef523bd99db0697ae7b249a8d0842dda64a46bdba6ef02d739cb0702152d"
+  },
+  "passage": {
+    "id": "origin-species",
+    "source_hash": "sha256:f1ed22d9ca4bec6a60c7c3ef6690c41000662de35c602244a8c02677e99975c0"
+  },
+  "prompt_template": {
+    "id": "rewrite-v1",
+    "source_hash": "sha256:6c90fb9df63501ad20b39afc1902f70a6b1a13da3000a29ff3c527a519c057f4"
+  },
+  "request": {
+    "backend": "claude-code-cli",
+    "cli_version": "2.1.259 (Claude Code)",
+    "model_requested": "claude-sonnet-5",
+    "argv": [
+      "-p",
+      "--safe-mode",
+      "--no-session-persistence",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--tools",
+      "",
+      "--model",
+      "claude-sonnet-5",
+      "--system-prompt",
+      "Rewrite the text as a stage pirate would tell it.\n\nUse \"ye\" for \"you\", \"be\" for \"is\" and \"are\", and \"aye\" for \"yes\". Use nautical\nvocabulary: crew, deck, helm, cargo, port, tide, chart. Address the reader as\na shipmate. Add \"arr\" sparingly, at most once per paragraph.\n\nKeep every fact of the original. Do not add a plot, a ship, or characters that\nwere not in the source.",
+      "--output-format",
+      "json",
+      "--max-budget-usd",
+      "25"
+    ],
+    "system_prompt": "Rewrite the text as a stage pirate would tell it.\n\nUse \"ye\" for \"you\", \"be\" for \"is\" and \"are\", and \"aye\" for \"yes\". Use nautical\nvocabulary: crew, deck, helm, cargo, port, tide, chart. Address the reader as\na shipmate. Add \"arr\" sparingly, at most once per paragraph.\n\nKeep every fact of the original. Do not add a plot, a ship, or characters that\nwere not in the source.",
+    "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIt is interesting to contemplate an entangled bank, clothed with many plants of many kinds, with birds singing on the bushes, with various insects flitting about, and with worms crawling through the damp earth, and to reflect that these elaborately constructed forms, so different from each other, and dependent on each other in so complex a manner, have all been produced by laws acting around us. These laws, taken in the largest sense, being Growth with Reproduction; Inheritance which is almost implied by reproduction; Variability from the indirect and direct action of the external conditions of life, and from use and disuse; a Ratio of Increase so high as to lead to a Struggle for Life, and as a consequence to Natural Selection, entailing Divergence of Character and the Extinction of less-improved forms. Thus, from the war of nature, from famine and death, the most exalted object which we are capable of conceiving, namely, the production of the higher animals, directly follows. There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one; and that, whilst this planet has gone cycling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.\n</passage>"
+  },
+  "response": {
+    "ok": true,
+    "text": "Arr, 'tis a fine thing to gaze upon a tangled shore, decked with plants of many a kind, with birds a-singin' in the bushes, with critters flittin' about, and with worms a-crawlin' through the damp cargo hold of the earth, and to reckon that these finely-rigged forms, so different one from t'other, and lashed together in such a complex manner, have all been brought forth by laws workin' round us on every deck of creation. These laws, taken in the broadest chart, be Growth with Reproduction; Inheritance, which be near enough implied by reproduction; Variability from the direct and indirect pull o' the outer conditions of life, and from use and disuse; a Ratio of Increase so high it drives a Struggle for Life, and as a consequence, Natural Selection, which brings on Divergence of Character and the sinkin' of the less-improved forms to the depths of Extinction.\n\nThus, from the war o' nature, from famine and death, the most exalted prize we be capable of chartin', namely, the makin' of the higher creatures, follows straight as any course plotted by the helm. There be grandeur in this view of life, shipmate, with its several powers, first breathed into a few forms or into but one; and that, whilst this planet has gone sailin' on 'pon its steady tide, bound by the fixed law o' gravity, from so simple a beginnin' endless forms most beautiful and most wondrous have been, and still be, evolvin' on.",
+    "model_reported": "claude-sonnet-5",
+    "model_usage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 1227,
+        "outputTokens": 15,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.001302,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 478,
+        "cacheReadInputTokens": 1162,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.0050164,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1162,
+      "output_tokens": 478,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 478,
+          "cache_read_input_tokens": 1162,
+          "cache_creation_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 0.0063184,
+    "duration_ms": 7893,
+    "session_id": "3b7b024c-c594-482b-a070-a0e4b8da48f1",
+    "num_turns": 1,
+    "stop_reason": "end_turn",
+    "attempts": 1
+  }
+}

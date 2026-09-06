@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "run_id": "plain-language__moby-dick__r4",
+  "run_index": 4,
+  "generated_at": "2026-09-06T07:56:33.536Z",
+  "guide": {
+    "id": "plain-language",
+    "source_hash": "sha256:3a199abe94429448927b65beee6748ea31710b6ebb4d4cd8068dd5653757cd34"
+  },
+  "passage": {
+    "id": "moby-dick",
+    "source_hash": "sha256:92bae3a6a660b1b2e93bb187e3258a25294969104c92fc26f1e8f12e180ed918"
+  },
+  "prompt_template": {
+    "id": "rewrite-v1",
+    "source_hash": "sha256:6c90fb9df63501ad20b39afc1902f70a6b1a13da3000a29ff3c527a519c057f4"
+  },
+  "request": {
+    "backend": "claude-code-cli",
+    "cli_version": "2.1.259 (Claude Code)",
+    "model_requested": "claude-sonnet-5",
+    "argv": [
+      "-p",
+      "--safe-mode",
+      "--no-session-persistence",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--tools",
+      "",
+      "--model",
+      "claude-sonnet-5",
+      "--system-prompt",
+      "Rewrite the text in plain language, for a reader who has no background in the\nsubject and is reading in a hurry.\n\nAddress the reader as \"you\". Use the active voice and everyday words. Keep the\naverage sentence short. Put the most important information first, and put each\ndistinct idea in its own paragraph.\n\nReplace jargon, legalese, and abbreviations with common words, or define them\non first use. Turn hidden verbs back into verbs: write \"apply\", not \"submit an\napplication\".\n\nWhere the original lists conditions or steps, use a bulleted or numbered list.\nKeep every fact and every obligation from the original intact.",
+      "--output-format",
+      "json",
+      "--max-budget-usd",
+      "25"
+    ],
+    "system_prompt": "Rewrite the text in plain language, for a reader who has no background in the\nsubject and is reading in a hurry.\n\nAddress the reader as \"you\". Use the active voice and everyday words. Keep the\naverage sentence short. Put the most important information first, and put each\ndistinct idea in its own paragraph.\n\nReplace jargon, legalese, and abbreviations with common words, or define them\non first use. Turn hidden verbs back into verbs: write \"apply\", not \"submit an\napplication\".\n\nWhere the original lists conditions or steps, use a bulleted or numbered list.\nKeep every fact and every obligation from the original intact.",
+    "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nCall me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world. It is a way I have of driving off the spleen and regulating the circulation. Whenever I find myself growing grim about the mouth; whenever it is a damp, drizzly November in my soul; whenever I find myself involuntarily pausing before coffin warehouses, and bringing up the rear of every funeral I meet; and especially whenever my hypos get such an upper hand of me, that it requires a strong moral principle to prevent me from deliberately stepping into the street, and methodically knocking people's hats off—then, I account it high time to get to sea as soon as I can. This is my substitute for pistol and ball. With a philosophical flourish Cato throws himself upon his sword; I quietly take to the ship. There is nothing surprising in this. If they but knew it, almost all men in their degree, some time or other, cherish very nearly the same feelings towards the ocean with me.\n</passage>"
+  },
+  "response": {
+    "ok": true,
+    "text": "My name is Ishmael.\n\nA few years back, I had almost no money and nothing keeping me on land. So I decided to go to sea for a while and see the ocean.\n\nThat's how I deal with feeling low and keep myself steady.\n\nWhenever I start feeling grim, or my mood turns as dark and damp as a November day, I know it's time to act.\n\nWhenever I catch myself stopping outside coffin shops, or trailing behind every funeral I pass, I know it's time to act.\n\nWhenever my sadness gets so strong that I have to fight the urge to walk into the street and knock people's hats off, I know it's time to act.\n\nAt that point, I know it's time to get to sea as fast as I can.\n\nThis is how I deal with feeling this way, instead of turning to more drastic measures. Some people might end their troubles dramatically. I simply go to sea instead.\n\nNone of this should surprise you. Whether they realize it or not, most people feel this same pull toward the ocean at some point in their lives, just as I do.",
+    "model_reported": "claude-sonnet-5",
+    "model_usage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 1198,
+        "outputTokens": 16,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.001278,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 320,
+        "cacheReadInputTokens": 1159,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.0034358,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1159,
+      "output_tokens": 320,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 320,
+          "cache_read_input_tokens": 1159,
+          "cache_creation_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 0.004713800000000001,
+    "duration_ms": 4811,
+    "session_id": "1b84f0a4-bd0d-41ff-8e81-dc09e9532056",
+    "num_turns": 1,
+    "stop_reason": "end_turn",
+    "attempts": 1
+  }
+}

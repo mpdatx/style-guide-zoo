@@ -1,5 +1,556 @@
 {
   "guide_id": "hemingway",
   "passage_id": "declaration",
-  "runs": []
+  "runs": [
+    {
+      "run_index": 1,
+      "ok": true,
+      "text": "We hold these truths. All men are created equal. Their Creator gives them rights, and no one can take these rights away. Among them are Life, Liberty, and the pursuit of Happiness. Governments exist to secure these rights. They get their power from the people, and only from the people. When a Government works against these rights, the people can change it. They can tear it down and build another. They can found it on whatever principles, and shape it into whatever form, seems likely to bring them safety and happiness.\n\nA government that has stood a long time should not be changed for small reasons. This is what prudence teaches. And history shows the same thing. Men will suffer. They will bear evils as long as the evils can be borne. They would rather suffer than rise up and abolish the government they know. But there is a point past that. When a government commits one abuse after another, always toward the same end, and the end is clear, and the end is to put men under absolute Despotism, then men have a right. They have a duty. They must throw off such a Government. They must build new Guards for their future security.",
+      "metrics": {
+        "words": 205,
+        "sentences": 20,
+        "syllables": 281,
+        "mean_sentence_length": 10.3,
+        "flesch_reading_ease": 80.5
+      },
+      "generated_at": "2026-09-06T08:00:37.304Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in the manner of Ernest Hemingway's prose.\n\nUse short declarative sentences. Join them with \"and\" more often than with\nsubordinating conjunctions. Use concrete nouns and plain verbs. Name things\nrather than describing them.\n\nCut adjectives and adverbs to almost nothing. State actions and facts without\ninterpreting them. Let the emotion sit under the surface of the sentence\nrather than on top of it. Repeat a plain word rather than reaching for a\nsynonym.\n\nDo not imitate any specific published passage.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in the manner of Ernest Hemingway's prose.\n\nUse short declarative sentences. Join them with \"and\" more often than with\nsubordinating conjunctions. Use concrete nouns and plain verbs. Name things\nrather than describing them.\n\nCut adjectives and adverbs to almost nothing. State actions and facts without\ninterpreting them. Let the emotion sit under the surface of the sentence\nrather than on top of it. Repeat a plain word rather than reaching for a\nsynonym.\n\nDo not imitate any specific published passage.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nWe hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1158,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 317,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1158,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 317,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 1158,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1158
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.009083,
+        "duration_ms": 5297,
+        "session_id": "023b6505-fcb6-47ef-9b6f-596fca7b6ad2",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1212,
+            "outputTokens": 13,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001277,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 317,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 1158,
+            "webSearchRequests": 0,
+            "costUSD": 0.0078060000000000004,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 2,
+      "ok": true,
+      "text": "We hold these truths. All men are created equal. Their Creator gave them rights, and no one can take these rights away. Among them are Life, Liberty, and the pursuit of Happiness. Governments exist to secure these rights. They get their power from the people. When a Government works against these rights, the people may change it. They may end it. They may build a new Government on new ground, and give it whatever form seems likely to bring them safety and happiness.\n\nGovernments long in place should not be changed for small reasons. This is what prudence teaches. And history shows the same thing. Men will bear evils as long as they can be borne. They would rather suffer than throw off the forms they know. But when a long train of abuses and seizures of power moves toward one end, and that end is absolute rule over them, then they have the right. They have the duty. They must throw off such a Government. They must set new guards for their future.",
+      "metrics": {
+        "words": 174,
+        "sentences": 18,
+        "syllables": 230,
+        "mean_sentence_length": 9.7,
+        "flesch_reading_ease": 85.2
+      },
+      "generated_at": "2026-09-06T08:00:41.169Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in the manner of Ernest Hemingway's prose.\n\nUse short declarative sentences. Join them with \"and\" more often than with\nsubordinating conjunctions. Use concrete nouns and plain verbs. Name things\nrather than describing them.\n\nCut adjectives and adverbs to almost nothing. State actions and facts without\ninterpreting them. Let the emotion sit under the surface of the sentence\nrather than on top of it. Repeat a plain word rather than reaching for a\nsynonym.\n\nDo not imitate any specific published passage.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in the manner of Ernest Hemingway's prose.\n\nUse short declarative sentences. Join them with \"and\" more often than with\nsubordinating conjunctions. Use concrete nouns and plain verbs. Name things\nrather than describing them.\n\nCut adjectives and adverbs to almost nothing. State actions and facts without\ninterpreting them. Let the emotion sit under the surface of the sentence\nrather than on top of it. Repeat a plain word rather than reaching for a\nsynonym.\n\nDo not imitate any specific published passage.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nWe hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1158,
+          "output_tokens": 272,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 272,
+              "cache_read_input_tokens": 1158,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0042276,
+        "duration_ms": 5913,
+        "session_id": "74afe037-9d64-452b-a007-79857538ac27",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1212,
+            "outputTokens": 12,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001272,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 272,
+            "cacheReadInputTokens": 1158,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0029556,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 3,
+      "ok": true,
+      "text": "We hold this to be true. All men are created equal. Their Creator gave them rights, and no one can take these away. Among them are Life. Liberty. The pursuit of Happiness. Governments exist to secure these rights. They get their power from the people. That is the only way. And when a government works against these rights, the people have the right to end it. They can build a new one. They can found it on whatever principles seem right to them, and set it up in whatever form seems likely to bring them safety and happiness.\n\nA government that has stood a long time should not be changed for small reasons. This is common sense. And history shows that men will suffer bad things longer than they should, rather than fix what is wrong. They are used to their old ways. But when a government follows one long line of abuse, one after another, aimed always at the same end, and that end is to put men under absolute rule, then the people have the right. They have the duty. They must throw off that government. They must set up new guards for their future.",
+      "metrics": {
+        "words": 197,
+        "sentences": 20,
+        "syllables": 259,
+        "mean_sentence_length": 9.9,
+        "flesch_reading_ease": 85.6
+      },
+      "generated_at": "2026-09-06T08:00:41.949Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in the manner of Ernest Hemingway's prose.\n\nUse short declarative sentences. Join them with \"and\" more often than with\nsubordinating conjunctions. Use concrete nouns and plain verbs. Name things\nrather than describing them.\n\nCut adjectives and adverbs to almost nothing. State actions and facts without\ninterpreting them. Let the emotion sit under the surface of the sentence\nrather than on top of it. Repeat a plain word rather than reaching for a\nsynonym.\n\nDo not imitate any specific published passage.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in the manner of Ernest Hemingway's prose.\n\nUse short declarative sentences. Join them with \"and\" more often than with\nsubordinating conjunctions. Use concrete nouns and plain verbs. Name things\nrather than describing them.\n\nCut adjectives and adverbs to almost nothing. State actions and facts without\ninterpreting them. Let the emotion sit under the surface of the sentence\nrather than on top of it. Repeat a plain word rather than reaching for a\nsynonym.\n\nDo not imitate any specific published passage.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nWe hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1158,
+          "output_tokens": 290,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 290,
+              "cache_read_input_tokens": 1158,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.004412599999999999,
+        "duration_ms": 5399,
+        "session_id": "ffb8661a-74d4-4803-b7e4-2b4350e3e9c3",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1212,
+            "outputTokens": 13,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001277,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 290,
+            "cacheReadInputTokens": 1158,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0031355999999999997,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 4,
+      "ok": true,
+      "text": "We hold these truths. All men are created equal. Their Creator gave them rights, and no one can take them away. Among these are life. Liberty. The pursuit of happiness. Governments exist to secure these rights. They get their power from the people. When a government turns against these ends, the people have the right to change it. Or to end it. And to build a new one, on ground that seems solid, in a shape that seems likely to keep them safe and let them be happy.\n\nA government long in place should not be swapped out for small reasons. This is true, and history shows it. Men will bear what is bearable. They will suffer before they rise up and cast off what they know. But when the abuses pile up, one after another, all pointing toward one end, and that end is a design to put them under absolute rule, then they have the right. They have the duty. They must throw off that government. They must set new guards for their own safety, going forward.",
+      "metrics": {
+        "words": 179,
+        "sentences": 19,
+        "syllables": 232,
+        "mean_sentence_length": 9.4,
+        "flesch_reading_ease": 87.6
+      },
+      "generated_at": "2026-09-06T08:00:42.047Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in the manner of Ernest Hemingway's prose.\n\nUse short declarative sentences. Join them with \"and\" more often than with\nsubordinating conjunctions. Use concrete nouns and plain verbs. Name things\nrather than describing them.\n\nCut adjectives and adverbs to almost nothing. State actions and facts without\ninterpreting them. Let the emotion sit under the surface of the sentence\nrather than on top of it. Repeat a plain word rather than reaching for a\nsynonym.\n\nDo not imitate any specific published passage.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in the manner of Ernest Hemingway's prose.\n\nUse short declarative sentences. Join them with \"and\" more often than with\nsubordinating conjunctions. Use concrete nouns and plain verbs. Name things\nrather than describing them.\n\nCut adjectives and adverbs to almost nothing. State actions and facts without\ninterpreting them. Let the emotion sit under the surface of the sentence\nrather than on top of it. Repeat a plain word rather than reaching for a\nsynonym.\n\nDo not imitate any specific published passage.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nWe hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1158,
+          "output_tokens": 272,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 272,
+              "cache_read_input_tokens": 1158,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0042325999999999996,
+        "duration_ms": 5073,
+        "session_id": "bf3f1cdc-0c3a-4ec5-9200-e83f31b0e6c9",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1212,
+            "outputTokens": 13,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001277,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 272,
+            "cacheReadInputTokens": 1158,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0029556,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 5,
+      "ok": true,
+      "text": "These truths we hold. All men are created equal. Their Creator gave them rights, and no one can take these rights away. Among them are life. And liberty. And the chance to chase happiness. Governments exist to protect these rights. They get their power from the people they govern, and from nothing else. When a government works against these rights, the people can change it. They can tear it down. They can build a new one. They can found it on whatever principles they choose, and shape it however they need, so it keeps them safe and lets them be happy.\n\nA government that has stood a long time should not fall for small reasons. This is common sense. And history shows it. Men will suffer. They will endure evils as long as the evils can be endured. They would rather suffer than tear down the systems they know. But there is a limit. When abuses pile up, one after another, all pointing toward the same end, and that end is total control over the people, then the people have a right. They have a duty. They must throw off that government. They must stand guard over their own future.",
+      "metrics": {
+        "words": 200,
+        "sentences": 23,
+        "syllables": 262,
+        "mean_sentence_length": 8.7,
+        "flesch_reading_ease": 87.2
+      },
+      "generated_at": "2026-09-06T08:00:44.270Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in the manner of Ernest Hemingway's prose.\n\nUse short declarative sentences. Join them with \"and\" more often than with\nsubordinating conjunctions. Use concrete nouns and plain verbs. Name things\nrather than describing them.\n\nCut adjectives and adverbs to almost nothing. State actions and facts without\ninterpreting them. Let the emotion sit under the surface of the sentence\nrather than on top of it. Repeat a plain word rather than reaching for a\nsynonym.\n\nDo not imitate any specific published passage.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in the manner of Ernest Hemingway's prose.\n\nUse short declarative sentences. Join them with \"and\" more often than with\nsubordinating conjunctions. Use concrete nouns and plain verbs. Name things\nrather than describing them.\n\nCut adjectives and adverbs to almost nothing. State actions and facts without\ninterpreting them. Let the emotion sit under the surface of the sentence\nrather than on top of it. Repeat a plain word rather than reaching for a\nsynonym.\n\nDo not imitate any specific published passage.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nWe hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1158,
+          "output_tokens": 300,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 300,
+              "cache_read_input_tokens": 1158,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0045126,
+        "duration_ms": 5544,
+        "session_id": "6b1f7aba-d942-44ca-8245-4257692bb98f",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1212,
+            "outputTokens": 13,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001277,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 300,
+            "cacheReadInputTokens": 1158,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0032356,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    }
+  ]
 }

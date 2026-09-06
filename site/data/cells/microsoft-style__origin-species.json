@@ -1,5 +1,556 @@
 {
   "guide_id": "microsoft-style",
   "passage_id": "origin-species",
-  "runs": []
+  "runs": [
+    {
+      "run_index": 1,
+      "ok": true,
+      "text": "Take a look at a tangled bank sometime. You'll see plants of every kind, birds singing in the bushes, insects darting around, and worms working through the damp soil. Here's the interesting part: these complex, wildly different living things, all depending on each other in tangled ways, came from laws that are still at work around us right now.\n\nWhat are those laws? Growth and reproduction. Inheritance, which comes bundled with reproduction. Variability, driven by how living things react to their surroundings and by use and disuse. And a rate of increase so high it forces a struggle for life — which leads to natural selection, which in turn drives character to diverge and weaker forms to die out.\n\nSo here's the payoff: out of nature's struggle, out of famine and death, comes the thing we find most awe-inspiring — the higher animals. That's the direct result.\n\nAnd there's something grand in that. Picture life's many powers breathed into just a few forms, maybe even one. Then picture this planet spinning on through time, bound by nothing more than the fixed law of gravity — and from that simple start, endless forms, each more beautiful and wonderful than the last, have evolved, and are evolving still.",
+      "metrics": {
+        "words": 203,
+        "sentences": 13,
+        "syllables": 301,
+        "mean_sentence_length": 15.6,
+        "flesch_reading_ease": 65.5
+      },
+      "generated_at": "2026-09-06T07:59:07.858Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following the Microsoft writing style.\n\nSound like a helpful colleague chatting with the reader, not a manual. Use\ncontractions everywhere they'd naturally occur, address the reader directly as\n\"you\", and reach for everyday words over formal ones. A sentence fragment is\nfine when it lands the point — don't force every thought into a full clause.\n\nOpen with the single thing the reader most needs to know, then explain. Keep\nsentences short and let the page's shape (headings, short paragraphs) do some\nof the work.\n\nUse sentence case for any heading. Use the active voice and the present tense.\nTell the reader exactly what to do and what happens next, in a tone that feels\nlike a quick conversation rather than a document.\n\nSkip jargon, hedging, and anything that talks down to the reader — but don't\nskip the personality. A little warmth and a casual aside are welcome.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following the Microsoft writing style.\n\nSound like a helpful colleague chatting with the reader, not a manual. Use\ncontractions everywhere they'd naturally occur, address the reader directly as\n\"you\", and reach for everyday words over formal ones. A sentence fragment is\nfine when it lands the point — don't force every thought into a full clause.\n\nOpen with the single thing the reader most needs to know, then explain. Keep\nsentences short and let the page's shape (headings, short paragraphs) do some\nof the work.\n\nUse sentence case for any heading. Use the active voice and the present tense.\nTell the reader exactly what to do and what happens next, in a tone that feels\nlike a quick conversation rather than a document.\n\nSkip jargon, hedging, and anything that talks down to the reader — but don't\nskip the personality. A little warmth and a casual aside are welcome.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIt is interesting to contemplate an entangled bank, clothed with many plants of many kinds, with birds singing on the bushes, with various insects flitting about, and with worms crawling through the damp earth, and to reflect that these elaborately constructed forms, so different from each other, and dependent on each other in so complex a manner, have all been produced by laws acting around us. These laws, taken in the largest sense, being Growth with Reproduction; Inheritance which is almost implied by reproduction; Variability from the indirect and direct action of the external conditions of life, and from use and disuse; a Ratio of Increase so high as to lead to a Struggle for Life, and as a consequence to Natural Selection, entailing Divergence of Character and the Extinction of less-improved forms. Thus, from the war of nature, from famine and death, the most exalted object which we are capable of conceiving, namely, the production of the higher animals, directly follows. There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one; and that, whilst this planet has gone cycling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1296,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 369,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1296,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 369,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 1296,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1296
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.010175,
+        "duration_ms": 6247,
+        "session_id": "ac4aa4e3-c17e-4492-aa2c-8357c3e0c4c8",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1227,
+            "outputTokens": 14,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001297,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 369,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 1296,
+            "webSearchRequests": 0,
+            "costUSD": 0.008878,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 2,
+      "ok": true,
+      "text": "Take a good look at a tangled hedgerow sometime. Plants of every kind, birds singing from the branches, insects darting around, worms working through the wet soil below. It's worth pausing on: all these intricate, wildly different living things, all leaning on each other in complicated ways, and all of them shaped by the same ordinary laws still running today.\n\nWhat are those laws? Growth and reproduction, for a start. Inheritance, which comes bundled with reproduction pretty much automatically. Variation, driven by the environment (directly and indirectly) and by how much or how little a trait gets used. Add in a birth rate high enough that living things end up competing hard just to get by — a struggle for existence. That struggle drives natural selection, which pushes species to diverge and leaves the less-fit forms behind.\n\nSo here's the thing: out of nature's harsh math — the competition, the hunger, the dying — comes something remarkable. The higher animals. That's the result.\n\nAnd that's what makes this view of life so grand. Picture just a handful of forms, or maybe only one, with life's breath first stirred into them. Then picture this planet spinning on through time, obedient to nothing more than the pull of gravity — and from that simple start, an endless parade of forms, each more beautiful and astonishing than the last, has been unfolding ever since. Still is.",
+      "metrics": {
+        "words": 229,
+        "sentences": 16,
+        "syllables": 353,
+        "mean_sentence_length": 14.3,
+        "flesch_reading_ease": 61.9
+      },
+      "generated_at": "2026-09-06T07:59:15.048Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following the Microsoft writing style.\n\nSound like a helpful colleague chatting with the reader, not a manual. Use\ncontractions everywhere they'd naturally occur, address the reader directly as\n\"you\", and reach for everyday words over formal ones. A sentence fragment is\nfine when it lands the point — don't force every thought into a full clause.\n\nOpen with the single thing the reader most needs to know, then explain. Keep\nsentences short and let the page's shape (headings, short paragraphs) do some\nof the work.\n\nUse sentence case for any heading. Use the active voice and the present tense.\nTell the reader exactly what to do and what happens next, in a tone that feels\nlike a quick conversation rather than a document.\n\nSkip jargon, hedging, and anything that talks down to the reader — but don't\nskip the personality. A little warmth and a casual aside are welcome.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following the Microsoft writing style.\n\nSound like a helpful colleague chatting with the reader, not a manual. Use\ncontractions everywhere they'd naturally occur, address the reader directly as\n\"you\", and reach for everyday words over formal ones. A sentence fragment is\nfine when it lands the point — don't force every thought into a full clause.\n\nOpen with the single thing the reader most needs to know, then explain. Keep\nsentences short and let the page's shape (headings, short paragraphs) do some\nof the work.\n\nUse sentence case for any heading. Use the active voice and the present tense.\nTell the reader exactly what to do and what happens next, in a tone that feels\nlike a quick conversation rather than a document.\n\nSkip jargon, hedging, and anything that talks down to the reader — but don't\nskip the personality. A little warmth and a casual aside are welcome.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIt is interesting to contemplate an entangled bank, clothed with many plants of many kinds, with birds singing on the bushes, with various insects flitting about, and with worms crawling through the damp earth, and to reflect that these elaborately constructed forms, so different from each other, and dependent on each other in so complex a manner, have all been produced by laws acting around us. These laws, taken in the largest sense, being Growth with Reproduction; Inheritance which is almost implied by reproduction; Variability from the indirect and direct action of the external conditions of life, and from use and disuse; a Ratio of Increase so high as to lead to a Struggle for Life, and as a consequence to Natural Selection, entailing Divergence of Character and the Extinction of less-improved forms. Thus, from the war of nature, from famine and death, the most exalted object which we are capable of conceiving, namely, the production of the higher animals, directly follows. There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one; and that, whilst this planet has gone cycling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1296,
+          "output_tokens": 427,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 427,
+              "cache_read_input_tokens": 1296,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0058202,
+        "duration_ms": 10554,
+        "session_id": "12d95ae5-ed5f-493c-acf8-7e382cc12fc9",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1227,
+            "outputTokens": 12,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001287,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 427,
+            "cacheReadInputTokens": 1296,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0045332,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 3,
+      "ok": true,
+      "text": "Here's the thing: everything you see on that tangled bank — plants, birds, bugs, worms in the dirt — all of it came from a few simple rules working quietly in the background.\n\nGrowth and reproduction. Inheritance (which pretty much comes free with reproduction). Variation, caused by the conditions living things face and by what they use or stop using. And because every species tends to produce more offspring than the world can support, you get a struggle for survival. That struggle drives natural selection, which pushes species apart from each other and pushes weaker forms out entirely.\n\nSo from famine, death, and constant competition comes something remarkable: the higher animals, us included.\n\nAnd that's the grand part. Picture life's basic power breathed into just one form, or a handful of them, at the very start. Then picture this planet spinning on, year after year, under nothing more than the plain law of gravity — and from that one simple beginning, an endless parade of forms, each one beautiful and strange in its own way, has kept unfolding. Still is.",
+      "metrics": {
+        "words": 177,
+        "sentences": 11,
+        "syllables": 271,
+        "mean_sentence_length": 16.1,
+        "flesch_reading_ease": 61
+      },
+      "generated_at": "2026-09-06T07:59:10.201Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following the Microsoft writing style.\n\nSound like a helpful colleague chatting with the reader, not a manual. Use\ncontractions everywhere they'd naturally occur, address the reader directly as\n\"you\", and reach for everyday words over formal ones. A sentence fragment is\nfine when it lands the point — don't force every thought into a full clause.\n\nOpen with the single thing the reader most needs to know, then explain. Keep\nsentences short and let the page's shape (headings, short paragraphs) do some\nof the work.\n\nUse sentence case for any heading. Use the active voice and the present tense.\nTell the reader exactly what to do and what happens next, in a tone that feels\nlike a quick conversation rather than a document.\n\nSkip jargon, hedging, and anything that talks down to the reader — but don't\nskip the personality. A little warmth and a casual aside are welcome.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following the Microsoft writing style.\n\nSound like a helpful colleague chatting with the reader, not a manual. Use\ncontractions everywhere they'd naturally occur, address the reader directly as\n\"you\", and reach for everyday words over formal ones. A sentence fragment is\nfine when it lands the point — don't force every thought into a full clause.\n\nOpen with the single thing the reader most needs to know, then explain. Keep\nsentences short and let the page's shape (headings, short paragraphs) do some\nof the work.\n\nUse sentence case for any heading. Use the active voice and the present tense.\nTell the reader exactly what to do and what happens next, in a tone that feels\nlike a quick conversation rather than a document.\n\nSkip jargon, hedging, and anything that talks down to the reader — but don't\nskip the personality. A little warmth and a casual aside are welcome.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIt is interesting to contemplate an entangled bank, clothed with many plants of many kinds, with birds singing on the bushes, with various insects flitting about, and with worms crawling through the damp earth, and to reflect that these elaborately constructed forms, so different from each other, and dependent on each other in so complex a manner, have all been produced by laws acting around us. These laws, taken in the largest sense, being Growth with Reproduction; Inheritance which is almost implied by reproduction; Variability from the indirect and direct action of the external conditions of life, and from use and disuse; a Ratio of Increase so high as to lead to a Struggle for Life, and as a consequence to Natural Selection, entailing Divergence of Character and the Extinction of less-improved forms. Thus, from the war of nature, from famine and death, the most exalted object which we are capable of conceiving, namely, the production of the higher animals, directly follows. There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one; and that, whilst this planet has gone cycling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1296,
+          "output_tokens": 319,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 319,
+              "cache_read_input_tokens": 1296,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0047402,
+        "duration_ms": 5607,
+        "session_id": "da9e60aa-b728-4f18-ab7c-ba8c0496c192",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1227,
+            "outputTokens": 12,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001287,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 319,
+            "cacheReadInputTokens": 1296,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0034532,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 4,
+      "ok": true,
+      "text": "Here's a fun thing to sit with: picture a tangled bank, thick with plants, birds singing in the bushes, insects darting around, worms working their way through the damp soil. All these wildly different, intricately built forms, all leaning on each other in complicated ways — and every one of them shows up because of laws working around us right now.\n\nWhat laws? Take them in the broadest sense: Growth and Reproduction. Inheritance, which reproduction basically guarantees. Variability, driven by how living conditions act on organisms directly and indirectly, and by use and disuse. And a rate of increase so high it forces a Struggle for Life — which leads straight to Natural Selection, and from there to Divergence of Character and the loss of less-fit forms along the way.\n\nSo here's the thing: out of nature's war, out of famine and death, comes the thing we'd call the most remarkable outcome imaginable — the higher animals themselves.\n\nThere's something grand in that. Life, and its powers, breathed into just a few forms, or maybe one. And while this planet has kept spinning on, following gravity's fixed law, from that simple start, endless forms — the most beautiful, the most wonderful — have kept coming into being. They still are.",
+      "metrics": {
+        "words": 205,
+        "sentences": 12,
+        "syllables": 315,
+        "mean_sentence_length": 17.1,
+        "flesch_reading_ease": 59.5
+      },
+      "generated_at": "2026-09-06T07:59:11.439Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following the Microsoft writing style.\n\nSound like a helpful colleague chatting with the reader, not a manual. Use\ncontractions everywhere they'd naturally occur, address the reader directly as\n\"you\", and reach for everyday words over formal ones. A sentence fragment is\nfine when it lands the point — don't force every thought into a full clause.\n\nOpen with the single thing the reader most needs to know, then explain. Keep\nsentences short and let the page's shape (headings, short paragraphs) do some\nof the work.\n\nUse sentence case for any heading. Use the active voice and the present tense.\nTell the reader exactly what to do and what happens next, in a tone that feels\nlike a quick conversation rather than a document.\n\nSkip jargon, hedging, and anything that talks down to the reader — but don't\nskip the personality. A little warmth and a casual aside are welcome.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following the Microsoft writing style.\n\nSound like a helpful colleague chatting with the reader, not a manual. Use\ncontractions everywhere they'd naturally occur, address the reader directly as\n\"you\", and reach for everyday words over formal ones. A sentence fragment is\nfine when it lands the point — don't force every thought into a full clause.\n\nOpen with the single thing the reader most needs to know, then explain. Keep\nsentences short and let the page's shape (headings, short paragraphs) do some\nof the work.\n\nUse sentence case for any heading. Use the active voice and the present tense.\nTell the reader exactly what to do and what happens next, in a tone that feels\nlike a quick conversation rather than a document.\n\nSkip jargon, hedging, and anything that talks down to the reader — but don't\nskip the personality. A little warmth and a casual aside are welcome.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIt is interesting to contemplate an entangled bank, clothed with many plants of many kinds, with birds singing on the bushes, with various insects flitting about, and with worms crawling through the damp earth, and to reflect that these elaborately constructed forms, so different from each other, and dependent on each other in so complex a manner, have all been produced by laws acting around us. These laws, taken in the largest sense, being Growth with Reproduction; Inheritance which is almost implied by reproduction; Variability from the indirect and direct action of the external conditions of life, and from use and disuse; a Ratio of Increase so high as to lead to a Struggle for Life, and as a consequence to Natural Selection, entailing Divergence of Character and the Extinction of less-improved forms. Thus, from the war of nature, from famine and death, the most exalted object which we are capable of conceiving, namely, the production of the higher animals, directly follows. There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one; and that, whilst this planet has gone cycling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1296,
+          "output_tokens": 388,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 388,
+              "cache_read_input_tokens": 1296,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0054302,
+        "duration_ms": 6669,
+        "session_id": "7b14436e-6a60-4721-8d78-ebc2dea4852e",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1227,
+            "outputTokens": 12,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001287,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 388,
+            "cacheReadInputTokens": 1296,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0041432,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 5,
+      "ok": true,
+      "text": "Here's the thing worth pausing on: every tangled, overgrown bank you've ever walked past — plants of every kind, birds singing in the bushes, insects darting around, worms working through the damp soil — didn't just happen. All these intricate, wildly different living things, all leaning on each other in complicated ways, came from laws that are still running right now, all around you.\n\nWhat laws? Growth and reproduction. Inheritance, which pretty much comes bundled with reproduction. Variability, driven by how living things respond to their surroundings and by what they use or stop using. And a rate of increase so relentless it forces a struggle to survive — which in turn drives natural selection, pushing species to diverge and older forms to die out.\n\nSo here's the striking part: out of nature's constant struggle, out of hunger and death, comes the thing we'd call the most remarkable outcome imaginable — the rise of the higher animals. Follow that thought far enough, and it's hard not to feel a bit of awe.\n\nThere's something grand in that. Picture life, and all its many abilities, breathed into just a few forms, or maybe just one. And then think about this planet, spinning on through time under nothing more than the steady pull of gravity — and from that one simple start, endless forms, each more beautiful and strange than the last, have kept emerging. They still are.",
+      "metrics": {
+        "words": 231,
+        "sentences": 13,
+        "syllables": 344,
+        "mean_sentence_length": 17.8,
+        "flesch_reading_ease": 62.8
+      },
+      "generated_at": "2026-09-06T07:59:15.484Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following the Microsoft writing style.\n\nSound like a helpful colleague chatting with the reader, not a manual. Use\ncontractions everywhere they'd naturally occur, address the reader directly as\n\"you\", and reach for everyday words over formal ones. A sentence fragment is\nfine when it lands the point — don't force every thought into a full clause.\n\nOpen with the single thing the reader most needs to know, then explain. Keep\nsentences short and let the page's shape (headings, short paragraphs) do some\nof the work.\n\nUse sentence case for any heading. Use the active voice and the present tense.\nTell the reader exactly what to do and what happens next, in a tone that feels\nlike a quick conversation rather than a document.\n\nSkip jargon, hedging, and anything that talks down to the reader — but don't\nskip the personality. A little warmth and a casual aside are welcome.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following the Microsoft writing style.\n\nSound like a helpful colleague chatting with the reader, not a manual. Use\ncontractions everywhere they'd naturally occur, address the reader directly as\n\"you\", and reach for everyday words over formal ones. A sentence fragment is\nfine when it lands the point — don't force every thought into a full clause.\n\nOpen with the single thing the reader most needs to know, then explain. Keep\nsentences short and let the page's shape (headings, short paragraphs) do some\nof the work.\n\nUse sentence case for any heading. Use the active voice and the present tense.\nTell the reader exactly what to do and what happens next, in a tone that feels\nlike a quick conversation rather than a document.\n\nSkip jargon, hedging, and anything that talks down to the reader — but don't\nskip the personality. A little warmth and a casual aside are welcome.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIt is interesting to contemplate an entangled bank, clothed with many plants of many kinds, with birds singing on the bushes, with various insects flitting about, and with worms crawling through the damp earth, and to reflect that these elaborately constructed forms, so different from each other, and dependent on each other in so complex a manner, have all been produced by laws acting around us. These laws, taken in the largest sense, being Growth with Reproduction; Inheritance which is almost implied by reproduction; Variability from the indirect and direct action of the external conditions of life, and from use and disuse; a Ratio of Increase so high as to lead to a Struggle for Life, and as a consequence to Natural Selection, entailing Divergence of Character and the Extinction of less-improved forms. Thus, from the war of nature, from famine and death, the most exalted object which we are capable of conceiving, namely, the production of the higher animals, directly follows. There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one; and that, whilst this planet has gone cycling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1296,
+          "output_tokens": 422,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 422,
+              "cache_read_input_tokens": 1296,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0057702,
+        "duration_ms": 6279,
+        "session_id": "b2f31a02-6910-4291-8b13-e052f4844f80",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1227,
+            "outputTokens": 12,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001287,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 422,
+            "cacheReadInputTokens": 1296,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0044832,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    }
+  ]
 }

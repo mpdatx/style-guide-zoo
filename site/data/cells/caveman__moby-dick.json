@@ -1,5 +1,556 @@
 {
   "guide_id": "caveman",
   "passage_id": "moby-dick",
-  "runs": []
+  "runs": [
+    {
+      "run_index": 1,
+      "ok": true,
+      "text": "Me call me Ishmael. Long time back—no matter how long—me have no money in pouch. No thing pull me on land. Me think: go on water, look at big wet world.\n\nThis my way. Chase away black mood. Fix blood inside body. When mouth turn hard and mean. When soul feel like wet gray sky month. When feet stop by box-for-dead-man house. When feet walk behind every dead-man line. When bad mood grab me so hard, me want knock hat off every man on street—then me know: time go to sea. Now.\n\nThis me trick instead of knife or spear-point. Other man fall on own sword, make big show. Me just walk on boat, quiet.\n\nNo strange thing here. Most man, deep down, feel same pull toward big water. Same like me.",
+      "metrics": {
+        "words": 132,
+        "sentences": 19,
+        "syllables": 155,
+        "mean_sentence_length": 6.9,
+        "flesch_reading_ease": 100.4
+      },
+      "generated_at": "2026-09-06T07:53:47.700Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nCall me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world. It is a way I have of driving off the spleen and regulating the circulation. Whenever I find myself growing grim about the mouth; whenever it is a damp, drizzly November in my soul; whenever I find myself involuntarily pausing before coffin warehouses, and bringing up the rear of every funeral I meet; and especially whenever my hypos get such an upper hand of me, that it requires a strong moral principle to prevent me from deliberately stepping into the street, and methodically knocking people's hats off—then, I account it high time to get to sea as soon as I can. This is my substitute for pistol and ball. With a philosophical flourish Cato throws himself upon his sword; I quietly take to the ship. There is nothing surprising in this. If they but knew it, almost all men in their degree, some time or other, cherish very nearly the same feelings towards the ocean with me.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1116,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 245,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1116,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 245,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 1116,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1116
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.008196,
+        "duration_ms": 6478,
+        "session_id": "e2c9e328-1561-4637-8a29-a545903874c6",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1198,
+            "outputTokens": 16,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001278,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 245,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 1116,
+            "webSearchRequests": 0,
+            "costUSD": 0.0069180000000000005,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 2,
+      "ok": true,
+      "text": "Me call Ishmael. Long time back, no matter how long, I got no coin in pocket. Nothing hold me on land. I think: go on water, look at big wet world. This my way. This chase away black mood, make blood move right.\n\nMouth go hard. Soul feel like wet, dark month. Feet stop by box-maker shop. Feet walk behind every dead-body march. Bad mood grab me strong, me want punch hat off stranger head. Then me know: time go to sea, go now.\n\nThis my knife-throw, my pistol-shot. Other man fall on sword like big thinker. Me just walk on ship, quiet.\n\nNo surprise here. Many men, deep inside, feel same pull to sea like me.",
+      "metrics": {
+        "words": 117,
+        "sentences": 17,
+        "syllables": 140,
+        "mean_sentence_length": 6.9,
+        "flesch_reading_ease": 98.6
+      },
+      "generated_at": "2026-09-06T07:53:47.731Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nCall me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world. It is a way I have of driving off the spleen and regulating the circulation. Whenever I find myself growing grim about the mouth; whenever it is a damp, drizzly November in my soul; whenever I find myself involuntarily pausing before coffin warehouses, and bringing up the rear of every funeral I meet; and especially whenever my hypos get such an upper hand of me, that it requires a strong moral principle to prevent me from deliberately stepping into the street, and methodically knocking people's hats off—then, I account it high time to get to sea as soon as I can. This is my substitute for pistol and ball. With a philosophical flourish Cato throws himself upon his sword; I quietly take to the ship. There is nothing surprising in this. If they but knew it, almost all men in their degree, some time or other, cherish very nearly the same feelings towards the ocean with me.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1116,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 231,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1116,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 231,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 1116,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1116
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.008056,
+        "duration_ms": 5441,
+        "session_id": "8731b443-ac75-4a18-99fc-db5d7ed8fa80",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1198,
+            "outputTokens": 16,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001278,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 231,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 1116,
+            "webSearchRequests": 0,
+            "costUSD": 0.006778,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 3,
+      "ok": true,
+      "text": "Me Ishmael. Long time ago—no matter how long—I got no money in pouch. No thing on land I want. I think: I go sea, I look big water world.\n\nThis my way. This chase bad mood away. This fix blood inside me.\n\nSometime mouth go hard, like stone. Sometime soul feel wet and dark, like rain month. Sometime I stop, I stare at box-for-dead-body shop. Sometime I walk behind every dead-man line I see.\n\nSometime bad feeling grab me strong. Strong like it want me walk in street, knock hat off every man head. Then I know: time go sea now. Quick.\n\nThis my knife-fight. This my arrow-shot. Other man, Cato, he fall on sword, big show. Me, I no do that. I go ship, quiet.\n\nNo surprise here. Many man, deep inside, feel same feel for big water. Same like me.",
+      "metrics": {
+        "words": 142,
+        "sentences": 23,
+        "syllables": 182,
+        "mean_sentence_length": 6.2,
+        "flesch_reading_ease": 92.1
+      },
+      "generated_at": "2026-09-06T07:53:50.819Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nCall me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world. It is a way I have of driving off the spleen and regulating the circulation. Whenever I find myself growing grim about the mouth; whenever it is a damp, drizzly November in my soul; whenever I find myself involuntarily pausing before coffin warehouses, and bringing up the rear of every funeral I meet; and especially whenever my hypos get such an upper hand of me, that it requires a strong moral principle to prevent me from deliberately stepping into the street, and methodically knocking people's hats off—then, I account it high time to get to sea as soon as I can. This is my substitute for pistol and ball. With a philosophical flourish Cato throws himself upon his sword; I quietly take to the ship. There is nothing surprising in this. If they but knew it, almost all men in their degree, some time or other, cherish very nearly the same feelings towards the ocean with me.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1116,
+          "output_tokens": 287,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 287,
+              "cache_read_input_tokens": 1116,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0043802,
+        "duration_ms": 5742,
+        "session_id": "e30533b3-56d0-4f3d-a7a7-491bafd04480",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1198,
+            "outputTokens": 17,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001283,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 287,
+            "cacheReadInputTokens": 1116,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0030971999999999996,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 4,
+      "ok": true,
+      "text": "Me Ishmael. Long time back—not say how long—no money in pouch. No thing on land pull me. I think: go on big water, look at watery part of world.\n\nThis my way. Push out bad mood. Fix blood flow in body.\n\nMouth turn hard. Heart feel like wet gray sky-month. Feet stop walk in front of box-house for dead bodies. Feet follow every dead-walk I see. Bad-mood-beast grab me strong, strong—want smash hats off head-people in street. Need much will-strength stop hand.\n\nThen I know: time go sea now.\n\nThis my knife. This my stone-throw. Other man Cato fall on sword, die brave-talk way. Me: I go on boat, quiet.\n\nNo surprise here. Many man feel this same pull to big water. Same feel like me. They no know it, but true.",
+      "metrics": {
+        "words": 132,
+        "sentences": 22,
+        "syllables": 162,
+        "mean_sentence_length": 6,
+        "flesch_reading_ease": 96.9
+      },
+      "generated_at": "2026-09-06T07:53:56.367Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nCall me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world. It is a way I have of driving off the spleen and regulating the circulation. Whenever I find myself growing grim about the mouth; whenever it is a damp, drizzly November in my soul; whenever I find myself involuntarily pausing before coffin warehouses, and bringing up the rear of every funeral I meet; and especially whenever my hypos get such an upper hand of me, that it requires a strong moral principle to prevent me from deliberately stepping into the street, and methodically knocking people's hats off—then, I account it high time to get to sea as soon as I can. This is my substitute for pistol and ball. With a philosophical flourish Cato throws himself upon his sword; I quietly take to the ship. There is nothing surprising in this. If they but knew it, almost all men in their degree, some time or other, cherish very nearly the same feelings towards the ocean with me.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1116,
+          "output_tokens": 270,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 270,
+              "cache_read_input_tokens": 1116,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0042002,
+        "duration_ms": 6851,
+        "session_id": "4db232ea-13dd-404b-978b-c511f12854b8",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1198,
+            "outputTokens": 15,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001273,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 270,
+            "cacheReadInputTokens": 1116,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0029272000000000005,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 5,
+      "ok": true,
+      "text": "Me, Ishmael. Long time back—no matter when—I got no money in pouch. No thing on land pull me. I think: go on water. Look at big wet world.\n\nThis my way. Chase away black cloud in head. Fix blood inside.\n\nWhen mouth go hard and mean. When soul feel like grey rain day. When feet stop by box-maker house, stare long time. When I walk behind every dead-man line, follow box to hole. When bad mood grab me strong, I want punch hats off man head in street. Then I know: time go sea, quick.\n\nThis my knife-fight. This my sword-fall. Other man, name Cato, fall on own blade, die proud. Not me. I walk to ship, quiet, no fuss.\n\nNo strange thing here. Many man feel same pull to sea, same as me. They not know it. But true.",
+      "metrics": {
+        "words": 140,
+        "sentences": 23,
+        "syllables": 162,
+        "mean_sentence_length": 6.1,
+        "flesch_reading_ease": 102.8
+      },
+      "generated_at": "2026-09-06T07:53:55.444Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nCall me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world. It is a way I have of driving off the spleen and regulating the circulation. Whenever I find myself growing grim about the mouth; whenever it is a damp, drizzly November in my soul; whenever I find myself involuntarily pausing before coffin warehouses, and bringing up the rear of every funeral I meet; and especially whenever my hypos get such an upper hand of me, that it requires a strong moral principle to prevent me from deliberately stepping into the street, and methodically knocking people's hats off—then, I account it high time to get to sea as soon as I can. This is my substitute for pistol and ball. With a philosophical flourish Cato throws himself upon his sword; I quietly take to the ship. There is nothing surprising in this. If they but knew it, almost all men in their degree, some time or other, cherish very nearly the same feelings towards the ocean with me.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1116,
+          "output_tokens": 264,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 264,
+              "cache_read_input_tokens": 1116,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0041452,
+        "duration_ms": 6283,
+        "session_id": "0d83e46d-adc0-4745-b34f-b08af80637b6",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1198,
+            "outputTokens": 16,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001278,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 264,
+            "cacheReadInputTokens": 1116,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0028672000000000003,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    }
+  ]
 }

@@ -1,5 +1,556 @@
 {
   "guide_id": "economist",
   "passage_id": "terms-of-service",
-  "runs": []
+  "runs": [
+    {
+      "run_index": 1,
+      "ok": true,
+      "text": "If the subscriber turns on the optional Enhanced Analytics Add-On (defined in Schedule C, which may change from time to time), the service may use any Usage Data this generates, aggregated or not, unless the subscriber objects in writing within the period set out in Schedule D. Using the service after this clause changes counts as accepting the change. The service may announce such changes solely via the subscriber's dashboard, without direct notice.",
+      "metrics": {
+        "words": 73,
+        "sentences": 3,
+        "syllables": 123,
+        "mean_sentence_length": 24.3,
+        "flesch_reading_ease": 39.6
+      },
+      "generated_at": "2026-09-06T07:56:02.515Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nNotwithstanding anything to the contrary elsewhere in this Agreement, in the event that the Subscriber elects to enable the optional Enhanced Analytics Add-On (as such term is defined in Schedule C, which Schedule may itself be amended from time to time in a manner not inconsistent with the general purposes of this Section), it is agreed and understood that any and all Usage Data collected in connection therewith, whether or not such Usage Data is subsequently aggregated, anonymized, or otherwise processed by or on behalf of the Service, shall, unless a written objection is received within the period specified in Schedule D, be deemed to have been licensed back to the Service on a non-exclusive basis. The Subscriber's continued use of the Service following any modification to this clause shall be construed as acceptance thereof, and it is acknowledged that certain notifications regarding such modifications may, at the Service's sole discretion, be delivered solely through the Subscriber's account dashboard rather than by direct communication.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1177,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 137,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1177,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 137,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 1177,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1177
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.007294,
+        "duration_ms": 2650,
+        "session_id": "443705c7-0e73-4fca-8e96-4b7ec55c67ac",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1147,
+            "outputTokens": 13,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001212,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 137,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 1177,
+            "webSearchRequests": 0,
+            "costUSD": 0.006082000000000001,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 2,
+      "ok": true,
+      "text": "If the subscriber turns on the optional Enhanced Analytics Add-On (defined in Schedule C, which the firm may amend), it may use any data this collects, raw or processed. Subscribers who object must say so in writing within the period set out in Schedule D. Using the service after any change to this clause counts as accepting it. The firm may announce such changes solely on the subscriber's dashboard, without further notice.",
+      "metrics": {
+        "words": 72,
+        "sentences": 4,
+        "syllables": 116,
+        "mean_sentence_length": 18,
+        "flesch_reading_ease": 52.3
+      },
+      "generated_at": "2026-09-06T07:56:04.565Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nNotwithstanding anything to the contrary elsewhere in this Agreement, in the event that the Subscriber elects to enable the optional Enhanced Analytics Add-On (as such term is defined in Schedule C, which Schedule may itself be amended from time to time in a manner not inconsistent with the general purposes of this Section), it is agreed and understood that any and all Usage Data collected in connection therewith, whether or not such Usage Data is subsequently aggregated, anonymized, or otherwise processed by or on behalf of the Service, shall, unless a written objection is received within the period specified in Schedule D, be deemed to have been licensed back to the Service on a non-exclusive basis. The Subscriber's continued use of the Service following any modification to this clause shall be construed as acceptance thereof, and it is acknowledged that certain notifications regarding such modifications may, at the Service's sole discretion, be delivered solely through the Subscriber's account dashboard rather than by direct communication.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1177,
+          "output_tokens": 132,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 132,
+              "cache_read_input_tokens": 1177,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0027714000000000003,
+        "duration_ms": 2741,
+        "session_id": "f10e336b-cd8c-4ecd-8a02-8cde84a3487e",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1147,
+            "outputTokens": 13,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001212,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 132,
+            "cacheReadInputTokens": 1177,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0015594,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 3,
+      "ok": true,
+      "text": "If a subscriber turns on the optional Enhanced Analytics Add-on (defined in Schedule C, which the firm may amend), it may use any Usage Data this generates—raw or processed—as it likes. Subscribers have a window, set out in Schedule D, to object in writing; otherwise the licence back to the service is automatic. Using the service after any change to this clause counts as accepting it. The firm may announce such changes solely via the subscriber's dashboard, with no other notice given.",
+      "metrics": {
+        "words": 82,
+        "sentences": 4,
+        "syllables": 138,
+        "mean_sentence_length": 20.5,
+        "flesch_reading_ease": 43.7
+      },
+      "generated_at": "2026-09-06T07:56:05.837Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nNotwithstanding anything to the contrary elsewhere in this Agreement, in the event that the Subscriber elects to enable the optional Enhanced Analytics Add-On (as such term is defined in Schedule C, which Schedule may itself be amended from time to time in a manner not inconsistent with the general purposes of this Section), it is agreed and understood that any and all Usage Data collected in connection therewith, whether or not such Usage Data is subsequently aggregated, anonymized, or otherwise processed by or on behalf of the Service, shall, unless a written objection is received within the period specified in Schedule D, be deemed to have been licensed back to the Service on a non-exclusive basis. The Subscriber's continued use of the Service following any modification to this clause shall be construed as acceptance thereof, and it is acknowledged that certain notifications regarding such modifications may, at the Service's sole discretion, be delivered solely through the Subscriber's account dashboard rather than by direct communication.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1177,
+          "output_tokens": 158,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 158,
+              "cache_read_input_tokens": 1177,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0030264,
+        "duration_ms": 3270,
+        "session_id": "296336dc-ed80-407a-ad4f-c3a2bcefd187",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1147,
+            "outputTokens": 12,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001207,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 158,
+            "cacheReadInputTokens": 1177,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0018193999999999999,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 4,
+      "ok": true,
+      "text": "If a subscriber turns on the optional Enhanced Analytics Add-On (defined in Schedule C, which the service may amend), the service may use any Usage Data this generates, raw or processed, and license it back to itself. Subscribers who object must say so in writing within the period set out in Schedule D. Keep using the service after a change to this clause, and that counts as agreement to it. The service may announce such changes solely through the account dashboard, with no direct notice at all.",
+      "metrics": {
+        "words": 87,
+        "sentences": 4,
+        "syllables": 136,
+        "mean_sentence_length": 21.8,
+        "flesch_reading_ease": 52.5
+      },
+      "generated_at": "2026-09-06T07:56:06.808Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nNotwithstanding anything to the contrary elsewhere in this Agreement, in the event that the Subscriber elects to enable the optional Enhanced Analytics Add-On (as such term is defined in Schedule C, which Schedule may itself be amended from time to time in a manner not inconsistent with the general purposes of this Section), it is agreed and understood that any and all Usage Data collected in connection therewith, whether or not such Usage Data is subsequently aggregated, anonymized, or otherwise processed by or on behalf of the Service, shall, unless a written objection is received within the period specified in Schedule D, be deemed to have been licensed back to the Service on a non-exclusive basis. The Subscriber's continued use of the Service following any modification to this clause shall be construed as acceptance thereof, and it is acknowledged that certain notifications regarding such modifications may, at the Service's sole discretion, be delivered solely through the Subscriber's account dashboard rather than by direct communication.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1177,
+          "output_tokens": 149,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 149,
+              "cache_read_input_tokens": 1177,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0029364,
+        "duration_ms": 2920,
+        "session_id": "c136510b-8dda-4bdf-8972-210e8decd8e0",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1147,
+            "outputTokens": 12,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001207,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 149,
+            "cacheReadInputTokens": 1177,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0017294,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 5,
+      "ok": true,
+      "text": "If the Subscriber turns on the optional Enhanced Analytics Add-On (defined in Schedule C, which may be amended in keeping with this section's purpose), any Usage Data collected—processed or not—counts as licensed back to the Service, unless the Subscriber objects in writing within the period set out in Schedule D. Using the Service after any change to this clause counts as accepting it. The Service may announce such changes solely through the account dashboard, with no direct notice required.",
+      "metrics": {
+        "words": 79,
+        "sentences": 3,
+        "syllables": 136,
+        "mean_sentence_length": 26.3,
+        "flesch_reading_ease": 34.5
+      },
+      "generated_at": "2026-09-06T07:56:07.456Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nNotwithstanding anything to the contrary elsewhere in this Agreement, in the event that the Subscriber elects to enable the optional Enhanced Analytics Add-On (as such term is defined in Schedule C, which Schedule may itself be amended from time to time in a manner not inconsistent with the general purposes of this Section), it is agreed and understood that any and all Usage Data collected in connection therewith, whether or not such Usage Data is subsequently aggregated, anonymized, or otherwise processed by or on behalf of the Service, shall, unless a written objection is received within the period specified in Schedule D, be deemed to have been licensed back to the Service on a non-exclusive basis. The Subscriber's continued use of the Service following any modification to this clause shall be construed as acceptance thereof, and it is acknowledged that certain notifications regarding such modifications may, at the Service's sole discretion, be delivered solely through the Subscriber's account dashboard rather than by direct communication.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1177,
+          "output_tokens": 153,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 153,
+              "cache_read_input_tokens": 1177,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0029764,
+        "duration_ms": 2714,
+        "session_id": "dc011cf9-02e2-4963-8b6c-e7e89fee9c56",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1147,
+            "outputTokens": 12,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001207,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 153,
+            "cacheReadInputTokens": 1177,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0017694000000000002,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    }
+  ]
 }

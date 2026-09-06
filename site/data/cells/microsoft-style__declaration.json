@@ -1,5 +1,556 @@
 {
   "guide_id": "microsoft-style",
   "passage_id": "declaration",
-  "runs": []
+  "runs": [
+    {
+      "run_index": 1,
+      "ok": true,
+      "text": "Here's the deal: everyone's equal, and that's just obvious. We're all born with certain rights nobody can take away — like life, liberty, and the chance to go after happiness. Governments exist to protect those rights, and they only get their authority because the people agree to it. So if a government starts working against those rights instead of for them, people get to change it or scrap it entirely and build something new — whatever setup seems most likely to keep them safe and happy.\n\nThat said, don't go changing governments over small stuff. History shows people usually put up with a lot before they're willing to ditch a system they're used to, even when that system's causing real harm. But once you see abuse after abuse, all pointing toward the same goal — total control over the people — that's a different story. At that point, it's not just your right to throw out that government. It's your job. And it's on you to build something better in its place.",
+      "metrics": {
+        "words": 168,
+        "sentences": 10,
+        "syllables": 243,
+        "mean_sentence_length": 16.8,
+        "flesch_reading_ease": 67.4
+      },
+      "generated_at": "2026-09-06T07:58:56.469Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following the Microsoft writing style.\n\nSound like a helpful colleague chatting with the reader, not a manual. Use\ncontractions everywhere they'd naturally occur, address the reader directly as\n\"you\", and reach for everyday words over formal ones. A sentence fragment is\nfine when it lands the point — don't force every thought into a full clause.\n\nOpen with the single thing the reader most needs to know, then explain. Keep\nsentences short and let the page's shape (headings, short paragraphs) do some\nof the work.\n\nUse sentence case for any heading. Use the active voice and the present tense.\nTell the reader exactly what to do and what happens next, in a tone that feels\nlike a quick conversation rather than a document.\n\nSkip jargon, hedging, and anything that talks down to the reader — but don't\nskip the personality. A little warmth and a casual aside are welcome.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following the Microsoft writing style.\n\nSound like a helpful colleague chatting with the reader, not a manual. Use\ncontractions everywhere they'd naturally occur, address the reader directly as\n\"you\", and reach for everyday words over formal ones. A sentence fragment is\nfine when it lands the point — don't force every thought into a full clause.\n\nOpen with the single thing the reader most needs to know, then explain. Keep\nsentences short and let the page's shape (headings, short paragraphs) do some\nof the work.\n\nUse sentence case for any heading. Use the active voice and the present tense.\nTell the reader exactly what to do and what happens next, in a tone that feels\nlike a quick conversation rather than a document.\n\nSkip jargon, hedging, and anything that talks down to the reader — but don't\nskip the personality. A little warmth and a casual aside are welcome.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nWe hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1264,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 266,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1264,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 266,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 1264,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1264
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.008992,
+        "duration_ms": 4602,
+        "session_id": "1be80032-2596-4437-a9ca-7940a03a5a68",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1212,
+            "outputTokens": 12,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001272,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 266,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 1264,
+            "webSearchRequests": 0,
+            "costUSD": 0.007719999999999999,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 2,
+      "ok": true,
+      "text": "Here's the deal: some things are just obviously true. Everyone's created equal, and everyone gets certain rights nobody can take away—like life, liberty, and the chance to go after happiness. That's the whole point of government: to protect those rights. And a government only gets to run things because the people it governs agree to let it.\n\nSo here's what follows from that. When a government stops protecting those rights and starts working against them, people have every right to change it or scrap it entirely. They can build a new one instead, based on whatever principles and structure seem most likely to actually keep them safe and happy.\n\nNow, you shouldn't tear down a long-standing government over small stuff or passing problems—that's just common sense. History backs this up: people tend to put up with a lot before they'll actually act, because changing the system you're used to is hard. But there's a limit. When you see the same abuses happening again and again, clearly aimed at putting people under total control, you don't just have the right to push back—you owe it to yourself and everyone else to do it. It's time to ditch that government and build better protections for the future.",
+      "metrics": {
+        "words": 205,
+        "sentences": 12,
+        "syllables": 305,
+        "mean_sentence_length": 17.1,
+        "flesch_reading_ease": 63.6
+      },
+      "generated_at": "2026-09-06T07:59:00.317Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following the Microsoft writing style.\n\nSound like a helpful colleague chatting with the reader, not a manual. Use\ncontractions everywhere they'd naturally occur, address the reader directly as\n\"you\", and reach for everyday words over formal ones. A sentence fragment is\nfine when it lands the point — don't force every thought into a full clause.\n\nOpen with the single thing the reader most needs to know, then explain. Keep\nsentences short and let the page's shape (headings, short paragraphs) do some\nof the work.\n\nUse sentence case for any heading. Use the active voice and the present tense.\nTell the reader exactly what to do and what happens next, in a tone that feels\nlike a quick conversation rather than a document.\n\nSkip jargon, hedging, and anything that talks down to the reader — but don't\nskip the personality. A little warmth and a casual aside are welcome.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following the Microsoft writing style.\n\nSound like a helpful colleague chatting with the reader, not a manual. Use\ncontractions everywhere they'd naturally occur, address the reader directly as\n\"you\", and reach for everyday words over formal ones. A sentence fragment is\nfine when it lands the point — don't force every thought into a full clause.\n\nOpen with the single thing the reader most needs to know, then explain. Keep\nsentences short and let the page's shape (headings, short paragraphs) do some\nof the work.\n\nUse sentence case for any heading. Use the active voice and the present tense.\nTell the reader exactly what to do and what happens next, in a tone that feels\nlike a quick conversation rather than a document.\n\nSkip jargon, hedging, and anything that talks down to the reader — but don't\nskip the personality. A little warmth and a casual aside are welcome.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nWe hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1264,
+          "output_tokens": 334,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 334,
+              "cache_read_input_tokens": 1264,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0048738,
+        "duration_ms": 5828,
+        "session_id": "111940ab-5da6-41b6-95db-9e463a2858c0",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1212,
+            "outputTokens": 13,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001277,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 334,
+            "cacheReadInputTokens": 1264,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0035968000000000003,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 3,
+      "ok": true,
+      "text": "Here's what we believe, plain and simple: everyone's created equal, and everyone gets certain rights nobody can take away—life, liberty, and the chance to pursue happiness. Governments exist to protect those rights, and they only get their power because the people agree to it. So if a government stops doing its job and starts working against those rights, people get to change it or ditch it entirely. They can build something new, based on whatever principles and structure seem most likely to keep them safe and happy.\n\nNow, that's not a decision to make lightly. Common sense says you don't overhaul a government that's been around a while just because something annoyed you. And history backs that up—people tend to put up with a lot before they're willing to scrap a system they're used to. But there's a limit. When you see abuse after abuse, all pointing toward the same goal of total control over people, that's a different story. At that point, it's not just a right to throw off that government—it's a duty. And it's time to put new safeguards in place for the future.",
+      "metrics": {
+        "words": 187,
+        "sentences": 11,
+        "syllables": 276,
+        "mean_sentence_length": 17,
+        "flesch_reading_ease": 64.7
+      },
+      "generated_at": "2026-09-06T07:59:03.016Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following the Microsoft writing style.\n\nSound like a helpful colleague chatting with the reader, not a manual. Use\ncontractions everywhere they'd naturally occur, address the reader directly as\n\"you\", and reach for everyday words over formal ones. A sentence fragment is\nfine when it lands the point — don't force every thought into a full clause.\n\nOpen with the single thing the reader most needs to know, then explain. Keep\nsentences short and let the page's shape (headings, short paragraphs) do some\nof the work.\n\nUse sentence case for any heading. Use the active voice and the present tense.\nTell the reader exactly what to do and what happens next, in a tone that feels\nlike a quick conversation rather than a document.\n\nSkip jargon, hedging, and anything that talks down to the reader — but don't\nskip the personality. A little warmth and a casual aside are welcome.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following the Microsoft writing style.\n\nSound like a helpful colleague chatting with the reader, not a manual. Use\ncontractions everywhere they'd naturally occur, address the reader directly as\n\"you\", and reach for everyday words over formal ones. A sentence fragment is\nfine when it lands the point — don't force every thought into a full clause.\n\nOpen with the single thing the reader most needs to know, then explain. Keep\nsentences short and let the page's shape (headings, short paragraphs) do some\nof the work.\n\nUse sentence case for any heading. Use the active voice and the present tense.\nTell the reader exactly what to do and what happens next, in a tone that feels\nlike a quick conversation rather than a document.\n\nSkip jargon, hedging, and anything that talks down to the reader — but don't\nskip the personality. A little warmth and a casual aside are welcome.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nWe hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1264,
+          "output_tokens": 307,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 307,
+              "cache_read_input_tokens": 1264,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0046038,
+        "duration_ms": 5158,
+        "session_id": "e8ed126e-2667-4f9a-ae6f-4cf16c148e67",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1212,
+            "outputTokens": 13,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001277,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 307,
+            "cacheReadInputTokens": 1264,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0033268,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 4,
+      "ok": true,
+      "text": "Here's what we believe: everyone's equal, and everyone's born with certain rights nobody can take away — life, liberty, and the chance to chase happiness. Governments exist to protect those rights, and they only get their authority because the people agree to it. So if a government ever turns against those rights, people get to change it or ditch it entirely and build something new — something structured to actually keep them safe and happy.\n\nNow, don't go changing governments over every little thing. That'd be reckless. History shows people generally put up with a lot before they'll toss out a system they're used to, even when that system's causing real harm. But when you see abuse after abuse, all pointing toward one goal — locking people under total control — that's different. At that point, you're not just allowed to overthrow it. You owe it to yourselves to do it, and to put better safeguards in place for whatever comes next.",
+      "metrics": {
+        "words": 158,
+        "sentences": 9,
+        "syllables": 246,
+        "mean_sentence_length": 17.6,
+        "flesch_reading_ease": 57.3
+      },
+      "generated_at": "2026-09-06T07:59:03.252Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following the Microsoft writing style.\n\nSound like a helpful colleague chatting with the reader, not a manual. Use\ncontractions everywhere they'd naturally occur, address the reader directly as\n\"you\", and reach for everyday words over formal ones. A sentence fragment is\nfine when it lands the point — don't force every thought into a full clause.\n\nOpen with the single thing the reader most needs to know, then explain. Keep\nsentences short and let the page's shape (headings, short paragraphs) do some\nof the work.\n\nUse sentence case for any heading. Use the active voice and the present tense.\nTell the reader exactly what to do and what happens next, in a tone that feels\nlike a quick conversation rather than a document.\n\nSkip jargon, hedging, and anything that talks down to the reader — but don't\nskip the personality. A little warmth and a casual aside are welcome.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following the Microsoft writing style.\n\nSound like a helpful colleague chatting with the reader, not a manual. Use\ncontractions everywhere they'd naturally occur, address the reader directly as\n\"you\", and reach for everyday words over formal ones. A sentence fragment is\nfine when it lands the point — don't force every thought into a full clause.\n\nOpen with the single thing the reader most needs to know, then explain. Keep\nsentences short and let the page's shape (headings, short paragraphs) do some\nof the work.\n\nUse sentence case for any heading. Use the active voice and the present tense.\nTell the reader exactly what to do and what happens next, in a tone that feels\nlike a quick conversation rather than a document.\n\nSkip jargon, hedging, and anything that talks down to the reader — but don't\nskip the personality. A little warmth and a casual aside are welcome.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nWe hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1264,
+          "output_tokens": 269,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 269,
+              "cache_read_input_tokens": 1264,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0042238,
+        "duration_ms": 4792,
+        "session_id": "5502277d-57f5-4f3b-860a-b88fba90c07f",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1212,
+            "outputTokens": 13,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001277,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 269,
+            "cacheReadInputTokens": 1264,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0029468,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 5,
+      "ok": true,
+      "text": "Here's the deal: everyone's equal, and everyone's born with certain rights nobody can take away — life, liberty, and the chance to chase happiness. That's just obvious.\n\nGovernments exist to protect those rights, and they only get their authority because the people agree to it. So if a government starts working against those rights instead of for them, people get to change it or scrap it entirely and build something new — whatever setup seems most likely to keep them safe and happy.\n\nNow, you shouldn't swap out a long-standing government over small stuff or passing problems. Common sense says so, and history backs it up: people would rather put up with bad situations than fix them by tearing down the systems they're used to. That's just how it goes.\n\nBut when the same abuses keep piling up over and over, clearly aimed at putting people under total control, they've got every right — actually, every duty — to throw that government out and put better safeguards in place for the future.",
+      "metrics": {
+        "words": 168,
+        "sentences": 8,
+        "syllables": 254,
+        "mean_sentence_length": 21,
+        "flesch_reading_ease": 57.6
+      },
+      "generated_at": "2026-09-06T07:59:03.110Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following the Microsoft writing style.\n\nSound like a helpful colleague chatting with the reader, not a manual. Use\ncontractions everywhere they'd naturally occur, address the reader directly as\n\"you\", and reach for everyday words over formal ones. A sentence fragment is\nfine when it lands the point — don't force every thought into a full clause.\n\nOpen with the single thing the reader most needs to know, then explain. Keep\nsentences short and let the page's shape (headings, short paragraphs) do some\nof the work.\n\nUse sentence case for any heading. Use the active voice and the present tense.\nTell the reader exactly what to do and what happens next, in a tone that feels\nlike a quick conversation rather than a document.\n\nSkip jargon, hedging, and anything that talks down to the reader — but don't\nskip the personality. A little warmth and a casual aside are welcome.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following the Microsoft writing style.\n\nSound like a helpful colleague chatting with the reader, not a manual. Use\ncontractions everywhere they'd naturally occur, address the reader directly as\n\"you\", and reach for everyday words over formal ones. A sentence fragment is\nfine when it lands the point — don't force every thought into a full clause.\n\nOpen with the single thing the reader most needs to know, then explain. Keep\nsentences short and let the page's shape (headings, short paragraphs) do some\nof the work.\n\nUse sentence case for any heading. Use the active voice and the present tense.\nTell the reader exactly what to do and what happens next, in a tone that feels\nlike a quick conversation rather than a document.\n\nSkip jargon, hedging, and anything that talks down to the reader — but don't\nskip the personality. A little warmth and a casual aside are welcome.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nWe hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1264,
+          "output_tokens": 284,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 284,
+              "cache_read_input_tokens": 1264,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.004373800000000001,
+        "duration_ms": 4548,
+        "session_id": "437a54da-bf57-4db4-9133-ca2322b3a890",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1212,
+            "outputTokens": 13,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001277,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 284,
+            "cacheReadInputTokens": 1264,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0030968000000000002,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    }
+  ]
 }

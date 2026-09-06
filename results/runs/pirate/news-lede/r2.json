@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "run_id": "pirate__news-lede__r2",
+  "run_index": 2,
+  "generated_at": "2026-09-06T08:03:45.378Z",
+  "guide": {
+    "id": "pirate",
+    "source_hash": "sha256:2f0bef523bd99db0697ae7b249a8d0842dda64a46bdba6ef02d739cb0702152d"
+  },
+  "passage": {
+    "id": "news-lede",
+    "source_hash": "sha256:992690e5412aa1753b5545e3500b52a17f7735cbb4b22527040d948afd8acee2"
+  },
+  "prompt_template": {
+    "id": "rewrite-v1",
+    "source_hash": "sha256:6c90fb9df63501ad20b39afc1902f70a6b1a13da3000a29ff3c527a519c057f4"
+  },
+  "request": {
+    "backend": "claude-code-cli",
+    "cli_version": "2.1.259 (Claude Code)",
+    "model_requested": "claude-sonnet-5",
+    "argv": [
+      "-p",
+      "--safe-mode",
+      "--no-session-persistence",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--tools",
+      "",
+      "--model",
+      "claude-sonnet-5",
+      "--system-prompt",
+      "Rewrite the text as a stage pirate would tell it.\n\nUse \"ye\" for \"you\", \"be\" for \"is\" and \"are\", and \"aye\" for \"yes\". Use nautical\nvocabulary: crew, deck, helm, cargo, port, tide, chart. Address the reader as\na shipmate. Add \"arr\" sparingly, at most once per paragraph.\n\nKeep every fact of the original. Do not add a plot, a ship, or characters that\nwere not in the source.",
+      "--output-format",
+      "json",
+      "--max-budget-usd",
+      "25"
+    ],
+    "system_prompt": "Rewrite the text as a stage pirate would tell it.\n\nUse \"ye\" for \"you\", \"be\" for \"is\" and \"are\", and \"aye\" for \"yes\". Use nautical\nvocabulary: crew, deck, helm, cargo, port, tide, chart. Address the reader as\na shipmate. Add \"arr\" sparingly, at most once per paragraph.\n\nKeep every fact of the original. Do not add a plot, a ship, or characters that\nwere not in the source.",
+    "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nThe Millbrook Hollow City Council voted Tuesday night to approve an amended version of the parks and recreation line item, following a meeting that also touched on the long-delayed replacement of the Third Street bridge. According to a spokesperson for the mayor's office, the revised figure reflects \"ongoing conversations\" among council members, though the spokesperson declined to characterize those conversations further. A separate memo, attributed by two council staffers to the finance subcommittee, put the adjustment at approximately $340,000, a figure that a budget analyst who reviewed the memo said was \"in the range we expected.\" Buried near the end of that same memo, and not raised by any council member during the meeting, was a line noting that the bridge's lead structural engineer had flagged a load-bearing crack serious enough to warrant closing the span to truck traffic within 90 days. The bridge project, which has appeared on the capital plan since at least 2019 and has already drawn 14 change orders, was not discussed in detail. Council member Dana Okafor, reached after the meeting, said only that \"the process worked the way it's supposed to work, and I think residents should feel good about that.\"\n</passage>"
+  },
+  "response": {
+    "ok": true,
+    "text": "Ahoy, shipmate, gather round and hear the tale. The Millbrook Hollow City Council, on Tuesday eve, did vote to approve an amended parks and recreation line item, and the meeting also touched upon the long-delayed replacement of the Third Street bridge, that span still awaiting its tide of repair. A spokesperson for the mayor's office says the revised figure be the fruit of \"ongoing conversations\" among the council crew, though the spokesperson wouldn't chart those conversations any further.\n\nA separate memo, credited by two council staffers to the finance subcommittee, put the adjustment at near $340,000 — a figure a budget analyst who read the memo says be \"in the range we expected.\" But buried near the end o' that same memo, and never raised by any council member at the meeting, was a line noting the bridge's lead structural engineer had flagged a load-bearing crack, one serious enough to close the span to truck traffic within 90 days. Arr, that be no small cargo of trouble left sitting quiet in the hold.\n\nThe bridge project itself has sat on the capital plan since at least 2019, and has already drawn 14 change orders to its name, yet it got no proper airing at the helm of discussion. Council member Dana Okafor, hailed after the meeting, said only that \"the process worked the way it's supposed to work, and I think residents should feel good about that\" — and that be all the word she gave, shipmate.",
+    "model_reported": "claude-sonnet-5",
+    "model_usage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 1195,
+        "outputTokens": 16,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.001275,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 460,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 1134,
+        "webSearchRequests": 0,
+        "costUSD": 0.009139999999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 1134,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 460,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 1134,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 460,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 1134,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1134
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 0.010414999999999999,
+    "duration_ms": 5809,
+    "session_id": "04166aa6-27b9-4c4c-a06a-240454533726",
+    "num_turns": 1,
+    "stop_reason": "end_turn",
+    "attempts": 1
+  }
+}

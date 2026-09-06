@@ -1,5 +1,556 @@
 {
   "guide_id": "strunk-white",
   "passage_id": "news-lede",
-  "runs": []
+  "runs": [
+    {
+      "run_index": 1,
+      "ok": true,
+      "text": "The Millbrook Hollow City Council approved an amended parks and recreation budget Tuesday night, at a meeting that also touched on the long-delayed Third Street bridge replacement. A spokesperson for the mayor's office said the revised figure reflects \"ongoing conversations\" among council members but declined to elaborate. A finance subcommittee memo, according to two council staffers, put the adjustment at roughly $340,000—a figure one budget analyst called \"in the range we expected.\"\n\nNear the end of that memo, unmentioned by any council member during the meeting, was a warning from the bridge's lead structural engineer: a load-bearing crack serious enough to require closing the span to truck traffic within 90 days. The bridge project has sat on the capital plan since 2019 and has already drawn 14 change orders. The council did not discuss it in detail.\n\nCouncil member Dana Okafor, reached after the meeting, offered only this: \"The process worked the way it's supposed to work, and I think residents should feel good about that.\"",
+      "metrics": {
+        "words": 166,
+        "sentences": 6,
+        "syllables": 271,
+        "mean_sentence_length": 27.7,
+        "flesch_reading_ease": 40.6
+      },
+      "generated_at": "2026-09-06T07:57:44.717Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following the rules of The Elements of Style.\n\nOmit needless words. Every word must tell. Use the active voice. Put\nstatements in positive form: say what something is, not what it is not.\n\nUse definite, specific, concrete language in preference to the vague and\nabstract. Keep related words together. Express coordinate ideas in parallel\nform. Place the emphatic words of a sentence at the end.\n\nMake the paragraph the unit of composition, each with a clear topic sentence.\nWrite with nouns and verbs rather than adjectives and adverbs. Avoid\nqualifiers such as \"rather\", \"very\", and \"little\".",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following the rules of The Elements of Style.\n\nOmit needless words. Every word must tell. Use the active voice. Put\nstatements in positive form: say what something is, not what it is not.\n\nUse definite, specific, concrete language in preference to the vague and\nabstract. Keep related words together. Express coordinate ideas in parallel\nform. Place the emphatic words of a sentence at the end.\n\nMake the paragraph the unit of composition, each with a clear topic sentence.\nWrite with nouns and verbs rather than adjectives and adverbs. Avoid\nqualifiers such as \"rather\", \"very\", and \"little\".",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nThe Millbrook Hollow City Council voted Tuesday night to approve an amended version of the parks and recreation line item, following a meeting that also touched on the long-delayed replacement of the Third Street bridge. According to a spokesperson for the mayor's office, the revised figure reflects \"ongoing conversations\" among council members, though the spokesperson declined to characterize those conversations further. A separate memo, attributed by two council staffers to the finance subcommittee, put the adjustment at approximately $340,000, a figure that a budget analyst who reviewed the memo said was \"in the range we expected.\" Buried near the end of that same memo, and not raised by any council member during the meeting, was a line noting that the bridge's lead structural engineer had flagged a load-bearing crack serious enough to warrant closing the span to truck traffic within 90 days. The bridge project, which has appeared on the capital plan since at least 2019 and has already drawn 14 change orders, was not discussed in detail. Council member Dana Okafor, reached after the meeting, said only that \"the process worked the way it's supposed to work, and I think residents should feel good about that.\"\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1185,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 326,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1185,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 326,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 1185,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1185
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.009284,
+        "duration_ms": 3910,
+        "session_id": "ea2cd156-2c3f-4436-8cbb-558ca372d770",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1195,
+            "outputTokens": 17,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.00128,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 326,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 1185,
+            "webSearchRequests": 0,
+            "costUSD": 0.008004,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 2,
+      "ok": true,
+      "text": "The Millbrook Hollow City Council voted Tuesday night to approve an amended parks and recreation budget. The meeting also touched on the long-delayed Third Street bridge replacement. The mayor's spokesperson said the revised figure reflects \"ongoing conversations\" among council members but declined to elaborate. A finance subcommittee memo, according to two council staffers, put the adjustment at roughly $340,000—a figure one budget analyst called \"in the range we expected.\"\n\nNear the memo's end, unmentioned by any council member during the meeting, sat a warning: the bridge's lead structural engineer had flagged a load-bearing crack serious enough to require closing the span to truck traffic within 90 days. The bridge project has sat on the capital plan since at least 2019 and has already drawn 14 change orders. The council did not discuss it in detail.\n\nCouncil member Dana Okafor, reached after the meeting, offered only this: \"The process worked the way it's supposed to work, and I think residents should feel good about that.\"",
+      "metrics": {
+        "words": 164,
+        "sentences": 7,
+        "syllables": 269,
+        "mean_sentence_length": 23.4,
+        "flesch_reading_ease": 44.3
+      },
+      "generated_at": "2026-09-06T07:57:45.800Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following the rules of The Elements of Style.\n\nOmit needless words. Every word must tell. Use the active voice. Put\nstatements in positive form: say what something is, not what it is not.\n\nUse definite, specific, concrete language in preference to the vague and\nabstract. Keep related words together. Express coordinate ideas in parallel\nform. Place the emphatic words of a sentence at the end.\n\nMake the paragraph the unit of composition, each with a clear topic sentence.\nWrite with nouns and verbs rather than adjectives and adverbs. Avoid\nqualifiers such as \"rather\", \"very\", and \"little\".",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following the rules of The Elements of Style.\n\nOmit needless words. Every word must tell. Use the active voice. Put\nstatements in positive form: say what something is, not what it is not.\n\nUse definite, specific, concrete language in preference to the vague and\nabstract. Keep related words together. Express coordinate ideas in parallel\nform. Place the emphatic words of a sentence at the end.\n\nMake the paragraph the unit of composition, each with a clear topic sentence.\nWrite with nouns and verbs rather than adjectives and adverbs. Avoid\nqualifiers such as \"rather\", \"very\", and \"little\".",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nThe Millbrook Hollow City Council voted Tuesday night to approve an amended version of the parks and recreation line item, following a meeting that also touched on the long-delayed replacement of the Third Street bridge. According to a spokesperson for the mayor's office, the revised figure reflects \"ongoing conversations\" among council members, though the spokesperson declined to characterize those conversations further. A separate memo, attributed by two council staffers to the finance subcommittee, put the adjustment at approximately $340,000, a figure that a budget analyst who reviewed the memo said was \"in the range we expected.\" Buried near the end of that same memo, and not raised by any council member during the meeting, was a line noting that the bridge's lead structural engineer had flagged a load-bearing crack serious enough to warrant closing the span to truck traffic within 90 days. The bridge project, which has appeared on the capital plan since at least 2019 and has already drawn 14 change orders, was not discussed in detail. Council member Dana Okafor, reached after the meeting, said only that \"the process worked the way it's supposed to work, and I think residents should feel good about that.\"\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1185,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 329,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1185,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 329,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 1185,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1185
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.009309,
+        "duration_ms": 4127,
+        "session_id": "a8044a06-b2ff-41de-85db-549e84469523",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1195,
+            "outputTokens": 16,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001275,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 329,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 1185,
+            "webSearchRequests": 0,
+            "costUSD": 0.008034,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 3,
+      "ok": true,
+      "text": "The Millbrook Hollow City Council on Tuesday night approved an amended parks and recreation budget and discussed the long-delayed Third Street bridge replacement. A mayoral spokesperson attributed the revised figure to \"ongoing conversations\" among council members but declined to elaborate. A finance subcommittee memo, according to two council staffers, put the adjustment at roughly $340,000—a figure one budget analyst called \"in the range we expected.\"\n\nNear the memo's end, unmentioned by any council member during the meeting, ran a single line: the bridge's lead structural engineer had flagged a load-bearing crack serious enough to require closing the span to truck traffic within 90 days. The council did not discuss the bridge project in detail, despite its place on the capital plan since 2019 and its fourteen change orders.\n\nCouncil member Dana Okafor, reached after the meeting, offered only this: \"The process worked the way it's supposed to work, and I think residents should feel good about that.\"",
+      "metrics": {
+        "words": 157,
+        "sentences": 5,
+        "syllables": 265,
+        "mean_sentence_length": 31.4,
+        "flesch_reading_ease": 32.2
+      },
+      "generated_at": "2026-09-06T07:57:45.911Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following the rules of The Elements of Style.\n\nOmit needless words. Every word must tell. Use the active voice. Put\nstatements in positive form: say what something is, not what it is not.\n\nUse definite, specific, concrete language in preference to the vague and\nabstract. Keep related words together. Express coordinate ideas in parallel\nform. Place the emphatic words of a sentence at the end.\n\nMake the paragraph the unit of composition, each with a clear topic sentence.\nWrite with nouns and verbs rather than adjectives and adverbs. Avoid\nqualifiers such as \"rather\", \"very\", and \"little\".",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following the rules of The Elements of Style.\n\nOmit needless words. Every word must tell. Use the active voice. Put\nstatements in positive form: say what something is, not what it is not.\n\nUse definite, specific, concrete language in preference to the vague and\nabstract. Keep related words together. Express coordinate ideas in parallel\nform. Place the emphatic words of a sentence at the end.\n\nMake the paragraph the unit of composition, each with a clear topic sentence.\nWrite with nouns and verbs rather than adjectives and adverbs. Avoid\nqualifiers such as \"rather\", \"very\", and \"little\".",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nThe Millbrook Hollow City Council voted Tuesday night to approve an amended version of the parks and recreation line item, following a meeting that also touched on the long-delayed replacement of the Third Street bridge. According to a spokesperson for the mayor's office, the revised figure reflects \"ongoing conversations\" among council members, though the spokesperson declined to characterize those conversations further. A separate memo, attributed by two council staffers to the finance subcommittee, put the adjustment at approximately $340,000, a figure that a budget analyst who reviewed the memo said was \"in the range we expected.\" Buried near the end of that same memo, and not raised by any council member during the meeting, was a line noting that the bridge's lead structural engineer had flagged a load-bearing crack serious enough to warrant closing the span to truck traffic within 90 days. The bridge project, which has appeared on the capital plan since at least 2019 and has already drawn 14 change orders, was not discussed in detail. Council member Dana Okafor, reached after the meeting, said only that \"the process worked the way it's supposed to work, and I think residents should feel good about that.\"\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1185,
+          "output_tokens": 317,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 317,
+              "cache_read_input_tokens": 1185,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.004686,
+        "duration_ms": 3901,
+        "session_id": "f32f53dc-63d4-4abc-9975-4a6585bd37bc",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1195,
+            "outputTokens": 16,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001275,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 317,
+            "cacheReadInputTokens": 1185,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.003411,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 4,
+      "ok": true,
+      "text": "The Millbrook Hollow City Council on Tuesday night approved an amended parks and recreation budget and discussed the long-delayed Third Street bridge replacement. A mayoral spokesperson attributed the revised figure to \"ongoing conversations\" among council members but declined to elaborate. A memo from the finance subcommittee put the adjustment at roughly $340,000—a figure a budget analyst called \"in the range we expected.\" Near the memo's end, unmentioned by any council member during the meeting, was a warning from the bridge's lead structural engineer: a load-bearing crack requires closing the span to truck traffic within 90 days. The council did not discuss the bridge project in detail, though it has sat on the capital plan since 2019 and has already drawn 14 change orders. Reached after the meeting, council member Dana Okafor said only, \"The process worked the way it's supposed to work, and I think residents should feel good about that.\"",
+      "metrics": {
+        "words": 151,
+        "sentences": 5,
+        "syllables": 250,
+        "mean_sentence_length": 30.2,
+        "flesch_reading_ease": 36.1
+      },
+      "generated_at": "2026-09-06T07:57:47.960Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following the rules of The Elements of Style.\n\nOmit needless words. Every word must tell. Use the active voice. Put\nstatements in positive form: say what something is, not what it is not.\n\nUse definite, specific, concrete language in preference to the vague and\nabstract. Keep related words together. Express coordinate ideas in parallel\nform. Place the emphatic words of a sentence at the end.\n\nMake the paragraph the unit of composition, each with a clear topic sentence.\nWrite with nouns and verbs rather than adjectives and adverbs. Avoid\nqualifiers such as \"rather\", \"very\", and \"little\".",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following the rules of The Elements of Style.\n\nOmit needless words. Every word must tell. Use the active voice. Put\nstatements in positive form: say what something is, not what it is not.\n\nUse definite, specific, concrete language in preference to the vague and\nabstract. Keep related words together. Express coordinate ideas in parallel\nform. Place the emphatic words of a sentence at the end.\n\nMake the paragraph the unit of composition, each with a clear topic sentence.\nWrite with nouns and verbs rather than adjectives and adverbs. Avoid\nqualifiers such as \"rather\", \"very\", and \"little\".",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nThe Millbrook Hollow City Council voted Tuesday night to approve an amended version of the parks and recreation line item, following a meeting that also touched on the long-delayed replacement of the Third Street bridge. According to a spokesperson for the mayor's office, the revised figure reflects \"ongoing conversations\" among council members, though the spokesperson declined to characterize those conversations further. A separate memo, attributed by two council staffers to the finance subcommittee, put the adjustment at approximately $340,000, a figure that a budget analyst who reviewed the memo said was \"in the range we expected.\" Buried near the end of that same memo, and not raised by any council member during the meeting, was a line noting that the bridge's lead structural engineer had flagged a load-bearing crack serious enough to warrant closing the span to truck traffic within 90 days. The bridge project, which has appeared on the capital plan since at least 2019 and has already drawn 14 change orders, was not discussed in detail. Council member Dana Okafor, reached after the meeting, said only that \"the process worked the way it's supposed to work, and I think residents should feel good about that.\"\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1185,
+          "output_tokens": 301,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 301,
+              "cache_read_input_tokens": 1185,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0045260000000000005,
+        "duration_ms": 3583,
+        "session_id": "3a9e65e2-ffbf-4a99-8ddb-b274ed743e24",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1195,
+            "outputTokens": 16,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001275,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 301,
+            "cacheReadInputTokens": 1185,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0032510000000000004,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 5,
+      "ok": true,
+      "text": "The Millbrook Hollow City Council on Tuesday night approved an amended parks and recreation budget and touched on the long-delayed Third Street bridge replacement. The mayor's spokesperson attributed the revised figure to \"ongoing conversations\" among council members but declined to elaborate. A finance subcommittee memo, described by two council staffers, put the adjustment at roughly $340,000—a figure a budget analyst called \"in the range we expected.\"\n\nNear the end of that memo, no council member mentioned a critical detail: the bridge's lead structural engineer had flagged a load-bearing crack serious enough to require closing the span to truck traffic within 90 days. The council did not discuss the bridge project in detail, though it has sat on the capital plan since at least 2019 and already carries 14 change orders.\n\nCouncil member Dana Okafor, reached after the meeting, offered only this: \"The process worked the way it's supposed to work, and I think residents should feel good about that.\"",
+      "metrics": {
+        "words": 159,
+        "sentences": 5,
+        "syllables": 263,
+        "mean_sentence_length": 31.8,
+        "flesch_reading_ease": 34.6
+      },
+      "generated_at": "2026-09-06T07:57:49.438Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following the rules of The Elements of Style.\n\nOmit needless words. Every word must tell. Use the active voice. Put\nstatements in positive form: say what something is, not what it is not.\n\nUse definite, specific, concrete language in preference to the vague and\nabstract. Keep related words together. Express coordinate ideas in parallel\nform. Place the emphatic words of a sentence at the end.\n\nMake the paragraph the unit of composition, each with a clear topic sentence.\nWrite with nouns and verbs rather than adjectives and adverbs. Avoid\nqualifiers such as \"rather\", \"very\", and \"little\".",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following the rules of The Elements of Style.\n\nOmit needless words. Every word must tell. Use the active voice. Put\nstatements in positive form: say what something is, not what it is not.\n\nUse definite, specific, concrete language in preference to the vague and\nabstract. Keep related words together. Express coordinate ideas in parallel\nform. Place the emphatic words of a sentence at the end.\n\nMake the paragraph the unit of composition, each with a clear topic sentence.\nWrite with nouns and verbs rather than adjectives and adverbs. Avoid\nqualifiers such as \"rather\", \"very\", and \"little\".",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nThe Millbrook Hollow City Council voted Tuesday night to approve an amended version of the parks and recreation line item, following a meeting that also touched on the long-delayed replacement of the Third Street bridge. According to a spokesperson for the mayor's office, the revised figure reflects \"ongoing conversations\" among council members, though the spokesperson declined to characterize those conversations further. A separate memo, attributed by two council staffers to the finance subcommittee, put the adjustment at approximately $340,000, a figure that a budget analyst who reviewed the memo said was \"in the range we expected.\" Buried near the end of that same memo, and not raised by any council member during the meeting, was a line noting that the bridge's lead structural engineer had flagged a load-bearing crack serious enough to warrant closing the span to truck traffic within 90 days. The bridge project, which has appeared on the capital plan since at least 2019 and has already drawn 14 change orders, was not discussed in detail. Council member Dana Okafor, reached after the meeting, said only that \"the process worked the way it's supposed to work, and I think residents should feel good about that.\"\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1185,
+          "output_tokens": 314,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 314,
+              "cache_read_input_tokens": 1185,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.004656,
+        "duration_ms": 3373,
+        "session_id": "c6cf8a08-72f0-46ff-9b93-f9dd471763c9",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1195,
+            "outputTokens": 16,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001275,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 314,
+            "cacheReadInputTokens": 1185,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0033810000000000003,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    }
+  ]
 }

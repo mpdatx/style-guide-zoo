@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "run_id": "microsoft-style__origin-species__r1",
+  "run_index": 1,
+  "generated_at": "2026-09-06T07:59:07.858Z",
+  "guide": {
+    "id": "microsoft-style",
+    "source_hash": "sha256:4c334c7bcdfd3c6fd5ad1b27fe55fff97b5585d8367f5cf84341073065b54e67"
+  },
+  "passage": {
+    "id": "origin-species",
+    "source_hash": "sha256:f1ed22d9ca4bec6a60c7c3ef6690c41000662de35c602244a8c02677e99975c0"
+  },
+  "prompt_template": {
+    "id": "rewrite-v1",
+    "source_hash": "sha256:6c90fb9df63501ad20b39afc1902f70a6b1a13da3000a29ff3c527a519c057f4"
+  },
+  "request": {
+    "backend": "claude-code-cli",
+    "cli_version": "2.1.259 (Claude Code)",
+    "model_requested": "claude-sonnet-5",
+    "argv": [
+      "-p",
+      "--safe-mode",
+      "--no-session-persistence",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--tools",
+      "",
+      "--model",
+      "claude-sonnet-5",
+      "--system-prompt",
+      "Rewrite the text following the Microsoft writing style.\n\nSound like a helpful colleague chatting with the reader, not a manual. Use\ncontractions everywhere they'd naturally occur, address the reader directly as\n\"you\", and reach for everyday words over formal ones. A sentence fragment is\nfine when it lands the point — don't force every thought into a full clause.\n\nOpen with the single thing the reader most needs to know, then explain. Keep\nsentences short and let the page's shape (headings, short paragraphs) do some\nof the work.\n\nUse sentence case for any heading. Use the active voice and the present tense.\nTell the reader exactly what to do and what happens next, in a tone that feels\nlike a quick conversation rather than a document.\n\nSkip jargon, hedging, and anything that talks down to the reader — but don't\nskip the personality. A little warmth and a casual aside are welcome.",
+      "--output-format",
+      "json",
+      "--max-budget-usd",
+      "25"
+    ],
+    "system_prompt": "Rewrite the text following the Microsoft writing style.\n\nSound like a helpful colleague chatting with the reader, not a manual. Use\ncontractions everywhere they'd naturally occur, address the reader directly as\n\"you\", and reach for everyday words over formal ones. A sentence fragment is\nfine when it lands the point — don't force every thought into a full clause.\n\nOpen with the single thing the reader most needs to know, then explain. Keep\nsentences short and let the page's shape (headings, short paragraphs) do some\nof the work.\n\nUse sentence case for any heading. Use the active voice and the present tense.\nTell the reader exactly what to do and what happens next, in a tone that feels\nlike a quick conversation rather than a document.\n\nSkip jargon, hedging, and anything that talks down to the reader — but don't\nskip the personality. A little warmth and a casual aside are welcome.",
+    "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIt is interesting to contemplate an entangled bank, clothed with many plants of many kinds, with birds singing on the bushes, with various insects flitting about, and with worms crawling through the damp earth, and to reflect that these elaborately constructed forms, so different from each other, and dependent on each other in so complex a manner, have all been produced by laws acting around us. These laws, taken in the largest sense, being Growth with Reproduction; Inheritance which is almost implied by reproduction; Variability from the indirect and direct action of the external conditions of life, and from use and disuse; a Ratio of Increase so high as to lead to a Struggle for Life, and as a consequence to Natural Selection, entailing Divergence of Character and the Extinction of less-improved forms. Thus, from the war of nature, from famine and death, the most exalted object which we are capable of conceiving, namely, the production of the higher animals, directly follows. There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one; and that, whilst this planet has gone cycling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.\n</passage>"
+  },
+  "response": {
+    "ok": true,
+    "text": "Take a look at a tangled bank sometime. You'll see plants of every kind, birds singing in the bushes, insects darting around, and worms working through the damp soil. Here's the interesting part: these complex, wildly different living things, all depending on each other in tangled ways, came from laws that are still at work around us right now.\n\nWhat are those laws? Growth and reproduction. Inheritance, which comes bundled with reproduction. Variability, driven by how living things react to their surroundings and by use and disuse. And a rate of increase so high it forces a struggle for life — which leads to natural selection, which in turn drives character to diverge and weaker forms to die out.\n\nSo here's the payoff: out of nature's struggle, out of famine and death, comes the thing we find most awe-inspiring — the higher animals. That's the direct result.\n\nAnd there's something grand in that. Picture life's many powers breathed into just a few forms, maybe even one. Then picture this planet spinning on through time, bound by nothing more than the fixed law of gravity — and from that simple start, endless forms, each more beautiful and wonderful than the last, have evolved, and are evolving still.",
+    "model_reported": "claude-sonnet-5",
+    "model_usage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 1227,
+        "outputTokens": 14,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.001297,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 369,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 1296,
+        "webSearchRequests": 0,
+        "costUSD": 0.008878,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 1296,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 369,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 1296,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 369,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 1296,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1296
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 0.010175,
+    "duration_ms": 6247,
+    "session_id": "ac4aa4e3-c17e-4492-aa2c-8357c3e0c4c8",
+    "num_turns": 1,
+    "stop_reason": "end_turn",
+    "attempts": 1
+  }
+}

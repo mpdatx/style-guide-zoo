@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "run_id": "plain-language__runbook__r4",
+  "run_index": 4,
+  "generated_at": "2026-09-06T07:57:14.437Z",
+  "guide": {
+    "id": "plain-language",
+    "source_hash": "sha256:3a199abe94429448927b65beee6748ea31710b6ebb4d4cd8068dd5653757cd34"
+  },
+  "passage": {
+    "id": "runbook",
+    "source_hash": "sha256:a5d5ba7538a9228b059c1fbd0ede018bec59bfb3e42fb7e8d39e5a135234611d"
+  },
+  "prompt_template": {
+    "id": "rewrite-v1",
+    "source_hash": "sha256:6c90fb9df63501ad20b39afc1902f70a6b1a13da3000a29ff3c527a519c057f4"
+  },
+  "request": {
+    "backend": "claude-code-cli",
+    "cli_version": "2.1.259 (Claude Code)",
+    "model_requested": "claude-sonnet-5",
+    "argv": [
+      "-p",
+      "--safe-mode",
+      "--no-session-persistence",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--tools",
+      "",
+      "--model",
+      "claude-sonnet-5",
+      "--system-prompt",
+      "Rewrite the text in plain language, for a reader who has no background in the\nsubject and is reading in a hurry.\n\nAddress the reader as \"you\". Use the active voice and everyday words. Keep the\naverage sentence short. Put the most important information first, and put each\ndistinct idea in its own paragraph.\n\nReplace jargon, legalese, and abbreviations with common words, or define them\non first use. Turn hidden verbs back into verbs: write \"apply\", not \"submit an\napplication\".\n\nWhere the original lists conditions or steps, use a bulleted or numbered list.\nKeep every fact and every obligation from the original intact.",
+      "--output-format",
+      "json",
+      "--max-budget-usd",
+      "25"
+    ],
+    "system_prompt": "Rewrite the text in plain language, for a reader who has no background in the\nsubject and is reading in a hurry.\n\nAddress the reader as \"you\". Use the active voice and everyday words. Keep the\naverage sentence short. Put the most important information first, and put each\ndistinct idea in its own paragraph.\n\nReplace jargon, legalese, and abbreviations with common words, or define them\non first use. Turn hidden verbs back into verbs: write \"apply\", not \"submit an\napplication\".\n\nWhere the original lists conditions or steps, use a bulleted or numbered list.\nKeep every fact and every obligation from the original intact.",
+    "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIf the ingest pipeline backlog alert fires, check the shared order fulfillment event router dashboard for a sustained spike above the QDX-7 threshold before paging the on-call TRV owner, since a brief burst during the nightly batch reconciliation window is expected and should not trigger escalation on its own. Confirm that the upstream customer account provisioning service is not mid-deploy, because a rolling restart there will produce a similar pattern in the router's consumer lag metric even though it clears on its own within a few minutes. Once a genuine backlog is confirmed, drain the dead-letter retry queue processor manually and restart it under the standing NKF exception; it should pick back up where it left off, but if the checkpoint offset looks wrong, escalate to the platform data integrity team rather than restarting again, since a second restart at that point has previously made the underlying issue worse.\n</passage>"
+  },
+  "response": {
+    "ok": true,
+    "text": "If the ingest pipeline backlog alert goes off, follow these steps:\n\n1. Check the shared order fulfillment event router dashboard first. Look for a sustained spike above the QDX-7 threshold.\n2. Don't page the on-call TRV owner yet. A brief burst during the nightly batch reconciliation window is normal and doesn't need escalation on its own.\n3. Make sure the upstream customer account provisioning service isn't in the middle of a deploy. A rolling restart there can cause a similar spike in the router's consumer lag metric, but it clears up on its own within a few minutes.\n\nOnce you've confirmed a real backlog:\n\n4. Drain the dead-letter retry queue processor by hand, then restart it under the standing NKF exception. It should pick up where it left off.\n5. If the checkpoint offset looks wrong, don't restart it again. Instead, escalate to the platform data integrity team. A second restart at this point has made the problem worse before.",
+    "model_reported": "claude-sonnet-5",
+    "model_usage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 1136,
+        "outputTokens": 17,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.001221,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 315,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 1092,
+        "webSearchRequests": 0,
+        "costUSD": 0.007522000000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 1092,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 315,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 1092,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 315,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 1092,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1092
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 0.008743,
+    "duration_ms": 3433,
+    "session_id": "656ebab6-caac-4f30-94c7-616340c28ddf",
+    "num_turns": 1,
+    "stop_reason": "end_turn",
+    "attempts": 1
+  }
+}

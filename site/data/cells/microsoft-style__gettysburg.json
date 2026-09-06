@@ -325,6 +325,226 @@
         "stop_reason": null
       },
       "error": null
+    },
+    {
+      "run_index": 4,
+      "ok": true,
+      "text": "87 years ago, our fathers started something new here: a nation built on liberty, and on the idea that everyone's created equal.\n\nNow we're in the middle of a huge civil war, and it's testing whether this nation—or any nation built that way—can actually last. We've gathered on a major battlefield from that war. We're here to dedicate part of that field as a resting place for the people who gave their lives so the nation could live. That's exactly what we should be doing.\n\nBut honestly, we can't dedicate this ground. We can't consecrate it. We can't make it holy. The brave people who fought here, living and dead, already did that—way beyond anything we could add or take away. The world won't remember much of what we say today, but it'll never forget what they did here. It's really on us, the living, to finish the work they so nobly started. It's on us to commit to the big task ahead: to take fresh inspiration from these honored dead and hold even tighter to the cause they gave everything for. To make sure they didn't die for nothing. To help this nation, under God, find a new birth of freedom. And to make sure government of the people, by the people, for the people, never disappears from this earth.",
+      "metrics": {
+        "words": 221,
+        "sentences": 15,
+        "syllables": 307,
+        "mean_sentence_length": 14.7,
+        "flesch_reading_ease": 74.4
+      },
+      "generated_at": "2026-09-06T07:58:46.912Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following the Microsoft writing style.\n\nSound like a helpful colleague chatting with the reader, not a manual. Use\ncontractions everywhere they'd naturally occur, address the reader directly as\n\"you\", and reach for everyday words over formal ones. A sentence fragment is\nfine when it lands the point — don't force every thought into a full clause.\n\nOpen with the single thing the reader most needs to know, then explain. Keep\nsentences short and let the page's shape (headings, short paragraphs) do some\nof the work.\n\nUse sentence case for any heading. Use the active voice and the present tense.\nTell the reader exactly what to do and what happens next, in a tone that feels\nlike a quick conversation rather than a document.\n\nSkip jargon, hedging, and anything that talks down to the reader — but don't\nskip the personality. A little warmth and a casual aside are welcome.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following the Microsoft writing style.\n\nSound like a helpful colleague chatting with the reader, not a manual. Use\ncontractions everywhere they'd naturally occur, address the reader directly as\n\"you\", and reach for everyday words over formal ones. A sentence fragment is\nfine when it lands the point — don't force every thought into a full clause.\n\nOpen with the single thing the reader most needs to know, then explain. Keep\nsentences short and let the page's shape (headings, short paragraphs) do some\nof the work.\n\nUse sentence case for any heading. Use the active voice and the present tense.\nTell the reader exactly what to do and what happens next, in a tone that feels\nlike a quick conversation rather than a document.\n\nSkip jargon, hedging, and anything that talks down to the reader — but don't\nskip the personality. A little warmth and a casual aside are welcome.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nFour score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.\n\nNow we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.\n\nBut, in a larger sense, we can not dedicate -- we can not consecrate -- we can not hallow -- this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us -- that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion -- that we here highly resolve that these dead shall not have died in vain -- that this nation, under God, shall have a new birth of freedom -- and that government of the people, by the people, for the people, shall not perish from the earth.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1336,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 361,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1336,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 361,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 1336,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1336
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.010307,
+        "duration_ms": 4658,
+        "session_id": "052794b4-77b5-4825-8d69-e1cbec9b5dff",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1274,
+            "outputTokens": 15,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001349,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 361,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 1336,
+            "webSearchRequests": 0,
+            "costUSD": 0.008958,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 5,
+      "ok": true,
+      "text": "Here's the deal: 87 years ago, our fathers built something new on this continent. A nation born in liberty, standing for one simple idea—everyone's created equal.\n\nNow we're in the middle of a huge civil war, and it's testing whether this nation (or any nation built this way) can actually last. We're standing on a battlefield from that war. We've come to set aside part of this field as a resting place for the people who gave their lives so the nation could live. That's exactly the right thing to do.\n\nBut here's the thing—we can't really dedicate this ground. We can't consecrate it. We can't make it any more sacred than it already is. The brave men who fought here, living and dead, already did that. It's way beyond our power to add anything or take anything away. The world won't pay much attention to what we say today, and it won't remember it for long. But it'll never forget what they did here.\n\nSo it's really on us, the living, to finish the work they started so nobly. It's on us to take up the big task ahead: draw more devotion from these honored dead to the cause they gave everything for. Let's make sure they didn't die for nothing. Let's make sure this nation, under God, gets a new birth of freedom. And let's make sure government of the people, by the people, for the people doesn't disappear from this earth.",
+      "metrics": {
+        "words": 244,
+        "sentences": 18,
+        "syllables": 330,
+        "mean_sentence_length": 13.6,
+        "flesch_reading_ease": 78.7
+      },
+      "generated_at": "2026-09-06T07:58:50.374Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following the Microsoft writing style.\n\nSound like a helpful colleague chatting with the reader, not a manual. Use\ncontractions everywhere they'd naturally occur, address the reader directly as\n\"you\", and reach for everyday words over formal ones. A sentence fragment is\nfine when it lands the point — don't force every thought into a full clause.\n\nOpen with the single thing the reader most needs to know, then explain. Keep\nsentences short and let the page's shape (headings, short paragraphs) do some\nof the work.\n\nUse sentence case for any heading. Use the active voice and the present tense.\nTell the reader exactly what to do and what happens next, in a tone that feels\nlike a quick conversation rather than a document.\n\nSkip jargon, hedging, and anything that talks down to the reader — but don't\nskip the personality. A little warmth and a casual aside are welcome.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following the Microsoft writing style.\n\nSound like a helpful colleague chatting with the reader, not a manual. Use\ncontractions everywhere they'd naturally occur, address the reader directly as\n\"you\", and reach for everyday words over formal ones. A sentence fragment is\nfine when it lands the point — don't force every thought into a full clause.\n\nOpen with the single thing the reader most needs to know, then explain. Keep\nsentences short and let the page's shape (headings, short paragraphs) do some\nof the work.\n\nUse sentence case for any heading. Use the active voice and the present tense.\nTell the reader exactly what to do and what happens next, in a tone that feels\nlike a quick conversation rather than a document.\n\nSkip jargon, hedging, and anything that talks down to the reader — but don't\nskip the personality. A little warmth and a casual aside are welcome.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nFour score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.\n\nNow we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.\n\nBut, in a larger sense, we can not dedicate -- we can not consecrate -- we can not hallow -- this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us -- that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion -- that we here highly resolve that these dead shall not have died in vain -- that this nation, under God, shall have a new birth of freedom -- and that government of the people, by the people, for the people, shall not perish from the earth.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1336,
+          "output_tokens": 400,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 400,
+              "cache_read_input_tokens": 1336,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.005620199999999999,
+        "duration_ms": 5696,
+        "session_id": "f701f4c2-cbb3-4b46-b7e9-f10e991930c7",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1274,
+            "outputTokens": 15,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001349,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 400,
+            "cacheReadInputTokens": 1336,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.004271199999999999,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
     }
   ]
 }

@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "run_id": "asd-ste100__gettysburg__r5",
+  "run_index": 5,
+  "generated_at": "2026-09-06T07:54:50.094Z",
+  "guide": {
+    "id": "asd-ste100",
+    "source_hash": "sha256:9fbce55203740208169f59fb79bf0a13c7b5a04d962d54f68c2157155c4cb2b2"
+  },
+  "passage": {
+    "id": "gettysburg",
+    "source_hash": "sha256:4731c9e7d51935b8f393d05607c5c5f42a91c18f839bdf85a4dcf593d1fb3d5c"
+  },
+  "prompt_template": {
+    "id": "rewrite-v1",
+    "source_hash": "sha256:6c90fb9df63501ad20b39afc1902f70a6b1a13da3000a29ff3c527a519c057f4"
+  },
+  "request": {
+    "backend": "claude-code-cli",
+    "cli_version": "2.1.259 (Claude Code)",
+    "model_requested": "claude-sonnet-5",
+    "argv": [
+      "-p",
+      "--safe-mode",
+      "--no-session-persistence",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--tools",
+      "",
+      "--model",
+      "claude-sonnet-5",
+      "--system-prompt",
+      "Rewrite the text following the principles of Simplified Technical English.\n\nUse one topic per sentence. Keep procedural sentences to twenty words or\nfewer and descriptive sentences to twenty-five words or fewer. Keep paragraphs\nto six sentences or fewer.\n\nUse the active voice. Address the reader directly with the imperative for\ninstructions. Use only the simple present, simple past, and simple future\ntense.\n\nUse one word for one meaning throughout, and one meaning for one word: never\nvary a term for elegance. Prefer short, common words over long or technical\nones. Do not use noun clusters of more than three words. Write out what a\npronoun refers to whenever there is any doubt.\n\nDo not use slang, idioms, or metaphors.",
+      "--output-format",
+      "json",
+      "--max-budget-usd",
+      "25"
+    ],
+    "system_prompt": "Rewrite the text following the principles of Simplified Technical English.\n\nUse one topic per sentence. Keep procedural sentences to twenty words or\nfewer and descriptive sentences to twenty-five words or fewer. Keep paragraphs\nto six sentences or fewer.\n\nUse the active voice. Address the reader directly with the imperative for\ninstructions. Use only the simple present, simple past, and simple future\ntense.\n\nUse one word for one meaning throughout, and one meaning for one word: never\nvary a term for elegance. Prefer short, common words over long or technical\nones. Do not use noun clusters of more than three words. Write out what a\npronoun refers to whenever there is any doubt.\n\nDo not use slang, idioms, or metaphors.",
+    "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nFour score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.\n\nNow we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.\n\nBut, in a larger sense, we can not dedicate -- we can not consecrate -- we can not hallow -- this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us -- that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion -- that we here highly resolve that these dead shall not have died in vain -- that this nation, under God, shall have a new birth of freedom -- and that government of the people, by the people, for the people, shall not perish from the earth.\n</passage>"
+  },
+  "response": {
+    "ok": true,
+    "text": "Our fathers founded a new nation on this continent 87 years ago. They believed in Liberty. They believed that all men are equal.\n\nNow our nation faces a great civil war. This war will test if our nation can survive. It will test if any nation with these beliefs can survive. We stand on a great battle-field of this war. Soldiers gave their lives here so that our nation could live. We come to this field to give part of it as a resting place for these soldiers. This action is fitting and proper.\n\nBut we cannot dedicate this ground in a larger sense. We cannot consecrate this ground. We cannot hallow this ground. The brave soldiers who fought here have already consecrated it, both the living and the dead. Their power to consecrate this ground is far greater than our power. The world will not remember our words for long, but the world will never forget the actions of these soldiers.\n\nWe the living must dedicate ourselves to the unfinished work of these soldiers. These soldiers advanced this work with great honor. We must dedicate ourselves instead to the great task before us. We must take increased devotion from these honored dead to their cause. These soldiers gave the last full measure of devotion to this cause. We must resolve that these soldiers did not die in vain. Our nation, under God, must have a new birth of freedom. Government of the people, by the people, and for the people must not disappear from the earth.",
+    "model_reported": "claude-sonnet-5",
+    "model_usage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 1274,
+        "outputTokens": 15,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.001349,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 430,
+        "cacheReadInputTokens": 1294,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.0045628,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1294,
+      "output_tokens": 430,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 430,
+          "cache_read_input_tokens": 1294,
+          "cache_creation_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 0.0059118,
+    "duration_ms": 5291,
+    "session_id": "fece6060-d497-4937-9103-c3189ebd8147",
+    "num_turns": 1,
+    "stop_reason": "end_turn",
+    "attempts": 1
+  }
+}

@@ -1,5 +1,556 @@
 {
   "guide_id": "caveman",
   "passage_id": "declaration",
-  "runs": []
+  "runs": [
+    {
+      "run_index": 1,
+      "ok": true,
+      "text": "We see this truth. No man need explain it. All men born same. Big Spirit give men rights. No man take these rights away. Men own Life. Men own Freedom. Men chase Happy-times.\n\nMen build Government to guard these rights. Government get power from People. People say yes first.\n\nGovernment turn bad, hurt People, People get right. People break Government. People build new Government. People choose new rules. People shape new power. People want Safe. People want Happy. People build for that.\n\nCareful mind say: old Government stand long time, People not break for small reason. People see this always: Men bear pain long time. Men not fast to break old ways. Men used to old ways.\n\nBut bad acts pile up. Bad acts stay same path. Bad acts show one plan: Chief want total power over People. Then People get right. People get duty. People throw down that Government. People stand new guard. People keep self safe, future time.",
+      "metrics": {
+        "words": 160,
+        "sentences": 31,
+        "syllables": 215,
+        "mean_sentence_length": 5.2,
+        "flesch_reading_ease": 87.9
+      },
+      "generated_at": "2026-09-06T07:53:55.864Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nWe hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1131,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 279,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1131,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 279,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 1131,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1131
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.008595,
+        "duration_ms": 5862,
+        "session_id": "ee822085-8541-4050-b12e-6702088fcf93",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1212,
+            "outputTokens": 13,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001277,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 279,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 1131,
+            "webSearchRequests": 0,
+            "costUSD": 0.007318,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 2,
+      "ok": true,
+      "text": "We say this thing true. All men born same. Big Spirit give men rights. No man take these rights away. Rights are: Life. Freedom. Chase after Happy.\n\nMen make Chiefs to guard these rights. Chief get power from People, not take power.\n\nIf Chief-group hurt People bad, People got right. People can break Chief-group. People can build new Chief-group. People pick rules for new Chief-group. People pick shape for new Chief-group. People want Safe. People want Happy.\n\nCareful now. Do not break old Chief-group for small hurt, quick hurt. Look back at many People before us. People bear bad things long time. People not like to break old ways fast. People used to old ways.\n\nBut watch. Bad acts pile up. Chief steal power, steal power, same bad path every time. This show plan: make People slave under hard rule. Then People got right. People got duty. Throw off that Chief-group. Build new guard. Watch over own tomorrow.",
+      "metrics": {
+        "words": 158,
+        "sentences": 31,
+        "syllables": 206,
+        "mean_sentence_length": 5.1,
+        "flesch_reading_ease": 91.4
+      },
+      "generated_at": "2026-09-06T07:53:59.038Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nWe hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1131,
+          "output_tokens": 307,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 307,
+              "cache_read_input_tokens": 1131,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0045772,
+        "duration_ms": 6800,
+        "session_id": "483071f7-5f03-4f72-a6b3-33c299c1ca3e",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1212,
+            "outputTokens": 13,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001277,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 307,
+            "cacheReadInputTokens": 1131,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0033002,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 3,
+      "ok": true,
+      "text": "We say this true. All men born same. Big Sky Father give men rights. No man take rights away. Rights these: Life. Freedom. Chase for happy.\n\nMen make Chief-group to guard rights. Chief-group get power from people. People say yes first.\n\nIf Chief-group hurt people, break these things, people can smash Chief-group. People can make new Chief-group. People build it own way. People pick shape that bring Safe and Happy.\n\nCareful-think say: no smash old Chief-group for small hurt, quick hurt. Look back at all times: men bear bad long time. Men not fast to smash old ways they know. Man rather suffer than break what he know.\n\nBut when many bad acts pile up, same bad path every time, man see plan: Chief-group want make men slaves total. Then people right to smash it. People duty to smash it. People must build new guard-thing for safe future.",
+      "metrics": {
+        "words": 148,
+        "sentences": 22,
+        "syllables": 186,
+        "mean_sentence_length": 6.7,
+        "flesch_reading_ease": 93.7
+      },
+      "generated_at": "2026-09-06T07:54:02.895Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nWe hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1131,
+          "output_tokens": 279,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 279,
+              "cache_read_input_tokens": 1131,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0042972,
+        "duration_ms": 6104,
+        "session_id": "9a175935-0c47-4679-a93e-95e3aec40b65",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1212,
+            "outputTokens": 13,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001277,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 279,
+            "cacheReadInputTokens": 1131,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0030202000000000002,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 4,
+      "ok": true,
+      "text": "We see this truth. Plain as rock. All men born same. Big Spirit give men rights. No man take these rights away. One right: live. One right: walk free. One right: chase happy life.\n\nMen make chief-groups to guard these rights. Chief-group get power from people. People say yes first.\n\nIf chief-group turn bad, hurt these rights, people can break it. People can build new chief-group. People choose how. People build it to keep them safe. People build it to bring happy life.\n\nCareful mind say: don't break old chief-group for small hurt, quick hurt. Look back at all men before us. Men bear bad thing long time. Men slow to break old way, old chief-group they know. Men suffer while pain still small enough to bear.\n\nBut watch long line of bad acts. Watch chiefs grab, grab, grab, same direction every time. This show one plan: make people bow low, crush people flat under hard fist. When men see this, men get right. Men get duty. Men must throw off that chief-group. Men must build new guard. Guard stand watch over men's days to come.",
+      "metrics": {
+        "words": 186,
+        "sentences": 29,
+        "syllables": 220,
+        "mean_sentence_length": 6.4,
+        "flesch_reading_ease": 100.3
+      },
+      "generated_at": "2026-09-06T07:54:04.432Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nWe hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1131,
+          "output_tokens": 336,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 336,
+              "cache_read_input_tokens": 1131,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0048622,
+        "duration_ms": 7021,
+        "session_id": "e639272e-7dac-46ef-aaf5-0d68702ae6db",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1212,
+            "outputTokens": 12,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001272,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 336,
+            "cacheReadInputTokens": 1131,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0035902,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 5,
+      "ok": true,
+      "text": "We see this truth. No one need explain it. All men born same. Big Sky Father give them rights. No man take these rights away. One right: live. One right: move free. One right: chase happy.\n\nMen make Governments to guard these rights. Government get power from people. People say yes first.\n\nGovernment turn bad, hurt these rights? People can smash it. People can build new Government. People choose how. People build it strong. People build it to keep them safe and happy.\n\nThink first. Don't smash old Government for small reason, quick reason. Look back at all people before us. People bear bad thing long time. People not fast to smash old ways they know.\n\nBut watch long line of bad acts. Watch long line of power-grabs. Same bad path, same bad goal. Goal: crush people flat, make them slaves. Then people must act. Right thing: throw off that Government. Duty thing: build new guard. Guard keep people safe, now and after.",
+      "metrics": {
+        "words": 163,
+        "sentences": 30,
+        "syllables": 202,
+        "mean_sentence_length": 5.4,
+        "flesch_reading_ease": 96.5
+      },
+      "generated_at": "2026-09-06T07:54:04.503Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nWe hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1131,
+          "output_tokens": 287,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 287,
+              "cache_read_input_tokens": 1131,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0043771999999999995,
+        "duration_ms": 6524,
+        "session_id": "baeb0703-b21b-46eb-9e77-c161153df7ee",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1212,
+            "outputTokens": 13,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001277,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 287,
+            "cacheReadInputTokens": 1131,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0031002,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    }
+  ]
 }

@@ -1,5 +1,556 @@
 {
   "guide_id": "hemingway",
   "passage_id": "safety-notice",
-  "runs": []
+  "runs": [
+    {
+      "run_index": 1,
+      "ok": true,
+      "text": "Lower the guard to the recommended clearance before you start the blade. Check the tensioning wheel through the shift anyway. Tension drifts even when the machine sits idle.\n\nCheck the lower blade guide for wear when you change the blade. If the new blade matches the old one in width and pitch, a look will do, and only if you have already run the tensioning procedure. Wear it right. No loose clothing, no jewelry. Tie back long hair.\n\nWait until the blade stops before you leave the area. The machine stays hot after that. Be careful.",
+      "metrics": {
+        "words": 96,
+        "sentences": 11,
+        "syllables": 129,
+        "mean_sentence_length": 8.7,
+        "flesch_reading_ease": 84.3
+      },
+      "generated_at": "2026-09-06T08:01:06.988Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in the manner of Ernest Hemingway's prose.\n\nUse short declarative sentences. Join them with \"and\" more often than with\nsubordinating conjunctions. Use concrete nouns and plain verbs. Name things\nrather than describing them.\n\nCut adjectives and adverbs to almost nothing. State actions and facts without\ninterpreting them. Let the emotion sit under the surface of the sentence\nrather than on top of it. Repeat a plain word rather than reaching for a\nsynonym.\n\nDo not imitate any specific published passage.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in the manner of Ernest Hemingway's prose.\n\nUse short declarative sentences. Join them with \"and\" more often than with\nsubordinating conjunctions. Use concrete nouns and plain verbs. Name things\nrather than describing them.\n\nCut adjectives and adverbs to almost nothing. State actions and facts without\ninterpreting them. Let the emotion sit under the surface of the sentence\nrather than on top of it. Repeat a plain word rather than reaching for a\nsynonym.\n\nDo not imitate any specific published passage.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nOperators must ensure the guard is lowered to within the recommended clearance of the workpiece before the blade is engaged, although the tensioning wheel should be checked periodically throughout a shift regardless of guard position, since drift in tension can occur even when the machine has not been used continuously. The lower blade guide must be inspected for wear whenever the blade has been changed, unless the replacement blade is of the same width and pitch as the one it replaces, in which case a visual check may be sufficient provided the operator has completed the tensioning procedure described elsewhere in this manual. Loose clothing and jewelry should not be worn near the machine, and long hair must be tied back. Operators may leave the work area only after the blade has come to a complete stop, though the machine's residual heat can persist for several minutes and caution is advised.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1054,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 174,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1054,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 174,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 1054,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1054
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.00715,
+        "duration_ms": 3156,
+        "session_id": "28640f3f-3fa5-4005-b2a5-469bf29af9cd",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1120,
+            "outputTokens": 14,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0011899999999999999,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 174,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 1054,
+            "webSearchRequests": 0,
+            "costUSD": 0.00596,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 2,
+      "ok": true,
+      "text": "Lower the guard close to the workpiece. Do this before the blade turns. Check the tensioning wheel through the shift. Do it whether the guard is up or down. Tension drifts. It drifts even when the machine sits idle.\n\nCheck the lower blade guide when you change the blade. Check it for wear. If the new blade matches the old one in width and pitch, a look will do. But tension the blade first. The manual tells you how.\n\nWear nothing loose. No jewelry. Tie back long hair.\n\nWait for the blade to stop before you leave the area. The machine stays hot after that. Keep your hands clear.",
+      "metrics": {
+        "words": 109,
+        "sentences": 17,
+        "syllables": 130,
+        "mean_sentence_length": 6.4,
+        "flesch_reading_ease": 99.4
+      },
+      "generated_at": "2026-09-06T08:01:11.320Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in the manner of Ernest Hemingway's prose.\n\nUse short declarative sentences. Join them with \"and\" more often than with\nsubordinating conjunctions. Use concrete nouns and plain verbs. Name things\nrather than describing them.\n\nCut adjectives and adverbs to almost nothing. State actions and facts without\ninterpreting them. Let the emotion sit under the surface of the sentence\nrather than on top of it. Repeat a plain word rather than reaching for a\nsynonym.\n\nDo not imitate any specific published passage.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in the manner of Ernest Hemingway's prose.\n\nUse short declarative sentences. Join them with \"and\" more often than with\nsubordinating conjunctions. Use concrete nouns and plain verbs. Name things\nrather than describing them.\n\nCut adjectives and adverbs to almost nothing. State actions and facts without\ninterpreting them. Let the emotion sit under the surface of the sentence\nrather than on top of it. Repeat a plain word rather than reaching for a\nsynonym.\n\nDo not imitate any specific published passage.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nOperators must ensure the guard is lowered to within the recommended clearance of the workpiece before the blade is engaged, although the tensioning wheel should be checked periodically throughout a shift regardless of guard position, since drift in tension can occur even when the machine has not been used continuously. The lower blade guide must be inspected for wear whenever the blade has been changed, unless the replacement blade is of the same width and pitch as the one it replaces, in which case a visual check may be sufficient provided the operator has completed the tensioning procedure described elsewhere in this manual. Loose clothing and jewelry should not be worn near the machine, and long hair must be tied back. Operators may leave the work area only after the blade has come to a complete stop, though the machine's residual heat can persist for several minutes and caution is advised.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1054,
+          "output_tokens": 198,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 198,
+              "cache_read_input_tokens": 1054,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0033898,
+        "duration_ms": 3745,
+        "session_id": "cf114aad-2aa7-426d-be5f-4e0b399b333f",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1120,
+            "outputTokens": 15,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0011949999999999999,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 198,
+            "cacheReadInputTokens": 1054,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0021948000000000002,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 3,
+      "ok": true,
+      "text": "Lower the guard to the recommended clearance before you start the blade. Check the tensioning wheel through the shift anyway. Tension drifts even when the machine sits idle.\n\nCheck the lower blade guide for wear when you change the blade. If the new blade matches the old one in width and pitch, a look will do. Do the tensioning procedure first.\n\nDo not wear loose clothing or jewelry near the machine. Tie back long hair.\n\nWait until the blade stops before you leave the area. The machine stays hot after that. Be careful.",
+      "metrics": {
+        "words": 93,
+        "sentences": 11,
+        "syllables": 124,
+        "mean_sentence_length": 8.5,
+        "flesch_reading_ease": 85.5
+      },
+      "generated_at": "2026-09-06T08:01:11.291Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in the manner of Ernest Hemingway's prose.\n\nUse short declarative sentences. Join them with \"and\" more often than with\nsubordinating conjunctions. Use concrete nouns and plain verbs. Name things\nrather than describing them.\n\nCut adjectives and adverbs to almost nothing. State actions and facts without\ninterpreting them. Let the emotion sit under the surface of the sentence\nrather than on top of it. Repeat a plain word rather than reaching for a\nsynonym.\n\nDo not imitate any specific published passage.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in the manner of Ernest Hemingway's prose.\n\nUse short declarative sentences. Join them with \"and\" more often than with\nsubordinating conjunctions. Use concrete nouns and plain verbs. Name things\nrather than describing them.\n\nCut adjectives and adverbs to almost nothing. State actions and facts without\ninterpreting them. Let the emotion sit under the surface of the sentence\nrather than on top of it. Repeat a plain word rather than reaching for a\nsynonym.\n\nDo not imitate any specific published passage.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nOperators must ensure the guard is lowered to within the recommended clearance of the workpiece before the blade is engaged, although the tensioning wheel should be checked periodically throughout a shift regardless of guard position, since drift in tension can occur even when the machine has not been used continuously. The lower blade guide must be inspected for wear whenever the blade has been changed, unless the replacement blade is of the same width and pitch as the one it replaces, in which case a visual check may be sufficient provided the operator has completed the tensioning procedure described elsewhere in this manual. Loose clothing and jewelry should not be worn near the machine, and long hair must be tied back. Operators may leave the work area only after the blade has come to a complete stop, though the machine's residual heat can persist for several minutes and caution is advised.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1054,
+          "output_tokens": 172,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 172,
+              "cache_read_input_tokens": 1054,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0031198000000000003,
+        "duration_ms": 3556,
+        "session_id": "d411e9e3-dfc4-4fda-8043-7496e669615e",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1120,
+            "outputTokens": 13,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0011849999999999999,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 172,
+            "cacheReadInputTokens": 1054,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0019348000000000004,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 4,
+      "ok": true,
+      "text": "Lower the guard to the recommended clearance before you start the blade. Check the tensioning wheel through the shift anyway. Tension can drift even when the machine sits idle.\n\nInspect the lower blade guide when you change the blade. If the new blade matches the old one in width and pitch, a look will do, as long as you have tensioned the machine the way the manual says. Change the blade if it does not match, and inspect the guide.\n\nDo not wear loose clothing near the machine. Do not wear jewelry. Tie back long hair.\n\nWait until the blade stops before you leave the work area. The machine stays hot after that. Be careful.",
+      "metrics": {
+        "words": 115,
+        "sentences": 12,
+        "syllables": 148,
+        "mean_sentence_length": 9.6,
+        "flesch_reading_ease": 88.2
+      },
+      "generated_at": "2026-09-06T08:01:11.565Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in the manner of Ernest Hemingway's prose.\n\nUse short declarative sentences. Join them with \"and\" more often than with\nsubordinating conjunctions. Use concrete nouns and plain verbs. Name things\nrather than describing them.\n\nCut adjectives and adverbs to almost nothing. State actions and facts without\ninterpreting them. Let the emotion sit under the surface of the sentence\nrather than on top of it. Repeat a plain word rather than reaching for a\nsynonym.\n\nDo not imitate any specific published passage.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in the manner of Ernest Hemingway's prose.\n\nUse short declarative sentences. Join them with \"and\" more often than with\nsubordinating conjunctions. Use concrete nouns and plain verbs. Name things\nrather than describing them.\n\nCut adjectives and adverbs to almost nothing. State actions and facts without\ninterpreting them. Let the emotion sit under the surface of the sentence\nrather than on top of it. Repeat a plain word rather than reaching for a\nsynonym.\n\nDo not imitate any specific published passage.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nOperators must ensure the guard is lowered to within the recommended clearance of the workpiece before the blade is engaged, although the tensioning wheel should be checked periodically throughout a shift regardless of guard position, since drift in tension can occur even when the machine has not been used continuously. The lower blade guide must be inspected for wear whenever the blade has been changed, unless the replacement blade is of the same width and pitch as the one it replaces, in which case a visual check may be sufficient provided the operator has completed the tensioning procedure described elsewhere in this manual. Loose clothing and jewelry should not be worn near the machine, and long hair must be tied back. Operators may leave the work area only after the blade has come to a complete stop, though the machine's residual heat can persist for several minutes and caution is advised.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1054,
+          "output_tokens": 203,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 203,
+              "cache_read_input_tokens": 1054,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0034448000000000005,
+        "duration_ms": 3126,
+        "session_id": "a764be46-ca1e-4486-bfa8-ce06cc46174a",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1120,
+            "outputTokens": 16,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0012,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 203,
+            "cacheReadInputTokens": 1054,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0022448000000000004,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 5,
+      "ok": true,
+      "text": "Lower the guard to the recommended clearance before you engage the blade. Check the tensioning wheel every shift anyway. Tension drifts even when the machine sits idle.\n\nCheck the lower blade guide for wear when you change the blade. If the new blade matches the old one in width and pitch, a look will do. But tension it first, the way this manual says.\n\nDon't wear loose clothing near the machine. Don't wear jewelry. Tie back long hair.\n\nWait until the blade stops before you leave the area. The machine stays hot after that. Mind your hands.",
+      "metrics": {
+        "words": 97,
+        "sentences": 12,
+        "syllables": 127,
+        "mean_sentence_length": 8.1,
+        "flesch_reading_ease": 87.9
+      },
+      "generated_at": "2026-09-06T08:01:12.673Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in the manner of Ernest Hemingway's prose.\n\nUse short declarative sentences. Join them with \"and\" more often than with\nsubordinating conjunctions. Use concrete nouns and plain verbs. Name things\nrather than describing them.\n\nCut adjectives and adverbs to almost nothing. State actions and facts without\ninterpreting them. Let the emotion sit under the surface of the sentence\nrather than on top of it. Repeat a plain word rather than reaching for a\nsynonym.\n\nDo not imitate any specific published passage.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in the manner of Ernest Hemingway's prose.\n\nUse short declarative sentences. Join them with \"and\" more often than with\nsubordinating conjunctions. Use concrete nouns and plain verbs. Name things\nrather than describing them.\n\nCut adjectives and adverbs to almost nothing. State actions and facts without\ninterpreting them. Let the emotion sit under the surface of the sentence\nrather than on top of it. Repeat a plain word rather than reaching for a\nsynonym.\n\nDo not imitate any specific published passage.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nOperators must ensure the guard is lowered to within the recommended clearance of the workpiece before the blade is engaged, although the tensioning wheel should be checked periodically throughout a shift regardless of guard position, since drift in tension can occur even when the machine has not been used continuously. The lower blade guide must be inspected for wear whenever the blade has been changed, unless the replacement blade is of the same width and pitch as the one it replaces, in which case a visual check may be sufficient provided the operator has completed the tensioning procedure described elsewhere in this manual. Loose clothing and jewelry should not be worn near the machine, and long hair must be tied back. Operators may leave the work area only after the blade has come to a complete stop, though the machine's residual heat can persist for several minutes and caution is advised.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1054,
+          "output_tokens": 180,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 180,
+              "cache_read_input_tokens": 1054,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0031998,
+        "duration_ms": 3844,
+        "session_id": "8dce08ed-72f3-4a69-9275-e5acae7643a5",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1120,
+            "outputTokens": 13,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0011849999999999999,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 180,
+            "cacheReadInputTokens": 1054,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0020148,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    }
+  ]
 }

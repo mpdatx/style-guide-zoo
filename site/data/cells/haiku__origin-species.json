@@ -1,5 +1,556 @@
 {
   "guide_id": "haiku",
   "passage_id": "origin-species",
-  "runs": []
+  "runs": [
+    {
+      "run_index": 1,
+      "ok": true,
+      "text": "A tangled green bank,\nbirds calling from the bushes,\nworms in the wet soil.\n\nEach strange living form\ntied to others, all shaped by\nlaws unseen but sure.\n\nGrowth begets more growth,\nchildren carry parents' marks,\nchange creeps in with time.\n\nToo many are born\nfor the earth to hold them all,\nso the struggle starts.\n\nThe fit ones survive,\nbranching into new pathways,\nweak forms fade to dust.\n\nFrom hunger and war\nthe highest creatures arise—\ndeath opens the door.\n\nOne breath, or a few,\nstarted life so long ago,\nsimple and alone.\n\nEarth turns round the sun,\nbound by gravity's plain law,\nwhile life keeps unfolding.\n\nEndless shapes appear,\nbeautiful, strange, wondrous things,\nstill being born now.",
+      "metrics": {
+        "words": 119,
+        "sentences": 9,
+        "syllables": 158,
+        "mean_sentence_length": 13.2,
+        "flesch_reading_ease": 81.1
+      },
+      "generated_at": "2026-09-06T08:04:25.284Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text as a sequence of haiku.\n\nEach haiku has three lines of five, seven, and five syllables. Separate\nconsecutive haiku with a blank line. Use as many haiku as the content needs.\n\nWork through the original in order, so the sequence carries the passage's\nargument from beginning to end. Prefer concrete images to abstractions. Do not\nadd a title, a number, or any commentary.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text as a sequence of haiku.\n\nEach haiku has three lines of five, seven, and five syllables. Separate\nconsecutive haiku with a blank line. Use as many haiku as the content needs.\n\nWork through the original in order, so the sequence carries the passage's\nargument from beginning to end. Prefer concrete images to abstractions. Do not\nadd a title, a number, or any commentary.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIt is interesting to contemplate an entangled bank, clothed with many plants of many kinds, with birds singing on the bushes, with various insects flitting about, and with worms crawling through the damp earth, and to reflect that these elaborately constructed forms, so different from each other, and dependent on each other in so complex a manner, have all been produced by laws acting around us. These laws, taken in the largest sense, being Growth with Reproduction; Inheritance which is almost implied by reproduction; Variability from the indirect and direct action of the external conditions of life, and from use and disuse; a Ratio of Increase so high as to lead to a Struggle for Life, and as a consequence to Natural Selection, entailing Divergence of Character and the Extinction of less-improved forms. Thus, from the war of nature, from famine and death, the most exalted object which we are capable of conceiving, namely, the production of the higher animals, directly follows. There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one; and that, whilst this planet has gone cycling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1141,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 256,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1141,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 256,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 1141,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1141
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.008435000000000002,
+        "duration_ms": 5141,
+        "session_id": "4527b1b8-ca57-4776-89ac-3370744fa497",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1227,
+            "outputTokens": 16,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001307,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 256,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 1141,
+            "webSearchRequests": 0,
+            "costUSD": 0.007128000000000001,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 2,
+      "ok": true,
+      "text": "A tangled bank grows,\nbirds singing, insects drifting,\nworms in damp dark earth.\n\nDifferent shapes, one web,\neach life leaning on the next—\nall born of plain law.\n\nGrowth begets more growth,\ninheritance follows birth,\nchange from world and use.\n\nToo many seeds fall,\nso struggle sifts the living—\nselection remains.\n\nForms split and diverge,\nthe weaker branches wither,\nwar without a sword.\n\nFrom famine and death\nthe highest good yet emerges:\ncreatures raised in time.\n\nGrand, this view of life—\none breath cast into few forms,\nor maybe just one.\n\nEarth wheels on through space,\nbound by gravity's plain law,\nwhile forms keep unfolding.\n\nSimple start, vast bloom—\nendless shapes both strange and fair,\nstill becoming now.",
+      "metrics": {
+        "words": 118,
+        "sentences": 9,
+        "syllables": 160,
+        "mean_sentence_length": 13.1,
+        "flesch_reading_ease": 78.8
+      },
+      "generated_at": "2026-09-06T08:04:30.281Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text as a sequence of haiku.\n\nEach haiku has three lines of five, seven, and five syllables. Separate\nconsecutive haiku with a blank line. Use as many haiku as the content needs.\n\nWork through the original in order, so the sequence carries the passage's\nargument from beginning to end. Prefer concrete images to abstractions. Do not\nadd a title, a number, or any commentary.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text as a sequence of haiku.\n\nEach haiku has three lines of five, seven, and five syllables. Separate\nconsecutive haiku with a blank line. Use as many haiku as the content needs.\n\nWork through the original in order, so the sequence carries the passage's\nargument from beginning to end. Prefer concrete images to abstractions. Do not\nadd a title, a number, or any commentary.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIt is interesting to contemplate an entangled bank, clothed with many plants of many kinds, with birds singing on the bushes, with various insects flitting about, and with worms crawling through the damp earth, and to reflect that these elaborately constructed forms, so different from each other, and dependent on each other in so complex a manner, have all been produced by laws acting around us. These laws, taken in the largest sense, being Growth with Reproduction; Inheritance which is almost implied by reproduction; Variability from the indirect and direct action of the external conditions of life, and from use and disuse; a Ratio of Increase so high as to lead to a Struggle for Life, and as a consequence to Natural Selection, entailing Divergence of Character and the Extinction of less-improved forms. Thus, from the war of nature, from famine and death, the most exalted object which we are capable of conceiving, namely, the production of the higher animals, directly follows. There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one; and that, whilst this planet has gone cycling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1141,
+          "output_tokens": 264,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 264,
+              "cache_read_input_tokens": 1141,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0041592,
+        "duration_ms": 5920,
+        "session_id": "960001ba-2675-40c1-a1fe-500ab41cfdd3",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1227,
+            "outputTokens": 12,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001287,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 264,
+            "cacheReadInputTokens": 1141,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0028722,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 3,
+      "ok": true,
+      "text": "A tangled green bank,\nbirds calling from every bush,\nworms in dark wet soil.\n\nEach form intricate,\neach leaning on the other—\nall born of plain law.\n\nGrowth begets its kind,\ntraits passed down through quiet seed,\nchange from wind and use.\n\nToo many are born,\nso life wages war for room,\nthe fit ones outlast.\n\nBranches spread apart,\nweaker lines fade into dust—\nthis the struggle makes.\n\nOut of famine, death,\nsomething noble still emerges:\ncreatures raised up high.\n\nThere is a vast grace\nin this—one breath, one beginning,\nnow countless bright forms.\n\nWhile earth wheels through space\nbound by gravity's plain pull,\nnew wonders unfold.",
+      "metrics": {
+        "words": 107,
+        "sentences": 8,
+        "syllables": 146,
+        "mean_sentence_length": 13.4,
+        "flesch_reading_ease": 77.8
+      },
+      "generated_at": "2026-09-06T08:04:30.734Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text as a sequence of haiku.\n\nEach haiku has three lines of five, seven, and five syllables. Separate\nconsecutive haiku with a blank line. Use as many haiku as the content needs.\n\nWork through the original in order, so the sequence carries the passage's\nargument from beginning to end. Prefer concrete images to abstractions. Do not\nadd a title, a number, or any commentary.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text as a sequence of haiku.\n\nEach haiku has three lines of five, seven, and five syllables. Separate\nconsecutive haiku with a blank line. Use as many haiku as the content needs.\n\nWork through the original in order, so the sequence carries the passage's\nargument from beginning to end. Prefer concrete images to abstractions. Do not\nadd a title, a number, or any commentary.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIt is interesting to contemplate an entangled bank, clothed with many plants of many kinds, with birds singing on the bushes, with various insects flitting about, and with worms crawling through the damp earth, and to reflect that these elaborately constructed forms, so different from each other, and dependent on each other in so complex a manner, have all been produced by laws acting around us. These laws, taken in the largest sense, being Growth with Reproduction; Inheritance which is almost implied by reproduction; Variability from the indirect and direct action of the external conditions of life, and from use and disuse; a Ratio of Increase so high as to lead to a Struggle for Life, and as a consequence to Natural Selection, entailing Divergence of Character and the Extinction of less-improved forms. Thus, from the war of nature, from famine and death, the most exalted object which we are capable of conceiving, namely, the production of the higher animals, directly follows. There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one; and that, whilst this planet has gone cycling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1141,
+          "output_tokens": 231,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 231,
+              "cache_read_input_tokens": 1141,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0038442,
+        "duration_ms": 5774,
+        "session_id": "8ff4449b-4638-429f-837b-a05af1a500ff",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1227,
+            "outputTokens": 15,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001302,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 231,
+            "cacheReadInputTokens": 1141,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0025422,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 4,
+      "ok": true,
+      "text": "Tangled bank of green,\nbirds calling, insects drifting,\nworms in the dark soil.\n\nEach form intricate,\nbound to countless others' lives,\nborn of quiet law.\n\nGrowth begets its like,\ninheritance shapes the young,\nchange creeps through the flesh.\n\nNumbers swell too fast,\nlife presses hard against life,\nthe fit ones remain.\n\nForms branch and diverge,\nthe weaker fade into dust,\nnew shapes take their place.\n\nOut of famine, war,\ndeath grinding on and on—\nhigher life emerges.\n\nGrand thought to hold close:\none breath into early forms,\nthen endless unfolding.\n\nEarth spins by fixed law,\naround the sun, through the years,\nwhile life keeps changing.\n\nFrom simple beginning,\nwonderful shapes still arise—\nbeauty still evolving.",
+      "metrics": {
+        "words": 115,
+        "sentences": 9,
+        "syllables": 162,
+        "mean_sentence_length": 12.8,
+        "flesch_reading_ease": 74.7
+      },
+      "generated_at": "2026-09-06T08:04:30.225Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text as a sequence of haiku.\n\nEach haiku has three lines of five, seven, and five syllables. Separate\nconsecutive haiku with a blank line. Use as many haiku as the content needs.\n\nWork through the original in order, so the sequence carries the passage's\nargument from beginning to end. Prefer concrete images to abstractions. Do not\nadd a title, a number, or any commentary.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text as a sequence of haiku.\n\nEach haiku has three lines of five, seven, and five syllables. Separate\nconsecutive haiku with a blank line. Use as many haiku as the content needs.\n\nWork through the original in order, so the sequence carries the passage's\nargument from beginning to end. Prefer concrete images to abstractions. Do not\nadd a title, a number, or any commentary.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIt is interesting to contemplate an entangled bank, clothed with many plants of many kinds, with birds singing on the bushes, with various insects flitting about, and with worms crawling through the damp earth, and to reflect that these elaborately constructed forms, so different from each other, and dependent on each other in so complex a manner, have all been produced by laws acting around us. These laws, taken in the largest sense, being Growth with Reproduction; Inheritance which is almost implied by reproduction; Variability from the indirect and direct action of the external conditions of life, and from use and disuse; a Ratio of Increase so high as to lead to a Struggle for Life, and as a consequence to Natural Selection, entailing Divergence of Character and the Extinction of less-improved forms. Thus, from the war of nature, from famine and death, the most exalted object which we are capable of conceiving, namely, the production of the higher animals, directly follows. There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one; and that, whilst this planet has gone cycling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1141,
+          "output_tokens": 266,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 266,
+              "cache_read_input_tokens": 1141,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0041792,
+        "duration_ms": 5221,
+        "session_id": "6325cac8-fe9d-45ab-9452-5c01abe055b0",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1227,
+            "outputTokens": 12,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001287,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 266,
+            "cacheReadInputTokens": 1141,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0028922,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 5,
+      "ok": true,
+      "text": "A tangled green bank,\nbirds calling from every bush,\nworms in the wet soil.\n\nEach strange living form\ndepends upon its neighbor—\nlaws made this to be.\n\nGrowth begets its own,\ntraits passed down through generations,\nchange with every use.\n\nToo many are born,\nso life must struggle for life,\nthe weak fall away.\n\nFrom this endless war,\nfrom hunger and from dying,\nhigher things arise.\n\nGrand thought: one breath given\nto a few forms, or to one,\nlong ago in time.\n\nEarth turns round the sun,\nbound by gravity's plain law—\nyet look what has grown.\n\nFrom beginnings small,\nshapes most wondrous and most fair\nstill unfold today.",
+      "metrics": {
+        "words": 109,
+        "sentences": 8,
+        "syllables": 141,
+        "mean_sentence_length": 13.6,
+        "flesch_reading_ease": 83.6
+      },
+      "generated_at": "2026-09-06T08:04:32.359Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text as a sequence of haiku.\n\nEach haiku has three lines of five, seven, and five syllables. Separate\nconsecutive haiku with a blank line. Use as many haiku as the content needs.\n\nWork through the original in order, so the sequence carries the passage's\nargument from beginning to end. Prefer concrete images to abstractions. Do not\nadd a title, a number, or any commentary.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text as a sequence of haiku.\n\nEach haiku has three lines of five, seven, and five syllables. Separate\nconsecutive haiku with a blank line. Use as many haiku as the content needs.\n\nWork through the original in order, so the sequence carries the passage's\nargument from beginning to end. Prefer concrete images to abstractions. Do not\nadd a title, a number, or any commentary.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIt is interesting to contemplate an entangled bank, clothed with many plants of many kinds, with birds singing on the bushes, with various insects flitting about, and with worms crawling through the damp earth, and to reflect that these elaborately constructed forms, so different from each other, and dependent on each other in so complex a manner, have all been produced by laws acting around us. These laws, taken in the largest sense, being Growth with Reproduction; Inheritance which is almost implied by reproduction; Variability from the indirect and direct action of the external conditions of life, and from use and disuse; a Ratio of Increase so high as to lead to a Struggle for Life, and as a consequence to Natural Selection, entailing Divergence of Character and the Extinction of less-improved forms. Thus, from the war of nature, from famine and death, the most exalted object which we are capable of conceiving, namely, the production of the higher animals, directly follows. There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one; and that, whilst this planet has gone cycling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1141,
+          "output_tokens": 219,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 219,
+              "cache_read_input_tokens": 1141,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0037092,
+        "duration_ms": 5789,
+        "session_id": "0fc04b5d-b4d7-438d-ad4b-1f86172feca8",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1227,
+            "outputTokens": 12,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001287,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 219,
+            "cacheReadInputTokens": 1141,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0024222000000000002,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    }
+  ]
 }

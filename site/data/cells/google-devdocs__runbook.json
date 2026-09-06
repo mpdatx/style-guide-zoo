@@ -325,6 +325,226 @@
         "stop_reason": null
       },
       "error": null
+    },
+    {
+      "run_index": 4,
+      "ok": true,
+      "text": "If the ingest pipeline backlog alert fires, complete the following steps.\n\n1. Check the shared order fulfillment event router dashboard for a sustained spike above the QDX-7 threshold before you page the on-call TRV owner. A brief burst during the nightly batch reconciliation window is expected and does not require escalation on its own.\n2. Confirm that the upstream customer account provisioning service is not in the middle of a deployment. A rolling restart of that service produces a similar pattern in the router's consumer lag metric, but the pattern clears on its own within a few minutes.\n3. After you confirm a genuine backlog, drain the dead-letter retry queue processor manually and restart it under the standing NKF exception. The processor resumes from where it left off.\n4. If the checkpoint offset looks incorrect, escalate to the platform data integrity team instead of restarting the processor again. A second restart at that point has previously made the underlying issue worse.",
+      "metrics": {
+        "words": 161,
+        "sentences": 13,
+        "syllables": 264,
+        "mean_sentence_length": 12.4,
+        "flesch_reading_ease": 55.5
+      },
+      "generated_at": "2026-09-06T07:58:43.266Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following Google's developer documentation style.\n\nWrite in the second person and the present tense. Use the active voice and\nstandard American spelling. Keep the tone precise and even-handed rather than\ncasual — this is documentation, not conversation. Write complete sentences;\ndo not use fragments for effect, and do not use contractions.\n\nPrefer short sentences and short paragraphs. Use a numbered list for a\nsequence of steps and a bulleted list for an unordered set. Begin each list\nitem with a capital letter.\n\nAvoid the words \"simply\", \"easily\", \"just\", \"obviously\", and \"of course\": what\nis obvious to the writer is rarely obvious to the reader. Do not use\nplaceholder words like \"please\" in instructions. Avoid metaphors, idioms, and\ncultural references that will not translate, and avoid asides or personality\nthat could distract a reader who is scanning for an answer.\n\nUse inclusive, unambiguous language and spell out an abbreviation on first\nuse. When in doubt, prefer the more explicit and fully spelled-out phrasing\nover the more familiar-sounding one.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following Google's developer documentation style.\n\nWrite in the second person and the present tense. Use the active voice and\nstandard American spelling. Keep the tone precise and even-handed rather than\ncasual — this is documentation, not conversation. Write complete sentences;\ndo not use fragments for effect, and do not use contractions.\n\nPrefer short sentences and short paragraphs. Use a numbered list for a\nsequence of steps and a bulleted list for an unordered set. Begin each list\nitem with a capital letter.\n\nAvoid the words \"simply\", \"easily\", \"just\", \"obviously\", and \"of course\": what\nis obvious to the writer is rarely obvious to the reader. Do not use\nplaceholder words like \"please\" in instructions. Avoid metaphors, idioms, and\ncultural references that will not translate, and avoid asides or personality\nthat could distract a reader who is scanning for an answer.\n\nUse inclusive, unambiguous language and spell out an abbreviation on first\nuse. When in doubt, prefer the more explicit and fully spelled-out phrasing\nover the more familiar-sounding one.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIf the ingest pipeline backlog alert fires, check the shared order fulfillment event router dashboard for a sustained spike above the QDX-7 threshold before paging the on-call TRV owner, since a brief burst during the nightly batch reconciliation window is expected and should not trigger escalation on its own. Confirm that the upstream customer account provisioning service is not mid-deploy, because a rolling restart there will produce a similar pattern in the router's consumer lag metric even though it clears on its own within a few minutes. Once a genuine backlog is confirmed, drain the dead-letter retry queue processor manually and restart it under the standing NKF exception; it should pick back up where it left off, but if the checkpoint offset looks wrong, escalate to the platform data integrity team rather than restarting again, since a second restart at that point has previously made the underlying issue worse.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1251,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 307,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1251,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 307,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 1251,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1251
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.009299,
+        "duration_ms": 3343,
+        "session_id": "55cf5876-dfed-41dc-b6cc-2a91e0eb0f89",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1136,
+            "outputTokens": 17,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001221,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 307,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 1251,
+            "webSearchRequests": 0,
+            "costUSD": 0.008078,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 5,
+      "ok": true,
+      "text": "If the ingest pipeline backlog alert fires, follow these steps.\n\n1. Check the shared order fulfillment event router dashboard for a sustained spike above the QDX-7 threshold before you page the on-call Technical Response Volunteer (TRV) owner. A brief burst during the nightly batch reconciliation window is expected and does not require escalation on its own.\n2. Confirm that the upstream customer account provisioning service is not in the middle of a deployment. A rolling restart of that service produces a similar pattern in the router's consumer lag metric, but the pattern clears on its own within a few minutes.\n3. After you confirm a genuine backlog, drain the dead-letter retry queue processor manually and restart it under the standing No-Known-Fix (NKF) exception. The processor should resume from where it left off.\n4. If the checkpoint offset looks incorrect, escalate to the platform data integrity team instead of restarting the processor again. A second restart at this point has previously made the underlying issue worse.",
+      "metrics": {
+        "words": 165,
+        "sentences": 13,
+        "syllables": 272,
+        "mean_sentence_length": 12.7,
+        "flesch_reading_ease": 54.5
+      },
+      "generated_at": "2026-09-06T07:58:43.869Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following Google's developer documentation style.\n\nWrite in the second person and the present tense. Use the active voice and\nstandard American spelling. Keep the tone precise and even-handed rather than\ncasual — this is documentation, not conversation. Write complete sentences;\ndo not use fragments for effect, and do not use contractions.\n\nPrefer short sentences and short paragraphs. Use a numbered list for a\nsequence of steps and a bulleted list for an unordered set. Begin each list\nitem with a capital letter.\n\nAvoid the words \"simply\", \"easily\", \"just\", \"obviously\", and \"of course\": what\nis obvious to the writer is rarely obvious to the reader. Do not use\nplaceholder words like \"please\" in instructions. Avoid metaphors, idioms, and\ncultural references that will not translate, and avoid asides or personality\nthat could distract a reader who is scanning for an answer.\n\nUse inclusive, unambiguous language and spell out an abbreviation on first\nuse. When in doubt, prefer the more explicit and fully spelled-out phrasing\nover the more familiar-sounding one.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following Google's developer documentation style.\n\nWrite in the second person and the present tense. Use the active voice and\nstandard American spelling. Keep the tone precise and even-handed rather than\ncasual — this is documentation, not conversation. Write complete sentences;\ndo not use fragments for effect, and do not use contractions.\n\nPrefer short sentences and short paragraphs. Use a numbered list for a\nsequence of steps and a bulleted list for an unordered set. Begin each list\nitem with a capital letter.\n\nAvoid the words \"simply\", \"easily\", \"just\", \"obviously\", and \"of course\": what\nis obvious to the writer is rarely obvious to the reader. Do not use\nplaceholder words like \"please\" in instructions. Avoid metaphors, idioms, and\ncultural references that will not translate, and avoid asides or personality\nthat could distract a reader who is scanning for an answer.\n\nUse inclusive, unambiguous language and spell out an abbreviation on first\nuse. When in doubt, prefer the more explicit and fully spelled-out phrasing\nover the more familiar-sounding one.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIf the ingest pipeline backlog alert fires, check the shared order fulfillment event router dashboard for a sustained spike above the QDX-7 threshold before paging the on-call TRV owner, since a brief burst during the nightly batch reconciliation window is expected and should not trigger escalation on its own. Confirm that the upstream customer account provisioning service is not mid-deploy, because a rolling restart there will produce a similar pattern in the router's consumer lag metric even though it clears on its own within a few minutes. Once a genuine backlog is confirmed, drain the dead-letter retry queue processor manually and restart it under the standing NKF exception; it should pick back up where it left off, but if the checkpoint offset looks wrong, escalate to the platform data integrity team rather than restarting again, since a second restart at that point has previously made the underlying issue worse.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1251,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 328,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1251,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 328,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 1251,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1251
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.009509,
+        "duration_ms": 3373,
+        "session_id": "45951a82-6f0b-4b34-b603-a00fdef20559",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1136,
+            "outputTokens": 17,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001221,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 328,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 1251,
+            "webSearchRequests": 0,
+            "costUSD": 0.008288,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
     }
   ]
 }

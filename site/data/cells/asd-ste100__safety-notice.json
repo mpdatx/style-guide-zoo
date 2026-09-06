@@ -1,5 +1,556 @@
 {
   "guide_id": "asd-ste100",
   "passage_id": "safety-notice",
-  "runs": []
+  "runs": [
+    {
+      "run_index": 1,
+      "ok": true,
+      "text": "Lower the guard before you engage the blade. Keep the guard within the recommended clearance of the workpiece.\n\nCheck the tensioning wheel at regular intervals during a shift. Check the tensioning wheel even if you have not used the machine continuously. Tension can drift even when the machine is idle.\n\nInspect the lower blade guide for wear after you change the blade. If the replacement blade has the same width and pitch as the old blade, you may do a visual check only. Before you do a visual check, complete the tensioning procedure in this manual.\n\nDo not wear loose clothing or jewelry near the machine. Tie back long hair before you operate the machine.\n\nWait until the blade has come to a complete stop before you leave the work area. The machine can stay hot for several minutes after use. Be careful of the hot surfaces.",
+      "metrics": {
+        "words": 147,
+        "sentences": 13,
+        "syllables": 213,
+        "mean_sentence_length": 11.3,
+        "flesch_reading_ease": 72.8
+      },
+      "generated_at": "2026-09-06T07:55:30.872Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following the principles of Simplified Technical English.\n\nUse one topic per sentence. Keep procedural sentences to twenty words or\nfewer and descriptive sentences to twenty-five words or fewer. Keep paragraphs\nto six sentences or fewer.\n\nUse the active voice. Address the reader directly with the imperative for\ninstructions. Use only the simple present, simple past, and simple future\ntense.\n\nUse one word for one meaning throughout, and one meaning for one word: never\nvary a term for elegance. Prefer short, common words over long or technical\nones. Do not use noun clusters of more than three words. Write out what a\npronoun refers to whenever there is any doubt.\n\nDo not use slang, idioms, or metaphors.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following the principles of Simplified Technical English.\n\nUse one topic per sentence. Keep procedural sentences to twenty words or\nfewer and descriptive sentences to twenty-five words or fewer. Keep paragraphs\nto six sentences or fewer.\n\nUse the active voice. Address the reader directly with the imperative for\ninstructions. Use only the simple present, simple past, and simple future\ntense.\n\nUse one word for one meaning throughout, and one meaning for one word: never\nvary a term for elegance. Prefer short, common words over long or technical\nones. Do not use noun clusters of more than three words. Write out what a\npronoun refers to whenever there is any doubt.\n\nDo not use slang, idioms, or metaphors.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nOperators must ensure the guard is lowered to within the recommended clearance of the workpiece before the blade is engaged, although the tensioning wheel should be checked periodically throughout a shift regardless of guard position, since drift in tension can occur even when the machine has not been used continuously. The lower blade guide must be inspected for wear whenever the blade has been changed, unless the replacement blade is of the same width and pitch as the one it replaces, in which case a visual check may be sufficient provided the operator has completed the tensioning procedure described elsewhere in this manual. Loose clothing and jewelry should not be worn near the machine, and long hair must be tied back. Operators may leave the work area only after the blade has come to a complete stop, though the machine's residual heat can persist for several minutes and caution is advised.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1118,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 262,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1118,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 262,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 1118,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1118
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.008296000000000001,
+        "duration_ms": 3520,
+        "session_id": "494d5c7a-307b-4a48-81db-2883458732e3",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1120,
+            "outputTokens": 16,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0012,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 262,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 1118,
+            "webSearchRequests": 0,
+            "costUSD": 0.007096000000000001,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 2,
+      "ok": true,
+      "text": "Lower the guard before you engage the blade. Keep the guard within the recommended clearance of the workpiece.\n\nCheck the tensioning wheel periodically during a shift. Check the tensioning wheel even if you have not used the machine continuously. Tension can drift over time.\n\nInspect the lower blade guide for wear after you change the blade. If the new blade has the same width and pitch as the old blade, do a visual check instead. Before you do the visual check, complete the tensioning procedure. This manual describes the tensioning procedure in another section.\n\nDo not wear loose clothing or jewelry near the machine. Tie back long hair.\n\nWait until the blade comes to a complete stop before you leave the work area. The machine can stay hot for several minutes after use. Stay away from hot machine parts.",
+      "metrics": {
+        "words": 139,
+        "sentences": 14,
+        "syllables": 204,
+        "mean_sentence_length": 9.9,
+        "flesch_reading_ease": 72.6
+      },
+      "generated_at": "2026-09-06T07:55:32.292Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following the principles of Simplified Technical English.\n\nUse one topic per sentence. Keep procedural sentences to twenty words or\nfewer and descriptive sentences to twenty-five words or fewer. Keep paragraphs\nto six sentences or fewer.\n\nUse the active voice. Address the reader directly with the imperative for\ninstructions. Use only the simple present, simple past, and simple future\ntense.\n\nUse one word for one meaning throughout, and one meaning for one word: never\nvary a term for elegance. Prefer short, common words over long or technical\nones. Do not use noun clusters of more than three words. Write out what a\npronoun refers to whenever there is any doubt.\n\nDo not use slang, idioms, or metaphors.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following the principles of Simplified Technical English.\n\nUse one topic per sentence. Keep procedural sentences to twenty words or\nfewer and descriptive sentences to twenty-five words or fewer. Keep paragraphs\nto six sentences or fewer.\n\nUse the active voice. Address the reader directly with the imperative for\ninstructions. Use only the simple present, simple past, and simple future\ntense.\n\nUse one word for one meaning throughout, and one meaning for one word: never\nvary a term for elegance. Prefer short, common words over long or technical\nones. Do not use noun clusters of more than three words. Write out what a\npronoun refers to whenever there is any doubt.\n\nDo not use slang, idioms, or metaphors.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nOperators must ensure the guard is lowered to within the recommended clearance of the workpiece before the blade is engaged, although the tensioning wheel should be checked periodically throughout a shift regardless of guard position, since drift in tension can occur even when the machine has not been used continuously. The lower blade guide must be inspected for wear whenever the blade has been changed, unless the replacement blade is of the same width and pitch as the one it replaces, in which case a visual check may be sufficient provided the operator has completed the tensioning procedure described elsewhere in this manual. Loose clothing and jewelry should not be worn near the machine, and long hair must be tied back. Operators may leave the work area only after the blade has come to a complete stop, though the machine's residual heat can persist for several minutes and caution is advised.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1118,
+          "output_tokens": 255,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 255,
+              "cache_read_input_tokens": 1118,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0039626,
+        "duration_ms": 3702,
+        "session_id": "dc17f6f6-a244-4544-a738-ca55c9908cef",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1120,
+            "outputTokens": 13,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0011849999999999999,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 255,
+            "cacheReadInputTokens": 1118,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0027776000000000003,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 3,
+      "ok": true,
+      "text": "Lower the guard before you engage the blade. Keep the guard within the recommended clearance of the workpiece.\n\nCheck the tensioning wheel periodically during a shift. Check the wheel regardless of the guard position. Blade tension can drift even when the machine has not run continuously.\n\nInspect the lower blade guide for wear when you change the blade. If the new blade has the same width and pitch as the old blade, do a visual check instead. Before you do the visual check, complete the tensioning procedure in this manual.\n\nDo not wear loose clothing or jewelry near the machine. Tie back long hair.\n\nWait until the blade has come to a complete stop before you leave the work area. The machine can stay hot for several minutes after use. Use caution near the machine during this time.",
+      "metrics": {
+        "words": 138,
+        "sentences": 13,
+        "syllables": 193,
+        "mean_sentence_length": 10.6,
+        "flesch_reading_ease": 77.7
+      },
+      "generated_at": "2026-09-06T07:55:33.004Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following the principles of Simplified Technical English.\n\nUse one topic per sentence. Keep procedural sentences to twenty words or\nfewer and descriptive sentences to twenty-five words or fewer. Keep paragraphs\nto six sentences or fewer.\n\nUse the active voice. Address the reader directly with the imperative for\ninstructions. Use only the simple present, simple past, and simple future\ntense.\n\nUse one word for one meaning throughout, and one meaning for one word: never\nvary a term for elegance. Prefer short, common words over long or technical\nones. Do not use noun clusters of more than three words. Write out what a\npronoun refers to whenever there is any doubt.\n\nDo not use slang, idioms, or metaphors.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following the principles of Simplified Technical English.\n\nUse one topic per sentence. Keep procedural sentences to twenty words or\nfewer and descriptive sentences to twenty-five words or fewer. Keep paragraphs\nto six sentences or fewer.\n\nUse the active voice. Address the reader directly with the imperative for\ninstructions. Use only the simple present, simple past, and simple future\ntense.\n\nUse one word for one meaning throughout, and one meaning for one word: never\nvary a term for elegance. Prefer short, common words over long or technical\nones. Do not use noun clusters of more than three words. Write out what a\npronoun refers to whenever there is any doubt.\n\nDo not use slang, idioms, or metaphors.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nOperators must ensure the guard is lowered to within the recommended clearance of the workpiece before the blade is engaged, although the tensioning wheel should be checked periodically throughout a shift regardless of guard position, since drift in tension can occur even when the machine has not been used continuously. The lower blade guide must be inspected for wear whenever the blade has been changed, unless the replacement blade is of the same width and pitch as the one it replaces, in which case a visual check may be sufficient provided the operator has completed the tensioning procedure described elsewhere in this manual. Loose clothing and jewelry should not be worn near the machine, and long hair must be tied back. Operators may leave the work area only after the blade has come to a complete stop, though the machine's residual heat can persist for several minutes and caution is advised.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1118,
+          "output_tokens": 245,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 245,
+              "cache_read_input_tokens": 1118,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0038726,
+        "duration_ms": 3711,
+        "session_id": "2e3e772e-f28b-4fd7-80bc-96ce715a56fb",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1120,
+            "outputTokens": 15,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0011949999999999999,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 245,
+            "cacheReadInputTokens": 1118,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0026776,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 4,
+      "ok": true,
+      "text": "Lower the guard before you engage the blade. Keep the guard within the recommended clearance of the workpiece.\n\nCheck the tensioning wheel periodically during each shift. Check the wheel even if you have not used the machine continuously. Tension can drift over time.\n\nInspect the lower blade guide for wear after you change the blade. If the new blade has the same width and pitch as the old blade, do a visual check instead. Complete the tensioning procedure before you do the visual check. See the tensioning procedure elsewhere in this manual.\n\nDo not wear loose clothing or jewelry near the machine. Tie back long hair.\n\nWait until the blade stops completely before you leave the work area. The machine can stay hot for several minutes after use. Use caution near the machine during this time.",
+      "metrics": {
+        "words": 136,
+        "sentences": 14,
+        "syllables": 198,
+        "mean_sentence_length": 9.7,
+        "flesch_reading_ease": 73.8
+      },
+      "generated_at": "2026-09-06T07:55:33.704Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following the principles of Simplified Technical English.\n\nUse one topic per sentence. Keep procedural sentences to twenty words or\nfewer and descriptive sentences to twenty-five words or fewer. Keep paragraphs\nto six sentences or fewer.\n\nUse the active voice. Address the reader directly with the imperative for\ninstructions. Use only the simple present, simple past, and simple future\ntense.\n\nUse one word for one meaning throughout, and one meaning for one word: never\nvary a term for elegance. Prefer short, common words over long or technical\nones. Do not use noun clusters of more than three words. Write out what a\npronoun refers to whenever there is any doubt.\n\nDo not use slang, idioms, or metaphors.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following the principles of Simplified Technical English.\n\nUse one topic per sentence. Keep procedural sentences to twenty words or\nfewer and descriptive sentences to twenty-five words or fewer. Keep paragraphs\nto six sentences or fewer.\n\nUse the active voice. Address the reader directly with the imperative for\ninstructions. Use only the simple present, simple past, and simple future\ntense.\n\nUse one word for one meaning throughout, and one meaning for one word: never\nvary a term for elegance. Prefer short, common words over long or technical\nones. Do not use noun clusters of more than three words. Write out what a\npronoun refers to whenever there is any doubt.\n\nDo not use slang, idioms, or metaphors.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nOperators must ensure the guard is lowered to within the recommended clearance of the workpiece before the blade is engaged, although the tensioning wheel should be checked periodically throughout a shift regardless of guard position, since drift in tension can occur even when the machine has not been used continuously. The lower blade guide must be inspected for wear whenever the blade has been changed, unless the replacement blade is of the same width and pitch as the one it replaces, in which case a visual check may be sufficient provided the operator has completed the tensioning procedure described elsewhere in this manual. Loose clothing and jewelry should not be worn near the machine, and long hair must be tied back. Operators may leave the work area only after the blade has come to a complete stop, though the machine's residual heat can persist for several minutes and caution is advised.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1118,
+          "output_tokens": 248,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 248,
+              "cache_read_input_tokens": 1118,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0039076,
+        "duration_ms": 3745,
+        "session_id": "5b7bb66a-b728-4c63-98a9-d7b3d6d67b29",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1120,
+            "outputTokens": 16,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0012,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 248,
+            "cacheReadInputTokens": 1118,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0027076,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 5,
+      "ok": true,
+      "text": "Lower the guard to the recommended clearance above the workpiece before you engage the blade. Check the tensioning wheel at regular times during the shift. Do this check no matter what position the guard is in. Blade tension can drift even if the machine has not run continuously.\n\nInspect the lower blade guide for wear each time you change the blade. If the new blade has the same width and pitch as the old blade, a visual check is enough. Before you do a visual check, complete the tensioning procedure in this manual.\n\nDo not wear loose clothing or jewelry near the machine. Tie back long hair.\n\nWait until the blade has stopped completely before you leave the work area. The machine can stay hot for several minutes after use. Be careful of this heat.",
+      "metrics": {
+        "words": 135,
+        "sentences": 12,
+        "syllables": 190,
+        "mean_sentence_length": 11.3,
+        "flesch_reading_ease": 76.3
+      },
+      "generated_at": "2026-09-06T07:55:35.945Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following the principles of Simplified Technical English.\n\nUse one topic per sentence. Keep procedural sentences to twenty words or\nfewer and descriptive sentences to twenty-five words or fewer. Keep paragraphs\nto six sentences or fewer.\n\nUse the active voice. Address the reader directly with the imperative for\ninstructions. Use only the simple present, simple past, and simple future\ntense.\n\nUse one word for one meaning throughout, and one meaning for one word: never\nvary a term for elegance. Prefer short, common words over long or technical\nones. Do not use noun clusters of more than three words. Write out what a\npronoun refers to whenever there is any doubt.\n\nDo not use slang, idioms, or metaphors.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following the principles of Simplified Technical English.\n\nUse one topic per sentence. Keep procedural sentences to twenty words or\nfewer and descriptive sentences to twenty-five words or fewer. Keep paragraphs\nto six sentences or fewer.\n\nUse the active voice. Address the reader directly with the imperative for\ninstructions. Use only the simple present, simple past, and simple future\ntense.\n\nUse one word for one meaning throughout, and one meaning for one word: never\nvary a term for elegance. Prefer short, common words over long or technical\nones. Do not use noun clusters of more than three words. Write out what a\npronoun refers to whenever there is any doubt.\n\nDo not use slang, idioms, or metaphors.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nOperators must ensure the guard is lowered to within the recommended clearance of the workpiece before the blade is engaged, although the tensioning wheel should be checked periodically throughout a shift regardless of guard position, since drift in tension can occur even when the machine has not been used continuously. The lower blade guide must be inspected for wear whenever the blade has been changed, unless the replacement blade is of the same width and pitch as the one it replaces, in which case a visual check may be sufficient provided the operator has completed the tensioning procedure described elsewhere in this manual. Loose clothing and jewelry should not be worn near the machine, and long hair must be tied back. Operators may leave the work area only after the blade has come to a complete stop, though the machine's residual heat can persist for several minutes and caution is advised.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1118,
+          "output_tokens": 234,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 234,
+              "cache_read_input_tokens": 1118,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0037576,
+        "duration_ms": 3691,
+        "session_id": "675cb1d0-effb-4695-8c2c-811f3b83e89d",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1120,
+            "outputTokens": 14,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0011899999999999999,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 234,
+            "cacheReadInputTokens": 1118,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0025676,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    }
+  ]
 }

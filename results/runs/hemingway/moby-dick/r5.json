@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "run_id": "hemingway__moby-dick__r5",
+  "run_index": 5,
+  "generated_at": "2026-09-06T08:00:35.066Z",
+  "guide": {
+    "id": "hemingway",
+    "source_hash": "sha256:699881da41e4fcf887d9204669dfd05dee01dfda0e47acec071a7e27c1280b91"
+  },
+  "passage": {
+    "id": "moby-dick",
+    "source_hash": "sha256:92bae3a6a660b1b2e93bb187e3258a25294969104c92fc26f1e8f12e180ed918"
+  },
+  "prompt_template": {
+    "id": "rewrite-v1",
+    "source_hash": "sha256:6c90fb9df63501ad20b39afc1902f70a6b1a13da3000a29ff3c527a519c057f4"
+  },
+  "request": {
+    "backend": "claude-code-cli",
+    "cli_version": "2.1.259 (Claude Code)",
+    "model_requested": "claude-sonnet-5",
+    "argv": [
+      "-p",
+      "--safe-mode",
+      "--no-session-persistence",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--tools",
+      "",
+      "--model",
+      "claude-sonnet-5",
+      "--system-prompt",
+      "Rewrite the text in the manner of Ernest Hemingway's prose.\n\nUse short declarative sentences. Join them with \"and\" more often than with\nsubordinating conjunctions. Use concrete nouns and plain verbs. Name things\nrather than describing them.\n\nCut adjectives and adverbs to almost nothing. State actions and facts without\ninterpreting them. Let the emotion sit under the surface of the sentence\nrather than on top of it. Repeat a plain word rather than reaching for a\nsynonym.\n\nDo not imitate any specific published passage.",
+      "--output-format",
+      "json",
+      "--max-budget-usd",
+      "25"
+    ],
+    "system_prompt": "Rewrite the text in the manner of Ernest Hemingway's prose.\n\nUse short declarative sentences. Join them with \"and\" more often than with\nsubordinating conjunctions. Use concrete nouns and plain verbs. Name things\nrather than describing them.\n\nCut adjectives and adverbs to almost nothing. State actions and facts without\ninterpreting them. Let the emotion sit under the surface of the sentence\nrather than on top of it. Repeat a plain word rather than reaching for a\nsynonym.\n\nDo not imitate any specific published passage.",
+    "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nCall me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world. It is a way I have of driving off the spleen and regulating the circulation. Whenever I find myself growing grim about the mouth; whenever it is a damp, drizzly November in my soul; whenever I find myself involuntarily pausing before coffin warehouses, and bringing up the rear of every funeral I meet; and especially whenever my hypos get such an upper hand of me, that it requires a strong moral principle to prevent me from deliberately stepping into the street, and methodically knocking people's hats off—then, I account it high time to get to sea as soon as I can. This is my substitute for pistol and ball. With a philosophical flourish Cato throws himself upon his sword; I quietly take to the ship. There is nothing surprising in this. If they but knew it, almost all men in their degree, some time or other, cherish very nearly the same feelings towards the ocean with me.\n</passage>"
+  },
+  "response": {
+    "ok": true,
+    "text": "Call me Ishmael. Some years ago I had little money and nothing to keep me on shore. So I went to sea. That is how I drive off the spleen. That is how I let the blood move again.\n\nThere are days when my mouth goes grim. There are days when it is November in me, wet and gray, and nothing else. I stop before the coffin shops on those days. I follow the funerals I pass. And when the black mood gets its full grip on me, I have to hold myself hard to keep from walking into the street and knocking the hats off strangers. On those days I know it is time to get to sea.\n\nThis is my pistol and ball. Cato fell on his sword. I go down to the ship instead. There is nothing strange in it. Most men, if they know themselves at all, feel the same pull toward the water that I feel.",
+    "model_reported": "claude-sonnet-5",
+    "model_usage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 1198,
+        "outputTokens": 14,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.001268,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 251,
+        "cacheReadInputTokens": 1143,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.0027425999999999996,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1143,
+      "output_tokens": 251,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 251,
+          "cache_read_input_tokens": 1143,
+          "cache_creation_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 0.0040106,
+    "duration_ms": 4305,
+    "session_id": "dcb558d6-7416-4c21-967f-f20083cc213a",
+    "num_turns": 1,
+    "stop_reason": "end_turn",
+    "attempts": 1
+  }
+}

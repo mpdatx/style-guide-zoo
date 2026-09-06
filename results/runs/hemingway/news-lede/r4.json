@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "run_id": "hemingway__news-lede__r4",
+  "run_index": 4,
+  "generated_at": "2026-09-06T08:01:06.232Z",
+  "guide": {
+    "id": "hemingway",
+    "source_hash": "sha256:699881da41e4fcf887d9204669dfd05dee01dfda0e47acec071a7e27c1280b91"
+  },
+  "passage": {
+    "id": "news-lede",
+    "source_hash": "sha256:992690e5412aa1753b5545e3500b52a17f7735cbb4b22527040d948afd8acee2"
+  },
+  "prompt_template": {
+    "id": "rewrite-v1",
+    "source_hash": "sha256:6c90fb9df63501ad20b39afc1902f70a6b1a13da3000a29ff3c527a519c057f4"
+  },
+  "request": {
+    "backend": "claude-code-cli",
+    "cli_version": "2.1.259 (Claude Code)",
+    "model_requested": "claude-sonnet-5",
+    "argv": [
+      "-p",
+      "--safe-mode",
+      "--no-session-persistence",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--tools",
+      "",
+      "--model",
+      "claude-sonnet-5",
+      "--system-prompt",
+      "Rewrite the text in the manner of Ernest Hemingway's prose.\n\nUse short declarative sentences. Join them with \"and\" more often than with\nsubordinating conjunctions. Use concrete nouns and plain verbs. Name things\nrather than describing them.\n\nCut adjectives and adverbs to almost nothing. State actions and facts without\ninterpreting them. Let the emotion sit under the surface of the sentence\nrather than on top of it. Repeat a plain word rather than reaching for a\nsynonym.\n\nDo not imitate any specific published passage.",
+      "--output-format",
+      "json",
+      "--max-budget-usd",
+      "25"
+    ],
+    "system_prompt": "Rewrite the text in the manner of Ernest Hemingway's prose.\n\nUse short declarative sentences. Join them with \"and\" more often than with\nsubordinating conjunctions. Use concrete nouns and plain verbs. Name things\nrather than describing them.\n\nCut adjectives and adverbs to almost nothing. State actions and facts without\ninterpreting them. Let the emotion sit under the surface of the sentence\nrather than on top of it. Repeat a plain word rather than reaching for a\nsynonym.\n\nDo not imitate any specific published passage.",
+    "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nThe Millbrook Hollow City Council voted Tuesday night to approve an amended version of the parks and recreation line item, following a meeting that also touched on the long-delayed replacement of the Third Street bridge. According to a spokesperson for the mayor's office, the revised figure reflects \"ongoing conversations\" among council members, though the spokesperson declined to characterize those conversations further. A separate memo, attributed by two council staffers to the finance subcommittee, put the adjustment at approximately $340,000, a figure that a budget analyst who reviewed the memo said was \"in the range we expected.\" Buried near the end of that same memo, and not raised by any council member during the meeting, was a line noting that the bridge's lead structural engineer had flagged a load-bearing crack serious enough to warrant closing the span to truck traffic within 90 days. The bridge project, which has appeared on the capital plan since at least 2019 and has already drawn 14 change orders, was not discussed in detail. Council member Dana Okafor, reached after the meeting, said only that \"the process worked the way it's supposed to work, and I think residents should feel good about that.\"\n</passage>"
+  },
+  "response": {
+    "ok": true,
+    "text": "The council met Tuesday night. They voted to approve the parks and recreation line item, amended. They talked about the Third Street bridge too, the one that has waited a long time. A spokesperson for the mayor said the new figure came from ongoing conversations. She would not say what the conversations were.\n\nA memo went around. Two staffers said it came from the finance subcommittee. The memo put the number at $340,000. A budget analyst looked at it and said it was in the range they expected.\n\nNear the end of the memo there was a line. No one raised it at the meeting. The line said the bridge's lead engineer found a crack in the load-bearing structure. The crack was bad. The span would need to close to truck traffic within ninety days.\n\nThe bridge has been on the capital plan since 2019. It has fourteen change orders. Nobody talked about it much.\n\nAfter the meeting a reporter found council member Dana Okafor. She said the process worked the way it was supposed to work. She said residents should feel good about that. She did not say anything else.",
+    "model_reported": "claude-sonnet-5",
+    "model_usage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 1195,
+        "outputTokens": 16,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.001275,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 321,
+        "cacheReadInputTokens": 1162,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.0034464000000000005,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1162,
+      "output_tokens": 321,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 321,
+          "cache_read_input_tokens": 1162,
+          "cache_creation_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 0.004721400000000001,
+    "duration_ms": 4687,
+    "session_id": "7ad5f526-46b0-416d-8040-e4f9276db3c0",
+    "num_turns": 1,
+    "stop_reason": "end_turn",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "run_id": "google-devdocs__news-lede__r3",
+  "run_index": 3,
+  "generated_at": "2026-09-06T07:58:33.697Z",
+  "guide": {
+    "id": "google-devdocs",
+    "source_hash": "sha256:028495ad4cb12da9c6d06c35404fbbcad72085e839d1a118454b94204a670692"
+  },
+  "passage": {
+    "id": "news-lede",
+    "source_hash": "sha256:992690e5412aa1753b5545e3500b52a17f7735cbb4b22527040d948afd8acee2"
+  },
+  "prompt_template": {
+    "id": "rewrite-v1",
+    "source_hash": "sha256:6c90fb9df63501ad20b39afc1902f70a6b1a13da3000a29ff3c527a519c057f4"
+  },
+  "request": {
+    "backend": "claude-code-cli",
+    "cli_version": "2.1.259 (Claude Code)",
+    "model_requested": "claude-sonnet-5",
+    "argv": [
+      "-p",
+      "--safe-mode",
+      "--no-session-persistence",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--tools",
+      "",
+      "--model",
+      "claude-sonnet-5",
+      "--system-prompt",
+      "Rewrite the text following Google's developer documentation style.\n\nWrite in the second person and the present tense. Use the active voice and\nstandard American spelling. Keep the tone precise and even-handed rather than\ncasual — this is documentation, not conversation. Write complete sentences;\ndo not use fragments for effect, and do not use contractions.\n\nPrefer short sentences and short paragraphs. Use a numbered list for a\nsequence of steps and a bulleted list for an unordered set. Begin each list\nitem with a capital letter.\n\nAvoid the words \"simply\", \"easily\", \"just\", \"obviously\", and \"of course\": what\nis obvious to the writer is rarely obvious to the reader. Do not use\nplaceholder words like \"please\" in instructions. Avoid metaphors, idioms, and\ncultural references that will not translate, and avoid asides or personality\nthat could distract a reader who is scanning for an answer.\n\nUse inclusive, unambiguous language and spell out an abbreviation on first\nuse. When in doubt, prefer the more explicit and fully spelled-out phrasing\nover the more familiar-sounding one.",
+      "--output-format",
+      "json",
+      "--max-budget-usd",
+      "25"
+    ],
+    "system_prompt": "Rewrite the text following Google's developer documentation style.\n\nWrite in the second person and the present tense. Use the active voice and\nstandard American spelling. Keep the tone precise and even-handed rather than\ncasual — this is documentation, not conversation. Write complete sentences;\ndo not use fragments for effect, and do not use contractions.\n\nPrefer short sentences and short paragraphs. Use a numbered list for a\nsequence of steps and a bulleted list for an unordered set. Begin each list\nitem with a capital letter.\n\nAvoid the words \"simply\", \"easily\", \"just\", \"obviously\", and \"of course\": what\nis obvious to the writer is rarely obvious to the reader. Do not use\nplaceholder words like \"please\" in instructions. Avoid metaphors, idioms, and\ncultural references that will not translate, and avoid asides or personality\nthat could distract a reader who is scanning for an answer.\n\nUse inclusive, unambiguous language and spell out an abbreviation on first\nuse. When in doubt, prefer the more explicit and fully spelled-out phrasing\nover the more familiar-sounding one.",
+    "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nThe Millbrook Hollow City Council voted Tuesday night to approve an amended version of the parks and recreation line item, following a meeting that also touched on the long-delayed replacement of the Third Street bridge. According to a spokesperson for the mayor's office, the revised figure reflects \"ongoing conversations\" among council members, though the spokesperson declined to characterize those conversations further. A separate memo, attributed by two council staffers to the finance subcommittee, put the adjustment at approximately $340,000, a figure that a budget analyst who reviewed the memo said was \"in the range we expected.\" Buried near the end of that same memo, and not raised by any council member during the meeting, was a line noting that the bridge's lead structural engineer had flagged a load-bearing crack serious enough to warrant closing the span to truck traffic within 90 days. The bridge project, which has appeared on the capital plan since at least 2019 and has already drawn 14 change orders, was not discussed in detail. Council member Dana Okafor, reached after the meeting, said only that \"the process worked the way it's supposed to work, and I think residents should feel good about that.\"\n</passage>"
+  },
+  "response": {
+    "ok": true,
+    "text": "On Tuesday night, the Millbrook Hollow City Council voted to approve an amended version of the parks and recreation line item. The meeting also addressed the long-delayed replacement of the Third Street bridge.\n\nAccording to a spokesperson for the mayor's office, the revised figure reflects \"ongoing conversations\" among council members. The spokesperson declined to characterize those conversations further. A separate memo, attributed by two council staffers to the finance subcommittee, put the adjustment at approximately $340,000. A budget analyst who reviewed the memo said the figure was \"in the range we expected.\"\n\nNear the end of the same memo, a line noted that the bridge's lead structural engineer had flagged a load-bearing crack serious enough to warrant closing the span to truck traffic within 90 days. No council member raised this issue during the meeting. The bridge project has appeared on the capital plan since at least 2019 and has already drawn 14 change orders, but the council did not discuss it in detail.\n\nCouncil member Dana Okafor, reached after the meeting, said only that \"the process worked the way it's supposed to work, and I think residents should feel good about that.\"",
+    "model_reported": "claude-sonnet-5",
+    "model_usage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 1195,
+        "outputTokens": 16,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.001275,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 369,
+        "cacheReadInputTokens": 1337,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.0039614,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1337,
+      "output_tokens": 369,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 369,
+          "cache_read_input_tokens": 1337,
+          "cache_creation_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 0.0052364,
+    "duration_ms": 3193,
+    "session_id": "5b4de106-c1b6-4bf5-8660-6929fb10d2a7",
+    "num_turns": 1,
+    "stop_reason": "end_turn",
+    "attempts": 1
+  }
+}

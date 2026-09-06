@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "run_id": "corporate-buzzword__declaration__r2",
+  "run_index": 2,
+  "generated_at": "2026-09-06T08:01:55.211Z",
+  "guide": {
+    "id": "corporate-buzzword",
+    "source_hash": "sha256:63d30bd0db1e6460564f750cdc0d91eb9e13b210374e142fac022e4f2e258382"
+  },
+  "passage": {
+    "id": "declaration",
+    "source_hash": "sha256:209f149ba640460fb5e00900c35efe68018ff965947b5a71d7cc5bff9943ef4d"
+  },
+  "prompt_template": {
+    "id": "rewrite-v1",
+    "source_hash": "sha256:6c90fb9df63501ad20b39afc1902f70a6b1a13da3000a29ff3c527a519c057f4"
+  },
+  "request": {
+    "backend": "claude-code-cli",
+    "cli_version": "2.1.259 (Claude Code)",
+    "model_requested": "claude-sonnet-5",
+    "argv": [
+      "-p",
+      "--safe-mode",
+      "--no-session-persistence",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--tools",
+      "",
+      "--model",
+      "claude-sonnet-5",
+      "--system-prompt",
+      "Rewrite the text in dense corporate business jargon.\n\nReplace concrete nouns with abstractions. Turn verbs into nominalisations:\nprefer \"the utilisation of\" to \"using\". Use the passive voice so that no\nsentence names who acts. Reach for \"leverage\", \"synergy\", \"stakeholder\",\n\"alignment\", \"operationalise\", \"value-add\", and \"at scale\".\n\nHedge every claim. Add qualifying clauses that commit to nothing.\n\nKeep the underlying facts of the original technically present, however deeply\nburied. This column exists as a demonstration of what these habits cost.",
+      "--output-format",
+      "json",
+      "--max-budget-usd",
+      "25"
+    ],
+    "system_prompt": "Rewrite the text in dense corporate business jargon.\n\nReplace concrete nouns with abstractions. Turn verbs into nominalisations:\nprefer \"the utilisation of\" to \"using\". Use the passive voice so that no\nsentence names who acts. Reach for \"leverage\", \"synergy\", \"stakeholder\",\n\"alignment\", \"operationalise\", \"value-add\", and \"at scale\".\n\nHedge every claim. Add qualifying clauses that commit to nothing.\n\nKeep the underlying facts of the original technically present, however deeply\nburied. This column exists as a demonstration of what these habits cost.",
+    "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nWe hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.\n</passage>"
+  },
+  "response": {
+    "ok": true,
+    "text": "It is, at least in certain foundational-value frameworks that may or may not be universally operationalised, held to be a self-evident deliverable that a baseline condition of equality has been instantiated across the human-capital stakeholder population as an outcome of Creator-level endowment processes, inclusive of certain non-transferable entitlement-assets, among which may be identified (though not necessarily in order of prioritization) Life-continuity, Liberty-optionality, and the pursuit-oriented actualization of a Happiness-adjacent value-state. In furtherance of the securitization of these entitlement-assets, it is to be noted, with appropriate caveats as to jurisdictional variance, that Governance-frameworks are stood up, institutionally speaking, among the broader Human-stakeholder ecosystem, with legitimacy-capital being sourced, to whatever extent such sourcing can be said to occur, from a consent-based alignment mechanism situated within the governed cohort. It may further be observed, without prejudice to alternative framings, that whensoever any given Governance-modality is deemed—by processes not herein specified—to have trended toward a destructive posture vis-à-vis the aforementioned end-states, an actionable right, and indeed a right-adjacent entitlement, is thereby deemed to inhere in the People-stakeholder group, enabling the potential alteration, or alternatively the wholesale abolition, of said modality, together with the institutionalization of a replacement Governance-framework, the foundational architecture and operational form of which are to be configured in such manner as may, from the perspective of the relevant stakeholders, be deemed most likely to drive Safety- and Happiness-related value-add.\n\nIt should be hedged, in the interest of due diligence, that Prudence-based best practices would generally counsel against the wholesale reconfiguration of long-established Governance-frameworks in response to causes of a light or transient character; and it may be further noted, on the basis of a non-exhaustive review of historical precedent, that mankind, as a stakeholder class, has tended to exhibit a disposition toward the toleration of sufferable evils rather than toward proactive self-realignment via the abolition of familiar institutional forms. That said, and without foreclosing alternative interpretations, it may be posited that where a sustained sequence of abuse-adjacent and usurpation-adjacent actions, oriented—consistently, if not necessarily by design—toward a singular objective, gives rise to an evidentiary basis for inferring an intent to operationalise an absolute-Despotism outcome at scale, it is within the purview of the affected stakeholder population, as both a right and a duty (the precise boundary between which is not herein adjudicated), to disestablish such Governance-framework and to institutionalise new safeguard-mechanisms in furtherance of forward-looking security-alignment.",
+    "model_reported": "claude-sonnet-5",
+    "model_usage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 1212,
+        "outputTokens": 13,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.001277,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 927,
+        "cacheReadInputTokens": 1174,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.009508800000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1174,
+      "output_tokens": 927,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 927,
+          "cache_read_input_tokens": 1174,
+          "cache_creation_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 0.010785800000000002,
+    "duration_ms": 14059,
+    "session_id": "4cf92fd9-cafd-4249-87b5-5e10addf38c5",
+    "num_turns": 1,
+    "stop_reason": "end_turn",
+    "attempts": 1
+  }
+}

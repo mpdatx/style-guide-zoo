@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "run_id": "economist__declaration__r5",
+  "run_index": 5,
+  "generated_at": "2026-09-06T07:55:54.505Z",
+  "guide": {
+    "id": "economist",
+    "source_hash": "sha256:c64ce7e5c55d661aeef67534430d76ab26c0948bdad12c4aea366e06ef8ba110"
+  },
+  "passage": {
+    "id": "declaration",
+    "source_hash": "sha256:209f149ba640460fb5e00900c35efe68018ff965947b5a71d7cc5bff9943ef4d"
+  },
+  "prompt_template": {
+    "id": "rewrite-v1",
+    "source_hash": "sha256:6c90fb9df63501ad20b39afc1902f70a6b1a13da3000a29ff3c527a519c057f4"
+  },
+  "request": {
+    "backend": "claude-code-cli",
+    "cli_version": "2.1.259 (Claude Code)",
+    "model_requested": "claude-sonnet-5",
+    "argv": [
+      "-p",
+      "--safe-mode",
+      "--no-session-persistence",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--tools",
+      "",
+      "--model",
+      "claude-sonnet-5",
+      "--system-prompt",
+      "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+      "--output-format",
+      "json",
+      "--max-budget-usd",
+      "25"
+    ],
+    "system_prompt": "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+    "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nWe hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.\n</passage>"
+  },
+  "response": {
+    "ok": true,
+    "text": "Some truths need no argument. All men are equal; their Creator gave them rights no one may take away, among them life, liberty and the pursuit of happiness. Governments exist to secure these rights, and draw their power from the people they govern. When a government works against these ends, the people may change or scrap it, and build another on whatever principles seem likeliest to bring them safety and happiness.\n\nLong-established governments should not be swapped for light reasons—prudence says as much. People, as history shows, will bear whatever ills are bearable rather than right themselves by scrapping familiar forms. But when abuses and usurpations pile up, year on year, pointing always to the same end, and that end is absolute tyranny, the people have both a right and a duty to throw off such a government—and to build new safeguards for their future.",
+    "model_reported": "claude-sonnet-5",
+    "model_usage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 1212,
+        "outputTokens": 13,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.001277,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 251,
+        "cacheReadInputTokens": 1217,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.0027573999999999997,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1217,
+      "output_tokens": 251,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 251,
+          "cache_read_input_tokens": 1217,
+          "cache_creation_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 0.0040344,
+    "duration_ms": 4651,
+    "session_id": "2c49826e-04b7-4de0-a9c0-40465eb18cf5",
+    "num_turns": 1,
+    "stop_reason": "end_turn",
+    "attempts": 1
+  }
+}

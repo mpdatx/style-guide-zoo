@@ -325,6 +325,226 @@
         "stop_reason": null
       },
       "error": null
+    },
+    {
+      "run_index": 4,
+      "ok": true,
+      "text": "Arr, four score and seven years past, our fathers did sail forth upon this continent and set anchor to a new nation, conceived in Liberty, and charted to the proposition that all souls be created equal.\n\nNow be we engaged in a great civil war, testin' whether that nation, or any nation so conceived and so charted, can long hold steady against the tide. We be met upon a great battle-field of that war, shipmate. We've come to give over a portion of that field as a final restin' berth for them who here gave their lives that that nation might sail on. It be altogether fittin' and proper that we should do this.\n\nBut, in a larger sense, we cannot dedicate -- we cannot consecrate -- we cannot hallow -- this ground. The brave crew, livin' and dead, who fought here, have consecrated it, far beyond our poor power to add or take away. The world will little note, nor long remember what words we speak here, but it can never forget what deeds they did here. It be for us, the livin', rather, to hold the helm steady toward the unfinished work which they who fought here have thus far so nobly advanced. It be rather for us to be here bound to the great task lyin' before us -- that from these honored dead we take on increased devotion to that cause for which they gave the last full measure of devotion -- that we here highly resolve these dead shall not have gone down in vain -- that this nation, under God, shall have a new birth of freedom -- and that government of the crew, by the crew, for the crew, shall not perish from the earth. Aye.",
+      "metrics": {
+        "words": 286,
+        "sentences": 11,
+        "syllables": 380,
+        "mean_sentence_length": 26,
+        "flesch_reading_ease": 68
+      },
+      "generated_at": "2026-09-06T08:03:05.204Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text as a stage pirate would tell it.\n\nUse \"ye\" for \"you\", \"be\" for \"is\" and \"are\", and \"aye\" for \"yes\". Use nautical\nvocabulary: crew, deck, helm, cargo, port, tide, chart. Address the reader as\na shipmate. Add \"arr\" sparingly, at most once per paragraph.\n\nKeep every fact of the original. Do not add a plot, a ship, or characters that\nwere not in the source.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text as a stage pirate would tell it.\n\nUse \"ye\" for \"you\", \"be\" for \"is\" and \"are\", and \"aye\" for \"yes\". Use nautical\nvocabulary: crew, deck, helm, cargo, port, tide, chart. Address the reader as\na shipmate. Add \"arr\" sparingly, at most once per paragraph.\n\nKeep every fact of the original. Do not add a plot, a ship, or characters that\nwere not in the source.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nFour score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.\n\nNow we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.\n\nBut, in a larger sense, we can not dedicate -- we can not consecrate -- we can not hallow -- this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us -- that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion -- that we here highly resolve that these dead shall not have died in vain -- that this nation, under God, shall have a new birth of freedom -- and that government of the people, by the people, for the people, shall not perish from the earth.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1202,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 483,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1202,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 483,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 1202,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1202
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.010990999999999999,
+        "duration_ms": 6356,
+        "session_id": "49ba2833-5bb4-4e19-aafd-e51465ff7b14",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1274,
+            "outputTokens": 15,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001349,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 483,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 1202,
+            "webSearchRequests": 0,
+            "costUSD": 0.009642,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 5,
+      "ok": true,
+      "text": "Arr, gather 'round, shipmate, and hear the tale. Four score and seven years past, our forefathers set sail upon this continent and brought forth a new nation, charted in Liberty, and bound by the proposition that all souls aboard be created equal.\n\nNow the crew be locked in a great civil war, testing whether that nation, or any nation so charted and so bound, can weather the tide and long endure. We be met upon a great battlefield of that war, and we've come to set aside a portion of that deck as a final berth for those who gave their lives that the nation might sail on. 'Tis fitting and proper we do so.\n\nBut in a larger sense, we cannot dedicate -- we cannot consecrate -- we cannot hallow -- this ground. The brave hands, living and dead, who fought here, have already consecrated it, far beyond our poor power to add or take away. The world will scarce note, nor long remember what we say on this deck, but it'll never forget what they did here. It be for us, the living crew, to stay true to the unfinished voyage which they who fought here have so nobly carried forward. It be for us to hold fast to the great task before us -- that from these honored dead we take fresh devotion to the cause for which they gave their last full measure -- that we here resolve these dead shall not have gone down in vain -- that this nation, under God, shall know a new birth of freedom -- and that government of the crew, by the crew, for the crew, shall not perish from the earth, aye.",
+      "metrics": {
+        "words": 277,
+        "sentences": 10,
+        "syllables": 358,
+        "mean_sentence_length": 27.7,
+        "flesch_reading_ease": 69.4
+      },
+      "generated_at": "2026-09-06T08:03:05.872Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text as a stage pirate would tell it.\n\nUse \"ye\" for \"you\", \"be\" for \"is\" and \"are\", and \"aye\" for \"yes\". Use nautical\nvocabulary: crew, deck, helm, cargo, port, tide, chart. Address the reader as\na shipmate. Add \"arr\" sparingly, at most once per paragraph.\n\nKeep every fact of the original. Do not add a plot, a ship, or characters that\nwere not in the source.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text as a stage pirate would tell it.\n\nUse \"ye\" for \"you\", \"be\" for \"is\" and \"are\", and \"aye\" for \"yes\". Use nautical\nvocabulary: crew, deck, helm, cargo, port, tide, chart. Address the reader as\na shipmate. Add \"arr\" sparingly, at most once per paragraph.\n\nKeep every fact of the original. Do not add a plot, a ship, or characters that\nwere not in the source.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nFour score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.\n\nNow we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.\n\nBut, in a larger sense, we can not dedicate -- we can not consecrate -- we can not hallow -- this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us -- that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion -- that we here highly resolve that these dead shall not have died in vain -- that this nation, under God, shall have a new birth of freedom -- and that government of the people, by the people, for the people, shall not perish from the earth.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1202,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 471,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1202,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 471,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 1202,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1202
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.010870999999999999,
+        "duration_ms": 6137,
+        "session_id": "19f21e57-eb91-4ca1-a02b-b20130894c7d",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1274,
+            "outputTokens": 15,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001349,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 471,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 1202,
+            "webSearchRequests": 0,
+            "costUSD": 0.009522,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
     }
   ]
 }

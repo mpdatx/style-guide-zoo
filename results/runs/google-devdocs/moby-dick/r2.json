@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "run_id": "google-devdocs__moby-dick__r2",
+  "run_index": 2,
+  "generated_at": "2026-09-06T07:58:02.638Z",
+  "guide": {
+    "id": "google-devdocs",
+    "source_hash": "sha256:028495ad4cb12da9c6d06c35404fbbcad72085e839d1a118454b94204a670692"
+  },
+  "passage": {
+    "id": "moby-dick",
+    "source_hash": "sha256:92bae3a6a660b1b2e93bb187e3258a25294969104c92fc26f1e8f12e180ed918"
+  },
+  "prompt_template": {
+    "id": "rewrite-v1",
+    "source_hash": "sha256:6c90fb9df63501ad20b39afc1902f70a6b1a13da3000a29ff3c527a519c057f4"
+  },
+  "request": {
+    "backend": "claude-code-cli",
+    "cli_version": "2.1.259 (Claude Code)",
+    "model_requested": "claude-sonnet-5",
+    "argv": [
+      "-p",
+      "--safe-mode",
+      "--no-session-persistence",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--tools",
+      "",
+      "--model",
+      "claude-sonnet-5",
+      "--system-prompt",
+      "Rewrite the text following Google's developer documentation style.\n\nWrite in the second person and the present tense. Use the active voice and\nstandard American spelling. Keep the tone precise and even-handed rather than\ncasual — this is documentation, not conversation. Write complete sentences;\ndo not use fragments for effect, and do not use contractions.\n\nPrefer short sentences and short paragraphs. Use a numbered list for a\nsequence of steps and a bulleted list for an unordered set. Begin each list\nitem with a capital letter.\n\nAvoid the words \"simply\", \"easily\", \"just\", \"obviously\", and \"of course\": what\nis obvious to the writer is rarely obvious to the reader. Do not use\nplaceholder words like \"please\" in instructions. Avoid metaphors, idioms, and\ncultural references that will not translate, and avoid asides or personality\nthat could distract a reader who is scanning for an answer.\n\nUse inclusive, unambiguous language and spell out an abbreviation on first\nuse. When in doubt, prefer the more explicit and fully spelled-out phrasing\nover the more familiar-sounding one.",
+      "--output-format",
+      "json",
+      "--max-budget-usd",
+      "25"
+    ],
+    "system_prompt": "Rewrite the text following Google's developer documentation style.\n\nWrite in the second person and the present tense. Use the active voice and\nstandard American spelling. Keep the tone precise and even-handed rather than\ncasual — this is documentation, not conversation. Write complete sentences;\ndo not use fragments for effect, and do not use contractions.\n\nPrefer short sentences and short paragraphs. Use a numbered list for a\nsequence of steps and a bulleted list for an unordered set. Begin each list\nitem with a capital letter.\n\nAvoid the words \"simply\", \"easily\", \"just\", \"obviously\", and \"of course\": what\nis obvious to the writer is rarely obvious to the reader. Do not use\nplaceholder words like \"please\" in instructions. Avoid metaphors, idioms, and\ncultural references that will not translate, and avoid asides or personality\nthat could distract a reader who is scanning for an answer.\n\nUse inclusive, unambiguous language and spell out an abbreviation on first\nuse. When in doubt, prefer the more explicit and fully spelled-out phrasing\nover the more familiar-sounding one.",
+    "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nCall me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world. It is a way I have of driving off the spleen and regulating the circulation. Whenever I find myself growing grim about the mouth; whenever it is a damp, drizzly November in my soul; whenever I find myself involuntarily pausing before coffin warehouses, and bringing up the rear of every funeral I meet; and especially whenever my hypos get such an upper hand of me, that it requires a strong moral principle to prevent me from deliberately stepping into the street, and methodically knocking people's hats off—then, I account it high time to get to sea as soon as I can. This is my substitute for pistol and ball. With a philosophical flourish Cato throws himself upon his sword; I quietly take to the ship. There is nothing surprising in this. If they but knew it, almost all men in their degree, some time or other, cherish very nearly the same feelings towards the ocean with me.\n</passage>"
+  },
+  "response": {
+    "ok": true,
+    "text": "My name is Ishmael. Some years ago, I had little money and no particular interest on shore, so I decided to sail and see the watery part of the world. This is how I drive off low spirits and regulate my circulation.\n\nYou can recognize the signs when they appear. My mouth grows grim. My soul feels like a damp, drizzly November. I pause involuntarily before coffin warehouses and follow every funeral I pass. My low spirits gain such an upper hand that only strong moral principle keeps me from stepping into the street and knocking off people's hats. When these signs appear, I know it is time to get to sea.\n\nThis practice serves as my substitute for a pistol and a bullet. Cato throws himself upon his sword with a philosophical flourish; I take to a ship instead. This response is not surprising. Most people, in their own way, hold nearly the same feelings toward the ocean that I do.",
+    "model_reported": "claude-sonnet-5",
+    "model_usage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 1198,
+        "outputTokens": 16,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.001278,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 284,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 1318,
+        "webSearchRequests": 0,
+        "costUSD": 0.008116,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 1318,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 284,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 1318,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 284,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 1318,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1318
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 0.009394,
+    "duration_ms": 4185,
+    "session_id": "c8c58eb5-f358-4776-9778-084ec7bfc15c",
+    "num_turns": 1,
+    "stop_reason": "end_turn",
+    "attempts": 1
+  }
+}

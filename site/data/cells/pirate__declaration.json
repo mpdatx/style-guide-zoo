@@ -1,5 +1,556 @@
 {
   "guide_id": "pirate",
   "passage_id": "declaration",
-  "runs": []
+  "runs": [
+    {
+      "run_index": 1,
+      "ok": true,
+      "text": "Arr, we hold these truths to be self-evident, shipmate, that all men be created equal, that they be endowed by their Creator with certain unalienable Rights, that among these be Life, Liberty, and the pursuit of Happiness. To secure these rights, Governments be set up among Men, drawin' their just powers from the consent of the governed — that whenever any Form of Government turns rotten against these ends, it be the Right of the crew to alter or scuttle it, and to raise up new Government, layin' its keel on such principles and riggin' its powers in such form, as to them shall seem most likely to steer their Safety and Happiness. Prudence, indeed, will chart the course that Governments long established should not be changed for light and passin' tides; and so all experience hath shown, that mankind be more disposed to weather the storm, while evils be bearable, than to right themselves by scuttlin' the forms they be accustomed to. But when a long train of abuses and usurpations, holdin' steady on the same course, shows a design to drag 'em down under absolute Despotism, it be their right, it be their duty, to cast off such Government, and set new Guards at the helm for their future security.",
+      "metrics": {
+        "words": 211,
+        "sentences": 4,
+        "syllables": 307,
+        "mean_sentence_length": 52.8,
+        "flesch_reading_ease": 30.2
+      },
+      "generated_at": "2026-09-06T08:03:14.344Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text as a stage pirate would tell it.\n\nUse \"ye\" for \"you\", \"be\" for \"is\" and \"are\", and \"aye\" for \"yes\". Use nautical\nvocabulary: crew, deck, helm, cargo, port, tide, chart. Address the reader as\na shipmate. Add \"arr\" sparingly, at most once per paragraph.\n\nKeep every fact of the original. Do not add a plot, a ship, or characters that\nwere not in the source.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text as a stage pirate would tell it.\n\nUse \"ye\" for \"you\", \"be\" for \"is\" and \"are\", and \"aye\" for \"yes\". Use nautical\nvocabulary: crew, deck, helm, cargo, port, tide, chart. Address the reader as\na shipmate. Add \"arr\" sparingly, at most once per paragraph.\n\nKeep every fact of the original. Do not add a plot, a ship, or characters that\nwere not in the source.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nWe hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1130,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 377,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1130,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 377,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 1130,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1130
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.009571,
+        "duration_ms": 4799,
+        "session_id": "1b5fd2b1-e50d-462f-9fff-b087a5b4f2ae",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1212,
+            "outputTokens": 13,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001277,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 377,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 1130,
+            "webSearchRequests": 0,
+            "costUSD": 0.008294,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 2,
+      "ok": true,
+      "text": "Arr, listen well, shipmate, for these truths be plain as a clear horizon: all men be created equal on this voyage o' life, and their Creator be the one who granted 'em rights no soul can strip away — Life, Liberty, and the chasin' o' Happiness. To keep these rights safe, crews o' Governments be set upon the deck o' Men, and they draw their rightful power only from the consent o' them they govern. And whenever any Form o' Government turns rotten and works against these ends, 'tis the right o' the People to alter her course or scuttle her entire, and lay down a new vessel o' Government, settin' her keel on such principles and riggin' her powers in such form as seems most likely to bring 'em safe to Happiness's port.\n\nPrudence, mind ye, would have it that Governments long held to their moorings ought not be cast off for light and passin' squalls; and sure as the tide, all experience hath shown that mankind be more willin' to suffer, while the troubles can be borne, than to right their own ship by scrappin' the forms they've grown used to sailin' under. But when a long chain o' abuses and thievin' o' power, all pointin' toward one and the same design, shows plain that they mean to drag the crew down into absolute Despotism, then it be their right, aye, their very duty, to throw such Government overboard and set new watchmen at the helm for their future security.",
+      "metrics": {
+        "words": 251,
+        "sentences": 5,
+        "syllables": 335,
+        "mean_sentence_length": 50.2,
+        "flesch_reading_ease": 43
+      },
+      "generated_at": "2026-09-06T08:03:21.011Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text as a stage pirate would tell it.\n\nUse \"ye\" for \"you\", \"be\" for \"is\" and \"are\", and \"aye\" for \"yes\". Use nautical\nvocabulary: crew, deck, helm, cargo, port, tide, chart. Address the reader as\na shipmate. Add \"arr\" sparingly, at most once per paragraph.\n\nKeep every fact of the original. Do not add a plot, a ship, or characters that\nwere not in the source.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text as a stage pirate would tell it.\n\nUse \"ye\" for \"you\", \"be\" for \"is\" and \"are\", and \"aye\" for \"yes\". Use nautical\nvocabulary: crew, deck, helm, cargo, port, tide, chart. Address the reader as\na shipmate. Add \"arr\" sparingly, at most once per paragraph.\n\nKeep every fact of the original. Do not add a plot, a ship, or characters that\nwere not in the source.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nWe hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1130,
+          "output_tokens": 448,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 448,
+              "cache_read_input_tokens": 1130,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.005986999999999999,
+        "duration_ms": 8343,
+        "session_id": "141f8f94-ee5f-49d4-a46e-59be3f56a1db",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1212,
+            "outputTokens": 13,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001277,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 448,
+            "cacheReadInputTokens": 1130,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.004709999999999999,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 3,
+      "ok": true,
+      "text": "Arr, listen well, shipmate, for these truths be plain as the tide itself: all souls be created equal aboard this world, and their Maker be the one who granted 'em certain rights no crew nor captain can strip away — Life, Liberty, and the chasin' o' Happiness. To keep these rights safe and sound, Governments be raised up among Men, and their power comes only from the consent o' them they govern. Whenever any Form o' Government turns pirate against these ends, it be the right o' the People to alter her course or scuttle her entire, and to raise up a new Government upon whatever chart o' principles seems most likely to steer their Safety and Happiness home to port.\n\nPrudence bids that Governments long at helm ought not be changed for causes light as sea-foam; and truth be told, all experience upon every deck hath shown that mankind be more willing to endure what can be endured than to right themselves by scuttlin' the old forms they be used to. But when a long train o' abuses and thievin' o' power, all steerin' toward the same black harbor, shows plain a design to drag folk down under absolute Despotism — aye, then it be their right, it be their duty, to cast off such a Government, and to post new Guards at the helm for their future security.",
+      "metrics": {
+        "words": 228,
+        "sentences": 5,
+        "syllables": 317,
+        "mean_sentence_length": 45.6,
+        "flesch_reading_ease": 42.9
+      },
+      "generated_at": "2026-09-06T08:03:21.515Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text as a stage pirate would tell it.\n\nUse \"ye\" for \"you\", \"be\" for \"is\" and \"are\", and \"aye\" for \"yes\". Use nautical\nvocabulary: crew, deck, helm, cargo, port, tide, chart. Address the reader as\na shipmate. Add \"arr\" sparingly, at most once per paragraph.\n\nKeep every fact of the original. Do not add a plot, a ship, or characters that\nwere not in the source.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text as a stage pirate would tell it.\n\nUse \"ye\" for \"you\", \"be\" for \"is\" and \"are\", and \"aye\" for \"yes\". Use nautical\nvocabulary: crew, deck, helm, cargo, port, tide, chart. Address the reader as\na shipmate. Add \"arr\" sparingly, at most once per paragraph.\n\nKeep every fact of the original. Do not add a plot, a ship, or characters that\nwere not in the source.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nWe hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1130,
+          "output_tokens": 399,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 399,
+              "cache_read_input_tokens": 1130,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.005501999999999999,
+        "duration_ms": 7786,
+        "session_id": "56c7c070-709f-4e44-924f-a2a92078622d",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1212,
+            "outputTokens": 14,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001282,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 399,
+            "cacheReadInputTokens": 1130,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.004219999999999999,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 4,
+      "ok": true,
+      "text": "Listen well, shipmate, for we hold this chart o' truth to be plain as the open sea: all men be created equal, endowed by their Creator with rights no one can strip from 'em — Life, Liberty, and the chase after Happiness. To keep these rights safe, Governments be set up among Men, drawin' their rightful power from the consent o' the crew bein' governed. And whenever any Form o' Government turns to plunderin' these very ends, it be the right o' the People to alter her course or scuttle her entire, and raise up a new Government, layin' her keel on such principles and riggin' her powers in such form as seems most likely to secure their Safety and Happiness. Aye, prudence will tell ye that Governments long at anchor shouldn't be cast off for light and passin' squalls; and every voyage through history has shown that folk be more willin' to endure while the troubles be bearable, than to right their own ship by scrappin' the forms they've grown used to. But when a long train o' abuses and stolen powers, all makin' for the same port, shows a design to drag 'em down into absolute Despotism, arr — it be their right, it be their duty, to throw that Government overboard, and post new watchmen at the helm for their future security.",
+      "metrics": {
+        "words": 223,
+        "sentences": 5,
+        "syllables": 308,
+        "mean_sentence_length": 44.6,
+        "flesch_reading_ease": 44.7
+      },
+      "generated_at": "2026-09-06T08:03:22.021Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text as a stage pirate would tell it.\n\nUse \"ye\" for \"you\", \"be\" for \"is\" and \"are\", and \"aye\" for \"yes\". Use nautical\nvocabulary: crew, deck, helm, cargo, port, tide, chart. Address the reader as\na shipmate. Add \"arr\" sparingly, at most once per paragraph.\n\nKeep every fact of the original. Do not add a plot, a ship, or characters that\nwere not in the source.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text as a stage pirate would tell it.\n\nUse \"ye\" for \"you\", \"be\" for \"is\" and \"are\", and \"aye\" for \"yes\". Use nautical\nvocabulary: crew, deck, helm, cargo, port, tide, chart. Address the reader as\na shipmate. Add \"arr\" sparingly, at most once per paragraph.\n\nKeep every fact of the original. Do not add a plot, a ship, or characters that\nwere not in the source.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nWe hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1130,
+          "output_tokens": 397,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 397,
+              "cache_read_input_tokens": 1130,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.005471999999999999,
+        "duration_ms": 6861,
+        "session_id": "8110f71d-7b83-4855-97f3-f906d793f0bc",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1212,
+            "outputTokens": 12,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001272,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 397,
+            "cacheReadInputTokens": 1130,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.004199999999999999,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 5,
+      "ok": true,
+      "text": "Arr, hear me now, shipmate: we hold these truths to be plain as the chart before the helm, that all souls be created equal, and be given by their Creator certain rights no crew nor captain can strip away, and among these be Life, Liberty, and the chasin' of Happiness. To keep these rights safe, Governments be set up among Men, drawin' their rightful powers from the consent of the crew what be governed. And whenever any Form of Government turns rotten and works against these ends, it be the right of the People to alter her course or scuttle her entire, and to raise up new Government, layin' her keel on such principles and riggin' her powers in such form as seems most likely to bring the crew Safety and Happiness.\n\nPrudence, aye, will tell ye that Governments long afloat oughtn't be changed for every passing squall; and sure as the tide, all experience has shown that mankind be more willing to suffer, while the troubles be bearable, than to right the ship by scrappin' the forms they've grown used to. But when a long train of abuses and thievin' of power, all sailin' toward the same port, shows a design to drag the crew down into absolute Despotism, it be their right, it be their duty, to cast off such a Government, and post new Guards at the helm for their future security.",
+      "metrics": {
+        "words": 235,
+        "sentences": 5,
+        "syllables": 320,
+        "mean_sentence_length": 47,
+        "flesch_reading_ease": 43.9
+      },
+      "generated_at": "2026-09-06T08:03:22.915Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text as a stage pirate would tell it.\n\nUse \"ye\" for \"you\", \"be\" for \"is\" and \"are\", and \"aye\" for \"yes\". Use nautical\nvocabulary: crew, deck, helm, cargo, port, tide, chart. Address the reader as\na shipmate. Add \"arr\" sparingly, at most once per paragraph.\n\nKeep every fact of the original. Do not add a plot, a ship, or characters that\nwere not in the source.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text as a stage pirate would tell it.\n\nUse \"ye\" for \"you\", \"be\" for \"is\" and \"are\", and \"aye\" for \"yes\". Use nautical\nvocabulary: crew, deck, helm, cargo, port, tide, chart. Address the reader as\na shipmate. Add \"arr\" sparingly, at most once per paragraph.\n\nKeep every fact of the original. Do not add a plot, a ship, or characters that\nwere not in the source.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nWe hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1130,
+          "output_tokens": 407,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 407,
+              "cache_read_input_tokens": 1130,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.005582,
+        "duration_ms": 7173,
+        "session_id": "6c2b9d92-39af-44e2-a142-4125bacb1976",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1212,
+            "outputTokens": 14,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001282,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 407,
+            "cacheReadInputTokens": 1130,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0043,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    }
+  ]
 }

@@ -1,5 +1,556 @@
 {
   "guide_id": "economist",
   "passage_id": "origin-species",
-  "runs": []
+  "runs": [
+    {
+      "run_index": 1,
+      "ok": true,
+      "text": "Picture a tangled hedgerow: plants of every sort, birds singing in the branches, insects darting about, worms working through the wet soil. These forms differ wildly, depend on one another in countless ways—and all arose from laws still at work around us. Broadly, they are these: growth and reproduction; inheritance, all but guaranteed by reproduction; variation, caused by conditions of life and by use and disuse; and a rate of increase so high that a struggle for existence follows, and with it natural selection, which drives species apart and drives the weaker ones extinct.\n\nSo from famine and death—nature's own warfare—comes the grandest thing we can imagine: the higher animals. There is something majestic in this: that life, with its various powers, was breathed into one form or a few; and that as the planet has turned, bound by gravity's fixed law, endless forms of great beauty have grown, and go on growing, from so plain a start.",
+      "metrics": {
+        "words": 158,
+        "sentences": 5,
+        "syllables": 243,
+        "mean_sentence_length": 31.6,
+        "flesch_reading_ease": 44.6
+      },
+      "generated_at": "2026-09-06T07:55:56.834Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIt is interesting to contemplate an entangled bank, clothed with many plants of many kinds, with birds singing on the bushes, with various insects flitting about, and with worms crawling through the damp earth, and to reflect that these elaborately constructed forms, so different from each other, and dependent on each other in so complex a manner, have all been produced by laws acting around us. These laws, taken in the largest sense, being Growth with Reproduction; Inheritance which is almost implied by reproduction; Variability from the indirect and direct action of the external conditions of life, and from use and disuse; a Ratio of Increase so high as to lead to a Struggle for Life, and as a consequence to Natural Selection, entailing Divergence of Character and the Extinction of less-improved forms. Thus, from the war of nature, from famine and death, the most exalted object which we are capable of conceiving, namely, the production of the higher animals, directly follows. There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one; and that, whilst this planet has gone cycling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1249,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 294,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1249,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 294,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 1249,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1249
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.009226999999999999,
+        "duration_ms": 5160,
+        "session_id": "4a7a0d90-d05c-4398-acc8-c03f0620df4c",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1227,
+            "outputTokens": 12,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001287,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 294,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 1249,
+            "webSearchRequests": 0,
+            "costUSD": 0.00794,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 2,
+      "ok": true,
+      "text": "Consider a tangled bank: plants of many kinds, birds singing in the bushes, insects on the wing, worms in the damp earth. These forms differ wildly, depend on one another in complex ways, and yet all arose from laws at work around us still. Take them at their broadest: Growth and Reproduction; Inheritance, which reproduction all but guarantees; Variability, caused directly and indirectly by conditions of life and by use and disuse; a rate of increase so high that a Struggle for Life follows, and with it Natural Selection, which drives Divergence of Character and the Extinction of weaker forms. So from the war of nature, from famine and death, comes the loftiest outcome we can imagine: the higher animals.\n\nThere is grandeur in this: that life, with its various powers, was breathed into one form or a few; that as the planet has turned, bound by the fixed law of gravity, endless forms most beautiful and most wonderful have grown, and go on growing, from so simple a start.",
+      "metrics": {
+        "words": 170,
+        "sentences": 5,
+        "syllables": 252,
+        "mean_sentence_length": 34,
+        "flesch_reading_ease": 46.9
+      },
+      "generated_at": "2026-09-06T07:55:58.544Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIt is interesting to contemplate an entangled bank, clothed with many plants of many kinds, with birds singing on the bushes, with various insects flitting about, and with worms crawling through the damp earth, and to reflect that these elaborately constructed forms, so different from each other, and dependent on each other in so complex a manner, have all been produced by laws acting around us. These laws, taken in the largest sense, being Growth with Reproduction; Inheritance which is almost implied by reproduction; Variability from the indirect and direct action of the external conditions of life, and from use and disuse; a Ratio of Increase so high as to lead to a Struggle for Life, and as a consequence to Natural Selection, entailing Divergence of Character and the Extinction of less-improved forms. Thus, from the war of nature, from famine and death, the most exalted object which we are capable of conceiving, namely, the production of the higher animals, directly follows. There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one; and that, whilst this planet has gone cycling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1249,
+          "output_tokens": 318,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 318,
+              "cache_read_input_tokens": 1249,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0047258,
+        "duration_ms": 5816,
+        "session_id": "626118aa-7982-46fb-9e9a-f65836736675",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1227,
+            "outputTokens": 13,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001292,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 318,
+            "cacheReadInputTokens": 1249,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0034338,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 3,
+      "ok": true,
+      "text": "Picture a tangled hedgerow: plants of every sort, birds singing in the branches, insects darting about, worms working through the damp soil. These forms differ wildly, yet each depends on the others, and all arose from laws still at work today. Broadly, they are these: growth and reproduction; inheritance, which reproduction all but guarantees; variability, caused by conditions of life and by use and disuse; a rate of increase so high that a struggle for survival follows, and with it natural selection, driving species apart and driving weaker ones extinct.\n\nSo from famine, death and nature's war comes the loftiest outcome imaginable: the higher animals. There is grandeur in that. Life's many powers were breathed into a few forms, or into one, and while this planet has turned, bound by gravity, endless forms most beautiful have grown from so simple a start—and go on growing still.",
+      "metrics": {
+        "words": 146,
+        "sentences": 6,
+        "syllables": 231,
+        "mean_sentence_length": 24.3,
+        "flesch_reading_ease": 48.3
+      },
+      "generated_at": "2026-09-06T07:56:00.390Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIt is interesting to contemplate an entangled bank, clothed with many plants of many kinds, with birds singing on the bushes, with various insects flitting about, and with worms crawling through the damp earth, and to reflect that these elaborately constructed forms, so different from each other, and dependent on each other in so complex a manner, have all been produced by laws acting around us. These laws, taken in the largest sense, being Growth with Reproduction; Inheritance which is almost implied by reproduction; Variability from the indirect and direct action of the external conditions of life, and from use and disuse; a Ratio of Increase so high as to lead to a Struggle for Life, and as a consequence to Natural Selection, entailing Divergence of Character and the Extinction of less-improved forms. Thus, from the war of nature, from famine and death, the most exalted object which we are capable of conceiving, namely, the production of the higher animals, directly follows. There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one; and that, whilst this planet has gone cycling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1249,
+          "output_tokens": 278,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 278,
+              "cache_read_input_tokens": 1249,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0043308,
+        "duration_ms": 4521,
+        "session_id": "a0b90430-c29b-43b7-a297-6cb5b1d94c81",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1227,
+            "outputTokens": 14,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001297,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 278,
+            "cacheReadInputTokens": 1249,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0030338,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 4,
+      "ok": true,
+      "text": "Consider a tangled bank: many plants, birds singing in the bushes, insects darting about, worms working through the damp soil. These forms differ wildly, yet depend on one another, and all arose from laws still at work today. Chief among them: growth and reproduction; inheritance, which reproduction all but guarantees; variation, caused by conditions of life and by use and disuse; and a rate of increase so high that a struggle for survival follows, and with it natural selection—which drives species apart and kills off the less fit.\n\nSo from famine, death and nature's war comes the grandest thing we can conceive: the higher animals. There is grandeur in this: that life, with its several powers, was breathed into one form or a few; that the planet has kept cycling on under fixed gravity; and that from so simple a start, endless forms most beautiful have evolved, and go on evolving still.",
+      "metrics": {
+        "words": 152,
+        "sentences": 5,
+        "syllables": 229,
+        "mean_sentence_length": 30.4,
+        "flesch_reading_ease": 48.5
+      },
+      "generated_at": "2026-09-06T07:56:01.238Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIt is interesting to contemplate an entangled bank, clothed with many plants of many kinds, with birds singing on the bushes, with various insects flitting about, and with worms crawling through the damp earth, and to reflect that these elaborately constructed forms, so different from each other, and dependent on each other in so complex a manner, have all been produced by laws acting around us. These laws, taken in the largest sense, being Growth with Reproduction; Inheritance which is almost implied by reproduction; Variability from the indirect and direct action of the external conditions of life, and from use and disuse; a Ratio of Increase so high as to lead to a Struggle for Life, and as a consequence to Natural Selection, entailing Divergence of Character and the Extinction of less-improved forms. Thus, from the war of nature, from famine and death, the most exalted object which we are capable of conceiving, namely, the production of the higher animals, directly follows. There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one; and that, whilst this planet has gone cycling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1249,
+          "output_tokens": 275,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 275,
+              "cache_read_input_tokens": 1249,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.004290800000000001,
+        "duration_ms": 4858,
+        "session_id": "3af07613-70ea-46d9-a5c9-25b088dd26dc",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1227,
+            "outputTokens": 12,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001287,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 275,
+            "cacheReadInputTokens": 1249,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0030038000000000005,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 5,
+      "ok": true,
+      "text": "Picture a tangled bank: plants of many kinds, birds singing in the bushes, insects on the wing, worms in the damp soil beneath. These creatures differ wildly, yet depend on one another in intricate ways—and all were produced by laws still at work today. Chief among them: growth and reproduction; inheritance, which reproduction almost guarantees; variation, caused by the conditions of life and by use and disuse; and a rate of increase so high that a struggle for existence follows, and with it natural selection—which drives species apart and kills off the less fit.\n\nSo from famine, death and nature's endless war comes the grandest outcome imaginable: the higher animals. There is grandeur in this: that life, with all its powers, was breathed into one form or a few; and that as the planet has turned, bound by gravity's fixed law, endless forms most beautiful and most wonderful have arisen, and go on arising, from so simple a start.",
+      "metrics": {
+        "words": 159,
+        "sentences": 5,
+        "syllables": 244,
+        "mean_sentence_length": 31.8,
+        "flesch_reading_ease": 44.7
+      },
+      "generated_at": "2026-09-06T07:56:03.234Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIt is interesting to contemplate an entangled bank, clothed with many plants of many kinds, with birds singing on the bushes, with various insects flitting about, and with worms crawling through the damp earth, and to reflect that these elaborately constructed forms, so different from each other, and dependent on each other in so complex a manner, have all been produced by laws acting around us. These laws, taken in the largest sense, being Growth with Reproduction; Inheritance which is almost implied by reproduction; Variability from the indirect and direct action of the external conditions of life, and from use and disuse; a Ratio of Increase so high as to lead to a Struggle for Life, and as a consequence to Natural Selection, entailing Divergence of Character and the Extinction of less-improved forms. Thus, from the war of nature, from famine and death, the most exalted object which we are capable of conceiving, namely, the production of the higher animals, directly follows. There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one; and that, whilst this planet has gone cycling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1249,
+          "output_tokens": 298,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 298,
+              "cache_read_input_tokens": 1249,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0045308,
+        "duration_ms": 5033,
+        "session_id": "3cb7d0f7-2cd5-4e4a-a6db-7ab6f07137a9",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1227,
+            "outputTokens": 14,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001297,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 298,
+            "cacheReadInputTokens": 1249,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0032338,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    }
+  ]
 }

@@ -1,5 +1,556 @@
 {
   "guide_id": "chicago",
   "passage_id": "safety-notice",
-  "runs": []
+  "runs": [
+    {
+      "run_index": 1,
+      "ok": true,
+      "text": "Operators must ensure that the guard is lowered to within the recommended clearance of the workpiece before the blade is engaged, although the tensioning wheel should be checked periodically throughout a shift regardless of guard position, since drift in tension can occur even when the machine has not been used continuously. The lower blade guide must be inspected for wear whenever the blade has been changed, unless the replacement blade is of the same width and pitch as the one it replaces, in which case a visual check may be sufficient, provided that the operator has completed the tensioning procedure described elsewhere in this manual. Loose clothing and jewelry should not be worn near the machine, and long hair must be tied back. Operators may leave the work area only after the blade has come to a complete stop, though the machine's residual heat can persist for several minutes—caution is therefore advised.",
+      "metrics": {
+        "words": 152,
+        "sentences": 4,
+        "syllables": 245,
+        "mean_sentence_length": 38,
+        "flesch_reading_ease": 31.9
+      },
+      "generated_at": "2026-09-06T08:00:15.916Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in formal American prose following Chicago Manual of Style\nconventions.\n\nUse the serial comma. Spell out whole numbers from one through one hundred and\nany round number, and use numerals above that. Use double quotation marks for\nquoted material, with commas and periods inside the closing quotation mark.\nUse an em dash without surrounding spaces for a parenthetical break.\n\nMaintain a measured, formal register. Prefer complete sentences and full\nsubordination to fragments. Use standard American spelling. Do not use\ncontractions.\n\nPreserve the argument and every fact of the original; change only the prose.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in formal American prose following Chicago Manual of Style\nconventions.\n\nUse the serial comma. Spell out whole numbers from one through one hundred and\nany round number, and use numerals above that. Use double quotation marks for\nquoted material, with commas and periods inside the closing quotation mark.\nUse an em dash without surrounding spaces for a parenthetical break.\n\nMaintain a measured, formal register. Prefer complete sentences and full\nsubordination to fragments. Use standard American spelling. Do not use\ncontractions.\n\nPreserve the argument and every fact of the original; change only the prose.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nOperators must ensure the guard is lowered to within the recommended clearance of the workpiece before the blade is engaged, although the tensioning wheel should be checked periodically throughout a shift regardless of guard position, since drift in tension can occur even when the machine has not been used continuously. The lower blade guide must be inspected for wear whenever the blade has been changed, unless the replacement blade is of the same width and pitch as the one it replaces, in which case a visual check may be sufficient provided the operator has completed the tensioning procedure described elsewhere in this manual. Loose clothing and jewelry should not be worn near the machine, and long hair must be tied back. Operators may leave the work area only after the blade has come to a complete stop, though the machine's residual heat can persist for several minutes and caution is advised.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1072,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 267,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1072,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 267,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 1072,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1072
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.008147,
+        "duration_ms": 2698,
+        "session_id": "b7eb1d72-836a-4bb3-b381-38c2ac477267",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1120,
+            "outputTokens": 13,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0011849999999999999,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 267,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 1072,
+            "webSearchRequests": 0,
+            "costUSD": 0.0069619999999999994,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 2,
+      "ok": true,
+      "text": "Operators must ensure that the guard is lowered to within the recommended clearance of the workpiece before the blade is engaged, although the tensioning wheel should be checked periodically throughout a shift regardless of guard position, since drift in tension can occur even when the machine has not been used continuously. The lower blade guide must be inspected for wear whenever the blade has been changed, unless the replacement blade is of the same width and pitch as the one it replaces, in which case a visual check may be sufficient, provided that the operator has completed the tensioning procedure described elsewhere in this manual. Loose clothing and jewelry should not be worn near the machine, and long hair must be tied back. Operators may leave the work area only after the blade has come to a complete stop; however, the machine's residual heat can persist for several minutes, and caution is advised.",
+      "metrics": {
+        "words": 153,
+        "sentences": 4,
+        "syllables": 245,
+        "mean_sentence_length": 38.3,
+        "flesch_reading_ease": 32.5
+      },
+      "generated_at": "2026-09-06T08:00:19.353Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in formal American prose following Chicago Manual of Style\nconventions.\n\nUse the serial comma. Spell out whole numbers from one through one hundred and\nany round number, and use numerals above that. Use double quotation marks for\nquoted material, with commas and periods inside the closing quotation mark.\nUse an em dash without surrounding spaces for a parenthetical break.\n\nMaintain a measured, formal register. Prefer complete sentences and full\nsubordination to fragments. Use standard American spelling. Do not use\ncontractions.\n\nPreserve the argument and every fact of the original; change only the prose.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in formal American prose following Chicago Manual of Style\nconventions.\n\nUse the serial comma. Spell out whole numbers from one through one hundred and\nany round number, and use numerals above that. Use double quotation marks for\nquoted material, with commas and periods inside the closing quotation mark.\nUse an em dash without surrounding spaces for a parenthetical break.\n\nMaintain a measured, formal register. Prefer complete sentences and full\nsubordination to fragments. Use standard American spelling. Do not use\ncontractions.\n\nPreserve the argument and every fact of the original; change only the prose.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nOperators must ensure the guard is lowered to within the recommended clearance of the workpiece before the blade is engaged, although the tensioning wheel should be checked periodically throughout a shift regardless of guard position, since drift in tension can occur even when the machine has not been used continuously. The lower blade guide must be inspected for wear whenever the blade has been changed, unless the replacement blade is of the same width and pitch as the one it replaces, in which case a visual check may be sufficient provided the operator has completed the tensioning procedure described elsewhere in this manual. Loose clothing and jewelry should not be worn near the machine, and long hair must be tied back. Operators may leave the work area only after the blade has come to a complete stop, though the machine's residual heat can persist for several minutes and caution is advised.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1072,
+          "output_tokens": 266,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 266,
+              "cache_read_input_tokens": 1072,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0040734,
+        "duration_ms": 5035,
+        "session_id": "4c6d0af0-6053-41ed-be0c-725b2364f653",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1120,
+            "outputTokens": 15,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0011949999999999999,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 266,
+            "cacheReadInputTokens": 1072,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0028784,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 3,
+      "ok": true,
+      "text": "Operators must ensure that the guard is lowered to within the recommended clearance of the workpiece before the blade is engaged; the tensioning wheel should nonetheless be checked periodically throughout a shift regardless of guard position, since drift in tension can occur even when the machine has not been used continuously. The lower blade guide must be inspected for wear whenever the blade has been changed, unless the replacement blade is of the same width and pitch as the one it replaces, in which case a visual check may be sufficient, provided that the operator has completed the tensioning procedure described elsewhere in this manual. Loose clothing and jewelry should not be worn near the machine, and long hair must be tied back. Operators may leave the work area only after the blade has come to a complete stop; however, the machine's residual heat can persist for several minutes, and caution is advised.",
+      "metrics": {
+        "words": 153,
+        "sentences": 4,
+        "syllables": 247,
+        "mean_sentence_length": 38.3,
+        "flesch_reading_ease": 31.4
+      },
+      "generated_at": "2026-09-06T08:00:19.071Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in formal American prose following Chicago Manual of Style\nconventions.\n\nUse the serial comma. Spell out whole numbers from one through one hundred and\nany round number, and use numerals above that. Use double quotation marks for\nquoted material, with commas and periods inside the closing quotation mark.\nUse an em dash without surrounding spaces for a parenthetical break.\n\nMaintain a measured, formal register. Prefer complete sentences and full\nsubordination to fragments. Use standard American spelling. Do not use\ncontractions.\n\nPreserve the argument and every fact of the original; change only the prose.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in formal American prose following Chicago Manual of Style\nconventions.\n\nUse the serial comma. Spell out whole numbers from one through one hundred and\nany round number, and use numerals above that. Use double quotation marks for\nquoted material, with commas and periods inside the closing quotation mark.\nUse an em dash without surrounding spaces for a parenthetical break.\n\nMaintain a measured, formal register. Prefer complete sentences and full\nsubordination to fragments. Use standard American spelling. Do not use\ncontractions.\n\nPreserve the argument and every fact of the original; change only the prose.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nOperators must ensure the guard is lowered to within the recommended clearance of the workpiece before the blade is engaged, although the tensioning wheel should be checked periodically throughout a shift regardless of guard position, since drift in tension can occur even when the machine has not been used continuously. The lower blade guide must be inspected for wear whenever the blade has been changed, unless the replacement blade is of the same width and pitch as the one it replaces, in which case a visual check may be sufficient provided the operator has completed the tensioning procedure described elsewhere in this manual. Loose clothing and jewelry should not be worn near the machine, and long hair must be tied back. Operators may leave the work area only after the blade has come to a complete stop, though the machine's residual heat can persist for several minutes and caution is advised.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1072,
+          "output_tokens": 270,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 270,
+              "cache_read_input_tokens": 1072,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0041034,
+        "duration_ms": 2835,
+        "session_id": "3bd99c9e-34ff-462a-8c39-dd46c4334e7e",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1120,
+            "outputTokens": 13,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0011849999999999999,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 270,
+            "cacheReadInputTokens": 1072,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0029184000000000002,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 4,
+      "ok": true,
+      "text": "Operators must ensure that the guard is lowered to within the recommended clearance of the workpiece before the blade is engaged; however, the tensioning wheel should be checked periodically throughout a shift regardless of guard position, since drift in tension can occur even when the machine has not been used continuously. The lower blade guide must be inspected for wear whenever the blade has been changed, unless the replacement blade is of the same width and pitch as the one it replaces, in which case a visual check may be sufficient, provided that the operator has completed the tensioning procedure described elsewhere in this manual. Loose clothing and jewelry should not be worn near the machine, and long hair must be tied back. Operators may leave the work area only after the blade has come to a complete stop; the machine's residual heat can persist for several minutes, however, and caution is advised.",
+      "metrics": {
+        "words": 153,
+        "sentences": 4,
+        "syllables": 246,
+        "mean_sentence_length": 38.3,
+        "flesch_reading_ease": 32
+      },
+      "generated_at": "2026-09-06T08:00:19.655Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in formal American prose following Chicago Manual of Style\nconventions.\n\nUse the serial comma. Spell out whole numbers from one through one hundred and\nany round number, and use numerals above that. Use double quotation marks for\nquoted material, with commas and periods inside the closing quotation mark.\nUse an em dash without surrounding spaces for a parenthetical break.\n\nMaintain a measured, formal register. Prefer complete sentences and full\nsubordination to fragments. Use standard American spelling. Do not use\ncontractions.\n\nPreserve the argument and every fact of the original; change only the prose.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in formal American prose following Chicago Manual of Style\nconventions.\n\nUse the serial comma. Spell out whole numbers from one through one hundred and\nany round number, and use numerals above that. Use double quotation marks for\nquoted material, with commas and periods inside the closing quotation mark.\nUse an em dash without surrounding spaces for a parenthetical break.\n\nMaintain a measured, formal register. Prefer complete sentences and full\nsubordination to fragments. Use standard American spelling. Do not use\ncontractions.\n\nPreserve the argument and every fact of the original; change only the prose.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nOperators must ensure the guard is lowered to within the recommended clearance of the workpiece before the blade is engaged, although the tensioning wheel should be checked periodically throughout a shift regardless of guard position, since drift in tension can occur even when the machine has not been used continuously. The lower blade guide must be inspected for wear whenever the blade has been changed, unless the replacement blade is of the same width and pitch as the one it replaces, in which case a visual check may be sufficient provided the operator has completed the tensioning procedure described elsewhere in this manual. Loose clothing and jewelry should not be worn near the machine, and long hair must be tied back. Operators may leave the work area only after the blade has come to a complete stop, though the machine's residual heat can persist for several minutes and caution is advised.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1072,
+          "output_tokens": 267,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 267,
+              "cache_read_input_tokens": 1072,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0040734,
+        "duration_ms": 2325,
+        "session_id": "5cc6d3a4-8697-4c9a-93bd-6491d5516021",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1120,
+            "outputTokens": 13,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0011849999999999999,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 267,
+            "cacheReadInputTokens": 1072,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0028883999999999997,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 5,
+      "ok": true,
+      "text": "Operators must ensure that the guard is lowered to within the recommended clearance of the workpiece before the blade is engaged, although the tensioning wheel should be checked periodically throughout a shift regardless of guard position, since drift in tension can occur even when the machine has not been used continuously. The lower blade guide must be inspected for wear whenever the blade has been changed, unless the replacement blade is of the same width and pitch as the one it replaces, in which case a visual check may be sufficient, provided that the operator has completed the tensioning procedure described elsewhere in this manual. Loose clothing and jewelry should not be worn near the machine, and long hair must be tied back. Operators may leave the work area only after the blade has come to a complete stop; however, the machine's residual heat can persist for several minutes, and caution is advised.",
+      "metrics": {
+        "words": 153,
+        "sentences": 4,
+        "syllables": 245,
+        "mean_sentence_length": 38.3,
+        "flesch_reading_ease": 32.5
+      },
+      "generated_at": "2026-09-06T08:00:22.839Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in formal American prose following Chicago Manual of Style\nconventions.\n\nUse the serial comma. Spell out whole numbers from one through one hundred and\nany round number, and use numerals above that. Use double quotation marks for\nquoted material, with commas and periods inside the closing quotation mark.\nUse an em dash without surrounding spaces for a parenthetical break.\n\nMaintain a measured, formal register. Prefer complete sentences and full\nsubordination to fragments. Use standard American spelling. Do not use\ncontractions.\n\nPreserve the argument and every fact of the original; change only the prose.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in formal American prose following Chicago Manual of Style\nconventions.\n\nUse the serial comma. Spell out whole numbers from one through one hundred and\nany round number, and use numerals above that. Use double quotation marks for\nquoted material, with commas and periods inside the closing quotation mark.\nUse an em dash without surrounding spaces for a parenthetical break.\n\nMaintain a measured, formal register. Prefer complete sentences and full\nsubordination to fragments. Use standard American spelling. Do not use\ncontractions.\n\nPreserve the argument and every fact of the original; change only the prose.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nOperators must ensure the guard is lowered to within the recommended clearance of the workpiece before the blade is engaged, although the tensioning wheel should be checked periodically throughout a shift regardless of guard position, since drift in tension can occur even when the machine has not been used continuously. The lower blade guide must be inspected for wear whenever the blade has been changed, unless the replacement blade is of the same width and pitch as the one it replaces, in which case a visual check may be sufficient provided the operator has completed the tensioning procedure described elsewhere in this manual. Loose clothing and jewelry should not be worn near the machine, and long hair must be tied back. Operators may leave the work area only after the blade has come to a complete stop, though the machine's residual heat can persist for several minutes and caution is advised.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1072,
+          "output_tokens": 266,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 266,
+              "cache_read_input_tokens": 1072,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0040584,
+        "duration_ms": 3106,
+        "session_id": "d219e9a2-cf13-4362-bf54-f8b77d8d065f",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1120,
+            "outputTokens": 12,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0011799999999999998,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 266,
+            "cacheReadInputTokens": 1072,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0028784,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    }
+  ]
 }

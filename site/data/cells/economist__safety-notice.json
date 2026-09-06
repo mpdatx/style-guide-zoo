@@ -1,5 +1,556 @@
 {
   "guide_id": "economist",
   "passage_id": "safety-notice",
-  "runs": []
+  "runs": [
+    {
+      "run_index": 1,
+      "ok": true,
+      "text": "Lower the guard to the recommended clearance before starting the blade. Check the tensioning wheel every shift regardless of guard position; tension can drift even on machines that sit idle. Inspect the lower blade guide for wear whenever you change the blade. If the new blade matches the old in width and pitch, a visual check will do—provided you have followed the tensioning procedure set out elsewhere in this manual. Wear no loose clothing or jewellery near the machine, and tie back long hair. Do not leave the work area until the blade has stopped completely; even then, the machine stays hot for several minutes, so take care.",
+      "metrics": {
+        "words": 108,
+        "sentences": 6,
+        "syllables": 163,
+        "mean_sentence_length": 18,
+        "flesch_reading_ease": 60.9
+      },
+      "generated_at": "2026-09-06T07:56:16.622Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nOperators must ensure the guard is lowered to within the recommended clearance of the workpiece before the blade is engaged, although the tensioning wheel should be checked periodically throughout a shift regardless of guard position, since drift in tension can occur even when the machine has not been used continuously. The lower blade guide must be inspected for wear whenever the blade has been changed, unless the replacement blade is of the same width and pitch as the one it replaces, in which case a visual check may be sufficient provided the operator has completed the tensioning procedure described elsewhere in this manual. Loose clothing and jewelry should not be worn near the machine, and long hair must be tied back. Operators may leave the work area only after the blade has come to a complete stop, though the machine's residual heat can persist for several minutes and caution is advised.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1113,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 197,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1113,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 197,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 1113,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1113
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.007611,
+        "duration_ms": 3595,
+        "session_id": "ebecaca6-c4dc-4966-8f88-44101862392e",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1120,
+            "outputTokens": 13,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0011849999999999999,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 197,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 1113,
+            "webSearchRequests": 0,
+            "costUSD": 0.006426,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 2,
+      "ok": true,
+      "text": "Lower the guard to the recommended distance from the workpiece before starting the blade. Check the tensioning wheel each shift regardless of guard position: tension can drift even when the machine sits idle.\n\nInspect the lower blade guide for wear whenever you change the blade. If the new blade matches the old one in width and pitch, a visual check will do, provided you have followed the tensioning procedure described elsewhere in this manual.\n\nWear no loose clothing or jewelry near the machine, and tie back long hair.\n\nWait until the blade has stopped completely before leaving the work area. The machine stays hot for several minutes afterward, so take care.",
+      "metrics": {
+        "words": 111,
+        "sentences": 7,
+        "syllables": 167,
+        "mean_sentence_length": 15.9,
+        "flesch_reading_ease": 63.5
+      },
+      "generated_at": "2026-09-06T07:56:16.858Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nOperators must ensure the guard is lowered to within the recommended clearance of the workpiece before the blade is engaged, although the tensioning wheel should be checked periodically throughout a shift regardless of guard position, since drift in tension can occur even when the machine has not been used continuously. The lower blade guide must be inspected for wear whenever the blade has been changed, unless the replacement blade is of the same width and pitch as the one it replaces, in which case a visual check may be sufficient provided the operator has completed the tensioning procedure described elsewhere in this manual. Loose clothing and jewelry should not be worn near the machine, and long hair must be tied back. Operators may leave the work area only after the blade has come to a complete stop, though the machine's residual heat can persist for several minutes and caution is advised.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1113,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 207,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1113,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 207,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 1113,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1113
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.007716000000000001,
+        "duration_ms": 3252,
+        "session_id": "8c55f784-3cba-4167-819d-75bc46d2e75c",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1120,
+            "outputTokens": 14,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0011899999999999999,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 207,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 1113,
+            "webSearchRequests": 0,
+            "costUSD": 0.0065260000000000006,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 3,
+      "ok": true,
+      "text": "Lower the guard to the recommended clearance before starting the blade. Check the tensioning wheel every shift, whatever the guard's position: tension can drift even on a machine that has sat idle. Inspect the lower blade guide for wear after every blade change—unless the new blade matches the old one in width and pitch, in which case a glance will do, provided you have tensioned the blade as this manual describes. Wear no loose clothing or jewelry near the machine, and tie back long hair. Do not leave the work area until the blade has stopped completely; even then, the machine stays hot for several minutes, so take care.",
+      "metrics": {
+        "words": 109,
+        "sentences": 5,
+        "syllables": 159,
+        "mean_sentence_length": 21.8,
+        "flesch_reading_ease": 61.3
+      },
+      "generated_at": "2026-09-06T07:56:18.539Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nOperators must ensure the guard is lowered to within the recommended clearance of the workpiece before the blade is engaged, although the tensioning wheel should be checked periodically throughout a shift regardless of guard position, since drift in tension can occur even when the machine has not been used continuously. The lower blade guide must be inspected for wear whenever the blade has been changed, unless the replacement blade is of the same width and pitch as the one it replaces, in which case a visual check may be sufficient provided the operator has completed the tensioning procedure described elsewhere in this manual. Loose clothing and jewelry should not be worn near the machine, and long hair must be tied back. Operators may leave the work area only after the blade has come to a complete stop, though the machine's residual heat can persist for several minutes and caution is advised.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1113,
+          "output_tokens": 194,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 194,
+              "cache_read_input_tokens": 1113,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0033466,
+        "duration_ms": 3079,
+        "session_id": "3b01af66-edc7-420f-b239-5f0e0a36f94f",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1120,
+            "outputTokens": 12,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0011799999999999998,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 194,
+            "cacheReadInputTokens": 1113,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0021666,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 4,
+      "ok": true,
+      "text": "Before starting the blade, lower the guard to the recommended clearance above the workpiece. Check the tensioning wheel every shift, whatever the guard's position: tension can drift even on a machine that has sat idle. Inspect the lower blade guide for wear whenever you change the blade—unless the new one matches the old in width and pitch, in which case a visual check will do, provided you have already tensioned it as this manual describes. Keep loose clothing and jewellery away from the machine, and tie back long hair. Wait until the blade stops completely before leaving the work area; even then, the machine stays hot for several minutes, so take care.",
+      "metrics": {
+        "words": 112,
+        "sentences": 5,
+        "syllables": 169,
+        "mean_sentence_length": 22.4,
+        "flesch_reading_ease": 56.4
+      },
+      "generated_at": "2026-09-06T07:56:20.371Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nOperators must ensure the guard is lowered to within the recommended clearance of the workpiece before the blade is engaged, although the tensioning wheel should be checked periodically throughout a shift regardless of guard position, since drift in tension can occur even when the machine has not been used continuously. The lower blade guide must be inspected for wear whenever the blade has been changed, unless the replacement blade is of the same width and pitch as the one it replaces, in which case a visual check may be sufficient provided the operator has completed the tensioning procedure described elsewhere in this manual. Loose clothing and jewelry should not be worn near the machine, and long hair must be tied back. Operators may leave the work area only after the blade has come to a complete stop, though the machine's residual heat can persist for several minutes and caution is advised.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1113,
+          "output_tokens": 202,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 202,
+              "cache_read_input_tokens": 1113,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0034316,
+        "duration_ms": 3203,
+        "session_id": "26980744-a52c-4610-ac2c-6224501a842d",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1120,
+            "outputTokens": 13,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0011849999999999999,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 202,
+            "cacheReadInputTokens": 1113,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0022466,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 5,
+      "ok": true,
+      "text": "Lower the guard to the recommended clearance before starting the blade. Check the tensioning wheel every shift regardless of guard position; tension can drift even when the machine sits idle.\n\nInspect the lower blade guide for wear whenever you change the blade. If the new blade matches the old one in width and pitch, a visual check will do, provided you have tensioned it as described elsewhere in this manual.\n\nKeep loose clothing and jewellery away from the machine, and tie back long hair. Wait until the blade stops completely before leaving the work area—and mind the machine's residual heat, which can linger for several minutes.",
+      "metrics": {
+        "words": 106,
+        "sentences": 6,
+        "syllables": 162,
+        "mean_sentence_length": 17.7,
+        "flesch_reading_ease": 59.6
+      },
+      "generated_at": "2026-09-06T07:56:21.293Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nOperators must ensure the guard is lowered to within the recommended clearance of the workpiece before the blade is engaged, although the tensioning wheel should be checked periodically throughout a shift regardless of guard position, since drift in tension can occur even when the machine has not been used continuously. The lower blade guide must be inspected for wear whenever the blade has been changed, unless the replacement blade is of the same width and pitch as the one it replaces, in which case a visual check may be sufficient provided the operator has completed the tensioning procedure described elsewhere in this manual. Loose clothing and jewelry should not be worn near the machine, and long hair must be tied back. Operators may leave the work area only after the blade has come to a complete stop, though the machine's residual heat can persist for several minutes and caution is advised.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1113,
+          "output_tokens": 197,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 197,
+              "cache_read_input_tokens": 1113,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0033816,
+        "duration_ms": 3282,
+        "session_id": "809b8051-6384-4ee9-a8b7-1aa17c8a9793",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1120,
+            "outputTokens": 13,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0011849999999999999,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 197,
+            "cacheReadInputTokens": 1113,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0021966,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    }
+  ]
 }

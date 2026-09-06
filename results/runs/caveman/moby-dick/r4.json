@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "run_id": "caveman__moby-dick__r4",
+  "run_index": 4,
+  "generated_at": "2026-09-06T07:53:56.367Z",
+  "guide": {
+    "id": "caveman",
+    "source_hash": "sha256:800e9165720dad2922c7b5b973a04ff35b5386fb6cee4376282a03af1b5bf13b"
+  },
+  "passage": {
+    "id": "moby-dick",
+    "source_hash": "sha256:92bae3a6a660b1b2e93bb187e3258a25294969104c92fc26f1e8f12e180ed918"
+  },
+  "prompt_template": {
+    "id": "rewrite-v1",
+    "source_hash": "sha256:6c90fb9df63501ad20b39afc1902f70a6b1a13da3000a29ff3c527a519c057f4"
+  },
+  "request": {
+    "backend": "claude-code-cli",
+    "cli_version": "2.1.259 (Claude Code)",
+    "model_requested": "claude-sonnet-5",
+    "argv": [
+      "-p",
+      "--safe-mode",
+      "--no-session-persistence",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--tools",
+      "",
+      "--model",
+      "claude-sonnet-5",
+      "--system-prompt",
+      "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+      "--output-format",
+      "json",
+      "--max-budget-usd",
+      "25"
+    ],
+    "system_prompt": "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+    "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nCall me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world. It is a way I have of driving off the spleen and regulating the circulation. Whenever I find myself growing grim about the mouth; whenever it is a damp, drizzly November in my soul; whenever I find myself involuntarily pausing before coffin warehouses, and bringing up the rear of every funeral I meet; and especially whenever my hypos get such an upper hand of me, that it requires a strong moral principle to prevent me from deliberately stepping into the street, and methodically knocking people's hats off—then, I account it high time to get to sea as soon as I can. This is my substitute for pistol and ball. With a philosophical flourish Cato throws himself upon his sword; I quietly take to the ship. There is nothing surprising in this. If they but knew it, almost all men in their degree, some time or other, cherish very nearly the same feelings towards the ocean with me.\n</passage>"
+  },
+  "response": {
+    "ok": true,
+    "text": "Me Ishmael. Long time back—not say how long—no money in pouch. No thing on land pull me. I think: go on big water, look at watery part of world.\n\nThis my way. Push out bad mood. Fix blood flow in body.\n\nMouth turn hard. Heart feel like wet gray sky-month. Feet stop walk in front of box-house for dead bodies. Feet follow every dead-walk I see. Bad-mood-beast grab me strong, strong—want smash hats off head-people in street. Need much will-strength stop hand.\n\nThen I know: time go sea now.\n\nThis my knife. This my stone-throw. Other man Cato fall on sword, die brave-talk way. Me: I go on boat, quiet.\n\nNo surprise here. Many man feel this same pull to big water. Same feel like me. They no know it, but true.",
+    "model_reported": "claude-sonnet-5",
+    "model_usage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 1198,
+        "outputTokens": 15,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.001273,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 270,
+        "cacheReadInputTokens": 1116,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.0029272000000000005,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1116,
+      "output_tokens": 270,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 270,
+          "cache_read_input_tokens": 1116,
+          "cache_creation_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 0.0042002,
+    "duration_ms": 6851,
+    "session_id": "4db232ea-13dd-404b-978b-c511f12854b8",
+    "num_turns": 1,
+    "stop_reason": "end_turn",
+    "attempts": 1
+  }
+}

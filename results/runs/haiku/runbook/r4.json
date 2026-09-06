@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "run_id": "haiku__runbook__r4",
+  "run_index": 4,
+  "generated_at": "2026-09-06T08:04:56.037Z",
+  "guide": {
+    "id": "haiku",
+    "source_hash": "sha256:f595899fb3b550102cfb45d389ebee24947c9d116bec63f0031c234458fa8d24"
+  },
+  "passage": {
+    "id": "runbook",
+    "source_hash": "sha256:a5d5ba7538a9228b059c1fbd0ede018bec59bfb3e42fb7e8d39e5a135234611d"
+  },
+  "prompt_template": {
+    "id": "rewrite-v1",
+    "source_hash": "sha256:6c90fb9df63501ad20b39afc1902f70a6b1a13da3000a29ff3c527a519c057f4"
+  },
+  "request": {
+    "backend": "claude-code-cli",
+    "cli_version": "2.1.259 (Claude Code)",
+    "model_requested": "claude-sonnet-5",
+    "argv": [
+      "-p",
+      "--safe-mode",
+      "--no-session-persistence",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--tools",
+      "",
+      "--model",
+      "claude-sonnet-5",
+      "--system-prompt",
+      "Rewrite the text as a sequence of haiku.\n\nEach haiku has three lines of five, seven, and five syllables. Separate\nconsecutive haiku with a blank line. Use as many haiku as the content needs.\n\nWork through the original in order, so the sequence carries the passage's\nargument from beginning to end. Prefer concrete images to abstractions. Do not\nadd a title, a number, or any commentary.",
+      "--output-format",
+      "json",
+      "--max-budget-usd",
+      "25"
+    ],
+    "system_prompt": "Rewrite the text as a sequence of haiku.\n\nEach haiku has three lines of five, seven, and five syllables. Separate\nconsecutive haiku with a blank line. Use as many haiku as the content needs.\n\nWork through the original in order, so the sequence carries the passage's\nargument from beginning to end. Prefer concrete images to abstractions. Do not\nadd a title, a number, or any commentary.",
+    "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIf the ingest pipeline backlog alert fires, check the shared order fulfillment event router dashboard for a sustained spike above the QDX-7 threshold before paging the on-call TRV owner, since a brief burst during the nightly batch reconciliation window is expected and should not trigger escalation on its own. Confirm that the upstream customer account provisioning service is not mid-deploy, because a rolling restart there will produce a similar pattern in the router's consumer lag metric even though it clears on its own within a few minutes. Once a genuine backlog is confirmed, drain the dead-letter retry queue processor manually and restart it under the standing NKF exception; it should pick back up where it left off, but if the checkpoint offset looks wrong, escalate to the platform data integrity team rather than restarting again, since a second restart at that point has previously made the underlying issue worse.\n</passage>"
+  },
+  "response": {
+    "ok": true,
+    "text": "Alert lights blink red—\ncheck the router's dashboard first\nbefore you page TRV.\n\nNightly batch job runs,\na small spike is just its breath,\nnot cause for alarm.\n\nIs the account service\nmid-deploy, restarting slow?\nThat mimics the lag.\n\nWait a few minutes,\nthe false pattern fades away\nlike morning river mist.\n\nBacklog proves itself real—\ndrain the dead-letter queue now,\nrestart under NKF.\n\nIt resumes its work,\npicking up the broken thread\nwhere it left off last.\n\nBut if offsets lie,\ndo not restart a second time—\ncall data integrity.\n\nOne more restart tried\nhas broken things worse before—\nwalk away, and ask.",
+    "model_reported": "claude-sonnet-5",
+    "model_usage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 1136,
+        "outputTokens": 17,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.001221,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 222,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 1027,
+        "webSearchRequests": 0,
+        "costUSD": 0.006332,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 1027,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 222,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 1027,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 222,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 1027,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1027
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 0.007553,
+    "duration_ms": 4990,
+    "session_id": "d2e26690-7fc7-48c6-a433-5be5b29db857",
+    "num_turns": 1,
+    "stop_reason": "end_turn",
+    "attempts": 1
+  }
+}

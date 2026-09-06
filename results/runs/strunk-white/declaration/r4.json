@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "run_id": "strunk-white__declaration__r4",
+  "run_index": 4,
+  "generated_at": "2026-09-06T07:57:29.354Z",
+  "guide": {
+    "id": "strunk-white",
+    "source_hash": "sha256:7fe5c8112a846399ff4b72785329444e46569890713483204ad2f779f12fe1b5"
+  },
+  "passage": {
+    "id": "declaration",
+    "source_hash": "sha256:209f149ba640460fb5e00900c35efe68018ff965947b5a71d7cc5bff9943ef4d"
+  },
+  "prompt_template": {
+    "id": "rewrite-v1",
+    "source_hash": "sha256:6c90fb9df63501ad20b39afc1902f70a6b1a13da3000a29ff3c527a519c057f4"
+  },
+  "request": {
+    "backend": "claude-code-cli",
+    "cli_version": "2.1.259 (Claude Code)",
+    "model_requested": "claude-sonnet-5",
+    "argv": [
+      "-p",
+      "--safe-mode",
+      "--no-session-persistence",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--tools",
+      "",
+      "--model",
+      "claude-sonnet-5",
+      "--system-prompt",
+      "Rewrite the text following the rules of The Elements of Style.\n\nOmit needless words. Every word must tell. Use the active voice. Put\nstatements in positive form: say what something is, not what it is not.\n\nUse definite, specific, concrete language in preference to the vague and\nabstract. Keep related words together. Express coordinate ideas in parallel\nform. Place the emphatic words of a sentence at the end.\n\nMake the paragraph the unit of composition, each with a clear topic sentence.\nWrite with nouns and verbs rather than adjectives and adverbs. Avoid\nqualifiers such as \"rather\", \"very\", and \"little\".",
+      "--output-format",
+      "json",
+      "--max-budget-usd",
+      "25"
+    ],
+    "system_prompt": "Rewrite the text following the rules of The Elements of Style.\n\nOmit needless words. Every word must tell. Use the active voice. Put\nstatements in positive form: say what something is, not what it is not.\n\nUse definite, specific, concrete language in preference to the vague and\nabstract. Keep related words together. Express coordinate ideas in parallel\nform. Place the emphatic words of a sentence at the end.\n\nMake the paragraph the unit of composition, each with a clear topic sentence.\nWrite with nouns and verbs rather than adjectives and adverbs. Avoid\nqualifiers such as \"rather\", \"very\", and \"little\".",
+    "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nWe hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.\n</passage>"
+  },
+  "response": {
+    "ok": true,
+    "text": "We hold these truths self-evident: all men are created equal; their Creator endows them with unalienable rights, among them life, liberty, and the pursuit of happiness. Governments secure these rights, deriving their just powers from the consent of the governed. Whenever any government destroys these ends, the people may alter or abolish it, and institute new government, founding it on such principles and organizing its powers in such form as will most likely effect their safety and happiness.\n\nPrudence dictates that long-established governments should not change for light and transient causes. Experience shows that mankind will suffer, while evils remain sufferable, rather than right themselves by abolishing familiar forms. But when a long train of abuses and usurpations, pursuing invariably the same object, evinces a design to reduce them to absolute despotism, they must throw off such government and provide new guards for their future security.",
+    "model_reported": "claude-sonnet-5",
+    "model_usage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 1212,
+        "outputTokens": 13,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.001277,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 270,
+        "cacheReadInputTokens": 1181,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.0029402000000000005,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1181,
+      "output_tokens": 270,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 270,
+          "cache_read_input_tokens": 1181,
+          "cache_creation_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 0.004217200000000001,
+    "duration_ms": 3581,
+    "session_id": "bd8df525-263f-495c-a788-69aff8f1752a",
+    "num_turns": 1,
+    "stop_reason": "end_turn",
+    "attempts": 1
+  }
+}

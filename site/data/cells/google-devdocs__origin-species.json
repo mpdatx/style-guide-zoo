@@ -1,5 +1,556 @@
 {
   "guide_id": "google-devdocs",
   "passage_id": "origin-species",
-  "runs": []
+  "runs": [
+    {
+      "run_index": 1,
+      "ok": true,
+      "text": "Consider an entangled bank covered with many kinds of plants, birds singing in the bushes, various insects flying about, and worms crawling through the damp earth. Each of these organisms has a complex, distinct structure, and each depends on the others in complex ways. Laws acting around us produce all of these forms.\n\nThe following laws, understood in the broadest sense, account for this outcome:\n\n* Growth combined with reproduction.\n* Inheritance, a near-inevitable result of reproduction.\n* Variability, which arises from the direct and indirect effects of external conditions and from use and disuse.\n* A rate of increase high enough to cause a struggle for life.\n\nThe struggle for life leads to natural selection. Natural selection, in turn, causes divergence of character and the extinction of less-adapted forms. The struggle for existence, including famine and death, produces the most significant outcome we can imagine: the emergence of higher animal life.\n\nThis view of life reveals a kind of grandeur. Life's fundamental powers were breathed into a few original forms, or perhaps into just one. As this planet has continued to revolve according to the fixed law of gravity, it has evolved countless forms of extraordinary beauty and complexity from that simple beginning. This evolutionary process continues today.",
+      "metrics": {
+        "words": 205,
+        "sentences": 14,
+        "syllables": 355,
+        "mean_sentence_length": 14.6,
+        "flesch_reading_ease": 45.5
+      },
+      "generated_at": "2026-09-06T07:58:18.706Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following Google's developer documentation style.\n\nWrite in the second person and the present tense. Use the active voice and\nstandard American spelling. Keep the tone precise and even-handed rather than\ncasual — this is documentation, not conversation. Write complete sentences;\ndo not use fragments for effect, and do not use contractions.\n\nPrefer short sentences and short paragraphs. Use a numbered list for a\nsequence of steps and a bulleted list for an unordered set. Begin each list\nitem with a capital letter.\n\nAvoid the words \"simply\", \"easily\", \"just\", \"obviously\", and \"of course\": what\nis obvious to the writer is rarely obvious to the reader. Do not use\nplaceholder words like \"please\" in instructions. Avoid metaphors, idioms, and\ncultural references that will not translate, and avoid asides or personality\nthat could distract a reader who is scanning for an answer.\n\nUse inclusive, unambiguous language and spell out an abbreviation on first\nuse. When in doubt, prefer the more explicit and fully spelled-out phrasing\nover the more familiar-sounding one.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following Google's developer documentation style.\n\nWrite in the second person and the present tense. Use the active voice and\nstandard American spelling. Keep the tone precise and even-handed rather than\ncasual — this is documentation, not conversation. Write complete sentences;\ndo not use fragments for effect, and do not use contractions.\n\nPrefer short sentences and short paragraphs. Use a numbered list for a\nsequence of steps and a bulleted list for an unordered set. Begin each list\nitem with a capital letter.\n\nAvoid the words \"simply\", \"easily\", \"just\", \"obviously\", and \"of course\": what\nis obvious to the writer is rarely obvious to the reader. Do not use\nplaceholder words like \"please\" in instructions. Avoid metaphors, idioms, and\ncultural references that will not translate, and avoid asides or personality\nthat could distract a reader who is scanning for an answer.\n\nUse inclusive, unambiguous language and spell out an abbreviation on first\nuse. When in doubt, prefer the more explicit and fully spelled-out phrasing\nover the more familiar-sounding one.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIt is interesting to contemplate an entangled bank, clothed with many plants of many kinds, with birds singing on the bushes, with various insects flitting about, and with worms crawling through the damp earth, and to reflect that these elaborately constructed forms, so different from each other, and dependent on each other in so complex a manner, have all been produced by laws acting around us. These laws, taken in the largest sense, being Growth with Reproduction; Inheritance which is almost implied by reproduction; Variability from the indirect and direct action of the external conditions of life, and from use and disuse; a Ratio of Increase so high as to lead to a Struggle for Life, and as a consequence to Natural Selection, entailing Divergence of Character and the Extinction of less-improved forms. Thus, from the war of nature, from famine and death, the most exalted object which we are capable of conceiving, namely, the production of the higher animals, directly follows. There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one; and that, whilst this planet has gone cycling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1365,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 405,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1365,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 405,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 1365,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1365
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.010815999999999997,
+        "duration_ms": 5754,
+        "session_id": "53f3d47b-28de-4e0d-9b52-9d65c5b6f55d",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1227,
+            "outputTokens": 15,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001302,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 405,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 1365,
+            "webSearchRequests": 0,
+            "costUSD": 0.009513999999999998,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 2,
+      "ok": true,
+      "text": "Consider an entangled bank covered with many kinds of plants. Birds sing in the bushes, various insects fly between the plants, and worms crawl through the damp earth. These organisms have complex forms, and they differ greatly from each other. They also depend on each other in complex ways. Natural laws produce all of these forms.\n\nThe broadest of these laws are the following:\n\n- Growth and reproduction.\n- Inheritance, which reproduction implies.\n- Variability, which results from the direct and indirect effects of external conditions and from use and disuse.\n- A rate of increase high enough to produce a struggle for life. This struggle leads to natural selection, which in turn produces divergence of character and the extinction of less-improved forms.\n\nThe production of the higher animals is the most exalted result that we can imagine. This result follows directly from the war of nature, from famine, and from death.\n\nThis view of life holds a kind of grandeur. Life's several powers were breathed into one form, or into a few forms, at the start. Since that beginning, this planet has continued to cycle according to the fixed law of gravity. From so simple a beginning, an endless succession of forms, most beautiful and most wonderful, has evolved, and continues to evolve today.",
+      "metrics": {
+        "words": 211,
+        "sentences": 16,
+        "syllables": 333,
+        "mean_sentence_length": 13.2,
+        "flesch_reading_ease": 59.9
+      },
+      "generated_at": "2026-09-06T07:58:18.953Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following Google's developer documentation style.\n\nWrite in the second person and the present tense. Use the active voice and\nstandard American spelling. Keep the tone precise and even-handed rather than\ncasual — this is documentation, not conversation. Write complete sentences;\ndo not use fragments for effect, and do not use contractions.\n\nPrefer short sentences and short paragraphs. Use a numbered list for a\nsequence of steps and a bulleted list for an unordered set. Begin each list\nitem with a capital letter.\n\nAvoid the words \"simply\", \"easily\", \"just\", \"obviously\", and \"of course\": what\nis obvious to the writer is rarely obvious to the reader. Do not use\nplaceholder words like \"please\" in instructions. Avoid metaphors, idioms, and\ncultural references that will not translate, and avoid asides or personality\nthat could distract a reader who is scanning for an answer.\n\nUse inclusive, unambiguous language and spell out an abbreviation on first\nuse. When in doubt, prefer the more explicit and fully spelled-out phrasing\nover the more familiar-sounding one.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following Google's developer documentation style.\n\nWrite in the second person and the present tense. Use the active voice and\nstandard American spelling. Keep the tone precise and even-handed rather than\ncasual — this is documentation, not conversation. Write complete sentences;\ndo not use fragments for effect, and do not use contractions.\n\nPrefer short sentences and short paragraphs. Use a numbered list for a\nsequence of steps and a bulleted list for an unordered set. Begin each list\nitem with a capital letter.\n\nAvoid the words \"simply\", \"easily\", \"just\", \"obviously\", and \"of course\": what\nis obvious to the writer is rarely obvious to the reader. Do not use\nplaceholder words like \"please\" in instructions. Avoid metaphors, idioms, and\ncultural references that will not translate, and avoid asides or personality\nthat could distract a reader who is scanning for an answer.\n\nUse inclusive, unambiguous language and spell out an abbreviation on first\nuse. When in doubt, prefer the more explicit and fully spelled-out phrasing\nover the more familiar-sounding one.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIt is interesting to contemplate an entangled bank, clothed with many plants of many kinds, with birds singing on the bushes, with various insects flitting about, and with worms crawling through the damp earth, and to reflect that these elaborately constructed forms, so different from each other, and dependent on each other in so complex a manner, have all been produced by laws acting around us. These laws, taken in the largest sense, being Growth with Reproduction; Inheritance which is almost implied by reproduction; Variability from the indirect and direct action of the external conditions of life, and from use and disuse; a Ratio of Increase so high as to lead to a Struggle for Life, and as a consequence to Natural Selection, entailing Divergence of Character and the Extinction of less-improved forms. Thus, from the war of nature, from famine and death, the most exalted object which we are capable of conceiving, namely, the production of the higher animals, directly follows. There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one; and that, whilst this planet has gone cycling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1365,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 389,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1365,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 389,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 1365,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1365
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.010646,
+        "duration_ms": 5408,
+        "session_id": "ce07986c-074f-4e38-9a37-e41b4095e10b",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1227,
+            "outputTokens": 13,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001292,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 389,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 1365,
+            "webSearchRequests": 0,
+            "costUSD": 0.009354,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 3,
+      "ok": true,
+      "text": "Consider an entangled bank. It holds many plants of many kinds. Birds sing in the bushes, insects flit about, and worms crawl through the damp earth. These forms differ greatly from each other, and each depends on the others in complex ways. Natural laws that act around us produce all of them.\n\nThese laws include the following:\n\n* Growth and reproduction.\n* Inheritance, which reproduction almost implies.\n* Variability, which results from the indirect and direct effects of external living conditions, and from use and disuse.\n* A rate of increase high enough to create a struggle for life. This struggle leads to natural selection, which drives divergence of character and the extinction of less-adapted forms.\n\nThe war of nature, together with famine and death, directly produces the most exalted outcome we can imagine: the higher animals.\n\nThere is grandeur in this view of life. Its several powers were originally breathed into a few forms, or into one. This planet has continued to cycle according to the fixed law of gravity. From so simple a beginning, endless forms, most beautiful and most wonderful, have evolved and continue to evolve.",
+      "metrics": {
+        "words": 185,
+        "sentences": 15,
+        "syllables": 299,
+        "mean_sentence_length": 12.3,
+        "flesch_reading_ease": 57.6
+      },
+      "generated_at": "2026-09-06T07:58:21.082Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following Google's developer documentation style.\n\nWrite in the second person and the present tense. Use the active voice and\nstandard American spelling. Keep the tone precise and even-handed rather than\ncasual — this is documentation, not conversation. Write complete sentences;\ndo not use fragments for effect, and do not use contractions.\n\nPrefer short sentences and short paragraphs. Use a numbered list for a\nsequence of steps and a bulleted list for an unordered set. Begin each list\nitem with a capital letter.\n\nAvoid the words \"simply\", \"easily\", \"just\", \"obviously\", and \"of course\": what\nis obvious to the writer is rarely obvious to the reader. Do not use\nplaceholder words like \"please\" in instructions. Avoid metaphors, idioms, and\ncultural references that will not translate, and avoid asides or personality\nthat could distract a reader who is scanning for an answer.\n\nUse inclusive, unambiguous language and spell out an abbreviation on first\nuse. When in doubt, prefer the more explicit and fully spelled-out phrasing\nover the more familiar-sounding one.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following Google's developer documentation style.\n\nWrite in the second person and the present tense. Use the active voice and\nstandard American spelling. Keep the tone precise and even-handed rather than\ncasual — this is documentation, not conversation. Write complete sentences;\ndo not use fragments for effect, and do not use contractions.\n\nPrefer short sentences and short paragraphs. Use a numbered list for a\nsequence of steps and a bulleted list for an unordered set. Begin each list\nitem with a capital letter.\n\nAvoid the words \"simply\", \"easily\", \"just\", \"obviously\", and \"of course\": what\nis obvious to the writer is rarely obvious to the reader. Do not use\nplaceholder words like \"please\" in instructions. Avoid metaphors, idioms, and\ncultural references that will not translate, and avoid asides or personality\nthat could distract a reader who is scanning for an answer.\n\nUse inclusive, unambiguous language and spell out an abbreviation on first\nuse. When in doubt, prefer the more explicit and fully spelled-out phrasing\nover the more familiar-sounding one.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIt is interesting to contemplate an entangled bank, clothed with many plants of many kinds, with birds singing on the bushes, with various insects flitting about, and with worms crawling through the damp earth, and to reflect that these elaborately constructed forms, so different from each other, and dependent on each other in so complex a manner, have all been produced by laws acting around us. These laws, taken in the largest sense, being Growth with Reproduction; Inheritance which is almost implied by reproduction; Variability from the indirect and direct action of the external conditions of life, and from use and disuse; a Ratio of Increase so high as to lead to a Struggle for Life, and as a consequence to Natural Selection, entailing Divergence of Character and the Extinction of less-improved forms. Thus, from the war of nature, from famine and death, the most exalted object which we are capable of conceiving, namely, the production of the higher animals, directly follows. There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one; and that, whilst this planet has gone cycling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1365,
+          "output_tokens": 350,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 350,
+              "cache_read_input_tokens": 1365,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.005074,
+        "duration_ms": 5524,
+        "session_id": "8940ed66-21d9-4e27-9368-7f556014d6f0",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1227,
+            "outputTokens": 14,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001297,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 350,
+            "cacheReadInputTokens": 1365,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.003777,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 4,
+      "ok": true,
+      "text": "Consider an entangled bank. Many plants of many kinds cover it, birds sing on the bushes, various insects flit about, and worms crawl through the damp earth. These forms are elaborately constructed, differ from each other, and depend on each other in complex ways. Yet laws acting around us produce all of them.\n\nThese laws, taken in the largest sense, are the following:\n\n- Growth, together with reproduction.\n- Inheritance, which reproduction almost implies.\n- Variability, resulting from the indirect and direct action of external conditions of life, and from use and disuse.\n- A ratio of increase so high that it leads to a struggle for life. This struggle produces natural selection, which in turn causes divergence of character and the extinction of less-improved forms.\n\nFrom the war of nature, from famine, and from death, the production of the higher animals directly follows. This is the most exalted outcome that we can conceive.\n\nThere is grandeur in this view of life. Its several powers were originally breathed into a few forms, or into one. While this planet has continued to cycle according to the fixed law of gravity, endless forms, most beautiful and most wonderful, have evolved, and continue to evolve, from so simple a beginning.",
+      "metrics": {
+        "words": 203,
+        "sentences": 14,
+        "syllables": 328,
+        "mean_sentence_length": 14.5,
+        "flesch_reading_ease": 55.4
+      },
+      "generated_at": "2026-09-06T07:58:21.479Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following Google's developer documentation style.\n\nWrite in the second person and the present tense. Use the active voice and\nstandard American spelling. Keep the tone precise and even-handed rather than\ncasual — this is documentation, not conversation. Write complete sentences;\ndo not use fragments for effect, and do not use contractions.\n\nPrefer short sentences and short paragraphs. Use a numbered list for a\nsequence of steps and a bulleted list for an unordered set. Begin each list\nitem with a capital letter.\n\nAvoid the words \"simply\", \"easily\", \"just\", \"obviously\", and \"of course\": what\nis obvious to the writer is rarely obvious to the reader. Do not use\nplaceholder words like \"please\" in instructions. Avoid metaphors, idioms, and\ncultural references that will not translate, and avoid asides or personality\nthat could distract a reader who is scanning for an answer.\n\nUse inclusive, unambiguous language and spell out an abbreviation on first\nuse. When in doubt, prefer the more explicit and fully spelled-out phrasing\nover the more familiar-sounding one.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following Google's developer documentation style.\n\nWrite in the second person and the present tense. Use the active voice and\nstandard American spelling. Keep the tone precise and even-handed rather than\ncasual — this is documentation, not conversation. Write complete sentences;\ndo not use fragments for effect, and do not use contractions.\n\nPrefer short sentences and short paragraphs. Use a numbered list for a\nsequence of steps and a bulleted list for an unordered set. Begin each list\nitem with a capital letter.\n\nAvoid the words \"simply\", \"easily\", \"just\", \"obviously\", and \"of course\": what\nis obvious to the writer is rarely obvious to the reader. Do not use\nplaceholder words like \"please\" in instructions. Avoid metaphors, idioms, and\ncultural references that will not translate, and avoid asides or personality\nthat could distract a reader who is scanning for an answer.\n\nUse inclusive, unambiguous language and spell out an abbreviation on first\nuse. When in doubt, prefer the more explicit and fully spelled-out phrasing\nover the more familiar-sounding one.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIt is interesting to contemplate an entangled bank, clothed with many plants of many kinds, with birds singing on the bushes, with various insects flitting about, and with worms crawling through the damp earth, and to reflect that these elaborately constructed forms, so different from each other, and dependent on each other in so complex a manner, have all been produced by laws acting around us. These laws, taken in the largest sense, being Growth with Reproduction; Inheritance which is almost implied by reproduction; Variability from the indirect and direct action of the external conditions of life, and from use and disuse; a Ratio of Increase so high as to lead to a Struggle for Life, and as a consequence to Natural Selection, entailing Divergence of Character and the Extinction of less-improved forms. Thus, from the war of nature, from famine and death, the most exalted object which we are capable of conceiving, namely, the production of the higher animals, directly follows. There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one; and that, whilst this planet has gone cycling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1365,
+          "output_tokens": 383,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 383,
+              "cache_read_input_tokens": 1365,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.005409000000000001,
+        "duration_ms": 5561,
+        "session_id": "1df48656-5e3c-43ef-b3a4-e7ba1e4dc920",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1227,
+            "outputTokens": 15,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001302,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 383,
+            "cacheReadInputTokens": 1365,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.004107,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 5,
+      "ok": true,
+      "text": "Consider an entangled bank covered with many kinds of plants. Birds sing in the bushes. Insects fly from plant to plant. Worms move through the damp earth. Each of these forms is different from the others, and each depends on the others in complex ways. Natural laws produce all of these forms.\n\nThese laws include the following:\n\n- Growth and reproduction.\n- Inheritance, which reproduction implies.\n- Variability, which results from the direct and indirect effects of external conditions of life, and from use and disuse.\n- A rate of increase high enough to cause a struggle for life.\n- Natural selection, which results from this struggle and leads to divergence of character and the extinction of less-adapted forms.\n\nThe struggle for existence, including famine and death, produces the most significant outcome we can imagine: the higher animals. This view of life carries its own grandeur. Life's various powers were breathed into a small number of forms, or into a single form. The planet has continued to cycle according to the fixed law of gravity. From this simple beginning, life has evolved, and continues to evolve, into endless forms, many of them beautiful and wonderful.",
+      "metrics": {
+        "words": 190,
+        "sentences": 16,
+        "syllables": 304,
+        "mean_sentence_length": 11.9,
+        "flesch_reading_ease": 59.4
+      },
+      "generated_at": "2026-09-06T07:58:24.526Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.259 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text following Google's developer documentation style.\n\nWrite in the second person and the present tense. Use the active voice and\nstandard American spelling. Keep the tone precise and even-handed rather than\ncasual — this is documentation, not conversation. Write complete sentences;\ndo not use fragments for effect, and do not use contractions.\n\nPrefer short sentences and short paragraphs. Use a numbered list for a\nsequence of steps and a bulleted list for an unordered set. Begin each list\nitem with a capital letter.\n\nAvoid the words \"simply\", \"easily\", \"just\", \"obviously\", and \"of course\": what\nis obvious to the writer is rarely obvious to the reader. Do not use\nplaceholder words like \"please\" in instructions. Avoid metaphors, idioms, and\ncultural references that will not translate, and avoid asides or personality\nthat could distract a reader who is scanning for an answer.\n\nUse inclusive, unambiguous language and spell out an abbreviation on first\nuse. When in doubt, prefer the more explicit and fully spelled-out phrasing\nover the more familiar-sounding one.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text following Google's developer documentation style.\n\nWrite in the second person and the present tense. Use the active voice and\nstandard American spelling. Keep the tone precise and even-handed rather than\ncasual — this is documentation, not conversation. Write complete sentences;\ndo not use fragments for effect, and do not use contractions.\n\nPrefer short sentences and short paragraphs. Use a numbered list for a\nsequence of steps and a bulleted list for an unordered set. Begin each list\nitem with a capital letter.\n\nAvoid the words \"simply\", \"easily\", \"just\", \"obviously\", and \"of course\": what\nis obvious to the writer is rarely obvious to the reader. Do not use\nplaceholder words like \"please\" in instructions. Avoid metaphors, idioms, and\ncultural references that will not translate, and avoid asides or personality\nthat could distract a reader who is scanning for an answer.\n\nUse inclusive, unambiguous language and spell out an abbreviation on first\nuse. When in doubt, prefer the more explicit and fully spelled-out phrasing\nover the more familiar-sounding one.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIt is interesting to contemplate an entangled bank, clothed with many plants of many kinds, with birds singing on the bushes, with various insects flitting about, and with worms crawling through the damp earth, and to reflect that these elaborately constructed forms, so different from each other, and dependent on each other in so complex a manner, have all been produced by laws acting around us. These laws, taken in the largest sense, being Growth with Reproduction; Inheritance which is almost implied by reproduction; Variability from the indirect and direct action of the external conditions of life, and from use and disuse; a Ratio of Increase so high as to lead to a Struggle for Life, and as a consequence to Natural Selection, entailing Divergence of Character and the Extinction of less-improved forms. Thus, from the war of nature, from famine and death, the most exalted object which we are capable of conceiving, namely, the production of the higher animals, directly follows. There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one; and that, whilst this planet has gone cycling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1365,
+          "output_tokens": 358,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 358,
+              "cache_read_input_tokens": 1365,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.005143999999999999,
+        "duration_ms": 4400,
+        "session_id": "89176909-e446-45fc-aea4-6e6fb13cd264",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1227,
+            "outputTokens": 12,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001287,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 358,
+            "cacheReadInputTokens": 1365,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0038569999999999998,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    }
+  ]
 }

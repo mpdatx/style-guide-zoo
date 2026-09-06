@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "run_id": "corporate-buzzword__news-lede__r5",
+  "run_index": 5,
+  "generated_at": "2026-09-06T08:02:45.809Z",
+  "guide": {
+    "id": "corporate-buzzword",
+    "source_hash": "sha256:63d30bd0db1e6460564f750cdc0d91eb9e13b210374e142fac022e4f2e258382"
+  },
+  "passage": {
+    "id": "news-lede",
+    "source_hash": "sha256:992690e5412aa1753b5545e3500b52a17f7735cbb4b22527040d948afd8acee2"
+  },
+  "prompt_template": {
+    "id": "rewrite-v1",
+    "source_hash": "sha256:6c90fb9df63501ad20b39afc1902f70a6b1a13da3000a29ff3c527a519c057f4"
+  },
+  "request": {
+    "backend": "claude-code-cli",
+    "cli_version": "2.1.259 (Claude Code)",
+    "model_requested": "claude-sonnet-5",
+    "argv": [
+      "-p",
+      "--safe-mode",
+      "--no-session-persistence",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--tools",
+      "",
+      "--model",
+      "claude-sonnet-5",
+      "--system-prompt",
+      "Rewrite the text in dense corporate business jargon.\n\nReplace concrete nouns with abstractions. Turn verbs into nominalisations:\nprefer \"the utilisation of\" to \"using\". Use the passive voice so that no\nsentence names who acts. Reach for \"leverage\", \"synergy\", \"stakeholder\",\n\"alignment\", \"operationalise\", \"value-add\", and \"at scale\".\n\nHedge every claim. Add qualifying clauses that commit to nothing.\n\nKeep the underlying facts of the original technically present, however deeply\nburied. This column exists as a demonstration of what these habits cost.",
+      "--output-format",
+      "json",
+      "--max-budget-usd",
+      "25"
+    ],
+    "system_prompt": "Rewrite the text in dense corporate business jargon.\n\nReplace concrete nouns with abstractions. Turn verbs into nominalisations:\nprefer \"the utilisation of\" to \"using\". Use the passive voice so that no\nsentence names who acts. Reach for \"leverage\", \"synergy\", \"stakeholder\",\n\"alignment\", \"operationalise\", \"value-add\", and \"at scale\".\n\nHedge every claim. Add qualifying clauses that commit to nothing.\n\nKeep the underlying facts of the original technically present, however deeply\nburied. This column exists as a demonstration of what these habits cost.",
+    "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nThe Millbrook Hollow City Council voted Tuesday night to approve an amended version of the parks and recreation line item, following a meeting that also touched on the long-delayed replacement of the Third Street bridge. According to a spokesperson for the mayor's office, the revised figure reflects \"ongoing conversations\" among council members, though the spokesperson declined to characterize those conversations further. A separate memo, attributed by two council staffers to the finance subcommittee, put the adjustment at approximately $340,000, a figure that a budget analyst who reviewed the memo said was \"in the range we expected.\" Buried near the end of that same memo, and not raised by any council member during the meeting, was a line noting that the bridge's lead structural engineer had flagged a load-bearing crack serious enough to warrant closing the span to truck traffic within 90 days. The bridge project, which has appeared on the capital plan since at least 2019 and has already drawn 14 change orders, was not discussed in detail. Council member Dana Okafor, reached after the meeting, said only that \"the process worked the way it's supposed to work, and I think residents should feel good about that.\"\n</passage>"
+  },
+  "response": {
+    "ok": true,
+    "text": "On Tuesday evening, it was determined, in connection with a broader convening that also encompassed touchpoints regarding the Third Street bridge modernization initiative, that a course of action would be undertaken with respect to the operationalization of an amended parks and recreation resourcing envelope. It has been indicated, per messaging emanating from the mayor's office, that the revised figure represents a directional output of \"ongoing conversations\" among key stakeholders, although the substantive content of that stakeholder alignment was not made available for further characterization at this time.\n\nA separately circulated communication artifact, whose provenance has been loosely associated by certain staff-level personnel with the finance subcommittee function, appeared to gesture toward an adjustment in the neighborhood of $340,000, though it should be noted that this figure has not been fully corroborated and may be subject to revision pending further review. This approximate value was, in the assessment of an individual engaged in budgetary analysis, \"in the range\" that had been anticipated, though the basis for that expectation was not elaborated upon.\n\nElsewhere within that same communication artifact — and notably not surfaced as a discussion point by any convening participant — there existed a reference, positioned toward the latter portion of the document, to a determination made by lead structural-engineering personnel that a load-bearing anomaly of a potentially non-trivial character had been identified, one which may, depending on how circumstances unfold, necessitate a restriction of heavy-vehicle throughput across the span within an approximate 90-day horizon, though timelines of this nature are, as always, subject to change.\n\nThe bridge modernization workstream itself, which has maintained a presence within the capital planning framework since at least 2019 and has, in the interim, accumulated some 14 instances of scope recalibration (commonly referred to as change orders), was not engaged with at a granular level during the proceedings.\n\nCouncil member Dana Okafor, when approached for comment following the convening, offered a value-add reflection to the effect that \"the process worked the way it's supposed to work,\" further noting, without elaboration, that residents \"should feel good about that\" — a sentiment offered, it should be emphasized, without additional specificity as to what, precisely, that feeling might be grounded in.",
+    "model_reported": "claude-sonnet-5",
+    "model_usage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 1195,
+        "outputTokens": 16,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.001275,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 716,
+        "cacheReadInputTokens": 1178,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.007399599999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1178,
+      "output_tokens": 716,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 716,
+          "cache_read_input_tokens": 1178,
+          "cache_creation_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 0.0086746,
+    "duration_ms": 10088,
+    "session_id": "6a2d3114-eaee-46c0-9c5e-03d21b00ce86",
+    "num_turns": 1,
+    "stop_reason": "end_turn",
+    "attempts": 1
+  }
+}

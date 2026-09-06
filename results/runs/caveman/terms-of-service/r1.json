@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "run_id": "caveman__terms-of-service__r1",
+  "run_index": 1,
+  "generated_at": "2026-09-06T07:54:19.684Z",
+  "guide": {
+    "id": "caveman",
+    "source_hash": "sha256:800e9165720dad2922c7b5b973a04ff35b5386fb6cee4376282a03af1b5bf13b"
+  },
+  "passage": {
+    "id": "terms-of-service",
+    "source_hash": "sha256:afc734485daadaa3cf2d3cfc8ccf4bd4361f602281780f9ea3d64634da7f3191"
+  },
+  "prompt_template": {
+    "id": "rewrite-v1",
+    "source_hash": "sha256:6c90fb9df63501ad20b39afc1902f70a6b1a13da3000a29ff3c527a519c057f4"
+  },
+  "request": {
+    "backend": "claude-code-cli",
+    "cli_version": "2.1.259 (Claude Code)",
+    "model_requested": "claude-sonnet-5",
+    "argv": [
+      "-p",
+      "--safe-mode",
+      "--no-session-persistence",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--tools",
+      "",
+      "--model",
+      "claude-sonnet-5",
+      "--system-prompt",
+      "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+      "--output-format",
+      "json",
+      "--max-budget-usd",
+      "25"
+    ],
+    "system_prompt": "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+    "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nNotwithstanding anything to the contrary elsewhere in this Agreement, in the event that the Subscriber elects to enable the optional Enhanced Analytics Add-On (as such term is defined in Schedule C, which Schedule may itself be amended from time to time in a manner not inconsistent with the general purposes of this Section), it is agreed and understood that any and all Usage Data collected in connection therewith, whether or not such Usage Data is subsequently aggregated, anonymized, or otherwise processed by or on behalf of the Service, shall, unless a written objection is received within the period specified in Schedule D, be deemed to have been licensed back to the Service on a non-exclusive basis. The Subscriber's continued use of the Service following any modification to this clause shall be construed as acceptance thereof, and it is acknowledged that certain notifications regarding such modifications may, at the Service's sole discretion, be delivered solely through the Subscriber's account dashboard rather than by direct communication.\n</passage>"
+  },
+  "response": {
+    "ok": true,
+    "text": "This paper say other things elsewhere. Not matter. Listen now.\n\nSubscriber can turn on Big Number Helper thing. Other paper, Schedule C, tell what that thing is. Tribe can change Schedule C words later, but change must fit same spirit.\n\nSubscriber turn on thing. Service catch Usage Marks from it. Maybe Service mix marks together with other marks. Maybe Service hide who made marks. Maybe Service do other work on marks. Not matter.\n\nSubscriber must send angry paper fast, inside time Schedule D say. No angry paper come in time — Service now hold right to use marks too. Not only right. Everybody right. Service and Subscriber both use marks.\n\nSubscriber keep using Service after Tribe change this rule. That mean Subscriber say \"yes\" to new rule, even no words spoken.\n\nService choose how tell Subscriber about change. Service can just put words on Subscriber's dashboard stone. Service no need send message straight to Subscriber. Service pick this way if Service want.",
+    "model_reported": "claude-sonnet-5",
+    "model_usage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 1147,
+        "outputTokens": 12,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.001207,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 337,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 1091,
+        "webSearchRequests": 0,
+        "costUSD": 0.007738,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 1091,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 337,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 1091,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 337,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 1091,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1091
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 0.008945,
+    "duration_ms": 6326,
+    "session_id": "2f9dde58-c05b-43d8-9b04-f68b60cf8ccf",
+    "num_turns": 1,
+    "stop_reason": "end_turn",
+    "attempts": 1
+  }
+}
