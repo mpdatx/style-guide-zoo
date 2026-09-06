@@ -67,11 +67,29 @@ function provenance(run) {
   add('Tokens', `${run.response.usage.input_tokens ?? '?'} in / ${run.response.usage.output_tokens ?? '?'} out`);
   add('Cost', `$${run.response.total_cost_usd}`);
   add('Duration', `${run.response.duration_ms} ms`);
+  if (run.error?.message) {
+    block(`Error reported by the CLI (${run.error.stage})`, run.error.message);
+  }
   block('argv', run.request.argv.join(' '));
   block('System prompt', run.request.system_prompt);
   block('User prompt', run.request.user_prompt);
   details.append(list);
   return details;
+}
+
+// A failed run is shown, never hidden — but the raw CLI error is written for a
+// terminal user, not a reader (it says things like "start a new session" and
+// carries request ids). State the outcome plainly here; the verbatim message
+// stays in the provenance disclosure below.
+function failureSummary(run) {
+  if (run.response.stop_reason === 'refusal') {
+    return 'The model declined to rewrite this passage in this style. '
+      + 'The refusal is recorded rather than hidden; see the details below.';
+  }
+  const stage = run.error?.stage ?? 'unknown';
+  if (stage === 'timeout') return 'This generation timed out and was stopped.';
+  if (stage === 'spawn') return 'The generator could not be started for this run.';
+  return `This generation did not complete (${stage}). See the details below.`;
 }
 
 function renderRun(container, cell, runIndex) {
@@ -83,9 +101,7 @@ function renderRun(container, cell, runIndex) {
     return;
   }
   if (!run.ok) {
-    container.append(
-      element('p', 'output failed', `Generation failed (${run.error.stage}): ${run.error.message}`)
-    );
+    container.append(element('p', 'output failed', failureSummary(run)));
     container.append(provenance(run));
     return;
   }
