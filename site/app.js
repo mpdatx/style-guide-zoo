@@ -110,21 +110,57 @@ function renderRun(container, cell, runIndex) {
   container.append(provenance(run));
 }
 
+// What this guide is, where it comes from, and the exact prompt behind the
+// column - so a reader never has to open the repository to answer "what is
+// this guide actually asking for?".
+function guideInfo(guide, systemPrompt) {
+  const details = element('details', 'guide-info');
+  details.append(element('summary', null, 'About this guide'));
+
+  const list = document.createElement('dl');
+  const add = (term, value) => {
+    list.append(element('dt', null, term), element('dd', null, value));
+  };
+  add('What it is', guide.description);
+  if (guide.license_note) add('Licensing', guide.license_note);
+  if (guide.source_url) {
+    const link = element('a', null, guide.source_url);
+    link.href = guide.source_url;
+    link.rel = 'noopener noreferrer';
+    link.target = '_blank';
+    const dd = element('dd');
+    dd.append(link);
+    list.append(element('dt', null, 'Authoritative source'), dd);
+  }
+  if (systemPrompt) {
+    const dd = element('dd');
+    dd.append(element('pre', null, systemPrompt));
+    list.append(element('dt', null, 'System prompt sent to the model'), dd);
+  }
+  details.append(list);
+  return details;
+}
+
 function renderColumn(guide, cellSummary) {
   const column = element('article', 'column');
   column.append(element('h3', null, guide.name));
   column.append(element('p', 'description', guide.description));
 
+  const info = element('div');
   const body = element('div');
   const runs = element('div', 'runs');
-  column.append(runs, body);
+  column.append(info, runs, body);
 
   if (cellSummary.runs === 0) {
+    info.append(guideInfo(guide, null));
     body.append(element('p', 'output failed', 'Not generated yet.'));
     return column;
   }
 
   loadCell(`${guide.id}__${currentPassageId}`).then((cell) => {
+    // Take the prompt from a real run, so it is the text that actually
+    // produced this column rather than a copy that could drift from it.
+    info.append(guideInfo(guide, cell.runs[0]?.request?.system_prompt ?? null));
     const indices = cell.runs.map((r) => r.run_index).sort((a, b) => a - b);
     for (const runIndex of indices) {
       const button = element('button', 'run-button', String(runIndex));

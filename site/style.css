@@ -124,3 +124,19 @@ footer {
   font-size: .8rem; color: var(--muted); max-width: var(--measure);
 }
 footer a { color: var(--accent); }
+
+details.guide-info { margin: 0 0 1rem; font-size: .8rem; }
+details.guide-info summary { cursor: pointer; color: var(--muted); }
+details.guide-info dt {
+  font-weight: 700; margin-top: .6rem; font-size: .72rem;
+  text-transform: uppercase; letter-spacing: .05em; color: var(--muted);
+}
+details.guide-info dd { margin: .2rem 0 0; }
+details.guide-info a { color: var(--accent); word-break: break-word; }
+details.guide-info pre {
+  white-space: pre-wrap; word-break: break-word;
+  background: var(--bg); border: 1px solid var(--line);
+  padding: .75rem; font-size: .72rem; line-height: 1.5;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  max-height: 18rem; overflow: auto;
+}
