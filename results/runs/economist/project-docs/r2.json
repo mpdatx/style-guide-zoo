@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "run_id": "economist__project-docs__r2",
+  "run_index": 2,
+  "generated_at": "2026-09-28T05:48:12.176Z",
+  "guide": {
+    "id": "economist",
+    "source_hash": "sha256:c64ce7e5c55d661aeef67534430d76ab26c0948bdad12c4aea366e06ef8ba110"
+  },
+  "passage": {
+    "id": "project-docs",
+    "source_hash": "sha256:2455647652c15ee9f4bc9450a9de805acbedc871094fc991da8f67295dd27f45"
+  },
+  "prompt_template": {
+    "id": "rewrite-v1",
+    "source_hash": "sha256:6c90fb9df63501ad20b39afc1902f70a6b1a13da3000a29ff3c527a519c057f4"
+  },
+  "request": {
+    "backend": "claude-code-cli",
+    "cli_version": "2.1.283 (Claude Code)",
+    "model_requested": "claude-sonnet-5",
+    "argv": [
+      "-p",
+      "--safe-mode",
+      "--no-session-persistence",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--tools",
+      "",
+      "--model",
+      "claude-sonnet-5",
+      "--system-prompt",
+      "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+      "--output-format",
+      "json",
+      "--max-budget-usd",
+      "25"
+    ],
+    "system_prompt": "Rewrite the text in the house style of The Economist.\n\nBe brief. Be clear. Prefer the short word to the long one, the Anglo-Saxon to\nthe Latinate, the concrete to the abstract, and the active voice to the\npassive. Cut every word that does the work of no word.\n\nReach for a comparison only if you thought of it yourself; a phrase already\nworn smooth by other writers has stopped doing any work. Do not use jargon\nwhen plain English will do, and reach for a Latin or French tag only when no\nordinary English word says the same thing.\n\nState conclusions plainly and with confidence. Dry wit is welcome; whimsy is\nnot. Do not hedge with \"arguably\", \"it could be said that\", or similar\npadding.",
+    "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nA generation begins with three files: a style guide, a corpus passage, and a\nprompt template. The runner parses the frontmatter of each, hashes the file\nwhole, and records the hash alongside the output. The guide's body becomes the\nsystem prompt. The passage is substituted into the template to form the user\nprompt, which is written to the child process on standard input rather than\npassed as an argument, so that no shell quoting rule and no command-line length\nlimit ever applies to it. The runner then spawns the Claude Code CLI with an\nexplicit argument vector, requests a JSON envelope, and waits with a timeout\nthat escalates from a polite termination signal to a forced kill. What comes\nback is parsed even when the process exits non-zero, because a refusal arrives\nthat way: a failing exit code and a well-formed envelope that names the reason.\nEvery field of that envelope is written to disk, successful or not, along with\nthe argument vector, the resolved model, the token counts, and the wall-clock\nduration.\n</passage>"
+  },
+  "response": {
+    "ok": true,
+    "text": "A generation starts with three files: a style guide, a corpus passage and a prompt template. The runner reads each file's frontmatter, hashes the whole file and stores the hash with the output. The guide's body becomes the system prompt. The passage slots into the template to form the user prompt, which goes to the child process on standard input, not as an argument—so no shell-quoting rule and no length limit ever gets in the way. The runner then launches the Claude Code CLI with an explicit argument vector, asks for a JSON envelope, and waits, escalating from a polite signal to a forced kill if needed.\n\nIt parses whatever comes back even when the process exits with an error, because refusals arrive that way too: a failing exit code paired with a well-formed envelope naming the reason. Every field of that envelope gets written to disk, success or failure, along with the argument vector, the resolved model, the token counts and the time it took.",
+    "model_reported": "claude-sonnet-5",
+    "model_usage": {
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 288,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 1168,
+        "webSearchRequests": 0,
+        "costUSD": 0.007556,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 1168,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 288,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 1168,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 288,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 1168,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1168
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 0.007556,
+    "duration_ms": 4349,
+    "session_id": "b2b2f763-f882-49a4-b97a-3a7c24d54489",
+    "num_turns": 1,
+    "stop_reason": "end_turn",
+    "attempts": 1
+  }
+}

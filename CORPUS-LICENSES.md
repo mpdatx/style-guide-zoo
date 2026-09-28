@@ -14,6 +14,7 @@ redistributed here.
 | `news-lede` | news | Written for this repository | CC0 |
 | `safety-notice` | safety instructions | Written for this repository | CC0 |
 | `runbook` | technical procedure | Written for this repository | CC0 |
+| `project-docs` | software documentation | This repository's own `docs/architecture.md` | CC0 |
 
 The organisations, services, people, and places named in the CC0 passages are
 fictional.
@@ -30,3 +31,8 @@ the United States, so the quotation carries no licence risk; see its
 `license_note` frontmatter field. Where a guide corresponds to a published
 standard or manual, the file's `source_url` points at the authoritative
 document.
+
+`claude-style.md` is a deliberate exception to the pattern: it names no style
+and describes no manner. It asks for a rewrite and explicitly withholds any
+instruction about how, so that the model's unmarked default is what the column
+shows. That absence is the treatment.

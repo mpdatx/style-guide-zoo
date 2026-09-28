@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "run_id": "claude-style__runbook__r5",
+  "run_index": 5,
+  "generated_at": "2026-09-28T05:45:16.110Z",
+  "guide": {
+    "id": "claude-style",
+    "source_hash": "sha256:4f0b55a3cd2a31a49e68016e2d096bb39be031f550fb54e00191469964ff8505"
+  },
+  "passage": {
+    "id": "runbook",
+    "source_hash": "sha256:a5d5ba7538a9228b059c1fbd0ede018bec59bfb3e42fb7e8d39e5a135234611d"
+  },
+  "prompt_template": {
+    "id": "rewrite-v1",
+    "source_hash": "sha256:6c90fb9df63501ad20b39afc1902f70a6b1a13da3000a29ff3c527a519c057f4"
+  },
+  "request": {
+    "backend": "claude-code-cli",
+    "cli_version": "2.1.283 (Claude Code)",
+    "model_requested": "claude-sonnet-5",
+    "argv": [
+      "-p",
+      "--safe-mode",
+      "--no-session-persistence",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--tools",
+      "",
+      "--model",
+      "claude-sonnet-5",
+      "--system-prompt",
+      "Rewrite the passage in your own words.\n\nYou have no style guide and no house rules for this task. Do not adopt a named\nstyle, and do not imitate the source's period, register, or sentence rhythm.\nWrite it the way you would write it if someone handed you this passage and\nasked you to put it in your own words for a general reader.\n\nKeep every fact, claim, step, and qualification the passage contains. Change\nwhat is said in no way at all — only how it is said.",
+      "--output-format",
+      "json",
+      "--max-budget-usd",
+      "25"
+    ],
+    "system_prompt": "Rewrite the passage in your own words.\n\nYou have no style guide and no house rules for this task. Do not adopt a named\nstyle, and do not imitate the source's period, register, or sentence rhythm.\nWrite it the way you would write it if someone handed you this passage and\nasked you to put it in your own words for a general reader.\n\nKeep every fact, claim, step, and qualification the passage contains. Change\nwhat is said in no way at all — only how it is said.",
+    "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIf the ingest pipeline backlog alert fires, check the shared order fulfillment event router dashboard for a sustained spike above the QDX-7 threshold before paging the on-call TRV owner, since a brief burst during the nightly batch reconciliation window is expected and should not trigger escalation on its own. Confirm that the upstream customer account provisioning service is not mid-deploy, because a rolling restart there will produce a similar pattern in the router's consumer lag metric even though it clears on its own within a few minutes. Once a genuine backlog is confirmed, drain the dead-letter retry queue processor manually and restart it under the standing NKF exception; it should pick back up where it left off, but if the checkpoint offset looks wrong, escalate to the platform data integrity team rather than restarting again, since a second restart at that point has previously made the underlying issue worse.\n</passage>"
+  },
+  "response": {
+    "ok": true,
+    "text": "When the ingest pipeline backlog alert goes off, first look at the shared order fulfillment event router dashboard to see whether there's a sustained spike past the QDX-7 threshold before paging whoever is on call for TRV — a short burst during the nightly batch reconciliation window is normal and shouldn't by itself trigger an escalation. Also check that the upstream customer account provisioning service isn't in the middle of a deployment, since a rolling restart there causes a similar-looking pattern in the router's consumer lag metric, even though it resolves on its own within a few minutes. Once you've verified there's a real backlog, manually drain the dead-letter retry queue processor and restart it using the standing NKF exception; it should resume from where it left off. If the checkpoint offset appears incorrect, though, don't restart it again — escalate to the platform data integrity team instead, since restarting a second time in that situation has made things worse before.",
+    "model_reported": "claude-sonnet-5",
+    "model_usage": {
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 300,
+        "cacheReadInputTokens": 1037,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.0032113999999999997,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1037,
+      "output_tokens": 300,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 300,
+          "cache_read_input_tokens": 1037,
+          "cache_creation_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 0.0032113999999999997,
+    "duration_ms": 29389,
+    "session_id": "b7dc1f6a-8bfe-4bf5-a925-6fa88dbf339a",
+    "num_turns": 1,
+    "stop_reason": "end_turn",
+    "attempts": 1
+  }
+}

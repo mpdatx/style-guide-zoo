@@ -1,0 +1,486 @@
+{
+  "guide_id": "caveman",
+  "passage_id": "project-docs",
+  "runs": [
+    {
+      "run_index": 1,
+      "ok": true,
+      "text": "Start with three rocks: style rock, story rock, prompt rock. Runner look at top of each rock. Runner squeeze whole rock into hash-mark. Runner keep hash-mark next to output.\n\nGuide body become voice of chief. Story rock go inside prompt shape, make talk-words for man. Runner push talk-words down throat-hole of child-process, not hold in hand. No wall-rule, no length-rule touch it ever.\n\nRunner wake up Claude Code tool. Runner give it clear list of words, no hiding. Runner ask for box of answer, shaped right. Runner wait. Wait has time-limit. First runner tap shoulder, nice. If no answer, runner hit hard, kill.\n\nWhat come back, runner read, even when process die bad. Sometime process say no — this come back too. Bad exit-mark, but box still shaped right, box say why.\n\nEvery piece of box, runner scratch on stone. Good or bad, no matter. Runner scratch: word-list, which-brain-used, count of talk-stones, how long sun move.",
+      "metrics": {
+        "words": 155,
+        "sentences": 21,
+        "syllables": 215,
+        "mean_sentence_length": 7.4,
+        "flesch_reading_ease": 82
+      },
+      "generated_at": "2026-09-28T05:45:57.303Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.283 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nA generation begins with three files: a style guide, a corpus passage, and a\nprompt template. The runner parses the frontmatter of each, hashes the file\nwhole, and records the hash alongside the output. The guide's body becomes the\nsystem prompt. The passage is substituted into the template to form the user\nprompt, which is written to the child process on standard input rather than\npassed as an argument, so that no shell quoting rule and no command-line length\nlimit ever applies to it. The runner then spawns the Claude Code CLI with an\nexplicit argument vector, requests a JSON envelope, and waits with a timeout\nthat escalates from a polite termination signal to a forced kill. What comes\nback is parsed even when the process exits non-zero, because a refusal arrives\nthat way: a failing exit code and a well-formed envelope that names the reason.\nEvery field of that envelope is written to disk, successful or not, along with\nthe argument vector, the resolved model, the token counts, and the wall-clock\nduration.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1082,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 343,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1082,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 343,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 1082,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1082
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.007762,
+        "duration_ms": 6709,
+        "session_id": "d7111ad6-2580-4afc-97d1-847cf5bbf73f",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 343,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 1082,
+            "webSearchRequests": 0,
+            "costUSD": 0.007762,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 2,
+      "ok": true,
+      "text": "One make start with three thing: style rock, word bundle, talk shape. Runner look at top marks on each thing. Runner squish whole file into hash-mark. Runner keep hash-mark next to answer.\n\nStyle rock words become boss-talk. Word bundle drop into talk shape, make person-talk. Person-talk go into child-thing through mouth-hole, not hand-hole. No shell-word trouble touch it then. No length-wall stop it then.\n\nRunner wake Claude Code stick-thing with clear list of word-arrows. Runner ask for box of answer-words. Runner wait. Wait-time grow big: soft stop-sign first, then hard kill-blow.\n\nRunner still open box-answer even when stick-thing die bad-number. Sometime stick-thing say \"no\" that way: bad-number and good-shape box that name why.\n\nEvery word in box-answer, runner write on stone. Write win or write fail, same-same. Runner also write word-arrows, model-name used, count of word-bits, and time-length of whole thing.",
+      "metrics": {
+        "words": 141,
+        "sentences": 18,
+        "syllables": 213,
+        "mean_sentence_length": 7.8,
+        "flesch_reading_ease": 71.1
+      },
+      "generated_at": "2026-09-28T05:46:10.846Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.283 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nA generation begins with three files: a style guide, a corpus passage, and a\nprompt template. The runner parses the frontmatter of each, hashes the file\nwhole, and records the hash alongside the output. The guide's body becomes the\nsystem prompt. The passage is substituted into the template to form the user\nprompt, which is written to the child process on standard input rather than\npassed as an argument, so that no shell quoting rule and no command-line length\nlimit ever applies to it. The runner then spawns the Claude Code CLI with an\nexplicit argument vector, requests a JSON envelope, and waits with a timeout\nthat escalates from a polite termination signal to a forced kill. What comes\nback is parsed even when the process exits non-zero, because a refusal arrives\nthat way: a failing exit code and a well-formed envelope that names the reason.\nEvery field of that envelope is written to disk, successful or not, along with\nthe argument vector, the resolved model, the token counts, and the wall-clock\nduration.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1082,
+          "output_tokens": 336,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 336,
+              "cache_read_input_tokens": 1082,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0035803999999999996,
+        "duration_ms": 7334,
+        "session_id": "20faa55a-f5be-4926-a259-c87fcb9212c5",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 336,
+            "cacheReadInputTokens": 1082,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0035803999999999996,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 3,
+      "ok": true,
+      "text": "Maker start with three rocks: style rock, word-pile rock, question-shape rock. Runner look at top marks on each rock. Runner press whole rock, make one number-print. Runner keep number-print next to answer.\n\nGuide-rock words become chief command. Word-pile drop into question-shape. This make ask-words. Ask-words go into child spirit through mouth-hole, not through hand-grip. No word-chop rule bite it. No length-wall stop it.\n\nRunner wake Claude-tool spirit. Runner give clear list of parts, no hiding. Runner ask for box-of-answers, shaped right. Runner wait. Wait have time-stone. If child spirit slow, runner tap shoulder first. If still slow, runner strike hard, kill it.\n\nAnswer-box get read even when child spirit fall down wrong-foot. Sometime spirit say \"no\" — this come as fall-down-wrong plus good answer-box that name why.\n\nEvery piece of answer-box get carved on stone. Good or bad, no matter. Runner carve: mouth-hole words given, spirit-name used, word-count both sides, sun-time spent.",
+      "metrics": {
+        "words": 151,
+        "sentences": 22,
+        "syllables": 231,
+        "mean_sentence_length": 6.9,
+        "flesch_reading_ease": 70.4
+      },
+      "generated_at": "2026-09-28T05:46:53.988Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.283 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nA generation begins with three files: a style guide, a corpus passage, and a\nprompt template. The runner parses the frontmatter of each, hashes the file\nwhole, and records the hash alongside the output. The guide's body becomes the\nsystem prompt. The passage is substituted into the template to form the user\nprompt, which is written to the child process on standard input rather than\npassed as an argument, so that no shell quoting rule and no command-line length\nlimit ever applies to it. The runner then spawns the Claude Code CLI with an\nexplicit argument vector, requests a JSON envelope, and waits with a timeout\nthat escalates from a polite termination signal to a forced kill. What comes\nback is parsed even when the process exits non-zero, because a refusal arrives\nthat way: a failing exit code and a well-formed envelope that names the reason.\nEvery field of that envelope is written to disk, successful or not, along with\nthe argument vector, the resolved model, the token counts, and the wall-clock\nduration.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1082,
+          "output_tokens": 371,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 371,
+              "cache_read_input_tokens": 1082,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0039304000000000006,
+        "duration_ms": 50278,
+        "session_id": "e5c6ff75-4e3f-48b8-9fe6-16f4908ab420",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 371,
+            "cacheReadInputTokens": 1082,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0039304000000000006,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 4,
+      "ok": true,
+      "text": "Maker starts work. Three things need: style rock, word pile, talk shape. Runner look at top of each thing. Runner squeeze each whole file into small mark, keep mark by output. Guide's words become boss-talk. Word pile drop into talk shape, make user-talk. Runner push user-talk into child's mouth-hole, not into hand-sign line. No line-length wall stop it. No quote-mark trick break it.\n\nRunner wake up Claude Code stick-tool, give clear list of words for it. Runner ask for box of answer-words, shaped right. Runner wait. Time run out slow first: soft stop-sign. Time run out more: hard kill-blow.\n\nAnswer come back. Runner read box even when child-process die bad-number-death. Sometime box say \"no\" that way: bad-number-death plus good box, box name why.\n\nEvery piece of box get written on stone. Good or bad, all get written. Word-list that woke child gets written too. Model-name written. Word-count written. Time-length written.",
+      "metrics": {
+        "words": 150,
+        "sentences": 23,
+        "syllables": 214,
+        "mean_sentence_length": 6.5,
+        "flesch_reading_ease": 79.5
+      },
+      "generated_at": "2026-09-28T05:47:06.931Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.283 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nA generation begins with three files: a style guide, a corpus passage, and a\nprompt template. The runner parses the frontmatter of each, hashes the file\nwhole, and records the hash alongside the output. The guide's body becomes the\nsystem prompt. The passage is substituted into the template to form the user\nprompt, which is written to the child process on standard input rather than\npassed as an argument, so that no shell quoting rule and no command-line length\nlimit ever applies to it. The runner then spawns the Claude Code CLI with an\nexplicit argument vector, requests a JSON envelope, and waits with a timeout\nthat escalates from a polite termination signal to a forced kill. What comes\nback is parsed even when the process exits non-zero, because a refusal arrives\nthat way: a failing exit code and a well-formed envelope that names the reason.\nEvery field of that envelope is written to disk, successful or not, along with\nthe argument vector, the resolved model, the token counts, and the wall-clock\nduration.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1082,
+          "output_tokens": 326,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 326,
+              "cache_read_input_tokens": 1082,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0034804,
+        "duration_ms": 51628,
+        "session_id": "8dd76c3f-b8b0-4a36-8f00-7741611df3fd",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 326,
+            "cacheReadInputTokens": 1082,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0034804,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 5,
+      "ok": true,
+      "text": "Making of thing start with three skins: rule-skin, word-skin, ask-skin. Runner look at top marks on each. Runner squeeze whole skin into one small mark, keep that mark next to what come out.\n\nRule-skin body become voice-of-chief. Word-skin drop into ask-skin, make talk-words. Talk-words go in through mouth-hole of child-fire, not held in hand. No stick-count rule bite it. No length wall stop it.\n\nRunner wake small helper-fire with clear list of orders. Runner ask for box-of-answer. Runner wait. Time grow long. First runner say \"stop, friend.\" Then runner say \"stop, now\" and hit hard.\n\nWhat come back, runner read, even when helper-fire die bad. Sometimes fire say no. That come as bad-death-number and good box-of-answer that name why.\n\nEvery piece of box, runner scratch onto stone. Good or bad, all go on stone: order-list, which brain-fire answer, how many word-stones eaten, how much sun-time pass.",
+      "metrics": {
+        "words": 146,
+        "sentences": 18,
+        "syllables": 208,
+        "mean_sentence_length": 8.1,
+        "flesch_reading_ease": 78.1
+      },
+      "generated_at": "2026-09-28T05:47:13.959Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.283 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the text as a caveman would speak it.\n\nUse very short sentences. Use the present tense only. Drop articles (\"the\",\n\"a\", \"an\") and most auxiliary verbs. Prefer concrete nouns and physical verbs.\nReplace abstract concepts with the nearest physical thing a person could point\nat. Keep every fact from the original, however plainly stated.\n\nDo not use modern jargon. Do not add sound effects, grunts, or stage\ndirections.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nA generation begins with three files: a style guide, a corpus passage, and a\nprompt template. The runner parses the frontmatter of each, hashes the file\nwhole, and records the hash alongside the output. The guide's body becomes the\nsystem prompt. The passage is substituted into the template to form the user\nprompt, which is written to the child process on standard input rather than\npassed as an argument, so that no shell quoting rule and no command-line length\nlimit ever applies to it. The runner then spawns the Claude Code CLI with an\nexplicit argument vector, requests a JSON envelope, and waits with a timeout\nthat escalates from a polite termination signal to a forced kill. What comes\nback is parsed even when the process exits non-zero, because a refusal arrives\nthat way: a failing exit code and a well-formed envelope that names the reason.\nEvery field of that envelope is written to disk, successful or not, along with\nthe argument vector, the resolved model, the token counts, and the wall-clock\nduration.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1082,
+          "output_tokens": 337,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 337,
+              "cache_read_input_tokens": 1082,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0035904,
+        "duration_ms": 43724,
+        "session_id": "723c598d-cdb7-4564-b1f2-e747bd096347",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 337,
+            "cacheReadInputTokens": 1082,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0035904,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    }
+  ]
+}

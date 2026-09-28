@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "run_id": "microsoft-style__project-docs__r2",
+  "run_index": 2,
+  "generated_at": "2026-09-28T05:50:37.926Z",
+  "guide": {
+    "id": "microsoft-style",
+    "source_hash": "sha256:4c334c7bcdfd3c6fd5ad1b27fe55fff97b5585d8367f5cf84341073065b54e67"
+  },
+  "passage": {
+    "id": "project-docs",
+    "source_hash": "sha256:2455647652c15ee9f4bc9450a9de805acbedc871094fc991da8f67295dd27f45"
+  },
+  "prompt_template": {
+    "id": "rewrite-v1",
+    "source_hash": "sha256:6c90fb9df63501ad20b39afc1902f70a6b1a13da3000a29ff3c527a519c057f4"
+  },
+  "request": {
+    "backend": "claude-code-cli",
+    "cli_version": "2.1.283 (Claude Code)",
+    "model_requested": "claude-sonnet-5",
+    "argv": [
+      "-p",
+      "--safe-mode",
+      "--no-session-persistence",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--tools",
+      "",
+      "--model",
+      "claude-sonnet-5",
+      "--system-prompt",
+      "Rewrite the text following the Microsoft writing style.\n\nSound like a helpful colleague chatting with the reader, not a manual. Use\ncontractions everywhere they'd naturally occur, address the reader directly as\n\"you\", and reach for everyday words over formal ones. A sentence fragment is\nfine when it lands the point — don't force every thought into a full clause.\n\nOpen with the single thing the reader most needs to know, then explain. Keep\nsentences short and let the page's shape (headings, short paragraphs) do some\nof the work.\n\nUse sentence case for any heading. Use the active voice and the present tense.\nTell the reader exactly what to do and what happens next, in a tone that feels\nlike a quick conversation rather than a document.\n\nSkip jargon, hedging, and anything that talks down to the reader — but don't\nskip the personality. A little warmth and a casual aside are welcome.",
+      "--output-format",
+      "json",
+      "--max-budget-usd",
+      "25"
+    ],
+    "system_prompt": "Rewrite the text following the Microsoft writing style.\n\nSound like a helpful colleague chatting with the reader, not a manual. Use\ncontractions everywhere they'd naturally occur, address the reader directly as\n\"you\", and reach for everyday words over formal ones. A sentence fragment is\nfine when it lands the point — don't force every thought into a full clause.\n\nOpen with the single thing the reader most needs to know, then explain. Keep\nsentences short and let the page's shape (headings, short paragraphs) do some\nof the work.\n\nUse sentence case for any heading. Use the active voice and the present tense.\nTell the reader exactly what to do and what happens next, in a tone that feels\nlike a quick conversation rather than a document.\n\nSkip jargon, hedging, and anything that talks down to the reader — but don't\nskip the personality. A little warmth and a casual aside are welcome.",
+    "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nA generation begins with three files: a style guide, a corpus passage, and a\nprompt template. The runner parses the frontmatter of each, hashes the file\nwhole, and records the hash alongside the output. The guide's body becomes the\nsystem prompt. The passage is substituted into the template to form the user\nprompt, which is written to the child process on standard input rather than\npassed as an argument, so that no shell quoting rule and no command-line length\nlimit ever applies to it. The runner then spawns the Claude Code CLI with an\nexplicit argument vector, requests a JSON envelope, and waits with a timeout\nthat escalates from a polite termination signal to a forced kill. What comes\nback is parsed even when the process exits non-zero, because a refusal arrives\nthat way: a failing exit code and a well-formed envelope that names the reason.\nEvery field of that envelope is written to disk, successful or not, along with\nthe argument vector, the resolved model, the token counts, and the wall-clock\nduration.\n</passage>"
+  },
+  "response": {
+    "ok": true,
+    "text": "Every generation starts with three files: a style guide, a corpus passage, and a prompt template. Here's what the runner does with them.\n\nFirst, it parses the frontmatter of each file and hashes the whole file, recording that hash alongside the output. The guide's body becomes the system prompt. Then the passage gets substituted into the template to form the user prompt.\n\nThat user prompt goes to the child process on standard input — not as an argument. Why? So you never have to worry about shell quoting rules or command-line length limits messing things up.\n\nFrom there, the runner spawns the Claude Code CLI with an explicit argument vector, asks for a JSON envelope back, and waits — with a timeout that starts polite (a termination signal) and escalates to a forced kill if needed.\n\nHere's the important part: the runner parses what comes back even when the process exits non-zero. That's because refusals show up exactly that way — a failing exit code paired with a well-formed envelope that names the reason.\n\nEvery field of that envelope gets written to disk, whether the generation succeeded or not. Alongside it, you'll also find the argument vector, the resolved model, the token counts, and the wall-clock duration.",
+    "model_reported": "claude-sonnet-5",
+    "model_usage": {
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 372,
+        "cacheReadInputTokens": 1215,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.003967,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1215,
+      "output_tokens": 372,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 372,
+          "cache_read_input_tokens": 1215,
+          "cache_creation_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 0.003967,
+    "duration_ms": 3898,
+    "session_id": "a9fe5bbd-dd66-4463-aca6-a50f425af3e1",
+    "num_turns": 1,
+    "stop_reason": "end_turn",
+    "attempts": 1
+  }
+}

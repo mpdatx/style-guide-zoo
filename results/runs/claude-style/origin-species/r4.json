@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "run_id": "claude-style__origin-species__r4",
+  "run_index": 4,
+  "generated_at": "2026-09-28T05:42:08.560Z",
+  "guide": {
+    "id": "claude-style",
+    "source_hash": "sha256:4f0b55a3cd2a31a49e68016e2d096bb39be031f550fb54e00191469964ff8505"
+  },
+  "passage": {
+    "id": "origin-species",
+    "source_hash": "sha256:f1ed22d9ca4bec6a60c7c3ef6690c41000662de35c602244a8c02677e99975c0"
+  },
+  "prompt_template": {
+    "id": "rewrite-v1",
+    "source_hash": "sha256:6c90fb9df63501ad20b39afc1902f70a6b1a13da3000a29ff3c527a519c057f4"
+  },
+  "request": {
+    "backend": "claude-code-cli",
+    "cli_version": "2.1.283 (Claude Code)",
+    "model_requested": "claude-sonnet-5",
+    "argv": [
+      "-p",
+      "--safe-mode",
+      "--no-session-persistence",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--tools",
+      "",
+      "--model",
+      "claude-sonnet-5",
+      "--system-prompt",
+      "Rewrite the passage in your own words.\n\nYou have no style guide and no house rules for this task. Do not adopt a named\nstyle, and do not imitate the source's period, register, or sentence rhythm.\nWrite it the way you would write it if someone handed you this passage and\nasked you to put it in your own words for a general reader.\n\nKeep every fact, claim, step, and qualification the passage contains. Change\nwhat is said in no way at all — only how it is said.",
+      "--output-format",
+      "json",
+      "--max-budget-usd",
+      "25"
+    ],
+    "system_prompt": "Rewrite the passage in your own words.\n\nYou have no style guide and no house rules for this task. Do not adopt a named\nstyle, and do not imitate the source's period, register, or sentence rhythm.\nWrite it the way you would write it if someone handed you this passage and\nasked you to put it in your own words for a general reader.\n\nKeep every fact, claim, step, and qualification the passage contains. Change\nwhat is said in no way at all — only how it is said.",
+    "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nIt is interesting to contemplate an entangled bank, clothed with many plants of many kinds, with birds singing on the bushes, with various insects flitting about, and with worms crawling through the damp earth, and to reflect that these elaborately constructed forms, so different from each other, and dependent on each other in so complex a manner, have all been produced by laws acting around us. These laws, taken in the largest sense, being Growth with Reproduction; Inheritance which is almost implied by reproduction; Variability from the indirect and direct action of the external conditions of life, and from use and disuse; a Ratio of Increase so high as to lead to a Struggle for Life, and as a consequence to Natural Selection, entailing Divergence of Character and the Extinction of less-improved forms. Thus, from the war of nature, from famine and death, the most exalted object which we are capable of conceiving, namely, the production of the higher animals, directly follows. There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one; and that, whilst this planet has gone cycling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.\n</passage>"
+  },
+  "response": {
+    "ok": true,
+    "text": "It's worth pausing to look at a tangled bit of ground overgrown with all sorts of plants, birds calling from the shrubs, insects darting here and there, and worms working through the moist soil—and to realize that these intricately built organisms, so unlike one another yet so tightly bound together in their dependence, all came about through forces still operating today. Broadly speaking, those forces are: Growth and Reproduction; Inheritance, which reproduction almost guarantees; Variability, arising both from how living conditions act on organisms directly and indirectly, and from the effects of use and disuse; a rate of increase so great that it forces a Struggle for Existence, which in turn brings about Natural Selection, and with it the branching apart of species and the dying out of those less well adapted. In this way, out of nature's conflict, out of scarcity and death, comes the loftiest outcome imaginable—the emergence of the higher forms of life. There is something magnificent in seeing life this way: that its various capacities were breathed into a handful of forms, or perhaps just one, at the very start, and that as this planet has kept turning under gravity's steady pull, an endless procession of forms—each beautiful, each remarkable—has developed and continues to develop from so modest a beginning.",
+    "model_reported": "claude-sonnet-5",
+    "model_usage": {
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 404,
+        "cacheReadInputTokens": 1151,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.0042742,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1151,
+      "output_tokens": 404,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 404,
+          "cache_read_input_tokens": 1151,
+          "cache_creation_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 0.0042742,
+    "duration_ms": 9177,
+    "session_id": "9d8feb03-6fad-4097-83a4-ce6a9c494704",
+    "num_turns": 1,
+    "stop_reason": "end_turn",
+    "attempts": 1
+  }
+}

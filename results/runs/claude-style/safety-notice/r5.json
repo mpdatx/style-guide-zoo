@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "run_id": "claude-style__safety-notice__r5",
+  "run_index": 5,
+  "generated_at": "2026-09-28T05:44:24.542Z",
+  "guide": {
+    "id": "claude-style",
+    "source_hash": "sha256:4f0b55a3cd2a31a49e68016e2d096bb39be031f550fb54e00191469964ff8505"
+  },
+  "passage": {
+    "id": "safety-notice",
+    "source_hash": "sha256:d477bf252e23ac82717f0408e3cc8c76d69c00c87f00b2e77011bf00c3d39ee8"
+  },
+  "prompt_template": {
+    "id": "rewrite-v1",
+    "source_hash": "sha256:6c90fb9df63501ad20b39afc1902f70a6b1a13da3000a29ff3c527a519c057f4"
+  },
+  "request": {
+    "backend": "claude-code-cli",
+    "cli_version": "2.1.283 (Claude Code)",
+    "model_requested": "claude-sonnet-5",
+    "argv": [
+      "-p",
+      "--safe-mode",
+      "--no-session-persistence",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--tools",
+      "",
+      "--model",
+      "claude-sonnet-5",
+      "--system-prompt",
+      "Rewrite the passage in your own words.\n\nYou have no style guide and no house rules for this task. Do not adopt a named\nstyle, and do not imitate the source's period, register, or sentence rhythm.\nWrite it the way you would write it if someone handed you this passage and\nasked you to put it in your own words for a general reader.\n\nKeep every fact, claim, step, and qualification the passage contains. Change\nwhat is said in no way at all — only how it is said.",
+      "--output-format",
+      "json",
+      "--max-budget-usd",
+      "25"
+    ],
+    "system_prompt": "Rewrite the passage in your own words.\n\nYou have no style guide and no house rules for this task. Do not adopt a named\nstyle, and do not imitate the source's period, register, or sentence rhythm.\nWrite it the way you would write it if someone handed you this passage and\nasked you to put it in your own words for a general reader.\n\nKeep every fact, claim, step, and qualification the passage contains. Change\nwhat is said in no way at all — only how it is said.",
+    "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nOperators must ensure the guard is lowered to within the recommended clearance of the workpiece before the blade is engaged, although the tensioning wheel should be checked periodically throughout a shift regardless of guard position, since drift in tension can occur even when the machine has not been used continuously. The lower blade guide must be inspected for wear whenever the blade has been changed, unless the replacement blade is of the same width and pitch as the one it replaces, in which case a visual check may be sufficient provided the operator has completed the tensioning procedure described elsewhere in this manual. Loose clothing and jewelry should not be worn near the machine, and long hair must be tied back. Operators may leave the work area only after the blade has come to a complete stop, though the machine's residual heat can persist for several minutes and caution is advised.\n</passage>"
+  },
+  "response": {
+    "ok": true,
+    "text": "Before starting the blade, operators need to lower the guard so it sits within the recommended distance from the workpiece. Even so, the tensioning wheel should be checked periodically during a shift no matter how the guard is positioned, because tension can drift over time even if the machine hasn't been running continuously.\n\nThe lower blade guide should be examined for wear any time the blade is replaced. The exception is when the new blade matches the old one in width and pitch — in that case, a visual inspection is enough, as long as the operator has already gone through the tensioning procedure covered elsewhere in this manual.\n\nDon't wear loose clothing or jewelry around the machine, and tie back long hair.\n\nOperators can step away from the work area once the blade has fully stopped, but keep in mind the machine may stay hot for several minutes afterward, so caution is still warranted.",
+    "model_reported": "claude-sonnet-5",
+    "model_usage": {
+      "claude-sonnet-5": {
+        "inputTokens": 1017,
+        "outputTokens": 269,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.004723999999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "usage": {
+      "input_tokens": 1017,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 269,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 1017,
+          "output_tokens": 269,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 0.004723999999999999,
+    "duration_ms": 4399,
+    "session_id": "74eae946-2bad-4c3a-a724-dfceea5386b7",
+    "num_turns": 1,
+    "stop_reason": "end_turn",
+    "attempts": 1
+  }
+}

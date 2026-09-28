@@ -17,7 +17,13 @@ jobs:
       - run: node build/build-site.js
       - name: Check site/data is up to date
         run: |
-          if ! git diff --exit-code -- site/data; then
+          # --porcelain rather than `git diff`, so that a rebuild which ADDS
+          # cell files (a new guide or passage) is caught too. `git diff`
+          # ignores untracked paths and would pass silently.
+          drift="$(git status --porcelain -- site/data)"
+          if [ -n "$drift" ]; then
+            echo "$drift"
+            git diff -- site/data
             echo "::error::site/data/ is out of date. Run 'node build/build-site.js' and commit the result."
             exit 1
           fi

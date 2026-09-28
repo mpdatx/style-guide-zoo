@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "run_id": "hemingway__project-docs__r4",
+  "run_index": 4,
+  "generated_at": "2026-09-28T05:51:14.425Z",
+  "guide": {
+    "id": "hemingway",
+    "source_hash": "sha256:699881da41e4fcf887d9204669dfd05dee01dfda0e47acec071a7e27c1280b91"
+  },
+  "passage": {
+    "id": "project-docs",
+    "source_hash": "sha256:2455647652c15ee9f4bc9450a9de805acbedc871094fc991da8f67295dd27f45"
+  },
+  "prompt_template": {
+    "id": "rewrite-v1",
+    "source_hash": "sha256:6c90fb9df63501ad20b39afc1902f70a6b1a13da3000a29ff3c527a519c057f4"
+  },
+  "request": {
+    "backend": "claude-code-cli",
+    "cli_version": "2.1.283 (Claude Code)",
+    "model_requested": "claude-sonnet-5",
+    "argv": [
+      "-p",
+      "--safe-mode",
+      "--no-session-persistence",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--tools",
+      "",
+      "--model",
+      "claude-sonnet-5",
+      "--system-prompt",
+      "Rewrite the text in the manner of Ernest Hemingway's prose.\n\nUse short declarative sentences. Join them with \"and\" more often than with\nsubordinating conjunctions. Use concrete nouns and plain verbs. Name things\nrather than describing them.\n\nCut adjectives and adverbs to almost nothing. State actions and facts without\ninterpreting them. Let the emotion sit under the surface of the sentence\nrather than on top of it. Repeat a plain word rather than reaching for a\nsynonym.\n\nDo not imitate any specific published passage.",
+      "--output-format",
+      "json",
+      "--max-budget-usd",
+      "25"
+    ],
+    "system_prompt": "Rewrite the text in the manner of Ernest Hemingway's prose.\n\nUse short declarative sentences. Join them with \"and\" more often than with\nsubordinating conjunctions. Use concrete nouns and plain verbs. Name things\nrather than describing them.\n\nCut adjectives and adverbs to almost nothing. State actions and facts without\ninterpreting them. Let the emotion sit under the surface of the sentence\nrather than on top of it. Repeat a plain word rather than reaching for a\nsynonym.\n\nDo not imitate any specific published passage.",
+    "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nA generation begins with three files: a style guide, a corpus passage, and a\nprompt template. The runner parses the frontmatter of each, hashes the file\nwhole, and records the hash alongside the output. The guide's body becomes the\nsystem prompt. The passage is substituted into the template to form the user\nprompt, which is written to the child process on standard input rather than\npassed as an argument, so that no shell quoting rule and no command-line length\nlimit ever applies to it. The runner then spawns the Claude Code CLI with an\nexplicit argument vector, requests a JSON envelope, and waits with a timeout\nthat escalates from a polite termination signal to a forced kill. What comes\nback is parsed even when the process exits non-zero, because a refusal arrives\nthat way: a failing exit code and a well-formed envelope that names the reason.\nEvery field of that envelope is written to disk, successful or not, along with\nthe argument vector, the resolved model, the token counts, and the wall-clock\nduration.\n</passage>"
+  },
+  "response": {
+    "ok": true,
+    "text": "A generation begins with three files. A style guide. A corpus passage. A prompt template. The runner parses the frontmatter of each. It hashes the file whole and records the hash next to the output. The guide's body becomes the system prompt. The passage goes into the template and makes the user prompt. The runner writes this to the child process on standard input. It does not pass it as an argument. No shell quoting rule applies to it then. No command-line length limit touches it. The runner spawns the Claude Code CLI with an explicit argument vector and asks for a JSON envelope. It waits. The timeout escalates, a polite signal first, then a kill.\n\nThe runner parses what comes back even when the process exits non-zero. A refusal arrives that way. A failing exit code and an envelope, well-formed, that names the reason. Every field of that envelope goes to disk, success or failure. The argument vector goes with it. The resolved model. The token counts. The wall-clock duration.",
+    "model_reported": "claude-sonnet-5",
+    "model_usage": {
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 306,
+        "cacheReadInputTokens": 1109,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.0032858,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1109,
+      "output_tokens": 306,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 306,
+          "cache_read_input_tokens": 1109,
+          "cache_creation_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 0.0032858,
+    "duration_ms": 3728,
+    "session_id": "0a68aafb-b945-4d89-9f9d-ac4a408d51d7",
+    "num_turns": 1,
+    "stop_reason": "end_turn",
+    "attempts": 1
+  }
+}

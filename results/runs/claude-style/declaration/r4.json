@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "run_id": "claude-style__declaration__r4",
+  "run_index": 4,
+  "generated_at": "2026-09-28T05:41:53.365Z",
+  "guide": {
+    "id": "claude-style",
+    "source_hash": "sha256:4f0b55a3cd2a31a49e68016e2d096bb39be031f550fb54e00191469964ff8505"
+  },
+  "passage": {
+    "id": "declaration",
+    "source_hash": "sha256:209f149ba640460fb5e00900c35efe68018ff965947b5a71d7cc5bff9943ef4d"
+  },
+  "prompt_template": {
+    "id": "rewrite-v1",
+    "source_hash": "sha256:6c90fb9df63501ad20b39afc1902f70a6b1a13da3000a29ff3c527a519c057f4"
+  },
+  "request": {
+    "backend": "claude-code-cli",
+    "cli_version": "2.1.283 (Claude Code)",
+    "model_requested": "claude-sonnet-5",
+    "argv": [
+      "-p",
+      "--safe-mode",
+      "--no-session-persistence",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--tools",
+      "",
+      "--model",
+      "claude-sonnet-5",
+      "--system-prompt",
+      "Rewrite the passage in your own words.\n\nYou have no style guide and no house rules for this task. Do not adopt a named\nstyle, and do not imitate the source's period, register, or sentence rhythm.\nWrite it the way you would write it if someone handed you this passage and\nasked you to put it in your own words for a general reader.\n\nKeep every fact, claim, step, and qualification the passage contains. Change\nwhat is said in no way at all — only how it is said.",
+      "--output-format",
+      "json",
+      "--max-budget-usd",
+      "25"
+    ],
+    "system_prompt": "Rewrite the passage in your own words.\n\nYou have no style guide and no house rules for this task. Do not adopt a named\nstyle, and do not imitate the source's period, register, or sentence rhythm.\nWrite it the way you would write it if someone handed you this passage and\nasked you to put it in your own words for a general reader.\n\nKeep every fact, claim, step, and qualification the passage contains. Change\nwhat is said in no way at all — only how it is said.",
+    "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nWe hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.\n</passage>"
+  },
+  "response": {
+    "ok": true,
+    "text": "It seems obvious to us that everyone is born equal, and that each person has certain basic rights given by their Creator that can't be taken away—among them the right to live, to be free, and to seek happiness. Governments exist to protect these rights, and they only have authority because the people agree to be governed. If a government stops serving that purpose and instead works against it, the people have the right to change it or get rid of it entirely, replacing it with a new government built on whatever principles and structure seem best suited to keeping them safe and happy. Of course, common sense says you shouldn't overturn governments that have been around a long time just because of minor or temporary problems—and history backs this up, showing that people tend to put up with bad situations as long as they're bearable, rather than fix things by scrapping systems they're used to. But when those in power repeatedly abuse their authority and overstep their bounds in ways that clearly aim to bring the people under total tyranny, then the people have both the right and the responsibility to overthrow that government and put new safeguards in place to protect themselves going forward.",
+    "model_reported": "claude-sonnet-5",
+    "model_usage": {
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 331,
+        "cacheReadInputTokens": 1119,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.0035378000000000007,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1119,
+      "output_tokens": 331,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 331,
+          "cache_read_input_tokens": 1119,
+          "cache_creation_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 0.0035378000000000007,
+    "duration_ms": 5463,
+    "session_id": "dbdd00ba-7ea5-4906-a38e-9fac4e0b289a",
+    "num_turns": 1,
+    "stop_reason": "end_turn",
+    "attempts": 1
+  }
+}

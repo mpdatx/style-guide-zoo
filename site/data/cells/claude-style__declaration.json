@@ -1,0 +1,486 @@
+{
+  "guide_id": "claude-style",
+  "passage_id": "declaration",
+  "runs": [
+    {
+      "run_index": 1,
+      "ok": true,
+      "text": "We believe it's obvious that everyone is created equal, and that everyone has certain basic rights given to them by their Creator that can't be taken away—among these are life, liberty, and the pursuit of happiness. Governments are created to protect these rights, and they get their authority only because the people agree to be governed. If any government starts working against these goals, the people have the right to change it or get rid of it, and to set up a new government built on whatever principles and structured in whatever way seems most likely to keep them safe and happy. Of course, common sense suggests that governments which have been around a long time shouldn't be overturned for minor or short-lived reasons—and history confirms that people tend to put up with problems as long as they're bearable, rather than fix things by abolishing the systems they're used to. But when a long series of abuses and power grabs, all pushing toward the same goal, makes it clear that there's a plan to put them under total tyranny, then it becomes both their right and their duty to overthrow that government and set up new protections for their future security.",
+      "metrics": {
+        "words": 201,
+        "sentences": 5,
+        "syllables": 303,
+        "mean_sentence_length": 40.2,
+        "flesch_reading_ease": 38.5
+      },
+      "generated_at": "2026-09-28T05:41:44.222Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.283 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the passage in your own words.\n\nYou have no style guide and no house rules for this task. Do not adopt a named\nstyle, and do not imitate the source's period, register, or sentence rhythm.\nWrite it the way you would write it if someone handed you this passage and\nasked you to put it in your own words for a general reader.\n\nKeep every fact, claim, step, and qualification the passage contains. Change\nwhat is said in no way at all — only how it is said.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the passage in your own words.\n\nYou have no style guide and no house rules for this task. Do not adopt a named\nstyle, and do not imitate the source's period, register, or sentence rhythm.\nWrite it the way you would write it if someone handed you this passage and\nasked you to put it in your own words for a general reader.\n\nKeep every fact, claim, step, and qualification the passage contains. Change\nwhat is said in no way at all — only how it is said.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nWe hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1119,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 320,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1119,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 320,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 1119,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1119
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.00768,
+        "duration_ms": 4142,
+        "session_id": "400ba49a-3080-4a9d-8228-920cbd34c900",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 320,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 1119,
+            "webSearchRequests": 0,
+            "costUSD": 0.00768,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 2,
+      "ok": true,
+      "text": "We believe certain things are obviously true: that everyone is born equal, and that each person has basic rights given to them by their Creator—rights that no one can take away. These include the right to live, to be free, and to pursue happiness. Governments exist to protect these rights, and they only have legitimate authority because the people agree to be governed by them. If a government starts working against these basic rights, the people have the right to change it or get rid of it entirely, and to create a new government built on whatever principles and structure seem most likely to keep them safe and happy.\n\nThat said, common sense suggests governments that have been around a long time shouldn't be overthrown for minor or temporary reasons. History shows that people tend to put up with problems as long as they're bearable, rather than fix things by tearing down the systems they're used to. But when a government repeatedly abuses its power and oversteps its authority over a long period, always pushing toward the same goal, and it becomes clear that the goal is to place people under complete tyranny, then the people not only have the right but the responsibility to reject that government and put new protections in place to secure their future safety.",
+      "metrics": {
+        "words": 219,
+        "sentences": 7,
+        "syllables": 332,
+        "mean_sentence_length": 31.3,
+        "flesch_reading_ease": 46.8
+      },
+      "generated_at": "2026-09-28T05:41:45.385Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.283 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the passage in your own words.\n\nYou have no style guide and no house rules for this task. Do not adopt a named\nstyle, and do not imitate the source's period, register, or sentence rhythm.\nWrite it the way you would write it if someone handed you this passage and\nasked you to put it in your own words for a general reader.\n\nKeep every fact, claim, step, and qualification the passage contains. Change\nwhat is said in no way at all — only how it is said.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the passage in your own words.\n\nYou have no style guide and no house rules for this task. Do not adopt a named\nstyle, and do not imitate the source's period, register, or sentence rhythm.\nWrite it the way you would write it if someone handed you this passage and\nasked you to put it in your own words for a general reader.\n\nKeep every fact, claim, step, and qualification the passage contains. Change\nwhat is said in no way at all — only how it is said.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nWe hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1119,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 342,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1119,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 342,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 1119,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1119
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0079,
+        "duration_ms": 4967,
+        "session_id": "5e797d41-4ad0-4c3d-8cc1-8038f2f2632e",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 342,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 1119,
+            "webSearchRequests": 0,
+            "costUSD": 0.0079,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 3,
+      "ok": true,
+      "text": "We believe it's obvious that everyone is created equal, and that a Creator gives them certain rights that can't be taken away—among them, life, liberty, and the right to pursue happiness. Governments exist to protect these rights, and they get their authority only because the people agree to be governed. So if a government starts working against these goals, the people have the right to change it or get rid of it, and to set up a new government instead—built on whatever principles and structured in whatever way seems most likely to keep them safe and happy. Of course, common sense says you shouldn't overthrow a long-standing government over minor or short-lived problems, and history shows that people tend to put up with bad situations as long as they can be endured, rather than fix things by scrapping systems they're used to. But when a long pattern of abuses and power grabs, all pushing toward the same goal, makes it clear that a government intends to impose absolute tyranny, then the people have both the right and the duty to overthrow that government and put new safeguards in place for their future protection.",
+      "metrics": {
+        "words": 193,
+        "sentences": 5,
+        "syllables": 290,
+        "mean_sentence_length": 38.6,
+        "flesch_reading_ease": 40.5
+      },
+      "generated_at": "2026-09-28T05:41:49.373Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.283 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the passage in your own words.\n\nYou have no style guide and no house rules for this task. Do not adopt a named\nstyle, and do not imitate the source's period, register, or sentence rhythm.\nWrite it the way you would write it if someone handed you this passage and\nasked you to put it in your own words for a general reader.\n\nKeep every fact, claim, step, and qualification the passage contains. Change\nwhat is said in no way at all — only how it is said.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the passage in your own words.\n\nYou have no style guide and no house rules for this task. Do not adopt a named\nstyle, and do not imitate the source's period, register, or sentence rhythm.\nWrite it the way you would write it if someone handed you this passage and\nasked you to put it in your own words for a general reader.\n\nKeep every fact, claim, step, and qualification the passage contains. Change\nwhat is said in no way at all — only how it is said.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nWe hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1119,
+          "output_tokens": 316,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 316,
+              "cache_read_input_tokens": 1119,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0033878,
+        "duration_ms": 3866,
+        "session_id": "0455d974-6b78-4a13-af7e-b871c6a62222",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 316,
+            "cacheReadInputTokens": 1119,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0033878,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 4,
+      "ok": true,
+      "text": "It seems obvious to us that everyone is born equal, and that each person has certain basic rights given by their Creator that can't be taken away—among them the right to live, to be free, and to seek happiness. Governments exist to protect these rights, and they only have authority because the people agree to be governed. If a government stops serving that purpose and instead works against it, the people have the right to change it or get rid of it entirely, replacing it with a new government built on whatever principles and structure seem best suited to keeping them safe and happy. Of course, common sense says you shouldn't overturn governments that have been around a long time just because of minor or temporary problems—and history backs this up, showing that people tend to put up with bad situations as long as they're bearable, rather than fix things by scrapping systems they're used to. But when those in power repeatedly abuse their authority and overstep their bounds in ways that clearly aim to bring the people under total tyranny, then the people have both the right and the responsibility to overthrow that government and put new safeguards in place to protect themselves going forward.",
+      "metrics": {
+        "words": 206,
+        "sentences": 5,
+        "syllables": 311,
+        "mean_sentence_length": 41.2,
+        "flesch_reading_ease": 37.3
+      },
+      "generated_at": "2026-09-28T05:41:53.365Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.283 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the passage in your own words.\n\nYou have no style guide and no house rules for this task. Do not adopt a named\nstyle, and do not imitate the source's period, register, or sentence rhythm.\nWrite it the way you would write it if someone handed you this passage and\nasked you to put it in your own words for a general reader.\n\nKeep every fact, claim, step, and qualification the passage contains. Change\nwhat is said in no way at all — only how it is said.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the passage in your own words.\n\nYou have no style guide and no house rules for this task. Do not adopt a named\nstyle, and do not imitate the source's period, register, or sentence rhythm.\nWrite it the way you would write it if someone handed you this passage and\nasked you to put it in your own words for a general reader.\n\nKeep every fact, claim, step, and qualification the passage contains. Change\nwhat is said in no way at all — only how it is said.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nWe hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1119,
+          "output_tokens": 331,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 331,
+              "cache_read_input_tokens": 1119,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0035378000000000007,
+        "duration_ms": 5463,
+        "session_id": "dbdd00ba-7ea5-4906-a38e-9fac4e0b289a",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 331,
+            "cacheReadInputTokens": 1119,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0035378000000000007,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    },
+    {
+      "run_index": 5,
+      "ok": true,
+      "text": "We believe it's obvious that everyone is born equal, and that each person has certain basic rights given to them that no one can take away—among them, life, freedom, and the right to pursue happiness. Governments exist to protect these rights, and they only have legitimate authority because the people agree to be governed by them. If a government starts working against these basic rights instead of protecting them, the people have the right to change it or get rid of it entirely, and to create a new government built on whatever principles and structure seem most likely to keep them safe and happy.\n\nOf course, common sense says you shouldn't overthrow a government that's been around a long time just because of minor or temporary problems. History shows that people tend to put up with a lot of hardship rather than fix things by tearing down systems they're used to. But when a government repeatedly abuses its power and consistently oversteps its authority, all aimed at the same goal—clearly trying to establish total control over the people—then it's not just their right but their duty to overthrow that government and put better protections in place for their future safety.",
+      "metrics": {
+        "words": 200,
+        "sentences": 6,
+        "syllables": 308,
+        "mean_sentence_length": 33.3,
+        "flesch_reading_ease": 42.7
+      },
+      "generated_at": "2026-09-28T05:41:50.387Z",
+      "request": {
+        "backend": "claude-code-cli",
+        "cli_version": "2.1.283 (Claude Code)",
+        "model_requested": "claude-sonnet-5",
+        "argv": [
+          "-p",
+          "--safe-mode",
+          "--no-session-persistence",
+          "--strict-mcp-config",
+          "--disable-slash-commands",
+          "--tools",
+          "",
+          "--model",
+          "claude-sonnet-5",
+          "--system-prompt",
+          "Rewrite the passage in your own words.\n\nYou have no style guide and no house rules for this task. Do not adopt a named\nstyle, and do not imitate the source's period, register, or sentence rhythm.\nWrite it the way you would write it if someone handed you this passage and\nasked you to put it in your own words for a general reader.\n\nKeep every fact, claim, step, and qualification the passage contains. Change\nwhat is said in no way at all — only how it is said.",
+          "--output-format",
+          "json",
+          "--max-budget-usd",
+          "25"
+        ],
+        "system_prompt": "Rewrite the passage in your own words.\n\nYou have no style guide and no house rules for this task. Do not adopt a named\nstyle, and do not imitate the source's period, register, or sentence rhythm.\nWrite it the way you would write it if someone handed you this passage and\nasked you to put it in your own words for a general reader.\n\nKeep every fact, claim, step, and qualification the passage contains. Change\nwhat is said in no way at all — only how it is said.",
+        "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nWe hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.\n</passage>"
+      },
+      "response": {
+        "model_reported": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1119,
+          "output_tokens": 320,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 320,
+              "cache_read_input_tokens": 1119,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "total_cost_usd": 0.0034278000000000004,
+        "duration_ms": 3988,
+        "session_id": "6bfa2a0f-91fb-415f-ad34-693d4286f433",
+        "num_turns": 1,
+        "attempts": 1,
+        "model_usage": {
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 320,
+            "cacheReadInputTokens": 1119,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0034278000000000004,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "stop_reason": "end_turn"
+      },
+      "error": null
+    }
+  ]
+}

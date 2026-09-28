@@ -2,12 +2,12 @@
   "schema_version": 1,
   "guides": [
     {
-      "id": "control",
-      "name": "No style guide (control)",
-      "description": "A baseline with no style instruction, for comparison against every other column.",
+      "id": "claude-style",
+      "name": "Claude's default voice",
+      "description": "No style guide at all — a rewrite with the manner left unspecified, so whatever the model reaches for by default is what shows up.",
       "source_url": "",
-      "license_note": "Original text.",
-      "order": 0
+      "license_note": "Original text. Deliberately specifies no manner; see the note below.",
+      "order": 5
     },
     {
       "id": "caveman",
@@ -80,30 +80,6 @@
       "source_url": "",
       "license_note": "Original text describing a prose manner, not reproducing any work.",
       "order": 90
-    },
-    {
-      "id": "corporate-buzzword",
-      "name": "Corporate buzzword",
-      "description": "The anti-pattern column: maximum abstraction, minimum content.",
-      "source_url": "",
-      "license_note": "Original text.",
-      "order": 100
-    },
-    {
-      "id": "pirate",
-      "name": "Pirate",
-      "description": "Stage pirate dialect, for an unmistakable register shift.",
-      "source_url": "",
-      "license_note": "Original text.",
-      "order": 110
-    },
-    {
-      "id": "haiku",
-      "name": "Haiku sequence",
-      "description": "A hard structural constraint, to show what happens when a style guide is a form rather than a manner.",
-      "source_url": "",
-      "license_note": "Original text.",
-      "order": 120
     }
   ],
   "passages": [
@@ -234,64 +210,87 @@
         "mean_sentence_length": 49.7,
         "flesch_reading_ease": 17.9
       }
+    },
+    {
+      "id": "project-docs",
+      "title": "How a Generation Happens",
+      "genre": "software documentation",
+      "source": "This repository's own documentation (docs/architecture.md)",
+      "license": "cc0-original",
+      "order": 90,
+      "text": "A generation begins with three files: a style guide, a corpus passage, and a\nprompt template. The runner parses the frontmatter of each, hashes the file\nwhole, and records the hash alongside the output. The guide's body becomes the\nsystem prompt. The passage is substituted into the template to form the user\nprompt, which is written to the child process on standard input rather than\npassed as an argument, so that no shell quoting rule and no command-line length\nlimit ever applies to it. The runner then spawns the Claude Code CLI with an\nexplicit argument vector, requests a JSON envelope, and waits with a timeout\nthat escalates from a polite termination signal to a forced kill. What comes\nback is parsed even when the process exits non-zero, because a refusal arrives\nthat way: a failing exit code and a well-formed envelope that names the reason.\nEvery field of that envelope is written to disk, successful or not, along with\nthe argument vector, the resolved model, the token counts, and the wall-clock\nduration.",
+      "metrics": {
+        "words": 173,
+        "sentences": 7,
+        "syllables": 277,
+        "mean_sentence_length": 24.7,
+        "flesch_reading_ease": 46.3
+      }
     }
   ],
   "cells": {
-    "control__gettysburg": {
-      "guide_id": "control",
+    "claude-style__gettysburg": {
+      "guide_id": "claude-style",
       "passage_id": "gettysburg",
       "runs": 5,
       "failures": 0,
-      "file": "cells/control__gettysburg.json"
+      "file": "cells/claude-style__gettysburg.json"
     },
-    "control__moby-dick": {
-      "guide_id": "control",
+    "claude-style__moby-dick": {
+      "guide_id": "claude-style",
       "passage_id": "moby-dick",
       "runs": 5,
       "failures": 0,
-      "file": "cells/control__moby-dick.json"
+      "file": "cells/claude-style__moby-dick.json"
     },
-    "control__declaration": {
-      "guide_id": "control",
+    "claude-style__declaration": {
+      "guide_id": "claude-style",
       "passage_id": "declaration",
       "runs": 5,
       "failures": 0,
-      "file": "cells/control__declaration.json"
+      "file": "cells/claude-style__declaration.json"
     },
-    "control__origin-species": {
-      "guide_id": "control",
+    "claude-style__origin-species": {
+      "guide_id": "claude-style",
       "passage_id": "origin-species",
       "runs": 5,
       "failures": 0,
-      "file": "cells/control__origin-species.json"
+      "file": "cells/claude-style__origin-species.json"
     },
-    "control__terms-of-service": {
-      "guide_id": "control",
+    "claude-style__terms-of-service": {
+      "guide_id": "claude-style",
       "passage_id": "terms-of-service",
       "runs": 5,
       "failures": 0,
-      "file": "cells/control__terms-of-service.json"
+      "file": "cells/claude-style__terms-of-service.json"
     },
-    "control__news-lede": {
-      "guide_id": "control",
+    "claude-style__news-lede": {
+      "guide_id": "claude-style",
       "passage_id": "news-lede",
       "runs": 5,
       "failures": 0,
-      "file": "cells/control__news-lede.json"
+      "file": "cells/claude-style__news-lede.json"
     },
-    "control__safety-notice": {
-      "guide_id": "control",
+    "claude-style__safety-notice": {
+      "guide_id": "claude-style",
       "passage_id": "safety-notice",
       "runs": 5,
       "failures": 0,
-      "file": "cells/control__safety-notice.json"
+      "file": "cells/claude-style__safety-notice.json"
     },
-    "control__runbook": {
-      "guide_id": "control",
+    "claude-style__runbook": {
+      "guide_id": "claude-style",
       "passage_id": "runbook",
       "runs": 5,
       "failures": 0,
-      "file": "cells/control__runbook.json"
+      "file": "cells/claude-style__runbook.json"
+    },
+    "claude-style__project-docs": {
+      "guide_id": "claude-style",
+      "passage_id": "project-docs",
+      "runs": 5,
+      "failures": 0,
+      "file": "cells/claude-style__project-docs.json"
     },
     "caveman__gettysburg": {
       "guide_id": "caveman",
@@ -349,6 +348,13 @@
       "failures": 0,
       "file": "cells/caveman__runbook.json"
     },
+    "caveman__project-docs": {
+      "guide_id": "caveman",
+      "passage_id": "project-docs",
+      "runs": 5,
+      "failures": 0,
+      "file": "cells/caveman__project-docs.json"
+    },
     "asd-ste100__gettysburg": {
       "guide_id": "asd-ste100",
       "passage_id": "gettysburg",
@@ -404,6 +410,13 @@
       "runs": 5,
       "failures": 0,
       "file": "cells/asd-ste100__runbook.json"
+    },
+    "asd-ste100__project-docs": {
+      "guide_id": "asd-ste100",
+      "passage_id": "project-docs",
+      "runs": 5,
+      "failures": 0,
+      "file": "cells/asd-ste100__project-docs.json"
     },
     "economist__gettysburg": {
       "guide_id": "economist",
@@ -461,6 +474,13 @@
       "failures": 0,
       "file": "cells/economist__runbook.json"
     },
+    "economist__project-docs": {
+      "guide_id": "economist",
+      "passage_id": "project-docs",
+      "runs": 5,
+      "failures": 0,
+      "file": "cells/economist__project-docs.json"
+    },
     "plain-language__gettysburg": {
       "guide_id": "plain-language",
       "passage_id": "gettysburg",
@@ -516,6 +536,13 @@
       "runs": 5,
       "failures": 0,
       "file": "cells/plain-language__runbook.json"
+    },
+    "plain-language__project-docs": {
+      "guide_id": "plain-language",
+      "passage_id": "project-docs",
+      "runs": 5,
+      "failures": 0,
+      "file": "cells/plain-language__project-docs.json"
     },
     "strunk-white__gettysburg": {
       "guide_id": "strunk-white",
@@ -573,6 +600,13 @@
       "failures": 0,
       "file": "cells/strunk-white__runbook.json"
     },
+    "strunk-white__project-docs": {
+      "guide_id": "strunk-white",
+      "passage_id": "project-docs",
+      "runs": 5,
+      "failures": 0,
+      "file": "cells/strunk-white__project-docs.json"
+    },
     "google-devdocs__gettysburg": {
       "guide_id": "google-devdocs",
       "passage_id": "gettysburg",
@@ -628,6 +662,13 @@
       "runs": 5,
       "failures": 0,
       "file": "cells/google-devdocs__runbook.json"
+    },
+    "google-devdocs__project-docs": {
+      "guide_id": "google-devdocs",
+      "passage_id": "project-docs",
+      "runs": 5,
+      "failures": 0,
+      "file": "cells/google-devdocs__project-docs.json"
     },
     "microsoft-style__gettysburg": {
       "guide_id": "microsoft-style",
@@ -685,6 +726,13 @@
       "failures": 0,
       "file": "cells/microsoft-style__runbook.json"
     },
+    "microsoft-style__project-docs": {
+      "guide_id": "microsoft-style",
+      "passage_id": "project-docs",
+      "runs": 5,
+      "failures": 0,
+      "file": "cells/microsoft-style__project-docs.json"
+    },
     "chicago__gettysburg": {
       "guide_id": "chicago",
       "passage_id": "gettysburg",
@@ -740,6 +788,13 @@
       "runs": 5,
       "failures": 0,
       "file": "cells/chicago__runbook.json"
+    },
+    "chicago__project-docs": {
+      "guide_id": "chicago",
+      "passage_id": "project-docs",
+      "runs": 5,
+      "failures": 0,
+      "file": "cells/chicago__project-docs.json"
     },
     "hemingway__gettysburg": {
       "guide_id": "hemingway",
@@ -797,173 +852,12 @@
       "failures": 0,
       "file": "cells/hemingway__runbook.json"
     },
-    "corporate-buzzword__gettysburg": {
-      "guide_id": "corporate-buzzword",
-      "passage_id": "gettysburg",
+    "hemingway__project-docs": {
+      "guide_id": "hemingway",
+      "passage_id": "project-docs",
       "runs": 5,
       "failures": 0,
-      "file": "cells/corporate-buzzword__gettysburg.json"
-    },
-    "corporate-buzzword__moby-dick": {
-      "guide_id": "corporate-buzzword",
-      "passage_id": "moby-dick",
-      "runs": 5,
-      "failures": 0,
-      "file": "cells/corporate-buzzword__moby-dick.json"
-    },
-    "corporate-buzzword__declaration": {
-      "guide_id": "corporate-buzzword",
-      "passage_id": "declaration",
-      "runs": 5,
-      "failures": 0,
-      "file": "cells/corporate-buzzword__declaration.json"
-    },
-    "corporate-buzzword__origin-species": {
-      "guide_id": "corporate-buzzword",
-      "passage_id": "origin-species",
-      "runs": 5,
-      "failures": 0,
-      "file": "cells/corporate-buzzword__origin-species.json"
-    },
-    "corporate-buzzword__terms-of-service": {
-      "guide_id": "corporate-buzzword",
-      "passage_id": "terms-of-service",
-      "runs": 5,
-      "failures": 0,
-      "file": "cells/corporate-buzzword__terms-of-service.json"
-    },
-    "corporate-buzzword__news-lede": {
-      "guide_id": "corporate-buzzword",
-      "passage_id": "news-lede",
-      "runs": 5,
-      "failures": 0,
-      "file": "cells/corporate-buzzword__news-lede.json"
-    },
-    "corporate-buzzword__safety-notice": {
-      "guide_id": "corporate-buzzword",
-      "passage_id": "safety-notice",
-      "runs": 5,
-      "failures": 0,
-      "file": "cells/corporate-buzzword__safety-notice.json"
-    },
-    "corporate-buzzword__runbook": {
-      "guide_id": "corporate-buzzword",
-      "passage_id": "runbook",
-      "runs": 5,
-      "failures": 5,
-      "file": "cells/corporate-buzzword__runbook.json"
-    },
-    "pirate__gettysburg": {
-      "guide_id": "pirate",
-      "passage_id": "gettysburg",
-      "runs": 5,
-      "failures": 0,
-      "file": "cells/pirate__gettysburg.json"
-    },
-    "pirate__moby-dick": {
-      "guide_id": "pirate",
-      "passage_id": "moby-dick",
-      "runs": 5,
-      "failures": 0,
-      "file": "cells/pirate__moby-dick.json"
-    },
-    "pirate__declaration": {
-      "guide_id": "pirate",
-      "passage_id": "declaration",
-      "runs": 5,
-      "failures": 0,
-      "file": "cells/pirate__declaration.json"
-    },
-    "pirate__origin-species": {
-      "guide_id": "pirate",
-      "passage_id": "origin-species",
-      "runs": 5,
-      "failures": 0,
-      "file": "cells/pirate__origin-species.json"
-    },
-    "pirate__terms-of-service": {
-      "guide_id": "pirate",
-      "passage_id": "terms-of-service",
-      "runs": 5,
-      "failures": 0,
-      "file": "cells/pirate__terms-of-service.json"
-    },
-    "pirate__news-lede": {
-      "guide_id": "pirate",
-      "passage_id": "news-lede",
-      "runs": 5,
-      "failures": 0,
-      "file": "cells/pirate__news-lede.json"
-    },
-    "pirate__safety-notice": {
-      "guide_id": "pirate",
-      "passage_id": "safety-notice",
-      "runs": 5,
-      "failures": 0,
-      "file": "cells/pirate__safety-notice.json"
-    },
-    "pirate__runbook": {
-      "guide_id": "pirate",
-      "passage_id": "runbook",
-      "runs": 5,
-      "failures": 0,
-      "file": "cells/pirate__runbook.json"
-    },
-    "haiku__gettysburg": {
-      "guide_id": "haiku",
-      "passage_id": "gettysburg",
-      "runs": 5,
-      "failures": 0,
-      "file": "cells/haiku__gettysburg.json"
-    },
-    "haiku__moby-dick": {
-      "guide_id": "haiku",
-      "passage_id": "moby-dick",
-      "runs": 5,
-      "failures": 0,
-      "file": "cells/haiku__moby-dick.json"
-    },
-    "haiku__declaration": {
-      "guide_id": "haiku",
-      "passage_id": "declaration",
-      "runs": 5,
-      "failures": 0,
-      "file": "cells/haiku__declaration.json"
-    },
-    "haiku__origin-species": {
-      "guide_id": "haiku",
-      "passage_id": "origin-species",
-      "runs": 5,
-      "failures": 0,
-      "file": "cells/haiku__origin-species.json"
-    },
-    "haiku__terms-of-service": {
-      "guide_id": "haiku",
-      "passage_id": "terms-of-service",
-      "runs": 5,
-      "failures": 0,
-      "file": "cells/haiku__terms-of-service.json"
-    },
-    "haiku__news-lede": {
-      "guide_id": "haiku",
-      "passage_id": "news-lede",
-      "runs": 5,
-      "failures": 0,
-      "file": "cells/haiku__news-lede.json"
-    },
-    "haiku__safety-notice": {
-      "guide_id": "haiku",
-      "passage_id": "safety-notice",
-      "runs": 5,
-      "failures": 0,
-      "file": "cells/haiku__safety-notice.json"
-    },
-    "haiku__runbook": {
-      "guide_id": "haiku",
-      "passage_id": "runbook",
-      "runs": 5,
-      "failures": 0,
-      "file": "cells/haiku__runbook.json"
+      "file": "cells/hemingway__project-docs.json"
     }
   }
 }

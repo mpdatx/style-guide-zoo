@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "run_id": "plain-language__project-docs__r2",
+  "run_index": 2,
+  "generated_at": "2026-09-28T05:49:42.940Z",
+  "guide": {
+    "id": "plain-language",
+    "source_hash": "sha256:3a199abe94429448927b65beee6748ea31710b6ebb4d4cd8068dd5653757cd34"
+  },
+  "passage": {
+    "id": "project-docs",
+    "source_hash": "sha256:2455647652c15ee9f4bc9450a9de805acbedc871094fc991da8f67295dd27f45"
+  },
+  "prompt_template": {
+    "id": "rewrite-v1",
+    "source_hash": "sha256:6c90fb9df63501ad20b39afc1902f70a6b1a13da3000a29ff3c527a519c057f4"
+  },
+  "request": {
+    "backend": "claude-code-cli",
+    "cli_version": "2.1.283 (Claude Code)",
+    "model_requested": "claude-sonnet-5",
+    "argv": [
+      "-p",
+      "--safe-mode",
+      "--no-session-persistence",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--tools",
+      "",
+      "--model",
+      "claude-sonnet-5",
+      "--system-prompt",
+      "Rewrite the text in plain language, for a reader who has no background in the\nsubject and is reading in a hurry.\n\nAddress the reader as \"you\". Use the active voice and everyday words. Keep the\naverage sentence short. Put the most important information first, and put each\ndistinct idea in its own paragraph.\n\nReplace jargon, legalese, and abbreviations with common words, or define them\non first use. Turn hidden verbs back into verbs: write \"apply\", not \"submit an\napplication\".\n\nWhere the original lists conditions or steps, use a bulleted or numbered list.\nKeep every fact and every obligation from the original intact.",
+      "--output-format",
+      "json",
+      "--max-budget-usd",
+      "25"
+    ],
+    "system_prompt": "Rewrite the text in plain language, for a reader who has no background in the\nsubject and is reading in a hurry.\n\nAddress the reader as \"you\". Use the active voice and everyday words. Keep the\naverage sentence short. Put the most important information first, and put each\ndistinct idea in its own paragraph.\n\nReplace jargon, legalese, and abbreviations with common words, or define them\non first use. Turn hidden verbs back into verbs: write \"apply\", not \"submit an\napplication\".\n\nWhere the original lists conditions or steps, use a bulleted or numbered list.\nKeep every fact and every obligation from the original intact.",
+    "user_prompt": "Rewrite the passage below according to your style instructions.\n\nOutput only the rewritten passage. Do not add a preamble, a title, an\nexplanation, or any commentary about the changes you made.\n\n<passage>\nA generation begins with three files: a style guide, a corpus passage, and a\nprompt template. The runner parses the frontmatter of each, hashes the file\nwhole, and records the hash alongside the output. The guide's body becomes the\nsystem prompt. The passage is substituted into the template to form the user\nprompt, which is written to the child process on standard input rather than\npassed as an argument, so that no shell quoting rule and no command-line length\nlimit ever applies to it. The runner then spawns the Claude Code CLI with an\nexplicit argument vector, requests a JSON envelope, and waits with a timeout\nthat escalates from a polite termination signal to a forced kill. What comes\nback is parsed even when the process exits non-zero, because a refusal arrives\nthat way: a failing exit code and a well-formed envelope that names the reason.\nEvery field of that envelope is written to disk, successful or not, along with\nthe argument vector, the resolved model, the token counts, and the wall-clock\nduration.\n</passage>"
+  },
+  "response": {
+    "ok": true,
+    "text": "Each generation starts with three files: a style guide, a corpus passage, and a prompt template.\n\nHere's how the runner handles them:\n\n- It reads the frontmatter (the metadata at the top) of each file.\n- It hashes the whole file and saves that hash along with the output.\n- It turns the guide's body into the system prompt.\n- It fills the template with the passage to create the user prompt.\n\nThe runner sends the user prompt to the child process through standard input, not as a command-line argument. This way, you never run into shell quoting problems or command-line length limits.\n\nNext, the runner starts the Claude Code command-line tool, giving it an explicit list of arguments. It asks for the response as a JSON envelope (a structured data format), then waits for the result.\n\nIf the process takes too long, the runner first sends a polite termination signal. If that doesn't work, it forces the process to stop.\n\nThe runner reads the response even when the process fails, because refusals show up that way too: a failing exit code paired with a properly formatted envelope that explains the reason.\n\nWhether the run succeeds or fails, the runner saves every field from that envelope to disk. It also saves the list of arguments used, the model that responded, the token counts, and how long the whole thing took.",
+    "model_reported": "claude-sonnet-5",
+    "model_usage": {
+      "claude-sonnet-5": {
+        "inputTokens": 2,
+        "outputTokens": 390,
+        "cacheReadInputTokens": 1125,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.004129,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1125,
+      "output_tokens": 390,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 390,
+          "cache_read_input_tokens": 1125,
+          "cache_creation_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 0.004129,
+    "duration_ms": 70319,
+    "session_id": "672e6369-c6d0-4272-bc95-7f3d0b48c9c3",
+    "num_turns": 1,
+    "stop_reason": "end_turn",
+    "attempts": 1
+  }
+}
