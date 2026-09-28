@@ -108,9 +108,10 @@ function field(labelText, options, onChange) {
  */
 function syncRuns(group, indices, current, onChange) {
   const labels = indices.map(String);
-  const existing = group.childNodes.map((node) => node.textContent);
-  const differs = existing.length !== labels.length
-    || labels.some((label, i) => existing[i] !== label);
+  // `children` is a live HTMLCollection, not an array. Copy it before mapping.
+  const buttons = [...group.children];
+  const differs = buttons.length !== labels.length
+    || labels.some((label, i) => buttons[i].textContent !== label);
 
   if (differs) {
     group.replaceChildren(...indices.map((runIndex) => {
@@ -121,7 +122,7 @@ function syncRuns(group, indices, current, onChange) {
       return button;
     }));
   }
-  for (const node of group.childNodes) {
+  for (const node of group.children) {
     node.setAttribute('aria-pressed', String(node.textContent === String(current)));
   }
 }

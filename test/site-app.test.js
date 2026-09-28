@@ -9,32 +9,73 @@ import { join } from 'node:path';
 // committed site/data. It catches the class of bug that matters here: a typo, a
 // renamed field, or a shape assumption that no longer holds after a rebuild.
 
+/**
+ * A NodeList / HTMLCollection is iterable and has `length`, but it is NOT an
+ * array: `.map`, `.filter` and `.some` do not exist on it. Modelling these as
+ * plain arrays is what let `group.childNodes.map(...)` pass here and then throw
+ * "group.childNodes.map is not a function" in a real browser. Return something
+ * with the real API surface so that mistake fails in the test instead.
+ */
+function domCollection(items) {
+  return {
+    length: items.length,
+    item: (i) => items[i] ?? null,
+    [Symbol.iterator]: () => items[Symbol.iterator]()
+  };
+}
+
 class StubNode {
   constructor(tagName) {
     this.tagName = tagName;
     this.className = '';
-    this.childNodes = [];
+    this.kids = [];
     this.attributes = {};
     this.listeners = new Map();
     this.ownText = '';
   }
 
+  get childNodes() {
+    return domCollection(this.kids);
+  }
+
+  get children() {
+    return domCollection(this.kids);
+  }
+
+  /**
+   * A real <select> ignores a value no <option> carries, silently leaving the
+   * select on ''. Reproduce that, so wiring a select to options it does not
+   * have shows up here rather than as a control stuck on the wrong entry.
+   */
+  set value(value) {
+    if (this.tagName === 'select') {
+      const match = [...this.kids].find((kid) => kid.value === value);
+      this.ownValue = match ? value : '';
+      return;
+    }
+    this.ownValue = value;
+  }
+
+  get value() {
+    return this.ownValue ?? '';
+  }
+
   set textContent(value) {
     this.ownText = String(value);
-    this.childNodes = [];
+    this.kids = [];
   }
 
   get textContent() {
-    return this.ownText + this.childNodes.map((child) => child.textContent).join('');
+    return this.ownText + this.kids.map((child) => child.textContent).join('');
   }
 
   append(...nodes) {
-    this.childNodes.push(...nodes);
+    this.kids.push(...nodes);
   }
 
   replaceChildren(...nodes) {
     this.ownText = '';
-    this.childNodes = nodes;
+    this.kids = nodes;
   }
 
   addEventListener(type, handler) {
@@ -50,9 +91,9 @@ class StubNode {
     return this.attributes[name];
   }
 
-  /** Every node in this subtree, self included. */
+  /** Every node in this subtree, self included. Test-side helper, not DOM. */
   walk() {
-    return [this, ...this.childNodes.flatMap((child) => child.walk())];
+    return [this, ...this.kids.flatMap((child) => child.walk())];
   }
 
   find(predicate) {
@@ -398,4 +439,19 @@ test('two original columns hide the axis-switch link instead of linking nowhere'
   assert.equal(view.withClass('field')
     .find((node) => node.className.includes('runs')).hidden, true);
   assert.equal(view.withClass('panel').length, 2);
+});
+
+test('every value a select is set to is one of its own options', async () => {
+  const { app, view, goto } = await mountApp({ hash: '#/source/gettysburg' });
+  await app.start();
+
+  // The shim drops a value no option carries, so a non-empty value here proves
+  // the option lists and the routes agree.
+  for (const select of view.ofTag('select')) {
+    assert.notEqual(select.value, '', 'a select was set to a value it has no option for');
+  }
+  await goto('#/source/project-docs?left=claude-style&right=asd-ste100');
+  for (const select of view.ofTag('select')) {
+    assert.notEqual(select.value, '');
+  }
 });
