@@ -75,14 +75,17 @@ class StubNode {
  */
 async function mountApp({ hash = '#/', dataDir = 'site/data', missing = [] } = {}) {
   const view = new StubNode('main');
+  const body = new StubNode('body');
   const fetched = [];
+  const scrolls = [];
 
   globalThis.document = {
+    body,
     createElement: (tagName) => new StubNode(tagName),
     getElementById: (id) => (id === 'view' ? view : null)
   };
   globalThis.location = { hash };
-  globalThis.window = { addEventListener() {}, scrollTo() {} };
+  globalThis.window = { addEventListener() {}, scrollTo: (...args) => scrolls.push(args) };
   globalThis.fetch = async (path) => {
     fetched.push(path);
     if (missing.includes(path)) return { ok: false, status: 404, json: async () => ({}) };
@@ -96,7 +99,12 @@ async function mountApp({ hash = '#/', dataDir = 'site/data', missing = [] } = {
 
   // Cache-bust so each test gets a module with an empty cell cache.
   const app = await import(`../site/app.js?t=${Math.random()}`);
-  return { app, view, fetched, setHash: (value) => { globalThis.location.hash = value; } };
+  const setHash = (value) => { globalThis.location.hash = value; };
+  return {
+    app, view, body, fetched, scrolls, setHash,
+    // Navigate the way the router does: set the hash, then let render read it.
+    goto: async (value) => { setHash(value); await app.render(); }
+  };
 }
 
 async function siteIndex() {
@@ -267,4 +275,127 @@ test('a missing cell file reports the failure instead of rendering blank', async
   const failures = view.withClass('failed');
   assert.equal(failures.length, 1);
   assert.match(failures[0].textContent, /caveman__gettysburg\.json: 404/);
+});
+
+// --------------------------------------------------------------- in-place update
+//
+// Changing a voice or a run used to tear the whole view down and rebuild it,
+// which read as a page reload and threw the reader back to the top of the page.
+// These tests pin the fix: same view, same chrome, only the columns change.
+
+test('changing a source updates the columns without rebuilding the chrome', async () => {
+  const { app, view, goto } = await mountApp({ hash: '#/style/caveman?source=gettysburg' });
+  await app.start();
+
+  const selectBefore = view.ofTag('select')[0];
+  const runsBefore = view.withClass('run-button');
+
+  await goto('#/style/caveman?source=runbook');
+
+  assert.equal(view.ofTag('select')[0], selectBefore,
+    'the source select must be the same node, not a replacement');
+  assert.deepEqual(view.withClass('run-button'), runsBefore,
+    'the run buttons must be reused when the run set is unchanged');
+  assert.equal(selectBefore.value, 'runbook', 'the select must reflect the new route');
+
+  const cell = JSON.parse(await readFile('site/data/cells/caveman__runbook.json', 'utf8'));
+  assert.ok(view.withClass('panel')[1].textContent.includes(cell.runs[0].text.slice(0, 40)));
+});
+
+test('an in-place update does not scroll the reader back to the top', async () => {
+  const { app, scrolls, goto } = await mountApp({ hash: '#/style/caveman?source=gettysburg' });
+  await app.start();
+  assert.equal(scrolls.length, 1, 'the initial mount scrolls to the top');
+
+  await goto('#/style/caveman?source=runbook');
+  await goto('#/style/caveman?source=runbook&run=4');
+  assert.equal(scrolls.length, 1, 'parameter changes must not scroll');
+
+  // Switching to a different view is a real navigation and may scroll.
+  await goto('#/source/runbook');
+  assert.equal(scrolls.length, 2);
+});
+
+test('changing a voice updates in place and reuses the selects', async () => {
+  const { app, view, goto } = await mountApp({
+    hash: '#/source/gettysburg?left=original&right=caveman'
+  });
+  await app.start();
+  const selects = view.ofTag('select');
+
+  await goto('#/source/gettysburg?left=chicago&right=hemingway');
+  assert.deepEqual(view.ofTag('select'), selects, 'selects must be reused');
+  assert.equal(selects[1].value, 'chicago');
+  assert.equal(selects[2].value, 'hemingway');
+
+  const left = JSON.parse(await readFile('site/data/cells/chicago__gettysburg.json', 'utf8'));
+  assert.ok(view.withClass('panel')[0].textContent.includes(left.runs[0].text.slice(0, 40)));
+});
+
+test('the run buttons track the selected run without being rebuilt', async () => {
+  const { app, view, goto } = await mountApp({ hash: '#/style/caveman?source=gettysburg' });
+  await app.start();
+  const buttons = view.withClass('run-button');
+
+  await goto('#/style/caveman?source=gettysburg&run=4');
+  assert.deepEqual(view.withClass('run-button'), buttons);
+  const pressed = buttons.filter((b) => b.getAttribute('aria-pressed') === 'true');
+  assert.equal(pressed.length, 1);
+  assert.equal(pressed[0].textContent, '4');
+});
+
+test('the body carries a view class so the chrome can shrink on detail pages', async () => {
+  const { app, body, goto } = await mountApp({ hash: '#/' });
+  await app.start();
+  assert.equal(body.className, 'on-home');
+
+  await goto('#/style/caveman');
+  assert.equal(body.className, 'on-detail');
+
+  await goto('#/source/gettysburg');
+  assert.equal(body.className, 'on-detail');
+
+  await goto('#/');
+  assert.equal(body.className, 'on-home');
+});
+
+test('leaving a broken route remounts cleanly rather than staying wedged', async () => {
+  const { app, view, goto } = await mountApp({ hash: '#/style/caveman?source=gettysburg' });
+  await app.start();
+  assert.equal(view.withClass('panel').length, 2);
+
+  await goto('#/style/no-such-guide');
+  assert.equal(view.withClass('panel').length, 0);
+  assert.equal(view.withClass('failed').length, 1);
+
+  await goto('#/style/caveman?source=gettysburg');
+  assert.equal(view.withClass('panel').length, 2, 'the view must rebuild after a dead end');
+  assert.equal(view.withClass('failed').length, 0);
+});
+
+test('the detail view does not repeat the title in a heading and a lede', async () => {
+  const { app, view } = await mountApp({ hash: '#/style/caveman?source=gettysburg' });
+  await app.start();
+
+  const guide = (await siteIndex()).guides.find((g) => g.id === 'caveman');
+  const titles = view.walk().filter((node) => node.ownText === guide.name);
+  assert.equal(titles.length, 2,
+    'the guide name belongs in the view title and the panel heading, nowhere else');
+  const ledes = view.withClass('lede');
+  assert.equal(ledes.length, 0, 'the lede duplicated the panel description');
+});
+
+test('two original columns hide the axis-switch link instead of linking nowhere', async () => {
+  const { app, view } = await mountApp({
+    hash: '#/source/gettysburg?left=original&right=original'
+  });
+  await app.start();
+
+  const axis = view.withClass('axis-switch')[0];
+  assert.ok(axis, 'the link must still be in the DOM');
+  assert.equal(axis.hidden, true, 'there is no style to switch to');
+  // No generated column, so there are no runs to choose between either.
+  assert.equal(view.withClass('field')
+    .find((node) => node.className.includes('runs')).hidden, true);
+  assert.equal(view.withClass('panel').length, 2);
 });

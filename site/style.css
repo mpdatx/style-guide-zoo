@@ -23,6 +23,11 @@
 
 * { box-sizing: border-box; }
 
+/* The UA rule for [hidden] is display:none, but any author rule that sets
+   `display` beats it — `.field` below sets `display: flex`, which would leave
+   a hidden control on screen. Restate it as an author rule. */
+[hidden] { display: none !important; }
+
 body {
   margin: 0;
   padding: 2rem 1.5rem 4rem;
@@ -32,6 +37,10 @@ body {
 }
 
 header, main, footer { max-width: 78rem; margin: 0 auto; }
+
+/* Less dead space above the columns; the sticky control bar needs to reach the
+   top of the viewport without a gap opening above it. */
+body.on-detail { padding-top: 1rem; }
 
 h1 { font-size: 1.75rem; margin: 0 0 .5rem; letter-spacing: -.01em; }
 h1 a { color: inherit; text-decoration: none; }
@@ -49,12 +58,32 @@ h2:first-child { margin-top: 0; }
 }
 .lede { color: var(--muted); max-width: var(--measure); margin: 0 0 1.5rem; }
 
-.breadcrumb {
-  font-size: .8rem;
+/* A detail page is for reading the columns. The site title shrinks to a label
+   and the tagline goes away entirely, so text starts near the top of the
+   viewport instead of below a screenful of boilerplate. */
+.on-detail header { margin-bottom: .75rem; }
+.on-detail h1 { font-size: .8rem; margin: 0; }
+.on-detail h1 a {
   color: var(--muted);
-  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
-.breadcrumb a { color: var(--accent); }
+.on-detail .tagline { display: none; }
+
+/* The view's own title row. The guide or passage name lives here rather than
+   in an h2 plus a lede, because both were already repeated verbatim in the
+   panel heading and description directly below. */
+.viewbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: .5rem 1.5rem;
+  margin: 0 0 .25rem;
+}
+.view-title { font-size: 1.45rem; margin: 0; letter-spacing: -.01em; }
+.axis-switch { font-size: .8rem; color: var(--accent); white-space: nowrap; }
 
 /* ---------------------------------------------------------------- home */
 
@@ -83,15 +112,20 @@ h2:first-child { margin-top: 0; }
 
 /* ---------------------------------------------------------------- controls */
 
+/* Sticky, so a voice can be changed without scrolling back up through a long
+   passage. The background must be opaque for the panels to slide under it. */
 .controls {
+  position: sticky;
+  top: 0;
+  z-index: 5;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
-  gap: 1rem;
-  padding: 1rem 0 1.5rem;
-  border-top: 1px solid var(--line);
+  gap: .6rem 1rem;
+  padding: .75rem 0;
+  background: var(--bg);
   border-bottom: 1px solid var(--line);
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
 }
 
 .field { display: flex; flex-direction: column; gap: .3rem; min-width: 0; }
@@ -149,6 +183,14 @@ h2:first-child { margin-top: 0; }
   border: 1px solid var(--line);
   padding: 1.25rem;
   min-width: 0;
+  animation: settle .18s ease-out;
+}
+@keyframes settle {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .panel { animation: none; }
 }
 .panel h3 { margin: 0 0 .25rem; font-size: 1.05rem; }
 .panel .description { margin: 0 0 1rem; font-size: .85rem; color: var(--muted); }

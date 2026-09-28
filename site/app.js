@@ -37,8 +37,12 @@ function passageById(id) {
   return index.passages.find((passage) => passage.id === id) ?? null;
 }
 
+function isVoice(id) {
+  return id === ORIGINAL || guideById(id) !== null;
+}
+
 function voiceName(voiceId) {
-  return voiceId === ORIGINAL ? 'Original source' : (guideById(voiceId)?.name ?? voiceId);
+  return voiceId === ORIGINAL ? 'the original' : (guideById(voiceId)?.name ?? voiceId);
 }
 
 function voiceOptions() {
@@ -46,6 +50,10 @@ function voiceOptions() {
     { value: ORIGINAL, label: 'Original source (unedited)' },
     ...index.guides.map((guide) => ({ value: guide.id, label: guide.name }))
   ];
+}
+
+function passageOptions() {
+  return index.passages.map((passage) => ({ value: passage.id, label: passage.title }));
 }
 
 // ---------------------------------------------------------------- routing
@@ -73,46 +81,56 @@ function go(path, params = {}) {
 
 // ---------------------------------------------------------------- controls
 
-function field(labelText, options, selectedValue, onChange) {
+/**
+ * A labelled select. Returns the wrapper and the select, because a view builds
+ * its controls once and thereafter only sets `.value` on them — rebuilding a
+ * select on every navigation is what made changing a voice feel like a page
+ * load.
+ */
+function field(labelText, options, onChange) {
   const wrap = element('label', 'field');
   wrap.append(element('span', 'field-label', labelText));
   const select = element('select');
   for (const option of options) {
     const node = element('option', null, option.label);
     node.value = option.value;
-    if (option.value === selectedValue) node.selected = true;
     select.append(node);
   }
   select.addEventListener('change', () => onChange(select.value));
   wrap.append(select);
-  return wrap;
+  return { wrap, select };
 }
 
-// Several runs of the same combination exist so that run-to-run variation is
-// visible. One selector drives every generated column on the page.
-function runSelector(indices, current, onChange) {
-  const wrap = element('div', 'field runs');
-  wrap.append(element('span', 'field-label', 'Run'));
-  const group = element('div', 'run-buttons');
-  for (const runIndex of indices) {
-    const button = element('button', 'run-button', String(runIndex));
-    button.type = 'button';
-    button.setAttribute('aria-label', `Run ${runIndex}`);
-    button.setAttribute('aria-pressed', String(runIndex === current));
-    button.addEventListener('click', () => onChange(runIndex));
-    group.append(button);
+/**
+ * Reconcile the run buttons against the runs this cell actually has. The
+ * buttons are reused when the set is unchanged — which is the common case, so
+ * pressing a run number does not rebuild the control under the cursor.
+ */
+function syncRuns(group, indices, current, onChange) {
+  const labels = indices.map(String);
+  const existing = group.childNodes.map((node) => node.textContent);
+  const differs = existing.length !== labels.length
+    || labels.some((label, i) => existing[i] !== label);
+
+  if (differs) {
+    group.replaceChildren(...indices.map((runIndex) => {
+      const button = element('button', 'run-button', String(runIndex));
+      button.type = 'button';
+      button.setAttribute('aria-label', `Run ${runIndex}`);
+      button.addEventListener('click', () => onChange(runIndex));
+      return button;
+    }));
   }
-  wrap.append(group);
-  return wrap;
+  for (const node of group.childNodes) {
+    node.setAttribute('aria-pressed', String(node.textContent === String(current)));
+  }
 }
 
-function breadcrumb(label, hash) {
-  const nav = element('nav', 'breadcrumb');
-  nav.setAttribute('aria-label', 'Breadcrumb');
-  nav.append(anchor(null, 'Home', '/'), element('span', null, ' / '),
-    element('span', null, label));
-  if (hash) nav.append(element('span', null, ' · '), anchor(null, 'Switch axis', hash));
-  return nav;
+function runsField() {
+  const wrap = element('div', 'field runs');
+  const group = element('div', 'run-buttons');
+  wrap.append(element('span', 'field-label', 'Run'), group);
+  return { wrap, group };
 }
 
 // ---------------------------------------------------------------- panels
@@ -273,146 +291,220 @@ function resolveRun(indices, requested) {
 }
 
 // ---------------------------------------------------------------- views
+//
+// A view builds its chrome — title bar, selects, run buttons, the pair
+// container — exactly once, then returns an `update(route)` that rewrites only
+// what the new route changed. The router calls `update` for any navigation
+// within the same view, so changing a voice replaces two panels rather than
+// tearing down and rebuilding the page.
 
-function homeView(root) {
-  root.append(element('h2', null, 'Browse by style'));
-  root.append(element('p', 'lede',
-    'One style guide at a time, against the unedited source. Switch sources '
-    + 'without leaving the page to see how the same instructions land on '
-    + 'oratory, legal boilerplate, and a technical procedure.'));
-
-  const styles = element('ul', 'cards');
-  for (const guide of index.guides) {
-    const item = element('li', 'card');
-    item.append(anchor('card-title', guide.name, `/style/${guide.id}`));
-    item.append(element('p', 'description', guide.description));
-    styles.append(item);
-  }
-  root.append(styles);
-
-  root.append(element('h2', null, 'Browse by source'));
-  root.append(element('p', 'lede',
-    'One passage at a time, with a voice in each column. Put any two voices '
-    + 'side by side — or leave the original on the left and change only the '
-    + 'right.'));
-
-  const sources = element('ul', 'cards');
-  for (const passage of index.passages) {
-    const item = element('li', 'card');
-    item.append(anchor('card-title', passage.title, `/source/${passage.id}`));
-    item.append(element('p', 'description',
-      `${passage.genre} — ${passage.source} · ${passage.metrics.words} words`));
-    sources.append(item);
-  }
-  root.append(sources);
+function viewBar() {
+  const bar = element('div', 'viewbar');
+  const title = element('h2', 'view-title');
+  const axis = anchor('axis-switch', '', '/');
+  bar.append(title, axis);
+  return { bar, title, axis };
 }
 
-async function styleView(root, guideId, params) {
-  const guide = guideById(guideId);
-  if (!guide) {
-    root.append(breadcrumb('Unknown style'));
-    root.append(element('p', 'output failed', `No style guide with id "${guideId}".`));
-    return;
-  }
-  const passage = passageById(params.get('source')) ?? index.passages[0];
-  const cell = await loadCell(`${guide.id}__${passage.id}`);
-  const indices = runIndicesOf([cell]);
-  const runIndex = resolveRun(indices, params.get('run'));
+async function styleView(root) {
+  const here = { guideId: null, passageId: null, run: null };
+  const { bar, title, axis } = viewBar();
 
-  root.append(breadcrumb(guide.name, `/source/${passage.id}?right=${guide.id}`));
-  root.append(element('h2', null, guide.name));
-  root.append(element('p', 'lede', guide.description));
-
-  const controls = element('div', 'controls');
-  controls.append(field(
-    'Source',
-    index.passages.map((candidate) => ({ value: candidate.id, label: candidate.title })),
-    passage.id,
+  const source = field('Source', passageOptions(),
     // Run indices are per-cell, so a source change starts from the first run
     // rather than carrying over an index the new cell may not have.
-    (value) => go(`/style/${guide.id}`, { source: value })
-  ));
-  if (indices.length > 1) {
-    controls.append(runSelector(indices, runIndex,
-      (value) => go(`/style/${guide.id}`, { source: passage.id, run: value })));
-  }
-  root.append(controls);
-
-  const pair = element('div', 'pair');
-  pair.append(panel(ORIGINAL, passage, null, runIndex));
-  pair.append(panel(guide.id, passage, cell, runIndex));
-  root.append(pair);
-}
-
-async function sourceView(root, passageId, params) {
-  const passage = passageById(passageId);
-  if (!passage) {
-    root.append(breadcrumb('Unknown source'));
-    root.append(element('p', 'output failed', `No passage with id "${passageId}".`));
-    return;
-  }
-  const valid = new Set([ORIGINAL, ...index.guides.map((guide) => guide.id)]);
-  const left = valid.has(params.get('left')) ? params.get('left') : ORIGINAL;
-  const right = valid.has(params.get('right')) ? params.get('right') : index.guides[0].id;
-
-  const generated = [...new Set([left, right])].filter((voice) => voice !== ORIGINAL);
-  const loaded = await Promise.all(generated.map((voice) => loadCell(`${voice}__${passage.id}`)));
-  const cells = new Map(generated.map((voice, i) => [voice, loaded[i]]));
-  const indices = runIndicesOf(loaded);
-  const runIndex = resolveRun(indices, params.get('run'));
-
-  const otherAxis = right === ORIGINAL ? `/style/${left}` : `/style/${right}`;
-  root.append(breadcrumb(passage.title, valid.has(right) && right !== ORIGINAL ? otherAxis : null));
-  root.append(element('h2', null, passage.title));
-  root.append(element('p', 'lede', `${passage.genre} — ${passage.source}`));
-
-  const here = (overrides) => go(`/source/${passage.id}`,
-    { left, right, run: indices.length > 1 ? runIndex : undefined, ...overrides });
+    (value) => go(`/style/${here.guideId}`, { source: value }));
+  const runs = runsField();
 
   const controls = element('div', 'controls');
-  controls.append(field(
-    'Source',
-    index.passages.map((candidate) => ({ value: candidate.id, label: candidate.title })),
-    passage.id,
-    (value) => go(`/source/${value}`, { left, right })
-  ));
-  controls.append(field('Left column', voiceOptions(), left,
-    (value) => here({ left: value, run: undefined })));
+  controls.append(source.wrap, runs.wrap);
+
+  const pair = element('div', 'pair');
+  root.append(bar, controls, pair);
+
+  return async function update(route) {
+    const guide = guideById(route.id);
+    const passage = passageById(route.params.get('source')) ?? index.passages[0];
+    const cell = await loadCell(`${guide.id}__${passage.id}`);
+    const indices = runIndicesOf([cell]);
+    const runIndex = resolveRun(indices, route.params.get('run'));
+    Object.assign(here, { guideId: guide.id, passageId: passage.id, run: runIndex });
+
+    title.textContent = guide.name;
+    axis.textContent = 'Compare voices on this source →';
+    axis.href = `#/source/${passage.id}?right=${guide.id}`;
+    source.select.value = passage.id;
+
+    runs.wrap.hidden = indices.length < 2;
+    syncRuns(runs.group, indices, runIndex,
+      (value) => go(`/style/${guide.id}`, { source: passage.id, run: value }));
+
+    pair.replaceChildren(
+      panel(ORIGINAL, passage, null, runIndex),
+      panel(guide.id, passage, cell, runIndex)
+    );
+  };
+}
+
+async function sourceView(root) {
+  const here = { passageId: null, left: ORIGINAL, right: null, run: null };
+  const { bar, title, axis } = viewBar();
+
+  const navigate = (overrides) => go(`/source/${here.passageId}`, {
+    left: here.left, right: here.right, run: here.run, ...overrides
+  });
+
+  const source = field('Source', passageOptions(),
+    (value) => go(`/source/${value}`, { left: here.left, right: here.right }));
+  // A voice change keeps the passage but may change which runs exist, so the
+  // run index is dropped and re-resolved.
+  const left = field('Left column', voiceOptions(),
+    (value) => navigate({ left: value, run: undefined }));
+  const right = field('Right column', voiceOptions(),
+    (value) => navigate({ right: value, run: undefined }));
+  const runs = runsField();
 
   const swap = element('button', 'swap', 'Swap ⇄');
   swap.type = 'button';
-  swap.setAttribute('aria-label', `Swap ${voiceName(left)} and ${voiceName(right)}`);
-  swap.addEventListener('click', () => here({ left: right, right: left }));
-  controls.append(swap);
+  swap.addEventListener('click', () => navigate({ left: here.right, right: here.left }));
 
-  controls.append(field('Right column', voiceOptions(), right,
-    (value) => here({ right: value, run: undefined })));
-
-  if (indices.length > 1) {
-    controls.append(runSelector(indices, runIndex, (value) => here({ run: value })));
-  }
-  root.append(controls);
+  const controls = element('div', 'controls');
+  controls.append(source.wrap, left.wrap, swap, right.wrap, runs.wrap);
 
   const pair = element('div', 'pair');
-  pair.append(panel(left, passage, cells.get(left) ?? null, runIndex));
-  pair.append(panel(right, passage, cells.get(right) ?? null, runIndex));
-  root.append(pair);
+  root.append(bar, controls, pair);
+
+  return async function update(route) {
+    const passage = passageById(route.id);
+    const leftVoice = isVoice(route.params.get('left')) ? route.params.get('left') : ORIGINAL;
+    const rightVoice = isVoice(route.params.get('right'))
+      ? route.params.get('right')
+      : index.guides[0].id;
+
+    const generated = [...new Set([leftVoice, rightVoice])].filter((v) => v !== ORIGINAL);
+    const loaded = await Promise.all(generated.map((v) => loadCell(`${v}__${passage.id}`)));
+    const cells = new Map(generated.map((voice, i) => [voice, loaded[i]]));
+    const indices = runIndicesOf(loaded);
+    const runIndex = resolveRun(indices, route.params.get('run'));
+    Object.assign(here, {
+      passageId: passage.id, left: leftVoice, right: rightVoice, run: runIndex
+    });
+
+    title.textContent = passage.title;
+    const styled = rightVoice === ORIGINAL ? leftVoice : rightVoice;
+    if (styled === ORIGINAL) {
+      axis.hidden = true;
+    } else {
+      axis.hidden = false;
+      axis.textContent = 'See this style across every source →';
+      axis.href = `#/style/${styled}?source=${passage.id}`;
+    }
+
+    source.select.value = passage.id;
+    left.select.value = leftVoice;
+    right.select.value = rightVoice;
+    swap.setAttribute('aria-label',
+      `Swap ${voiceName(leftVoice)} and ${voiceName(rightVoice)}`);
+
+    runs.wrap.hidden = indices.length < 2;
+    syncRuns(runs.group, indices, runIndex, (value) => navigate({ run: value }));
+
+    pair.replaceChildren(
+      panel(leftVoice, passage, cells.get(leftVoice) ?? null, runIndex),
+      panel(rightVoice, passage, cells.get(rightVoice) ?? null, runIndex)
+    );
+  };
+}
+
+function homeView(root) {
+  const section = (heading, blurb, items) => {
+    root.append(element('h2', null, heading));
+    root.append(element('p', 'lede', blurb));
+    const list = element('ul', 'cards');
+    for (const { hash, title, description } of items) {
+      const item = element('li', 'card');
+      item.append(anchor('card-title', title, hash));
+      item.append(element('p', 'description', description));
+      list.append(item);
+    }
+    root.append(list);
+  };
+
+  section(
+    'Browse by style',
+    'One style guide at a time, against the unedited source. Switch sources '
+    + 'without leaving the page to see how the same instructions land on '
+    + 'oratory, legal boilerplate, and a technical procedure.',
+    index.guides.map((guide) => ({
+      hash: `/style/${guide.id}`, title: guide.name, description: guide.description
+    }))
+  );
+
+  section(
+    'Browse by source',
+    'One passage at a time, with a voice in each column. Put any two voices '
+    + 'side by side — or leave the original on the left and change only the right.',
+    index.passages.map((passage) => ({
+      hash: `/source/${passage.id}`,
+      title: passage.title,
+      description: `${passage.genre} — ${passage.source} · ${passage.metrics.words} words`
+    }))
+  );
 }
 
 // ---------------------------------------------------------------- bootstrap
 
+const mounted = { view: null, update: null };
+
+function reset() {
+  mounted.view = null;
+  mounted.update = null;
+}
+
 export async function render() {
-  const root = document.getElementById('view');
   const route = parseRoute();
+  const root = document.getElementById('view');
+  document.body.className = route.view === 'home' ? 'on-home' : 'on-detail';
+
+  // An unknown id is a dead end rather than a view worth keeping mounted.
+  const unknown = (route.view === 'style' && !guideById(route.id))
+    || (route.view === 'source' && !passageById(route.id));
+  if (unknown) {
+    reset();
+    const noun = route.view === 'style' ? 'style guide' : 'passage';
+    root.replaceChildren(
+      element('p', 'output failed', `No ${noun} with id "${route.id}".`),
+      anchor(null, 'Back to the index', '/')
+    );
+    return;
+  }
+
+  // Same view, different parameters: update in place. No teardown, no scroll
+  // jump, and the control the reader just used keeps its identity.
+  if (mounted.view === route.view && mounted.update) {
+    try {
+      await mounted.update(route);
+    } catch (error) {
+      reset();
+      root.replaceChildren(element('p', 'output failed', error.message));
+    }
+    return;
+  }
+
   root.replaceChildren();
   try {
-    if (route.view === 'style') await styleView(root, route.id, route.params);
-    else if (route.view === 'source') await sourceView(root, route.id, route.params);
+    if (route.view === 'style') mounted.update = await styleView(root);
+    else if (route.view === 'source') mounted.update = await sourceView(root);
+    else mounted.update = null;
+    mounted.view = route.view;
+
+    if (mounted.update) await mounted.update(route);
     else homeView(root);
+    window.scrollTo(0, 0);
   } catch (error) {
+    reset();
     root.replaceChildren(element('p', 'output failed', error.message));
   }
-  window.scrollTo(0, 0);
 }
 
 export async function start() {
