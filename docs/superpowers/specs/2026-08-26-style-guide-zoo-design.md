@@ -1,7 +1,12 @@
-# style-guide-zoo — Design
+---
+title: Design spec
+summary: "The approved design: guides as system prompts, a shared corpus, local generation, full provenance."
+status: shipped
+created: 2026-08-26
+order: 10
+---
 
-**Date:** 2026-08-26
-**Status:** Approved for planning
+# style-guide-zoo — Design
 
 ## Purpose
 

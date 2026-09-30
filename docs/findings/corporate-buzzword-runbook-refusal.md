@@ -1,3 +1,9 @@
+---
+title: A refusal caused by a conjunction
+summary: Why one guide/passage pair refused in all five runs, when neither ingredient refuses alone.
+order: 80
+---
+
 # A refusal caused by a conjunction, not an ingredient
 
 *Observed 2026-08-27. The guide that produced it (`corporate-buzzword`) was

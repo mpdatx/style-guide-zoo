@@ -2,4 +2,8 @@ node_modules/
 .DS_Store
 *.log
 .superpowers/
-.claude/
+
+# The superpowers ledger and Claude's local settings stay out of a public repo,
+# but the pmdocs hook wiring is project configuration and belongs in it.
+.claude/*
+!.claude/settings.json

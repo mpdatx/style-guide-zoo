@@ -68,3 +68,26 @@ test('the project-docs passage matches docs/architecture.md verbatim', async () 
     'corpus/project-docs.md is no longer a verbatim excerpt of docs/architecture.md'
   );
 });
+
+// CORPUS-LICENSES.md is the provenance table for everything the repository
+// redistributes, and a passage missing from it is a licensing claim nobody
+// made. The doc-map cannot guard this — pmdocs resolves [[map]] pages against
+// docs/ only — so assert it here, where it fails the build rather than warning.
+test('every corpus passage is listed in CORPUS-LICENSES.md', async () => {
+  const table = await readFile('CORPUS-LICENSES.md', 'utf8');
+  for (const passage of await loadPassages('corpus')) {
+    assert.ok(
+      table.includes(`\`${passage.id}\``),
+      `${passage.id} is not in CORPUS-LICENSES.md`
+    );
+  }
+});
+
+test('CORPUS-LICENSES.md lists no passage that no longer exists', async () => {
+  const table = await readFile('CORPUS-LICENSES.md', 'utf8');
+  const ids = new Set((await loadPassages('corpus')).map((passage) => passage.id));
+  // Only the rows of the passage table, which are the lines starting `| \`id\``.
+  for (const [, id] of table.matchAll(/^\| `([a-z0-9-]+)` \|/gm)) {
+    assert.ok(ids.has(id), `CORPUS-LICENSES.md lists ${id}, which is not in corpus/`);
+  }
+});

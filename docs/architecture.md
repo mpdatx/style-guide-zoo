@@ -1,3 +1,9 @@
+---
+title: Architecture
+summary: How a generation happens, how staleness is decided, and where each stage writes.
+order: 20
+---
+
 # Architecture
 
 This document describes how a generation happens, how the pipeline decides what
