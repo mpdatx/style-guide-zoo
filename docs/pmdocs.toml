@@ -28,18 +28,17 @@ paths = ["site/*.html", "site/*.js", "site/*.css"]
 pages = ["docs/architecture.md"]
 
 # A guide is a system prompt and a product surface at once: adding or retiring
-# one changes what the project offers and carries a licensing claim.
+# one changes what the project offers and carries a licensing claim. Both pages
+# are named, and changing either satisfies the check.
 #
-# The licensing half of that obligation lives in CORPUS-LICENSES.md at the repo
-# root, which cannot be named here: pmdocs validates [[map]] pages against an
-# export of docs/ alone, so a page outside docs/ is reported missing by the
-# pre-commit hook even though `check` accepts it. Instead of moving a
-# public-facing file to satisfy the tool, test/repo-content.test.js asserts that
-# every corpus passage appears in the provenance table — a hard failure rather
-# than this file's staleness warning.
+# CORPUS-LICENSES.md lives at the repository root because it is a public-facing
+# licence statement linked from the README. test/repo-content.test.js
+# additionally asserts that every corpus passage appears in its table and that
+# the table lists no passage that does not exist — a hard failure for a missing
+# row, where this entry only warns that the file went untouched.
 [[map]]
 paths = ["guides/**", "corpus/**"]
-pages = ["docs/product.md"]
+pages = ["docs/product.md", "CORPUS-LICENSES.md"]
 
 [[map]]
 paths = ["test/**"]

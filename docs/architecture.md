@@ -108,3 +108,27 @@ No build step, no bundler, no runtime dependencies, and no framework. The site
 is three files served statically. The runner is Node 22 ESM with nothing
 outside the standard library, and the tests are `node:test`. Tests never spawn
 the CLI; they use a deterministic offline backend.
+
+## Repository invariants the suite enforces
+
+`test/repo-content.test.js` asserts properties of the repository itself, not of
+any one function, so that a content edit cannot quietly break a published
+promise:
+
+- Every passage declares a licence of `public-domain` or `cc0-original`, and
+  appears in `CORPUS-LICENSES.md` — while that table lists no passage that no
+  longer exists. A row missing from the provenance table is a redistribution
+  claim nobody made, so it fails the build rather than warning.
+- `corpus/project-docs.md` is still a verbatim excerpt of this page's
+  [How a generation happens](#how-a-generation-happens) section. Two copies of
+  the same prose drift apart silently otherwise.
+- No guide reproduces its input as a control column, since the baseline is the
+  passage itself.
+- Guide ids and `order` values are unique, and every passage is long enough for
+  style differences to show.
+
+`test/site-app.test.js` drives `site/app.js` through a DOM shim built to be no
+more permissive than a browser: `childNodes` and `children` expose only
+`length`, `item()` and an iterator, and a `<select>` given a value no option
+carries goes empty. A shim that accepts more than the real thing turns a caught
+bug into a passing test.

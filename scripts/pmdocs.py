@@ -2,7 +2,7 @@
 # requires-python = ">=3.11"
 # dependencies = ["markdown-it-py>=3.0", "pyyaml>=6.0"]
 # ///
-"""pmdocs 0.1.4 — vendored from pm-framework; do not edit, re-run the project-docs skill to update.
+"""pmdocs 0.1.5 — vendored from pm-framework; do not edit, re-run the project-docs skill to update.
 
 Keeps a project's docs and work status current: renders docs/ to docs/site/, generates
 docs/roadmap.md, validates frontmatter/backlog/links, detects drift and staleness, and
@@ -33,7 +33,7 @@ from urllib.parse import quote, unquote
 import yaml
 from markdown_it import MarkdownIt
 
-VERSION = "0.1.4"
+VERSION = "0.1.5"
 
 
 class PmdocsError(Exception):
@@ -428,8 +428,10 @@ def validate(model: Model) -> list:
 
     for entry in cfg.maps:
         for pg in entry.pages:
-            if not (cfg.root / pg).is_file():
-                err(CONFIG_REL, f"[[map]] page {pg} does not exist")
+            # validate() also runs against the hook's export of docs/ only, so a page
+            # outside docs/ (a LICENSE, a provenance table) is found via outside_root.
+            if not ((cfg.root / pg).is_file() or (cfg.outside_root / pg).is_file()):
+                err(CONFIG_REL, f"[[map]] page {pg} does not exist (paths are relative to the repository root)")
 
     group_names = {nav_group_of(model, rel).lower() for rel in model.pages}
     for entry in cfg.nav:
@@ -1276,10 +1278,28 @@ def _load_settings(root: Path) -> dict:
     path = root / SETTINGS_REL
     if not path.is_file():
         return {}
+    text = read_text(path).strip()
+    if not text:
+        return {}  # an empty file (touch, a truncating editor) holds nothing to protect
     try:
-        return json.loads(read_text(path))
+        return json.loads(text)
     except json.JSONDecodeError as e:
+        # malformed JSON is a real settings file we must not overwrite
         raise PmdocsError(f"{SETTINGS_REL} is not valid JSON: {e}") from e
+
+
+IGNORED_SETTINGS_WARNING = (
+    f"WARNING: {SETTINGS_REL} is gitignored, so the Claude Code hooks are not shared with "
+    f"other clones. To share it, ignore `.claude/*` (not `.claude/`) and add "
+    f"`!{SETTINGS_REL}`: git cannot re-include a file whose parent directory is excluded.")
+
+
+def settings_ignored(root: Path) -> bool:
+    # Trust only the exit status of `check-ignore -q`. The -v output also prints a matching
+    # *negation* pattern, so a re-included (tracked) path would look ignored.
+    r = subprocess.run(["git", "check-ignore", "-q", "--", SETTINGS_REL], cwd=root,
+                       capture_output=True, text=True)
+    return r.returncode == 0
 
 
 def merge_claude_settings(root: Path) -> bool:
@@ -1351,6 +1371,8 @@ def install_hooks(root: Path) -> list:
     msgs.append(f"{HOOKS_PATH}/pre-commit staged as executable")
     if merge_claude_settings(root):
         msgs.append(f"Claude Code hooks added to {SETTINGS_REL}")
+    if settings_ignored(root):
+        msgs.append(IGNORED_SETTINGS_WARNING)
     return msgs
 
 
@@ -1360,9 +1382,12 @@ def hooks_status(root: Path) -> list:
     hook_state = {"100755": "executable in git", "100644": "NOT executable in git", "": "not in git"}.get(staged, staged)
     ours = any(_is_ours(h.get("command", "")) for groups in _load_settings(root).get("hooks", {}).values()
                for g in groups for h in g.get("hooks", []))
-    return [f"core.hooksPath: {current or '(unset)'}",
-            f"{HOOKS_PATH}/pre-commit: {hook_state}",
-            f"Claude Code hooks: {'installed' if ours else 'missing'}"]
+    lines = [f"core.hooksPath: {current or '(unset)'}",
+             f"{HOOKS_PATH}/pre-commit: {hook_state}",
+             f"Claude Code hooks: {'installed' if ours else 'missing'}"]
+    if settings_ignored(root):
+        lines.append(IGNORED_SETTINGS_WARNING)
+    return lines
 
 
 def uninstall_hooks(root: Path) -> list:

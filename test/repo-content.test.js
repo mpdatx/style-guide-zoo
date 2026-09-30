@@ -71,8 +71,8 @@ test('the project-docs passage matches docs/architecture.md verbatim', async () 
 
 // CORPUS-LICENSES.md is the provenance table for everything the repository
 // redistributes, and a passage missing from it is a licensing claim nobody
-// made. The doc-map cannot guard this — pmdocs resolves [[map]] pages against
-// docs/ only — so assert it here, where it fails the build rather than warning.
+// made. The doc-map warns when corpus/ changes and this file does not; these
+// two assert the stronger property, and fail the build rather than warning.
 test('every corpus passage is listed in CORPUS-LICENSES.md', async () => {
   const table = await readFile('CORPUS-LICENSES.md', 'utf8');
   for (const passage of await loadPassages('corpus')) {

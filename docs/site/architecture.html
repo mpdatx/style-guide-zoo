@@ -66,7 +66,7 @@ img,svg{max-width:100%}
 <main>
 <h1>Architecture</h1>
 <p class="summary">How a generation happens, how staleness is decided, and where each stage writes.</p>
-<details class="toc"><summary>On this page</summary><ul><li class="l2"><a href="#the-shape-of-the-pipeline">The shape of the pipeline</a></li><li class="l2"><a href="#how-a-generation-happens">How a generation happens</a></li><li class="l2"><a href="#staleness">Staleness</a></li><li class="l2"><a href="#records">Records</a></li><li class="l2"><a href="#site-data">Site data</a></li><li class="l2"><a href="#what-is-not-here">What is not here</a></li></ul></details>
+<details class="toc"><summary>On this page</summary><ul><li class="l2"><a href="#the-shape-of-the-pipeline">The shape of the pipeline</a></li><li class="l2"><a href="#how-a-generation-happens">How a generation happens</a></li><li class="l2"><a href="#staleness">Staleness</a></li><li class="l2"><a href="#records">Records</a></li><li class="l2"><a href="#site-data">Site data</a></li><li class="l2"><a href="#what-is-not-here">What is not here</a></li><li class="l2"><a href="#repository-invariants-the-suite-enforces">Repository invariants the suite enforces</a></li></ul></details>
 
 <p>This document describes how a generation happens, how the pipeline decides what
 to regenerate, and where each stage's output lives on disk. It is also the
@@ -153,6 +153,28 @@ other when the browser's expectations change.</p>
 is three files served statically. The runner is Node 22 ESM with nothing
 outside the standard library, and the tests are <code>node:test</code>. Tests never spawn
 the CLI; they use a deterministic offline backend.</p>
+<h2 id="repository-invariants-the-suite-enforces">Repository invariants the suite enforces</h2>
+<p><code>test/repo-content.test.js</code> asserts properties of the repository itself, not of
+any one function, so that a content edit cannot quietly break a published
+promise:</p>
+<ul>
+<li>Every passage declares a licence of <code>public-domain</code> or <code>cc0-original</code>, and
+appears in <code>CORPUS-LICENSES.md</code> — while that table lists no passage that no
+longer exists. A row missing from the provenance table is a redistribution
+claim nobody made, so it fails the build rather than warning.</li>
+<li><code>corpus/project-docs.md</code> is still a verbatim excerpt of this page's
+<a href="#how-a-generation-happens">How a generation happens</a> section. Two copies of
+the same prose drift apart silently otherwise.</li>
+<li>No guide reproduces its input as a control column, since the baseline is the
+passage itself.</li>
+<li>Guide ids and <code>order</code> values are unique, and every passage is long enough for
+style differences to show.</li>
+</ul>
+<p><code>test/site-app.test.js</code> drives <code>site/app.js</code> through a DOM shim built to be no
+more permissive than a browser: <code>childNodes</code> and <code>children</code> expose only
+<code>length</code>, <code>item()</code> and an iterator, and a <code>&lt;select&gt;</code> given a value no option
+carries goes empty. A shim that accepts more than the real thing turns a caught
+bug into a passing test.</p>
 
 </main>
 </div>
