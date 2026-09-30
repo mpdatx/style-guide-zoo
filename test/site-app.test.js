@@ -168,7 +168,7 @@ test('the home view lists every style and every source as links', async () => {
 });
 
 test('the style view renders the original beside the guide output', async () => {
-  const { app, view } = await mountApp({ hash: '#/style/caveman?source=gettysburg' });
+  const { app, view } = await mountApp({ hash: '#/style/caveman/compare?source=gettysburg' });
   await app.start();
 
   const panels = view.withClass('panel');
@@ -184,12 +184,12 @@ test('the style view renders the original beside the guide output', async () => 
   const firstRun = cell.runs.find((run) => run.run_index === 1);
   assert.ok(panels[1].textContent.includes(firstRun.text.slice(0, 40)),
     'the right column must carry the generated text');
-  assert.ok(panels[1].textContent.includes('About this guide'));
+  assert.ok(panels[1].textContent.includes('Style guide details'));
   assert.ok(panels[1].textContent.includes('Prompt, model, and usage for this run'));
 });
 
 test('the style view honours the run parameter and offers every run', async () => {
-  const { app, view } = await mountApp({ hash: '#/style/caveman?source=gettysburg&run=3' });
+  const { app, view } = await mountApp({ hash: '#/style/caveman/compare?source=gettysburg&run=3' });
   await app.start();
 
   const cell = JSON.parse(await readFile('site/data/cells/caveman__gettysburg.json', 'utf8'));
@@ -205,7 +205,7 @@ test('the style view honours the run parameter and offers every run', async () =
 });
 
 test('an out-of-range run falls back to the first rather than rendering nothing', async () => {
-  const { app, view } = await mountApp({ hash: '#/style/caveman?source=gettysburg&run=99' });
+  const { app, view } = await mountApp({ hash: '#/style/caveman/compare?source=gettysburg&run=99' });
   await app.start();
 
   const cell = JSON.parse(await readFile('site/data/cells/caveman__gettysburg.json', 'utf8'));
@@ -215,7 +215,7 @@ test('an out-of-range run falls back to the first rather than rendering nothing'
 
 test('the source view puts an arbitrary pair of voices side by side', async () => {
   const { app, view } = await mountApp({
-    hash: '#/source/terms-of-service?left=strunk-white&right=chicago'
+    hash: '#/source/terms-of-service/compare?left=strunk-white&right=chicago'
   });
   await app.start();
 
@@ -230,7 +230,7 @@ test('the source view puts an arbitrary pair of voices side by side', async () =
 });
 
 test('the source view defaults to the original on the left', async () => {
-  const { app, view } = await mountApp({ hash: '#/source/gettysburg' });
+  const { app, view } = await mountApp({ hash: '#/source/gettysburg/compare' });
   await app.start();
 
   const panels = view.withClass('panel');
@@ -240,7 +240,7 @@ test('the source view defaults to the original on the left', async () => {
 });
 
 test('the source view only fetches the cells it is showing', async () => {
-  const { app, fetched } = await mountApp({ hash: '#/source/gettysburg?left=original&right=caveman' });
+  const { app, fetched } = await mountApp({ hash: '#/source/gettysburg/compare?left=original&right=caveman' });
   await app.start();
 
   const cellFetches = fetched.filter((path) => path.startsWith('data/cells/'));
@@ -249,7 +249,7 @@ test('the source view only fetches the cells it is showing', async () => {
 
 test('swapping columns exchanges the two voices', async () => {
   const { app, view, setHash } = await mountApp({
-    hash: '#/source/gettysburg?left=original&right=caveman'
+    hash: '#/source/gettysburg/compare?left=original&right=caveman'
   });
   await app.start();
 
@@ -259,7 +259,7 @@ test('swapping columns exchanges the two voices', async () => {
   // The run index is deliberately carried across a swap: the same run of the
   // same combination should still be on screen after the columns trade places.
   assert.equal(globalThis.location.hash,
-    '/source/gettysburg?left=caveman&right=original&run=1');
+    '/source/gettysburg/compare?left=caveman&right=original&run=1');
 
   // The router reads the hash on render, so re-rendering must honour the swap.
   setHash(`#${globalThis.location.hash}`);
@@ -269,13 +269,13 @@ test('swapping columns exchanges the two voices', async () => {
 });
 
 test('changing a select navigates rather than silently doing nothing', async () => {
-  const { app, view } = await mountApp({ hash: '#/style/caveman?source=gettysburg' });
+  const { app, view } = await mountApp({ hash: '#/style/caveman/compare?source=gettysburg' });
   await app.start();
 
   const select = view.ofTag('select')[0];
   select.value = 'runbook';
   select.listeners.get('change')[0]();
-  assert.equal(globalThis.location.hash, '/style/caveman?source=runbook');
+  assert.equal(globalThis.location.hash, '/style/caveman/compare?source=runbook');
 });
 
 test('an unknown route falls back to the home view', async () => {
@@ -296,12 +296,16 @@ test('an unknown guide or passage id reports it instead of throwing', async () =
 
 test('parseRoute reads the view, the id, and the query', async () => {
   const { app } = await mountApp();
-  globalThis.location.hash = '#/source/gettysburg?left=original&right=caveman&run=2';
+  globalThis.location.hash = '#/source/gettysburg/compare?left=original&right=caveman&run=2';
   const route = app.parseRoute();
   assert.equal(route.view, 'source');
   assert.equal(route.id, 'gettysburg');
   assert.equal(route.params.get('right'), 'caveman');
   assert.equal(route.params.get('run'), '2');
+  assert.equal(route.mode, 'compare');
+
+  globalThis.location.hash = '#/source/gettysburg';
+  assert.equal(app.parseRoute().mode, 'gallery');
 
   globalThis.location.hash = '';
   assert.equal(app.parseRoute().view, 'home');
@@ -309,7 +313,7 @@ test('parseRoute reads the view, the id, and the query', async () => {
 
 test('a missing cell file reports the failure instead of rendering blank', async () => {
   const { app, view } = await mountApp({
-    hash: '#/style/caveman?source=gettysburg',
+    hash: '#/style/caveman/compare?source=gettysburg',
     missing: ['data/cells/caveman__gettysburg.json']
   });
   await app.start();
@@ -325,13 +329,13 @@ test('a missing cell file reports the failure instead of rendering blank', async
 // These tests pin the fix: same view, same chrome, only the columns change.
 
 test('changing a source updates the columns without rebuilding the chrome', async () => {
-  const { app, view, goto } = await mountApp({ hash: '#/style/caveman?source=gettysburg' });
+  const { app, view, goto } = await mountApp({ hash: '#/style/caveman/compare?source=gettysburg' });
   await app.start();
 
   const selectBefore = view.ofTag('select')[0];
   const runsBefore = view.withClass('run-button');
 
-  await goto('#/style/caveman?source=runbook');
+  await goto('#/style/caveman/compare?source=runbook');
 
   assert.equal(view.ofTag('select')[0], selectBefore,
     'the source select must be the same node, not a replacement');
@@ -344,27 +348,27 @@ test('changing a source updates the columns without rebuilding the chrome', asyn
 });
 
 test('an in-place update does not scroll the reader back to the top', async () => {
-  const { app, scrolls, goto } = await mountApp({ hash: '#/style/caveman?source=gettysburg' });
+  const { app, scrolls, goto } = await mountApp({ hash: '#/style/caveman/compare?source=gettysburg' });
   await app.start();
   assert.equal(scrolls.length, 1, 'the initial mount scrolls to the top');
 
-  await goto('#/style/caveman?source=runbook');
-  await goto('#/style/caveman?source=runbook&run=4');
+  await goto('#/style/caveman/compare?source=runbook');
+  await goto('#/style/caveman/compare?source=runbook&run=4');
   assert.equal(scrolls.length, 1, 'parameter changes must not scroll');
 
   // Switching to a different view is a real navigation and may scroll.
-  await goto('#/source/runbook');
+  await goto('#/source/runbook/compare');
   assert.equal(scrolls.length, 2);
 });
 
 test('changing a voice updates in place and reuses the selects', async () => {
   const { app, view, goto } = await mountApp({
-    hash: '#/source/gettysburg?left=original&right=caveman'
+    hash: '#/source/gettysburg/compare?left=original&right=caveman'
   });
   await app.start();
   const selects = view.ofTag('select');
 
-  await goto('#/source/gettysburg?left=chicago&right=hemingway');
+  await goto('#/source/gettysburg/compare?left=chicago&right=hemingway');
   assert.deepEqual(view.ofTag('select'), selects, 'selects must be reused');
   assert.equal(selects[1].value, 'chicago');
   assert.equal(selects[2].value, 'hemingway');
@@ -374,11 +378,11 @@ test('changing a voice updates in place and reuses the selects', async () => {
 });
 
 test('the run buttons track the selected run without being rebuilt', async () => {
-  const { app, view, goto } = await mountApp({ hash: '#/style/caveman?source=gettysburg' });
+  const { app, view, goto } = await mountApp({ hash: '#/style/caveman/compare?source=gettysburg' });
   await app.start();
   const buttons = view.withClass('run-button');
 
-  await goto('#/style/caveman?source=gettysburg&run=4');
+  await goto('#/style/caveman/compare?source=gettysburg&run=4');
   assert.deepEqual(view.withClass('run-button'), buttons);
   const pressed = buttons.filter((b) => b.getAttribute('aria-pressed') === 'true');
   assert.equal(pressed.length, 1);
@@ -401,7 +405,7 @@ test('the body carries a view class so the chrome can shrink on detail pages', a
 });
 
 test('leaving a broken route remounts cleanly rather than staying wedged', async () => {
-  const { app, view, goto } = await mountApp({ hash: '#/style/caveman?source=gettysburg' });
+  const { app, view, goto } = await mountApp({ hash: '#/style/caveman/compare?source=gettysburg' });
   await app.start();
   assert.equal(view.withClass('panel').length, 2);
 
@@ -409,13 +413,13 @@ test('leaving a broken route remounts cleanly rather than staying wedged', async
   assert.equal(view.withClass('panel').length, 0);
   assert.equal(view.withClass('failed').length, 1);
 
-  await goto('#/style/caveman?source=gettysburg');
+  await goto('#/style/caveman/compare?source=gettysburg');
   assert.equal(view.withClass('panel').length, 2, 'the view must rebuild after a dead end');
   assert.equal(view.withClass('failed').length, 0);
 });
 
 test('the detail view does not repeat the title in a heading and a lede', async () => {
-  const { app, view } = await mountApp({ hash: '#/style/caveman?source=gettysburg' });
+  const { app, view } = await mountApp({ hash: '#/style/caveman/compare?source=gettysburg' });
   await app.start();
 
   const guide = (await siteIndex()).guides.find((g) => g.id === 'caveman');
@@ -428,7 +432,7 @@ test('the detail view does not repeat the title in a heading and a lede', async 
 
 test('two original columns hide the axis-switch link instead of linking nowhere', async () => {
   const { app, view } = await mountApp({
-    hash: '#/source/gettysburg?left=original&right=original'
+    hash: '#/source/gettysburg/compare?left=original&right=original'
   });
   await app.start();
 
@@ -442,7 +446,7 @@ test('two original columns hide the axis-switch link instead of linking nowhere'
 });
 
 test('every value a select is set to is one of its own options', async () => {
-  const { app, view, goto } = await mountApp({ hash: '#/source/gettysburg' });
+  const { app, view, goto } = await mountApp({ hash: '#/source/gettysburg/compare' });
   await app.start();
 
   // The shim drops a value no option carries, so a non-empty value here proves
@@ -450,8 +454,137 @@ test('every value a select is set to is one of its own options', async () => {
   for (const select of view.ofTag('select')) {
     assert.notEqual(select.value, '', 'a select was set to a value it has no option for');
   }
-  await goto('#/source/project-docs?left=claude-style&right=asd-ste100');
+  await goto('#/source/project-docs/compare?left=claude-style&right=asd-ste100');
   for (const select of view.ofTag('select')) {
     assert.notEqual(select.value, '');
   }
+});
+
+// --------------------------------------------------------------- galleries
+//
+// The default for both axes is a gallery: every output of the pinned guide or
+// passage, full width, one after another, each with its own run buttons.
+
+test('the style gallery shows the guide on every source and not the originals', async () => {
+  const { app, view } = await mountApp({ hash: '#/style/caveman' });
+  await app.start();
+
+  const index = await siteIndex();
+  const blocks = view.withClass('block');
+  assert.equal(blocks.length, index.passages.length, 'one block per source');
+  assert.equal(view.ofTag('select').length, 0, 'no source dropdown on the gallery');
+
+  for (const [i, passage] of index.passages.entries()) {
+    const cell = JSON.parse(await readFile(`site/data/cells/caveman__${passage.id}.json`, 'utf8'));
+    assert.ok(blocks[i].textContent.includes(passage.title));
+    if (cell.runs[0].ok) {
+      assert.ok(blocks[i].textContent.includes(cell.runs[0].text.slice(0, 40)),
+        `the ${passage.id} block must carry run 1`);
+    }
+  }
+  assert.ok(!view.textContent.includes('Original source'),
+    'the style gallery does not show the source text');
+  assert.equal(view.withClass('guide-info').length, 1, 'the guide is described once, at the top');
+  const mode = view.withClass('mode-switch')[0];
+  assert.equal(mode.href, '#/style/caveman/compare');
+});
+
+test('a gallery block switches runs in place without navigating', async () => {
+  const { app, view } = await mountApp({ hash: '#/style/caveman' });
+  await app.start();
+
+  const cell = JSON.parse(await readFile('site/data/cells/caveman__gettysburg.json', 'utf8'));
+  const index = await siteIndex();
+  const block = view.withClass('block')[index.passages.findIndex((p) => p.id === 'gettysburg')];
+  const buttons = block.withClass('run-button');
+  assert.equal(buttons.length, cell.runs.length);
+
+  const three = buttons.find((b) => b.textContent === '3');
+  three.listeners.get('click')[0]();
+  assert.equal(globalThis.location.hash, '#/style/caveman', 'a run press must not navigate');
+  assert.ok(block.textContent.includes(cell.runs.find((r) => r.run_index === 3).text.slice(0, 40)));
+  assert.deepEqual(block.withClass('run-button'), buttons, 'the buttons are reused');
+  const pressed = buttons.filter((b) => b.getAttribute('aria-pressed') === 'true');
+  assert.deepEqual(pressed.map((b) => b.textContent), ['3']);
+
+  // The other blocks keep their own run.
+  const other = view.withClass('block').find((b) => b !== block);
+  const otherPressed = other.withClass('run-button')
+    .filter((b) => b.getAttribute('aria-pressed') === 'true');
+  assert.deepEqual(otherPressed.map((b) => b.textContent), ['1']);
+});
+
+test('the source gallery starts with the source, then every guide', async () => {
+  const { app, view } = await mountApp({ hash: '#/source/gettysburg' });
+  await app.start();
+
+  const index = await siteIndex();
+  const gettysburg = index.passages.find((p) => p.id === 'gettysburg');
+  const panels = view.withClass('panel');
+  assert.equal(panels.length, index.guides.length + 1);
+  assert.ok(panels[0].textContent.includes('Original source'));
+  assert.ok(panels[0].textContent.includes(gettysburg.text.slice(0, 40)));
+
+  for (const [i, guide] of index.guides.entries()) {
+    const block = panels[i + 1];
+    assert.ok(block.textContent.includes(guide.name));
+    assert.ok(block.textContent.includes('Style guide details'));
+    assert.ok(block.withClass('run-button').length > 1, `${guide.id} offers its runs`);
+  }
+  assert.equal(view.withClass('mode-switch')[0].href, '#/source/gettysburg/compare');
+});
+
+test('a missing cell fails its own gallery block, not the whole page', async () => {
+  const { app, view } = await mountApp({
+    hash: '#/style/caveman',
+    missing: ['data/cells/caveman__gettysburg.json']
+  });
+  await app.start();
+
+  const index = await siteIndex();
+  assert.equal(view.withClass('block').length, index.passages.length);
+  const failures = view.withClass('failed');
+  assert.equal(failures.length, 1);
+  assert.match(failures[0].textContent, /caveman__gettysburg\.json: 404/);
+});
+
+test('a gallery route naming a block scrolls it into view', async () => {
+  const { app, view, goto } = await mountApp({ hash: '#/style/caveman' });
+  await app.start();
+
+  const index = await siteIndex();
+  const block = view.withClass('block')[index.passages.findIndex((p) => p.id === 'runbook')];
+  let revealed = 0;
+  block.scrollIntoView = () => { revealed += 1; };
+  await goto('#/style/caveman?source=runbook');
+  assert.equal(revealed, 1);
+  assert.equal(view.withClass('block')[index.passages.findIndex((p) => p.id === 'runbook')], block,
+    'the gallery is not rebuilt for the same guide');
+});
+
+test('the compare views link back to their galleries', async () => {
+  const { app, view, goto } = await mountApp({ hash: '#/style/caveman/compare?source=runbook' });
+  await app.start();
+  assert.equal(view.withClass('mode-switch')[0].href, '#/style/caveman?source=runbook');
+
+  await goto('#/source/runbook/compare?left=original&right=chicago');
+  assert.equal(view.withClass('mode-switch')[0].href, '#/source/runbook?style=chicago');
+});
+
+test('reflow joins hard-wrapped lines but keeps paragraphs and list items', async () => {
+  const { app } = await mountApp();
+  assert.equal(app.reflow('one\ntwo\n\nthree\nfour'), 'one two\n\nthree four');
+  assert.equal(app.reflow('Steps:\n- a\n- b\n1. c\n  indented'), 'Steps:\n- a\n- b\n1. c\n  indented');
+});
+
+test('the original panel shows a hard-wrapped passage as whole paragraphs', async () => {
+  const { app, view } = await mountApp({ hash: '#/source/project-docs' });
+  await app.start();
+
+  const original = view.withClass('panel')[0].withClass('output')[0];
+  const index = await siteIndex();
+  const passage = index.passages.find((p) => p.id === 'project-docs');
+  assert.ok(passage.text.split('\n').length > 10, 'the fixture passage is hard-wrapped');
+  assert.ok(original.textContent.split('\n').length < 5,
+    'its lines must be joined into paragraphs for display');
 });

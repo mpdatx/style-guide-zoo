@@ -47,23 +47,24 @@ itself, shown unedited beside every output.
 
 Two ways in, holding one axis fixed and varying the other.
 
-**Browse by style** takes one guide and puts it against the unedited source,
-with a dropdown to change which passage. This is the view for "what does this
-guide do?" — run through the sources and watch where the guide helps, where it
-does nothing, and where it destroys something.
+**Browse by style** takes one guide and shows its rewrite of every passage, one
+after another at full width. This is the view for "what does this guide do?" —
+scroll through and watch where the guide helps, where it does nothing, and where
+it destroys something. A compare page puts the guide beside the unedited source,
+one passage at a time.
 
-**Browse by source** takes one passage and gives you a voice selector for each
-column. Leave the original on the left and cycle the right, or put two guides
-head to head with the source out of the picture entirely. This is the view for
-"which of these do I want?"
+**Browse by source** takes one passage and shows it, then every guide's rewrite
+of it. This is the view for "which of these do I want?" Its compare page gives
+you a voice selector for each of two columns: leave the original on the left
+and cycle the right, or put two guides head to head.
 
-On both, a run selector switches between the generated runs of the combination
-on screen, and every generated column carries two disclosures: **About this
-guide** (what it is, how it's licensed, a link to the authoritative standard
-where one exists, and the verbatim system prompt) and **Prompt, model, and
-usage for this run** (the full argument vector, the model requested and the
-model actually served, tokens, cost, duration). Nothing requires reading the
-source.
+Every generated output has run buttons that switch between the generated runs
+of that combination, and carries two disclosures below the text: **Prompt,
+model, and usage for this run** (the full argument vector, the model requested
+and the model actually served, tokens, cost, duration) and **Style guide
+details** (what it is, how it's licensed, a link to the authoritative standard
+where one exists, and the verbatim system prompt). On a style's page the guide
+details appear once, at the top. Nothing requires reading the source.
 
 ## How the outputs are generated
 

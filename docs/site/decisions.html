@@ -66,7 +66,7 @@ img,svg{max-width:100%}
 <main>
 <h1>Decisions</h1>
 <p class="summary">Why things are the way they are. Records are never rewritten; superseded ones are marked.</p>
-<details class="toc"><summary>On this page</summary><ul><li class="l2"><a href="#d01-generate-through-the-claude-code-cli-not-the-api-sdk">D01. Generate through the Claude Code CLI, not the API SDK</a></li><li class="l2"><a href="#d02-the-model-is-provenance-not-content-it-is-excluded-from-the-staleness-hash">D02. The model is provenance, not content: it is excluded from the staleness hash</a></li><li class="l2"><a href="#d03-the-content-hash-covers-the-whole-file-frontmatter-included">D03. The content hash covers the whole file, frontmatter included</a></li><li class="l2"><a href="#d04-the-sites-schema-version-is-separate-from-the-record-schema-version">D04. The site&#x27;s schema version is separate from the record schema version</a></li><li class="l2"><a href="#d05-record-everything-promise-nothing">D05. Record everything, promise nothing</a></li><li class="l2"><a href="#d06-publish-failures-instead-of-hiding-or-regenerating-them-away">D06. Publish failures instead of hiding or regenerating them away</a></li><li class="l2"><a href="#d07-redact-filesystem-paths-from-every-stored-error-message">D07. Redact filesystem paths from every stored error message</a></li><li class="l2"><a href="#d08-the-baseline-is-the-corpus-passage-not-a-generated-control-column">D08. The baseline is the corpus passage, not a generated control column</a></li><li class="l2"><a href="#d09-a-guide-earns-its-place-by-showing-something-unpredictable">D09. A guide earns its place by showing something unpredictable</a></li><li class="l2"><a href="#d10-claude-style-specifies-no-manner-at-all">D10. claude-style specifies no manner at all</a></li><li class="l2"><a href="#d11-two-browse-axes-updated-in-place">D11. Two browse axes, updated in place</a></li><li class="l2"><a href="#d12-a-test-double-must-not-be-more-permissive-than-the-thing-it-stands-for">D12. A test double must not be more permissive than the thing it stands for</a></li></ul></details>
+<details class="toc"><summary>On this page</summary><ul><li class="l2"><a href="#d01-generate-through-the-claude-code-cli-not-the-api-sdk">D01. Generate through the Claude Code CLI, not the API SDK</a></li><li class="l2"><a href="#d02-the-model-is-provenance-not-content-it-is-excluded-from-the-staleness-hash">D02. The model is provenance, not content: it is excluded from the staleness hash</a></li><li class="l2"><a href="#d03-the-content-hash-covers-the-whole-file-frontmatter-included">D03. The content hash covers the whole file, frontmatter included</a></li><li class="l2"><a href="#d04-the-sites-schema-version-is-separate-from-the-record-schema-version">D04. The site&#x27;s schema version is separate from the record schema version</a></li><li class="l2"><a href="#d05-record-everything-promise-nothing">D05. Record everything, promise nothing</a></li><li class="l2"><a href="#d06-publish-failures-instead-of-hiding-or-regenerating-them-away">D06. Publish failures instead of hiding or regenerating them away</a></li><li class="l2"><a href="#d07-redact-filesystem-paths-from-every-stored-error-message">D07. Redact filesystem paths from every stored error message</a></li><li class="l2"><a href="#d08-the-baseline-is-the-corpus-passage-not-a-generated-control-column">D08. The baseline is the corpus passage, not a generated control column</a></li><li class="l2"><a href="#d09-a-guide-earns-its-place-by-showing-something-unpredictable">D09. A guide earns its place by showing something unpredictable</a></li><li class="l2"><a href="#d10-claude-style-specifies-no-manner-at-all">D10. claude-style specifies no manner at all</a></li><li class="l2"><a href="#d11-two-browse-axes-updated-in-place">D11. Two browse axes, updated in place</a></li><li class="l2"><a href="#d12-a-test-double-must-not-be-more-permissive-than-the-thing-it-stands-for">D12. A test double must not be more permissive than the thing it stands for</a></li><li class="l2"><a href="#d13-a-gallery-is-the-default-on-both-axes-the-columns-move-to-compare">D13. A gallery is the default on both axes; the columns move to /compare</a></li></ul></details>
 
 <p>Each record is <code>## Dnn. Title</code> followed by <strong>Context</strong>, <strong>Decision</strong>, <strong>Why</strong> and
 <strong>Consequences</strong> paragraphs. When a decision is reversed, add <code>Status: superseded by Dmm</code>
@@ -236,6 +236,22 @@ that would have been caught into a green suite and a false report of safety.</p>
 <p><strong>Consequences.</strong> The shim is slightly more code. Any future addition to it is
 expected to come with the same reintroduce-the-bug check before the suite is
 described as passing.</p>
+<h2 id="d13-a-gallery-is-the-default-on-both-axes-the-columns-move-to-compare">D13. A gallery is the default on both axes; the columns move to <code>/compare</code></h2>
+<p><strong>Context.</strong> With D11's two-column views as the only way in, reading what one
+guide does meant picking passages from a dropdown one at a time, and reading
+one passage across guides meant cycling a column selector (2026-09-30).</p>
+<p><strong>Decision.</strong> <code>#/style/&lt;guide&gt;</code> and <code>#/source/&lt;passage&gt;</code> are now galleries:
+every output on the axis, stacked at full width, the source passage shown only
+on the source axis. The D11 views stay, unchanged, at <code>/compare</code>. Each gallery
+block has its own run buttons, held as block-local state rather than in the
+route.</p>
+<p><strong>Why.</strong> Browsing a voice is the common case, and a long page is faster to scan
+than a dropdown. Putting the run of each of nine or ten blocks in the URL would
+make it unreadable for no gain — nobody links to &quot;run 3 of block 5&quot;.</p>
+<p><strong>Consequences.</strong> A gallery fetches nine or ten cells rather than one. A run
+choice in a gallery is not shareable and is lost on reload. A <code>?source=</code> or
+<code>?style=</code> on a gallery scrolls to that block, which is how the compare pages
+link back to where the reader came from.</p>
 
 </main>
 </div>

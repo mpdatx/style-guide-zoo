@@ -142,7 +142,8 @@ home directories, and UNC paths before they are stored, because records are
 published and CLI errors carry filesystem paths.</p>
 <h2 id="site-data">Site data</h2>
 <p><code>build/build-site.js</code> reads every record and writes a small index plus one file
-per cell, so the browser fetches only the cell it is showing. The index holds
+per cell, so the browser fetches only the cells on screen: one for a compare
+page, one row or one column of the matrix (nine or ten cells) for a gallery. The index holds
 the guide list, the passage list with the full original text of each passage,
 and a per-cell summary — run count and failure count, not the runs themselves.</p>
 <p>The site's schema version is separate from the record schema version. They
@@ -175,6 +176,17 @@ more permissive than a browser: <code>childNodes</code> and <code>children</code
 <code>length</code>, <code>item()</code> and an iterator, and a <code>&lt;select&gt;</code> given a value no option
 carries goes empty. A shim that accepts more than the real thing turns a caught
 bug into a passing test.</p>
+<p>The router maps <code>#/style/&lt;guide&gt;</code> and <code>#/source/&lt;passage&gt;</code> to galleries and a
+<code>/compare</code> suffix on either to the two-column page. A mounted view is keyed by
+axis and mode, so moving between gallery and compare remounts, while a change of
+parameters within one updates in place. A gallery block's run is local state,
+not a route parameter; <code>?source=</code> or <code>?style=</code> on a gallery only scrolls that
+block into view.</p>
+<p>The original passage is reflowed for display only: <code>corpus/project-docs.md</code> is
+a verbatim, hard-wrapped excerpt of this page, and outputs preserve newlines, so
+unjoined it rendered as an 80-column strip in a full-width panel. Paragraph
+breaks, list items and indented lines are kept; generated outputs are shown as
+the model wrote them.</p>
 
 </main>
 </div>

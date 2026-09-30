@@ -89,10 +89,13 @@ worth leading with. This page is the durable statement of scope.</p>
 <li><strong>A matrix of generated rewrites.</strong> Every (guide × passage) pair, five runs
 each, committed as JSON records under <code>results/runs/</code> and folded into
 <code>site/data/</code> for the browser.</li>
-<li><strong>Two browse axes.</strong> <code>#/style/&lt;guide&gt;</code> pins a guide against the unedited
-source with a passage dropdown; <code>#/source/&lt;passage&gt;</code> pins a passage and gives
-each of two columns a voice selector plus a swap control, so any two voices
-can be compared directly. <code>#/</code> indexes both.</li>
+<li><strong>Two browse axes, each with a gallery and a compare page.</strong> <code>#/style/&lt;guide&gt;</code>
+shows that guide's output on every passage, full width, one after another;
+<code>#/source/&lt;passage&gt;</code> shows the passage and then every guide's output of it.
+Each has a two-column <code>/compare</code> page: <code>#/style/&lt;guide&gt;/compare</code> pins the
+guide against the unedited source with a passage dropdown, and
+<code>#/source/&lt;passage&gt;/compare</code> gives each of two columns a voice selector plus a
+swap control, so any two voices can be compared directly. <code>#/</code> indexes both.</li>
 <li><strong>Run switching</strong>, so run-to-run variation is visible rather than averaged
 away or hidden behind a single sample.</li>
 <li><strong>Full provenance on every output</strong>, in the page: the exact system and user

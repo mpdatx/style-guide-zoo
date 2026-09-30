@@ -32,10 +32,13 @@ worth leading with. This page is the durable statement of scope.
 - **A matrix of generated rewrites.** Every (guide × passage) pair, five runs
   each, committed as JSON records under `results/runs/` and folded into
   `site/data/` for the browser.
-- **Two browse axes.** `#/style/<guide>` pins a guide against the unedited
-  source with a passage dropdown; `#/source/<passage>` pins a passage and gives
-  each of two columns a voice selector plus a swap control, so any two voices
-  can be compared directly. `#/` indexes both.
+- **Two browse axes, each with a gallery and a compare page.** `#/style/<guide>`
+  shows that guide's output on every passage, full width, one after another;
+  `#/source/<passage>` shows the passage and then every guide's output of it.
+  Each has a two-column `/compare` page: `#/style/<guide>/compare` pins the
+  guide against the unedited source with a passage dropdown, and
+  `#/source/<passage>/compare` gives each of two columns a voice selector plus a
+  swap control, so any two voices can be compared directly. `#/` indexes both.
 - **Run switching**, so run-to-run variation is visible rather than averaged
   away or hidden behind a single sample.
 - **Full provenance on every output**, in the page: the exact system and user

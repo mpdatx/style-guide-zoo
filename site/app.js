@@ -58,16 +58,21 @@ function passageOptions() {
 
 // ---------------------------------------------------------------- routing
 
-/** Routes are `#/`, `#/style/<guideId>?…`, `#/source/<passageId>?…`. */
+/**
+ * Routes are `#/`, `#/style/<guideId>`, `#/source/<passageId>`, and a
+ * `/compare` suffix on either for the two-column view. Without the suffix a
+ * view is a gallery: every output on one long page.
+ */
 export function parseRoute() {
   const raw = location.hash.replace(/^#\/?/, '');
   const [path, query] = raw.split('?');
   const segments = path.split('/').filter(Boolean).map(decodeURIComponent);
   const params = new URLSearchParams(query ?? '');
   if ((segments[0] === 'style' || segments[0] === 'source') && segments[1]) {
-    return { view: segments[0], id: segments[1], params };
+    const mode = segments[2] === 'compare' ? 'compare' : 'gallery';
+    return { view: segments[0], id: segments[1], mode, params };
   }
-  return { view: 'home', id: null, params };
+  return { view: 'home', id: null, mode: null, params };
 }
 
 function go(path, params = {}) {
@@ -213,7 +218,7 @@ function failureSummary(run) {
 // guide actually asking for?".
 function guideInfo(guide, systemPrompt) {
   const details = element('details', 'guide-info');
-  details.append(element('summary', null, 'About this guide'));
+  details.append(element('summary', null, 'Style guide details'));
 
   const list = document.createElement('dl');
   const add = (term, value) => {
@@ -239,6 +244,26 @@ function guideInfo(guide, systemPrompt) {
   return details;
 }
 
+/**
+ * Undo hard wrapping for display. A passage excerpted from Markdown source
+ * keeps its 80-column line breaks, and `.output` preserves newlines, so it
+ * rendered as a narrow ragged column however wide its panel was. Join each line
+ * to the one before it unless either is blank or the line starts a list item
+ * or is indented. The committed text, and what the model saw, are unchanged.
+ */
+export function reflow(text) {
+  const lines = text.split('\n');
+  const out = [];
+  for (const line of lines) {
+    const previous = out.length > 0 ? out[out.length - 1] : '';
+    const continues = previous.trim() !== '' && line.trim() !== ''
+      && !/^(\s|[-*+] |\d+[.)] )/.test(line);
+    if (continues) out[out.length - 1] = `${previous} ${line}`;
+    else out.push(line);
+  }
+  return out.join('\n');
+}
+
 /** One column: a single voice applied to a single passage. */
 function panel(voiceId, passage, cell, runIndex) {
   const article = element('article', 'panel');
@@ -246,7 +271,7 @@ function panel(voiceId, passage, cell, runIndex) {
   if (voiceId === ORIGINAL) {
     article.append(element('h3', null, 'Original source'));
     article.append(element('p', 'description', `${passage.genre} — ${passage.source}`));
-    article.append(element('div', 'output', passage.text));
+    article.append(element('div', 'output', reflow(passage.text)));
     article.append(metricsRow(passage.metrics));
     return article;
   }
@@ -258,23 +283,84 @@ function panel(voiceId, passage, cell, runIndex) {
   }
   article.append(element('h3', null, guide.name));
   article.append(element('p', 'description', guide.description));
-  // Take the prompt from a real run, so it is the text that actually produced
-  // this column rather than a copy that could drift from it.
-  article.append(guideInfo(guide, cell?.runs?.[0]?.request?.system_prompt ?? null));
+  article.append(...runBody(cell, runIndex, guideInfo(guide, systemPromptOf(cell))));
+  return article;
+}
 
+// Take the prompt from a real run, so it is the text that actually produced
+// the output rather than a copy that could drift from it.
+function systemPromptOf(cell) {
+  return cell?.runs?.[0]?.request?.system_prompt ?? null;
+}
+
+/**
+ * The reference disclosures under an output, side by side while closed. The
+ * guide details come after the output rather than above it, so the text starts
+ * right under the heading.
+ */
+function disclosures(...items) {
+  const row = element('div', 'disclosures');
+  row.append(...items.filter(Boolean));
+  return row;
+}
+
+/**
+ * The generated text of one run, with its metrics, its provenance, and — when
+ * given — the guide details. The details node is reused across run switches,
+ * so it stays open if the reader opened it.
+ */
+function runBody(cell, runIndex, info = null) {
   if (!cell || cell.runs.length === 0) {
-    article.append(element('p', 'output failed', 'Not generated yet.'));
-    return article;
+    return [element('p', 'output failed', 'Not generated yet.'), disclosures(info)];
   }
   const run = cell.runs.find((candidate) => candidate.run_index === runIndex) ?? cell.runs[0];
   if (!run.ok) {
-    article.append(element('p', 'output failed', failureSummary(run)));
-    article.append(provenance(run));
+    return [element('p', 'output failed', failureSummary(run)), disclosures(provenance(run), info)];
+  }
+  return [
+    element('div', 'output', run.text),
+    metricsRow(run.metrics),
+    disclosures(provenance(run), info)
+  ];
+}
+
+/**
+ * One full-width output in a gallery, with its own run buttons. The run is
+ * block-local state, not a route parameter: a gallery has one block per cell,
+ * and pressing a run swaps that block's text without navigating or moving the
+ * rest of the page.
+ */
+function galleryBlock({ title, titleHash, description, links = [], info = null, cell, error }) {
+  const article = element('article', 'panel block');
+  const head = element('div', 'block-head');
+  const heading = element('h3');
+  heading.append(titleHash ? anchor('block-title', title, titleHash) : element('span', null, title));
+  const group = element('div', 'run-buttons');
+  head.append(heading, group);
+  article.append(head);
+
+  const meta = element('p', 'description', description);
+  for (const link of links) {
+    meta.append(element('span', 'sep', ' · '), anchor('block-link', link.text, link.hash));
+  }
+  article.append(meta);
+
+  const body = element('div', 'block-body');
+  article.append(body);
+
+  if (error) {
+    body.append(element('p', 'output failed', error.message), disclosures(info));
+    group.hidden = true;
     return article;
   }
-  article.append(element('div', 'output', run.text));
-  article.append(metricsRow(run.metrics));
-  article.append(provenance(run));
+
+  const indices = runIndicesOf([cell]);
+  group.hidden = indices.length < 2;
+  const show = (runIndex) => {
+    syncRuns(group, indices, runIndex, show);
+    body.replaceChildren(...runBody(cell, runIndex, info));
+  };
+  show(indices[0] ?? 1);
   return article;
 }
 
@@ -302,19 +388,123 @@ function resolveRun(indices, requested) {
 function viewBar() {
   const bar = element('div', 'viewbar');
   const title = element('h2', 'view-title');
+  const links = element('div', 'view-links');
+  // `mode` flips between the gallery and the two-column page; `axis` moves to
+  // the other browse axis.
+  const mode = anchor('mode-switch', '', '/');
   const axis = anchor('axis-switch', '', '/');
-  bar.append(title, axis);
-  return { bar, title, axis };
+  links.append(mode, axis);
+  bar.append(title, links);
+  return { bar, title, mode, axis };
+}
+
+/**
+ * Load a set of cells without letting one missing file blank the page: each
+ * result is `{ cell }` or `{ error }`, and the block for a failed cell says so.
+ */
+async function loadCells(keys) {
+  const settled = await Promise.allSettled(keys.map(loadCell));
+  return settled.map((result) => (result.status === 'fulfilled'
+    ? { cell: result.value, error: null }
+    : { cell: null, error: result.reason }));
+}
+
+/** Bring a gallery block into view when the route names one. */
+function reveal(block) {
+  block?.scrollIntoView?.({ block: 'start' });
+}
+
+/** Every source in one style, full width, one after another. */
+async function styleGallery(root) {
+  const here = { guideId: null, blocks: new Map() };
+  const { bar, title, mode, axis } = viewBar();
+  axis.hidden = true;
+  const description = element('p', 'description view-description');
+  const info = element('div', 'view-info');
+  const list = element('div', 'gallery');
+  root.append(bar, description, info, list);
+
+  return async function update(route) {
+    const guide = guideById(route.id);
+    if (here.guideId !== guide.id) {
+      const results = await loadCells(index.passages.map((p) => `${guide.id}__${p.id}`));
+      here.guideId = guide.id;
+
+      title.textContent = guide.name;
+      mode.textContent = 'Compare with the original, side by side →';
+      mode.href = `#/style/${guide.id}/compare`;
+      description.textContent = guide.description;
+      const prompt = results.map((r) => systemPromptOf(r.cell)).find(Boolean) ?? null;
+      info.replaceChildren(guideInfo(guide, prompt));
+
+      here.blocks = new Map();
+      list.replaceChildren(...index.passages.map((passage, i) => {
+        const block = galleryBlock({
+          title: passage.title,
+          titleHash: `/source/${passage.id}`,
+          description: `${passage.genre} — ${passage.source}`,
+          links: [{
+            text: 'Compare with the original',
+            hash: `/style/${guide.id}/compare?source=${passage.id}`
+          }],
+          ...results[i]
+        });
+        here.blocks.set(passage.id, block);
+        return block;
+      }));
+    }
+    reveal(here.blocks.get(route.params.get('source')));
+  };
+}
+
+/** One source, then every style's output of it, full width. */
+async function sourceGallery(root) {
+  const here = { passageId: null, blocks: new Map() };
+  const { bar, title, mode, axis } = viewBar();
+  axis.hidden = true;
+  const list = element('div', 'gallery');
+  root.append(bar, list);
+
+  return async function update(route) {
+    const passage = passageById(route.id);
+    if (here.passageId !== passage.id) {
+      const results = await loadCells(index.guides.map((g) => `${g.id}__${passage.id}`));
+      here.passageId = passage.id;
+
+      title.textContent = passage.title;
+      mode.textContent = 'Compare two voices side by side →';
+      mode.href = `#/source/${passage.id}/compare`;
+
+      here.blocks = new Map();
+      const blocks = index.guides.map((guide, i) => {
+        const block = galleryBlock({
+          title: guide.name,
+          titleHash: `/style/${guide.id}`,
+          description: guide.description,
+          links: [{
+            text: 'Compare with the original',
+            hash: `/source/${passage.id}/compare?right=${guide.id}`
+          }],
+          info: guideInfo(guide, systemPromptOf(results[i].cell)),
+          ...results[i]
+        });
+        here.blocks.set(guide.id, block);
+        return block;
+      });
+      list.replaceChildren(panel(ORIGINAL, passage, null, null), ...blocks);
+    }
+    reveal(here.blocks.get(route.params.get('style')));
+  };
 }
 
 async function styleView(root) {
   const here = { guideId: null, passageId: null, run: null };
-  const { bar, title, axis } = viewBar();
+  const { bar, title, mode, axis } = viewBar();
 
   const source = field('Source', passageOptions(),
     // Run indices are per-cell, so a source change starts from the first run
     // rather than carrying over an index the new cell may not have.
-    (value) => go(`/style/${here.guideId}`, { source: value }));
+    (value) => go(`/style/${here.guideId}/compare`, { source: value }));
   const runs = runsField();
 
   const controls = element('div', 'controls');
@@ -332,13 +522,15 @@ async function styleView(root) {
     Object.assign(here, { guideId: guide.id, passageId: passage.id, run: runIndex });
 
     title.textContent = guide.name;
+    mode.textContent = '← Every source in this style';
+    mode.href = `#/style/${guide.id}?source=${passage.id}`;
     axis.textContent = 'Compare voices on this source →';
-    axis.href = `#/source/${passage.id}?right=${guide.id}`;
+    axis.href = `#/source/${passage.id}/compare?right=${guide.id}`;
     source.select.value = passage.id;
 
     runs.wrap.hidden = indices.length < 2;
     syncRuns(runs.group, indices, runIndex,
-      (value) => go(`/style/${guide.id}`, { source: passage.id, run: value }));
+      (value) => go(`/style/${guide.id}/compare`, { source: passage.id, run: value }));
 
     pair.replaceChildren(
       panel(ORIGINAL, passage, null, runIndex),
@@ -349,14 +541,14 @@ async function styleView(root) {
 
 async function sourceView(root) {
   const here = { passageId: null, left: ORIGINAL, right: null, run: null };
-  const { bar, title, axis } = viewBar();
+  const { bar, title, mode, axis } = viewBar();
 
-  const navigate = (overrides) => go(`/source/${here.passageId}`, {
+  const navigate = (overrides) => go(`/source/${here.passageId}/compare`, {
     left: here.left, right: here.right, run: here.run, ...overrides
   });
 
   const source = field('Source', passageOptions(),
-    (value) => go(`/source/${value}`, { left: here.left, right: here.right }));
+    (value) => go(`/source/${value}/compare`, { left: here.left, right: here.right }));
   // A voice change keeps the passage but may change which runs exist, so the
   // run index is dropped and re-resolved.
   const left = field('Left column', voiceOptions(),
@@ -393,6 +585,10 @@ async function sourceView(root) {
 
     title.textContent = passage.title;
     const styled = rightVoice === ORIGINAL ? leftVoice : rightVoice;
+    mode.textContent = '← Every style on this source';
+    mode.href = styled === ORIGINAL
+      ? `#/source/${passage.id}`
+      : `#/source/${passage.id}?style=${styled}`;
     if (styled === ORIGINAL) {
       axis.hidden = true;
     } else {
@@ -433,9 +629,9 @@ function homeView(root) {
 
   section(
     'Browse by style',
-    'One style guide at a time, against the unedited source. Switch sources '
-    + 'without leaving the page to see how the same instructions land on '
-    + 'oratory, legal boilerplate, and a technical procedure.',
+    'One style guide applied to every source, one after another, so you can '
+    + 'see how the same instructions land on oratory, legal boilerplate, and a '
+    + 'technical procedure. A side-by-side view against the original is one click away.',
     index.guides.map((guide) => ({
       hash: `/style/${guide.id}`, title: guide.name, description: guide.description
     }))
@@ -443,8 +639,8 @@ function homeView(root) {
 
   section(
     'Browse by source',
-    'One passage at a time, with a voice in each column. Put any two voices '
-    + 'side by side — or leave the original on the left and change only the right.',
+    'One passage, then every style\'s rewrite of it. To put any two voices '
+    + 'side by side, switch to the comparison view.',
     index.passages.map((passage) => ({
       hash: `/source/${passage.id}`,
       title: passage.title,
@@ -482,7 +678,8 @@ export async function render() {
 
   // Same view, different parameters: update in place. No teardown, no scroll
   // jump, and the control the reader just used keeps its identity.
-  if (mounted.view === route.view && mounted.update) {
+  const key = `${route.view}:${route.mode}`;
+  if (mounted.view === key && mounted.update) {
     try {
       await mounted.update(route);
     } catch (error) {
@@ -492,16 +689,22 @@ export async function render() {
     return;
   }
 
+  const views = {
+    'style:gallery': styleGallery,
+    'style:compare': styleView,
+    'source:gallery': sourceGallery,
+    'source:compare': sourceView
+  };
   root.replaceChildren();
+  // Before the update, not after: a gallery route may name a block to scroll
+  // to, and that must win over the reset to the top.
+  window.scrollTo(0, 0);
   try {
-    if (route.view === 'style') mounted.update = await styleView(root);
-    else if (route.view === 'source') mounted.update = await sourceView(root);
-    else mounted.update = null;
-    mounted.view = route.view;
+    mounted.update = views[key] ? await views[key](root) : null;
+    mounted.view = key;
 
     if (mounted.update) await mounted.update(route);
     else homeView(root);
-    window.scrollTo(0, 0);
   } catch (error) {
     reset();
     root.replaceChildren(element('p', 'output failed', error.message));

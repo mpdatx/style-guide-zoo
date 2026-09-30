@@ -94,7 +94,8 @@ published and CLI errors carry filesystem paths.
 ## Site data
 
 `build/build-site.js` reads every record and writes a small index plus one file
-per cell, so the browser fetches only the cell it is showing. The index holds
+per cell, so the browser fetches only the cells on screen: one for a compare
+page, one row or one column of the matrix (nine or ten cells) for a gallery. The index holds
 the guide list, the passage list with the full original text of each passage,
 and a per-cell summary — run count and failure count, not the runs themselves.
 
@@ -132,3 +133,16 @@ more permissive than a browser: `childNodes` and `children` expose only
 `length`, `item()` and an iterator, and a `<select>` given a value no option
 carries goes empty. A shim that accepts more than the real thing turns a caught
 bug into a passing test.
+
+The router maps `#/style/<guide>` and `#/source/<passage>` to galleries and a
+`/compare` suffix on either to the two-column page. A mounted view is keyed by
+axis and mode, so moving between gallery and compare remounts, while a change of
+parameters within one updates in place. A gallery block's run is local state,
+not a route parameter; `?source=` or `?style=` on a gallery only scrolls that
+block into view.
+
+The original passage is reflowed for display only: `corpus/project-docs.md` is
+a verbatim, hard-wrapped excerpt of this page, and outputs preserve newlines, so
+unjoined it rendered as an 80-column strip in a full-width panel. Paragraph
+breaks, list items and indented lines are kept; generated outputs are shown as
+the model wrote them.

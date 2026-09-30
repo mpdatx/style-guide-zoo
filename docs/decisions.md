@@ -235,3 +235,24 @@ that would have been caught into a green suite and a false report of safety.
 **Consequences.** The shim is slightly more code. Any future addition to it is
 expected to come with the same reintroduce-the-bug check before the suite is
 described as passing.
+
+## D13. A gallery is the default on both axes; the columns move to `/compare`
+
+**Context.** With D11's two-column views as the only way in, reading what one
+guide does meant picking passages from a dropdown one at a time, and reading
+one passage across guides meant cycling a column selector (2026-09-30).
+
+**Decision.** `#/style/<guide>` and `#/source/<passage>` are now galleries:
+every output on the axis, stacked at full width, the source passage shown only
+on the source axis. The D11 views stay, unchanged, at `/compare`. Each gallery
+block has its own run buttons, held as block-local state rather than in the
+route.
+
+**Why.** Browsing a voice is the common case, and a long page is faster to scan
+than a dropdown. Putting the run of each of nine or ten blocks in the URL would
+make it unreadable for no gain — nobody links to "run 3 of block 5".
+
+**Consequences.** A gallery fetches nine or ten cells rather than one. A run
+choice in a gallery is not shareable and is lost on reload. A `?source=` or
+`?style=` on a gallery scrolls to that block, which is how the compare pages
+link back to where the reader came from.

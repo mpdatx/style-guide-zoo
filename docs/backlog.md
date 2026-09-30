@@ -29,6 +29,9 @@ the browser automation extension was never connected during development:
   two columns to one on a phone. The `.controls` bar is sticky and wraps; how it
   behaves once it wraps to two or three rows on a narrow viewport is the part
   most likely to be wrong.
+- **Gallery pages** (D13). The full-width gallery blocks, their run buttons in
+  the block header, and the home page's single-column list (title beside
+  description above 40rem) were added without being seen rendered either.
 
 Acceptance: both checked at a phone width and in dark mode, with any contrast or
 wrap problems fixed or recorded here.
