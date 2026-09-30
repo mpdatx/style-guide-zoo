@@ -16,16 +16,11 @@ order: 5
 
 ## Backlog
 
-### Blocked
-
-- **B02** [Make the repository public](backlog.md#b02-make-the-repository-public)
-
 ### Open
 
-- **B01** [Verify the site visually in a browser](backlog.md#b01-verify-the-site-visually-in-a-browser)
 - **B03** [Add corpus passages closer to what most readers write](backlog.md#b03-add-corpus-passages-closer-to-what-most-readers-write)
 
-Closed items: none yet.
+Closed items: 2 in [the archive](backlog-archive.md).
 
 ## Inbox
 

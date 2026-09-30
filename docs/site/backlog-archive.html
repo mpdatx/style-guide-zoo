@@ -66,7 +66,43 @@ img,svg{max-width:100%}
 <main>
 <h1>Backlog archive</h1>
 <p class="summary">Closed backlog items, oldest first.</p>
+<details class="toc"><summary>On this page</summary><ul><li class="l2"><a href="#b01-verify-the-site-visually-in-a-browser">B01. Verify the site visually in a browser</a></li><li class="l2"><a href="#b02-make-the-repository-public">B02. Make the repository public</a></li></ul></details>
 
+<h2 id="b01-verify-the-site-visually-in-a-browser">B01. Verify the site visually in a browser</h2>
+<p>Status: done · Added: 2026-09-30 · Closed: 2026-09-30</p>
+<p>Closed 2026-09-30: the user reviewed the site in a browser and signed off.</p>
+<p>Two aspects of the site have only ever been checked by reading the CSS, because
+the browser automation extension was never connected during development:</p>
+<ul>
+<li><strong>Dark mode.</strong> The palette swaps via <code>prefers-color-scheme</code> in
+<code>site/style.css</code>. The token values have never been seen rendered, so actual
+contrast is unverified — in particular <code>--muted</code> on <code>--surface</code> for the
+metrics row and disclosure summaries, and <code>--accent</code> for links.</li>
+<li><strong>Narrow width.</strong> <code>.pair</code> is
+<code>repeat(auto-fit, minmax(min(24rem, 100%), 1fr))</code>, which should collapse the
+two columns to one on a phone. The <code>.controls</code> bar is sticky and wraps; how it
+behaves once it wraps to two or three rows on a narrow viewport is the part
+most likely to be wrong.</li>
+<li><strong>Gallery pages</strong> (D13). The full-width gallery blocks, their run buttons in
+the block header, and the home page's single-column list (title beside
+description above 40rem) were added without being seen rendered either.</li>
+</ul>
+<p>Acceptance: both checked at a phone width and in dark mode, with any contrast or
+wrap problems fixed or recorded here.</p>
+<p>Blocks B02 — the repository was kept private specifically until this was done.</p>
+<h2 id="b02-make-the-repository-public">B02. Make the repository public</h2>
+<p>Status: done · Added: 2026-09-30 · Closed: 2026-09-30</p>
+<p>Closed 2026-09-30: the repository is public, Pages was enabled with GitHub
+Actions as the build source (it had never been enabled, which is why every
+earlier deploy run failed), the deploy succeeded, and
+https://mpdatx.github.io/style-guide-zoo/ serves the site and its data.</p>
+<p>The repository was created private so the site could be reviewed before
+publication. Everything that gated it is done: the corpus and guide prompts are
+cleared for redistribution (see <a href="../../CORPUS-LICENSES.md">CORPUS-LICENSES</a>), error
+messages are redacted (D07), and the superpowers ledger is excluded from git.</p>
+<p>Blocked on B01.</p>
+<p>Acceptance: visibility flipped to public, GitHub Pages confirmed serving from
+the <code>site/</code> artifact, and the README's &quot;Browse the outputs&quot; link resolving.</p>
 
 </main>
 </div>

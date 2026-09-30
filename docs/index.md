@@ -14,8 +14,8 @@ committed; nothing is generated in CI or in the browser.
 
 The project is built and working. The full matrix is ten guides × nine passages
 × five runs = 450 committed records, every cell populated, no failures. The
-repository is still private pending a visual check of the site; see the
-[Backlog](backlog.md).
+repository is public and the site is served by GitHub Pages at
+https://mpdatx.github.io/style-guide-zoo/.
 
 ## What to read when
 
